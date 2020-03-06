@@ -2701,15 +2701,19 @@ void I2C_Slave_Init(uint8_t address);
 # 13 "./RTC.h" 2
 
 
-int BCD_a_DEC(int numBCD);
+uint8_t BCD_a_DEC(uint8_t numBCD);
 
 
 
-int DEC_a_BCD(int numDEC);
+uint8_t DEC_a_BCD(uint8_t numDEC);
 
 
 
 void Zeit_Datum_Set(void);
+
+
+
+void get_hora(void);
 
 
 
@@ -2739,15 +2743,17 @@ uint16_t * uint_to_array(uint8_t numero);
 
 
 
-int seg = 0;
-int min = 11;
-int hora = 11;
-int dia = 5;
-int datum = 6;
-int mes = 3;
-int jahr = 20;
+uint8_t estado = 0;
+uint8_t seg = 0;
+uint8_t min = 21;
+uint8_t hora = 16;
+uint8_t dia = 5;
+uint8_t datum = 6;
+uint8_t mes = 3;
+uint8_t jahr = 20;
 
 void display_Uhrzeit(uint8_t fila, uint8_t columna);
+void display_Datum(uint8_t fila, uint8_t columna);
 
 void main(void) {
     TRISD = 0;
@@ -2755,13 +2761,55 @@ void main(void) {
     TRISC1 = 0;
     LCD_init();
     LCD_clear();
-    LCD_Set_Cursor(1,1);
-    LCD_Write_String("S1:  S2:   S3:");
     I2C_Master_Init(100000);
 
+    get_Time();
     while(1){
-        get_Time();
-        display_Uhrzeit(2, 1);
+        switch(estado){
+            case 0:
+                get_Time();
+                display_Uhrzeit(2,4);
+                display_Datum(1,3);
+                break;
+            case 1:
+                LCD_Set_Cursor(1,0);
+                LCD_Write_String("Temp. Hambiente:");
+                LCD_Set_Cursor(2,6);
+                LCD_Write_String("69");
+                LCD_Write_Character(223);
+                LCD_Write_Character('C');
+                break;
+            case 2:
+                LCD_Set_Cursor(1,0);
+                LCD_Write_String("Temp. del Suelo:");
+                LCD_Set_Cursor(2,6);
+                LCD_Write_String("20");
+                LCD_Write_Character(223);
+                LCD_Write_Character('C');
+                break;
+            case 3:
+                LCD_Set_Cursor(1,0);
+                LCD_Write_String("Humedad:");
+                LCD_Set_Cursor(2,6);
+                LCD_Write_String("80");
+                LCD_Write_Character('%');
+                break;
+            case 4:
+                LCD_Set_Cursor(1,0);
+                LCD_Write_String("Atras: | Frente:");
+                LCD_Set_Cursor(2,2);
+                LCD_Write_String("3");
+                LCD_Write_Character('m');
+                LCD_Set_Cursor(2,7);
+                LCD_Write_Character('|');
+                LCD_Set_Cursor(2,11);
+                LCD_Write_String("4");
+                LCD_Write_Character('m');
+                break;
+            default:
+                LCD_Set_Cursor(1,9);
+                LCD_Write_String("ERROR");
+        }
     }
     return;
 }
@@ -2784,5 +2832,26 @@ void display_Uhrzeit(uint8_t fila, uint8_t columna){
     LCD_Write_Character(':');
     LCD_Write_Character(seg_d + '0');
     LCD_Write_Character(seg_u + '0');
+
+}
+
+void display_Datum(uint8_t fila, uint8_t columna){
+    char dia_u = datum%10;
+    char dia_d = datum/10;
+    char mes_u = mes%10;
+    char mes_d = mes/10;
+    char jahr_u = jahr%10;
+    char jahr_d = jahr/10;
+
+    LCD_Set_Cursor(fila, columna);
+    LCD_Write_Character(dia_d + '0');
+    LCD_Write_Character(dia_u + '0');
+    LCD_Write_Character('/');
+    LCD_Write_Character(mes_d + '0');
+    LCD_Write_Character(mes_u + '0');
+    LCD_Write_Character('/');
+    LCD_Write_String("20");
+    LCD_Write_Character(jahr_d + '0');
+    LCD_Write_Character(jahr_u + '0');
 
 }

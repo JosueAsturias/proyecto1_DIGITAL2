@@ -12,17 +12,21 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
 
-int BCD_a_DEC(int numBCD);
+uint8_t BCD_a_DEC(uint8_t numBCD);
 /****** convierte de BCD a decimal *****
  ****** -------------------------- *****/
 
-int DEC_a_BCD(int numDEC);
+uint8_t DEC_a_BCD(uint8_t numDEC);
 /****** convierte de Decimal a BCD *****
  ****** -------------------------- *****/
 
 void Zeit_Datum_Set(void);
 /****** ajustar hora y fecha   ****
  ****** --------------------   *****/
+
+void get_hora(void);
+/***** se obtiene solo la hora ****
+******                         ****/
 
 void get_Time(void);
 /****** obtiene hora y fecha   ****

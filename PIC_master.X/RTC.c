@@ -12,7 +12,7 @@
 #include "I2C.h"
 #endif
 
-#define __XTAL_FREQ 4000000
+#define __XTAL_FREQ 8000000
 
 //copiar y ajustar a lo deseado en main.c
 uint8_t seg = 0;

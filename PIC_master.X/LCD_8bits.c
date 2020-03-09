@@ -10,7 +10,7 @@
 #include <stdint.h>
 #include "LCD_8bits.h"
 
-#define _XTAL_FREQ 4000000   // cambiar de acuerdo a la configuracion del OSC
+#define _XTAL_FREQ 8000000   // cambiar de acuerdo a la configuracion del OSC
 
 #define RS PORTCbits.RC0
 #define EN PORTCbits.RC1
@@ -111,6 +111,14 @@ void LCD_Cursor_links(uint8_t espacios){
     for (uint8_t n = 0; n <= espacios; n++){
         LCD_Cmd(0x10);
     }
+}
+
+void LCD_Create_Char(uint8_t charnum, const uint8_t * chardata){
+	uint8_t n;
+	charnum &= 0x07;
+	LCD_Cmd(0x40 | (charnum << 3));
+	for (n = 0; n < 8; n++)
+		LCD_Write_Character(chardata[n]);
 }
 
 char uint_to_char(uint8_t numero){

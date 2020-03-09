@@ -2737,6 +2737,7 @@ void LCD_Shift_links();
 void LCD_Shift_rechts();
 void LCD_Cursor_rechts(uint8_t espacios);
 void LCD_Cursor_links(uint8_t espacios);
+void LCD_Create_Char(uint8_t charnum, const uint8_t * chardata);
 char uint_to_char(uint8_t numero);
 uint16_t * uint_to_array(uint8_t numero);
 # 28 "main_Master.c" 2
@@ -2751,67 +2752,138 @@ uint8_t dia = 5;
 uint8_t datum = 6;
 uint8_t mes = 3;
 uint8_t jahr = 20;
+uint8_t temperatura = 0;
+uint16_t * temp_array;
+uint8_t banderaBoton = 0;
+uint8_t banderaPUSH1 = 0;
+uint8_t banderaPUSH2 = 0;
 
+const char arrowr[8] = {
+    0x00,
+    0x08,
+    0x0C,
+    0x0E,
+    0x0F,
+    0x0E,
+    0x0C,
+    0x08
+};
+const char atilde[8] = {
+    0b00010,
+    0b00100,
+    0b00000,
+    0b01110,
+    0b00001,
+    0b01111,
+    0b10001,
+    0b01111
+};
+const char termometro[8] = {
+    0x04,
+    0x0A,
+    0x0A,
+    0x0E,
+    0x0E,
+    0x1F,
+    0x1F,
+    0x0E
+};
+const char gota[8] = {
+  0x04,
+  0x0A,
+  0x0A,
+  0x11,
+  0x11,
+  0x11,
+  0x0E,
+  0x00
+};
 void display_Uhrzeit(uint8_t fila, uint8_t columna);
 void display_Datum(uint8_t fila, uint8_t columna);
+void mostrarLCD(uint8_t pantalla);
+void pressBoton1(void);
+void pressBoton2(void);
+void SetUp(void);
+void OSC_config(uint32_t frecuencia);
+
+void __attribute__((picinterrupt(("")))) ISR(void){
+    if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){
+        INTCONbits.RBIF = 0;
+        if (banderaBoton == 0){
+            banderaBoton = 1;
+            INTCONbits.RBIE = 0;
+        }
+    }
+}
 
 void main(void) {
+    SetUp();
+    while(1){
+
+        get_Time();
+        temperatura = get_Temp();
+
+
+        mostrarLCD(estado);
+        pressBoton1();
+        pressBoton2();
+
+
+    }
+    return;
+}
+
+void SetUp(void){
+    OSC_config(8000000);
+    TRISB = 0b00000110;
+    ANSELH = 0;
+    WPUB = 0b00000110;
+    OPTION_REGbits.nRBPU = 0;
+    IOCB = 0b00000110;
+    INTCONbits.RBIE = 1;
+    INTCONbits.GIE = 1;
     TRISD = 0;
     TRISC0 = 0;
     TRISC1 = 0;
     LCD_init();
+    LCD_Create_Char(0, atilde);
+    LCD_Create_Char(1, arrowr);
+    LCD_Create_Char(2, termometro);
+    LCD_Create_Char(3, gota);
     LCD_clear();
     I2C_Master_Init(100000);
 
-    get_Time();
-    while(1){
-        switch(estado){
-            case 0:
-                get_Time();
-                display_Uhrzeit(2,4);
-                display_Datum(1,3);
-                break;
-            case 1:
-                LCD_Set_Cursor(1,0);
-                LCD_Write_String("Temp. Hambiente:");
-                LCD_Set_Cursor(2,6);
-                LCD_Write_String("69");
-                LCD_Write_Character(223);
-                LCD_Write_Character('C');
-                break;
-            case 2:
-                LCD_Set_Cursor(1,0);
-                LCD_Write_String("Temp. del Suelo:");
-                LCD_Set_Cursor(2,6);
-                LCD_Write_String("20");
-                LCD_Write_Character(223);
-                LCD_Write_Character('C');
-                break;
-            case 3:
-                LCD_Set_Cursor(1,0);
-                LCD_Write_String("Humedad:");
-                LCD_Set_Cursor(2,6);
-                LCD_Write_String("80");
-                LCD_Write_Character('%');
-                break;
-            case 4:
-                LCD_Set_Cursor(1,0);
-                LCD_Write_String("Atras: | Frente:");
-                LCD_Set_Cursor(2,2);
-                LCD_Write_String("3");
-                LCD_Write_Character('m');
-                LCD_Set_Cursor(2,7);
-                LCD_Write_Character('|');
-                LCD_Set_Cursor(2,11);
-                LCD_Write_String("4");
-                LCD_Write_Character('m');
-                break;
-            default:
-                LCD_Set_Cursor(1,9);
-                LCD_Write_String("ERROR");
-        }
+}
+
+void OSC_config(uint32_t frecuencia){
+    switch(frecuencia){
+        case 8000000:
+            OSCCONbits.IRCF = 0b111;
+            break;
+        case 4000000:
+            OSCCONbits.IRCF = 0b110;
+            break;
+        case 2000000:
+            OSCCONbits.IRCF = 0b101;
+            break;
+        case 1000000:
+            OSCCONbits.IRCF = 0b100;
+            break;
+        case 500000:
+            OSCCONbits.IRCF = 0b011;
+            break;
+        case 250000:
+            OSCCONbits.IRCF = 0b010;
+            break;
+        case 125000:
+            OSCCONbits.IRCF = 0b001;
+            break;
+        case 32000:
+            OSCCONbits.IRCF = 0b000;
+            break;
+        default:
+            OSCCONbits.IRCF = 0b110;
     }
-    return;
 }
 
 
@@ -2854,4 +2926,124 @@ void display_Datum(uint8_t fila, uint8_t columna){
     LCD_Write_Character(jahr_d + '0');
     LCD_Write_Character(jahr_u + '0');
 
+}
+
+void mostrarLCD(uint8_t pantalla){
+    switch(pantalla){
+        case 0:
+            display_Uhrzeit(2,4);
+            display_Datum(1,3);
+            LCD_Set_Cursor(2, 15);
+            break;
+        case 1:
+            LCD_Set_Cursor(1,0);
+            LCD_Write_String("Ambiente:");
+            uint8_t signo = temperatura & 0b10000000;
+            LCD_Set_Cursor(2,5);
+            LCD_Write_Character(2);
+            if (signo){
+                LCD_Write_Character('-');
+            }
+            else{
+                LCD_Write_Character(' ');
+            }
+            temp_array = uint_to_array(temperatura & 0b01111111);
+            LCD_Write_Character(uint_to_char(temp_array[1]));
+            LCD_Write_Character(uint_to_char(temp_array[2]));
+            LCD_Write_Character(223);
+            LCD_Write_Character('C');
+            break;
+        case 2:
+            LCD_Set_Cursor(1,0);
+            LCD_Write_String("Temp. del Suelo:");
+            LCD_Set_Cursor(2,6);
+            LCD_Write_String("20");
+            LCD_Write_Character(223);
+            LCD_Write_Character('C');
+            break;
+        case 3:
+            LCD_Set_Cursor(1,0);
+            LCD_Write_String("Humedad:");
+            LCD_Set_Cursor(2,4);
+            LCD_Write_Character(3);
+            LCD_Write_Character(' ');
+            LCD_Write_String("80");
+            LCD_Write_Character('%');
+            break;
+        case 4:
+            LCD_Set_Cursor(1,0);
+            LCD_Write_String("Atr");
+            LCD_Write_Character(0);
+            LCD_Write_String("s: | Frente:");
+            LCD_Set_Cursor(2,2);
+            LCD_Write_String("3");
+            LCD_Write_Character('m');
+            LCD_Set_Cursor(2,7);
+            LCD_Write_Character('|');
+            LCD_Set_Cursor(2,11);
+            LCD_Write_String("4");
+            LCD_Write_Character('m');
+            break;
+        case 5:
+            LCD_Set_Cursor(1, 0);
+            LCD_Write_String("Tomar datos:");
+            LCD_Set_Cursor(2,0);
+            LCD_Write_Character(1);
+            LCD_Set_Cursor(2,1);
+            LCD_Write_String("10min");
+            LCD_Set_Cursor(2,8);
+            LCD_Write_String("5x5");
+            break;
+        default:
+            LCD_Set_Cursor(1,9);
+            LCD_Write_String("ERROR");
+    }
+}
+
+void pressBoton1(){
+    if (banderaBoton == 1){
+        if (banderaPUSH1 == 0){
+            if (PORTBbits.RB1 == 0){
+                LCD_clear();
+                _delay((unsigned long)((10)*(8000000/4000.0)));
+                estado ++;
+                if (estado > 5){
+                    estado = 0;
+                }
+                banderaBoton = 0;
+                banderaPUSH1 = 1;
+                INTCONbits.RBIE = 1;
+            }
+        }
+    }
+    if (banderaPUSH1 == 1){
+        if (PORTBbits.RB1 == 1){
+        _delay((unsigned long)((10)*(8000000/4000.0)));
+        banderaPUSH1 = 0;
+        }
+    }
+}
+
+void pressBoton2(void){
+    if (banderaBoton == 1){
+        if (banderaPUSH2 == 0){
+            if (PORTBbits.RB2 == 0){
+                LCD_clear();
+                _delay((unsigned long)((10)*(8000000/4000.0)));
+                estado --;
+                if (estado <= 255 && estado > 250){
+                    estado = 5;
+                }
+                banderaBoton = 0;
+                banderaPUSH2 = 1;
+                INTCONbits.RBIE = 1;
+            }
+        }
+    }
+    if (banderaPUSH2 == 1){
+        if (PORTBbits.RB2 == 1){
+        _delay((unsigned long)((10)*(8000000/4000.0)));
+        banderaPUSH2 = 0;
+        }
+    }
 }

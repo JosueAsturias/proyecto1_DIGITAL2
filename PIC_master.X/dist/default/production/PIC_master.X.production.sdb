@@ -9,14 +9,22 @@
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
@@ -47,27 +55,25 @@
 [v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
 "116
 [v _LCD_Create_Char LCD_Create_Char `(v  1 e 1 0 ]
-"124
-[v _uint_to_char uint_to_char `(uc  1 e 1 0 ]
 "181
 [v _uint_to_array uint_to_array `(*.4ui  1 e 1 0 ]
-"103 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"110 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"113
+"120
 [v _main main `(v  1 e 1 0 ]
-"130
+"138
 [v _SetUp SetUp `(v  1 e 1 0 ]
-"153
+"161
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
-"185
+"193
 [v _display_Uhrzeit display_Uhrzeit `(v  1 e 1 0 ]
-"205
+"213
 [v _display_Datum display_Datum `(v  1 e 1 0 ]
-"226
+"234
 [v _mostrarLCD mostrarLCD `(v  1 e 1 0 ]
-"318
+"354
 [v _pressBoton1 pressBoton1 `(v  1 e 1 0 ]
-"351
+"399
 [v _pressBoton2 pressBoton2 `(v  1 e 1 0 ]
 "27 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
 [v _BCD_a_DEC BCD_a_DEC `(uc  1 e 1 0 ]
@@ -75,9 +81,11 @@
 [v _DEC_a_BCD DEC_a_BCD `(uc  1 e 1 0 ]
 "78
 [v _get_Time get_Time `(v  1 e 1 0 ]
-"144
-[v _get_Temp get_Temp `(uc  1 e 1 0 ]
-[s S188 . 1 `uc 1 RB0 1 0 :1:0 
+"16 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\Temperatura_I2C.c
+[v _temp_objeto temp_objeto `(ui  1 e 2 0 ]
+"39
+[v _temp_ambiente temp_ambiente `(ui  1 e 2 0 ]
+[s S193 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -87,9 +95,9 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f887.h
-[u S197 . 1 `S188 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES197  1 e 1 @6 ]
-[s S439 . 1 `uc 1 RC0 1 0 :1:0 
+[u S202 . 1 `S193 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES202  1 e 1 @6 ]
+[s S431 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -99,8 +107,8 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S448 . 1 `S439 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES448  1 e 1 @7 ]
+[u S440 . 1 `S431 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES440  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -124,7 +132,7 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S87 . 1 `uc 1 PS 1 0 :3:0 
+[s S91 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -132,15 +140,15 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S94 . 1 `uc 1 PS0 1 0 :1:0 
+[s S98 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S98 . 1 `S87 1 . 1 0 `S94 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES98  1 e 1 @129 ]
+[u S102 . 1 `S91 1 . 1 0 `S98 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES102  1 e 1 @129 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S360 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S352 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -150,27 +158,27 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S369 . 1 `S360 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES369  1 e 1 @135 ]
+[u S361 . 1 `S352 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES361  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S136 . 1 `uc 1 SCS 1 0 :1:0 
+[s S140 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S142 . 1 `uc 1 . 1 0 :4:0 
+[s S146 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S147 . 1 `S136 1 . 1 0 `S142 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES147  1 e 1 @143 ]
+[u S151 . 1 `S140 1 . 1 0 `S146 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES151  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S381 . 1 `uc 1 SEN 1 0 :1:0 
+[s S373 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -180,8 +188,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S390 . 1 `S381 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES390  1 e 1 @145 ]
+[u S382 . 1 `S373 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES382  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -208,29 +216,35 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"31 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"33 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _estado estado `uc  1 e 1 0 ]
-"39
-[v _temperatura temperatura `uc  1 e 1 0 ]
-"40
-[v _temp_array temp_array `*.4ui  1 e 1 0 ]
 "41
-[v _banderaBoton banderaBoton `uc  1 e 1 0 ]
+[v _temperatura temperatura `uc  1 e 1 0 ]
 "42
-[v _banderaPUSH1 banderaPUSH1 `uc  1 e 1 0 ]
+[v _temperatura_obj temperatura_obj `uc  1 e 1 0 ]
 "43
-[v _banderaPUSH2 banderaPUSH2 `uc  1 e 1 0 ]
+[v _obj_array obj_array `*.4ui  1 e 1 0 ]
 "44
-[v _tiempo tiempo `uc  1 e 1 0 ]
+[v _banderaBoton banderaBoton `uc  1 e 1 0 ]
 "45
+[v _banderaPUSH1 banderaPUSH1 `uc  1 e 1 0 ]
+"46
+[v _banderaPUSH2 banderaPUSH2 `uc  1 e 1 0 ]
+"47
+[v _tiempo tiempo `uc  1 e 1 0 ]
+"48
+[v _largo largo `uc  1 e 1 0 ]
+"49
+[v _ancho ancho `uc  1 e 1 0 ]
+"52
 [v _arrowr arrowr `DC[8]uc  1 e 8 0 ]
-"55
+"62
 [v _arrowr_vacio arrowr_vacio `DC[8]uc  1 e 8 0 ]
-"65
+"72
 [v _atilde atilde `DC[8]uc  1 e 8 0 ]
-"75
+"82
 [v _termometro termometro `DC[8]uc  1 e 8 0 ]
-"85
+"92
 [v _gota gota `DC[8]uc  1 e 8 0 ]
 "18 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
 [v _seg seg `uc  1 e 1 0 ]
@@ -246,51 +260,159 @@
 [v _mes mes `uc  1 e 1 0 ]
 "24
 [v _jahr jahr `uc  1 e 1 0 ]
-"113 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"120 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _main main `(v  1 e 1 0 ]
 {
-"128
+"136
 } 0
-"351
+"16 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\Temperatura_I2C.c
+[v _temp_objeto temp_objeto `(ui  1 e 2 0 ]
+{
+"17
+[v temp_objeto@temp_MSB temp_MSB `ui  1 a 2 17 ]
+"20
+[v temp_objeto@temp temp `ui  1 a 2 14 ]
+"18
+[v temp_objeto@temp_LSB temp_LSB `uc  1 a 1 16 ]
+"37
+} 0
+"39
+[v _temp_ambiente temp_ambiente `(ui  1 e 2 0 ]
+{
+"40
+[v temp_ambiente@temp_MSB temp_MSB `ui  1 a 2 17 ]
+"43
+[v temp_ambiente@temp temp `ui  1 a 2 14 ]
+"41
+[v temp_ambiente@temp_LSB temp_LSB `uc  1 a 1 16 ]
+"60
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 2 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 1 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 2 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 0 ]
+"44
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 79 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 78 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 0 ]
+"70
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S784 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S789 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S792 . 4 `l 1 i 4 0 `d 1 f 4 0 `S784 1 fAsBytes 4 0 `S789 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S792  1 a 4 26 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 21 ]
+[s S861 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S864 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S861 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S864  1 a 2 30 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 25 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 20 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 19 ]
+"8
+[v ___flmul@b b `d  1 p 4 6 ]
+[v ___flmul@a a `d  1 p 4 10 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 2 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 0 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 2 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 4 ]
+"60
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 72 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 65 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 70 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 77 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 76 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 69 ]
+"8
+[v ___fldiv@a a `d  1 p 4 52 ]
+[v ___fldiv@b b `d  1 p 4 56 ]
+"185
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 51 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 50 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 49 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 48 ]
+"10
+[v ___fladd@b b `d  1 p 4 32 ]
+[v ___fladd@a a `d  1 p 4 36 ]
+"237
+} 0
+"399 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _pressBoton2 pressBoton2 `(v  1 e 1 0 ]
 {
-"386
+"444
 } 0
-"318
+"354
 [v _pressBoton1 pressBoton1 `(v  1 e 1 0 ]
 {
-"349
+"397
 } 0
-"226
+"234
 [v _mostrarLCD mostrarLCD `(v  1 e 1 0 ]
 {
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 wreg ]
-"236
-[v mostrarLCD@signo signo `uc  1 a 1 26 ]
-"226
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 wreg ]
-[v mostrarLCD@pantalla pantalla `uc  1 a 1 25 ]
-"316
+[v mostrarLCD@pantalla pantalla `uc  1 a 1 26 ]
+"352
 } 0
-"124 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
-[v _uint_to_char uint_to_char `(uc  1 e 1 0 ]
-{
-[v uint_to_char@numero numero `uc  1 a 1 wreg ]
-"125
-[v uint_to_char@numChr numChr `uc  1 a 1 5 ]
-"124
-[v uint_to_char@numero numero `uc  1 a 1 wreg ]
-[v uint_to_char@numero numero `uc  1 a 1 4 ]
-"179
-} 0
-"181
+"181 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _uint_to_array uint_to_array `(*.4ui  1 e 1 0 ]
 {
 [v uint_to_array@numero numero `uc  1 a 1 wreg ]
 "182
-[v uint_to_array@resultado resultado `[3]ui  1 a 6 15 ]
+[v uint_to_array@resultado resultado `[3]ui  1 a 6 16 ]
 "184
-[v uint_to_array@centenas centenas `uc  1 a 1 21 ]
+[v uint_to_array@centenas centenas `uc  1 a 1 15 ]
 "186
 [v uint_to_array@decenas decenas `uc  1 a 1 14 ]
 "181
@@ -308,49 +430,49 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
 "53
 } 0
-"185 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"193 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _display_Uhrzeit display_Uhrzeit `(v  1 e 1 0 ]
 {
 [v display_Uhrzeit@fila fila `uc  1 a 1 wreg ]
-"191
+"199
 [v display_Uhrzeit@Uhr_d Uhr_d `uc  1 a 1 18 ]
-"190
+"198
 [v display_Uhrzeit@Uhr_u Uhr_u `uc  1 a 1 17 ]
-"189
+"197
 [v display_Uhrzeit@min_d min_d `uc  1 a 1 16 ]
-"188
+"196
 [v display_Uhrzeit@min_u min_u `uc  1 a 1 15 ]
-"187
+"195
 [v display_Uhrzeit@seg_d seg_d `uc  1 a 1 14 ]
-"186
+"194
 [v display_Uhrzeit@seg_u seg_u `uc  1 a 1 13 ]
-"185
+"193
 [v display_Uhrzeit@fila fila `uc  1 a 1 wreg ]
 [v display_Uhrzeit@columna columna `uc  1 p 1 8 ]
 [v display_Uhrzeit@fila fila `uc  1 a 1 12 ]
-"203
+"211
 } 0
-"205
+"213
 [v _display_Datum display_Datum `(v  1 e 1 0 ]
 {
 [v display_Datum@fila fila `uc  1 a 1 wreg ]
-"211
+"219
 [v display_Datum@jahr_d jahr_d `uc  1 a 1 18 ]
-"210
+"218
 [v display_Datum@jahr_u jahr_u `uc  1 a 1 17 ]
-"209
+"217
 [v display_Datum@mes_d mes_d `uc  1 a 1 16 ]
-"208
+"216
 [v display_Datum@mes_u mes_u `uc  1 a 1 15 ]
-"207
+"215
 [v display_Datum@dia_d dia_d `uc  1 a 1 14 ]
-"206
+"214
 [v display_Datum@dia_u dia_u `uc  1 a 1 13 ]
-"205
+"213
 [v display_Datum@fila fila `uc  1 a 1 wreg ]
 [v display_Datum@columna columna `uc  1 p 1 8 ]
 [v display_Datum@fila fila `uc  1 a 1 12 ]
-"224
+"232
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -405,34 +527,6 @@
 {
 "142
 } 0
-"27
-[v _BCD_a_DEC BCD_a_DEC `(uc  1 e 1 0 ]
-{
-[v BCD_a_DEC@numBCD numBCD `uc  1 a 1 wreg ]
-[v BCD_a_DEC@numBCD numBCD `uc  1 a 1 wreg ]
-[v BCD_a_DEC@numBCD numBCD `uc  1 a 1 9 ]
-"30
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
-{
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v ___bmul@product product `uc  1 a 1 4 ]
-"4
-[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
-[v ___bmul@multiplicand multiplicand `uc  1 p 1 2 ]
-"6
-[v ___bmul@multiplier multiplier `uc  1 a 1 5 ]
-"51
-} 0
-"144 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
-[v _get_Temp get_Temp `(uc  1 e 1 0 ]
-{
-"152
-[v get_Temp@TempMSB TempMSB `uc  1 a 1 1 ]
-"158
-} 0
 "65 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\I2C.c
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 {
@@ -463,16 +557,37 @@
 {
 "35
 } 0
-"130 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"27 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
+[v _BCD_a_DEC BCD_a_DEC `(uc  1 e 1 0 ]
+{
+[v BCD_a_DEC@numBCD numBCD `uc  1 a 1 wreg ]
+[v BCD_a_DEC@numBCD numBCD `uc  1 a 1 wreg ]
+[v BCD_a_DEC@numBCD numBCD `uc  1 a 1 9 ]
+"30
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 4 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 2 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 5 ]
+"51
+} 0
+"138 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _SetUp SetUp `(v  1 e 1 0 ]
 {
-"151
+"159
 } 0
-"153
+"161
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
 {
 [v OSC_config@frecuencia frecuencia `ul  1 p 4 2 ]
-"182
+"190
 } 0
 "44 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
@@ -531,8 +646,8 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 6 ]
 "30
 } 0
-"103 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"110 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"111
+"118
 } 0

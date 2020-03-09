@@ -141,18 +141,18 @@ void get_Time(void){
     I2C_Master_Stop();
 }
 
-uint8_t get_Temp(){
-    I2C_Master_Start();
-    I2C_Master_Write(0xD0);
-    I2C_Master_Write(0x11);
-    I2C_Master_Stop();
-    
-    I2C_Master_Start();
-    I2C_Master_Write(0xD1);
-    uint8_t TempMSB = I2C_Master_Read(0);
-    uint8_t Temp_LSB = I2C_Master_Read(0);
-    I2C_Master_Stop();
-    
-    return TempMSB;
-    
-}
+//uint8_t get_Temp(){
+//    I2C_Master_Start();
+//    I2C_Master_Write(0xD0);
+//    I2C_Master_Write(0x11);
+//    I2C_Master_Stop();
+//    
+//    I2C_Master_Start();
+//    I2C_Master_Write(0xD1);
+//    uint8_t TempMSB = I2C_Master_Read(0);
+//    uint8_t Temp_LSB = I2C_Master_Read(0);
+//    I2C_Master_Stop();
+//    
+//    return TempMSB;
+//    
+//}

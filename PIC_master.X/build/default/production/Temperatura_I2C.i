@@ -1,4 +1,4 @@
-# 1 "main_Master.c"
+# 1 "Temperatura_I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,28 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main_Master.c" 2
+# 1 "Temperatura_I2C.c" 2
 
 
 
 
 
-
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
 
 
 
@@ -2515,7 +2499,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 24 "main_Master.c" 2
+# 9 "Temperatura_I2C.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 3
@@ -2650,7 +2634,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 25 "main_Master.c" 2
+# 10 "Temperatura_I2C.c" 2
 
 # 1 "./I2C.h" 1
 # 19 "./I2C.h"
@@ -2693,50 +2677,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 26 "main_Master.c" 2
-
-# 1 "./RTC.h" 1
-# 13 "./RTC.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "./RTC.h" 2
-
-
-uint8_t BCD_a_DEC(uint8_t numBCD);
-
-
-
-uint8_t DEC_a_BCD(uint8_t numDEC);
-
-
-
-void Zeit_Datum_Set(void);
-
-
-
-void get_hora(void);
-
-
-
-void get_Time(void);
-# 27 "main_Master.c" 2
-
-# 1 "./LCD_8bits.h" 1
-# 16 "./LCD_8bits.h"
-void LCD_Cmd(uint8_t comando);
-void LCD_clear(void);
-void LCD_home(void);
-void LCD_init(void);
-void LCD_Write_Character(char caracter);
-void LCD_Write_String(char *a);
-void LCD_Set_Cursor(uint8_t linea, uint8_t columna);
-void LCD_Shift_links();
-void LCD_Shift_rechts();
-void LCD_Cursor_rechts(uint8_t espacios);
-void LCD_Cursor_links(uint8_t espacios);
-void LCD_Create_Char(uint8_t charnum, const uint8_t * chardata);
-
-uint16_t * uint_to_array(uint8_t numero);
-# 28 "main_Master.c" 2
+# 11 "Temperatura_I2C.c" 2
 
 # 1 "./Temperatura_I2C.h" 1
 # 13 "./Temperatura_I2C.h"
@@ -2746,420 +2687,53 @@ uint16_t * uint_to_array(uint8_t numero);
 
 uint16_t temp_objeto(void);
 uint16_t temp_ambiente(void);
-# 29 "main_Master.c" 2
+# 12 "Temperatura_I2C.c" 2
 
 
 
 
-uint8_t estado = 0;
-uint8_t seg = 0;
-uint8_t min = 21;
-uint8_t hora = 16;
-uint8_t dia = 5;
-uint8_t datum = 6;
-uint8_t mes = 3;
-uint8_t jahr = 20;
-uint8_t temperatura;
-uint8_t temperatura_obj = 0;
-uint16_t * obj_array;
-uint8_t banderaBoton = 0;
-uint8_t banderaPUSH1 = 0;
-uint8_t banderaPUSH2 = 0;
-uint8_t tiempo = 5;
-uint8_t largo = 1;
-uint8_t ancho = 1;
+uint16_t temp_objeto(void){
+    uint16_t temp_MSB;
+    uint8_t temp_LSB;
+    uint8_t PEC;
+    uint16_t temp;
+    I2C_Master_Start();
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x07);
 
 
-const char arrowr[8] = {
-    0x00,
-    0x08,
-    0x0C,
-    0x0E,
-    0x0F,
-    0x0E,
-    0x0C,
-    0x08
-};
-const char arrowr_vacio[8] = {
-    0x00,
-    0x08,
-    0x0C,
-    0x0A,
-    0x09,
-    0x0A,
-    0x0C,
-    0x08
-};
-const char atilde[8] = {
-    0b00010,
-    0b00100,
-    0b00000,
-    0b01110,
-    0b00001,
-    0b01111,
-    0b10001,
-    0b01111
-};
-const char termometro[8] = {
-    0x04,
-    0x0A,
-    0x0A,
-    0x0E,
-    0x0E,
-    0x1F,
-    0x1F,
-    0x0E
-};
-const char gota[8] = {
-  0x04,
-  0x0A,
-  0x0A,
-  0x11,
-  0x11,
-  0x11,
-  0x0E,
-  0x00
-};
-void display_Uhrzeit(uint8_t fila, uint8_t columna);
-void display_Datum(uint8_t fila, uint8_t columna);
-void mostrarLCD(uint8_t pantalla);
-void pressBoton1(void);
-void pressBoton2(void);
-void SetUp(void);
-void OSC_config(uint32_t frecuencia);
+    I2C_Master_Start();
+    I2C_Master_Write(0x01);
+    temp_LSB = I2C_Master_Read(0);
+    temp_MSB = I2C_Master_Read(0);
+    PEC = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    _delay((unsigned long)((50)*(8000000/4000.0)));
 
-void __attribute__((picinterrupt(("")))) ISR(void){
-    if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){
-        INTCONbits.RBIF = 0;
-        if (banderaBoton == 0){
-            banderaBoton = 1;
-            INTCONbits.RBIE = 0;
-        }
+    temp_MSB = temp_MSB <<8;
+    temp = (((temp_MSB+temp_LSB)*0.2)-273.15)/100;
+    return(temp);
     }
-}
 
-void main(void) {
-    SetUp();
-    while(1){
-
-        get_Time();
-        temperatura = temp_ambiente();
-        temperatura_obj = temp_objeto();
-
-
-        mostrarLCD(estado);
-        pressBoton1();
-        pressBoton2();
+uint16_t temp_ambiente(void){
+    uint16_t temp_MSB;
+    uint8_t temp_LSB;
+    uint8_t PEC;
+    uint16_t temp;
+    I2C_Master_Start();
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x06);
 
 
-    }
-    return;
-}
+    I2C_Master_Start();
+    I2C_Master_Write(0x01);
+    temp_LSB = I2C_Master_Read(0);
+    temp_MSB = I2C_Master_Read(0);
+    PEC = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    _delay((unsigned long)((50)*(8000000/4000.0)));
 
-void SetUp(void){
-    OSC_config(8000000);
-    TRISB = 0b00000110;
-    ANSELH = 0;
-    WPUB = 0b00000110;
-    OPTION_REGbits.nRBPU = 0;
-    IOCB = 0b00000110;
-    INTCONbits.RBIE = 1;
-    INTCONbits.GIE = 1;
-    TRISD = 0;
-    TRISC0 = 0;
-    TRISC1 = 0;
-    LCD_init();
-    LCD_Create_Char(0, atilde);
-    LCD_Create_Char(1, arrowr);
-    LCD_Create_Char(2, termometro);
-    LCD_Create_Char(3, gota);
-    LCD_Create_Char(4, arrowr_vacio);
-    LCD_clear();
-    I2C_Master_Init(100000);
-
-}
-
-void OSC_config(uint32_t frecuencia){
-    switch(frecuencia){
-        case 8000000:
-            OSCCONbits.IRCF = 0b111;
-            break;
-        case 4000000:
-            OSCCONbits.IRCF = 0b110;
-            break;
-        case 2000000:
-            OSCCONbits.IRCF = 0b101;
-            break;
-        case 1000000:
-            OSCCONbits.IRCF = 0b100;
-            break;
-        case 500000:
-            OSCCONbits.IRCF = 0b011;
-            break;
-        case 250000:
-            OSCCONbits.IRCF = 0b010;
-            break;
-        case 125000:
-            OSCCONbits.IRCF = 0b001;
-            break;
-        case 32000:
-            OSCCONbits.IRCF = 0b000;
-            break;
-        default:
-            OSCCONbits.IRCF = 0b110;
-    }
-}
-
-
-void display_Uhrzeit(uint8_t fila, uint8_t columna){
-    char seg_u = seg%10;
-    char seg_d = seg/10;
-    char min_u = min%10;
-    char min_d = min/10;
-    char Uhr_u = hora%10;
-    char Uhr_d = hora/10;
-
-    LCD_Set_Cursor(fila, columna);
-    LCD_Write_Character(Uhr_d + '0');
-    LCD_Write_Character(Uhr_u + '0');
-    LCD_Write_Character(':');
-    LCD_Write_Character(min_d + '0');
-    LCD_Write_Character(min_u + '0');
-    LCD_Write_Character(':');
-    LCD_Write_Character(seg_d + '0');
-    LCD_Write_Character(seg_u + '0');
-
-}
-
-void display_Datum(uint8_t fila, uint8_t columna){
-    char dia_u = datum%10;
-    char dia_d = datum/10;
-    char mes_u = mes%10;
-    char mes_d = mes/10;
-    char jahr_u = jahr%10;
-    char jahr_d = jahr/10;
-
-    LCD_Set_Cursor(fila, columna);
-    LCD_Write_Character(dia_d + '0');
-    LCD_Write_Character(dia_u + '0');
-    LCD_Write_Character('/');
-    LCD_Write_Character(mes_d + '0');
-    LCD_Write_Character(mes_u + '0');
-    LCD_Write_Character('/');
-    LCD_Write_String("20");
-    LCD_Write_Character(jahr_d + '0');
-    LCD_Write_Character(jahr_u + '0');
-
-}
-
-void mostrarLCD(uint8_t pantalla){
-    switch(pantalla){
-        case 0:
-            display_Uhrzeit(2,4);
-            display_Datum(1,3);
-            LCD_Set_Cursor(2, 15);
-            break;
-        case 1:
-            LCD_Set_Cursor(1,0);
-            LCD_Write_String("Ambiente:");
-            LCD_Set_Cursor(2,5);
-            LCD_Write_Character(2);
-            obj_array = uint_to_array(temperatura);
-            if (obj_array[0] == 0){
-                LCD_Write_Character(' ');
-            }
-            else {
-                LCD_Write_Character('0' + obj_array[0]);
-            }
-            LCD_Write_Character('0' + obj_array[1]);
-            LCD_Write_Character('0' + obj_array[2]);
-            LCD_Write_Character(223);
-            LCD_Write_Character('C');
-            break;
-        case 2:
-            LCD_Set_Cursor(1,0);
-            LCD_Write_String("Temp. del Suelo:");
-            LCD_Set_Cursor(2,5);
-            LCD_Write_Character(2);
-            obj_array = uint_to_array(temperatura_obj);
-            if (obj_array[0] == 0){
-                LCD_Write_Character(' ');
-            }
-            else {
-                LCD_Write_Character('0' + obj_array[0]);
-            }
-
-            if (obj_array[1] == 0 && obj_array[0] == 0){
-                LCD_Write_Character(' ');
-            }
-            else{
-                LCD_Write_Character('0' + obj_array[1]);
-            }
-            LCD_Write_Character('0' + obj_array[2]);
-            LCD_Write_Character(223);
-            LCD_Write_Character('C');
-            break;
-        case 3:
-            LCD_Set_Cursor(1,0);
-            LCD_Write_String("Humedad:");
-            LCD_Set_Cursor(2,4);
-            LCD_Write_Character(3);
-            LCD_Write_Character(' ');
-            LCD_Write_String("80");
-            LCD_Write_Character('%');
-            break;
-        case 4:
-            LCD_Set_Cursor(1,0);
-            LCD_Write_String("Atr");
-            LCD_Write_Character(0);
-            LCD_Write_String("s: | Frente:");
-            LCD_Set_Cursor(2,2);
-            LCD_Write_String("3");
-            LCD_Write_Character('m');
-            LCD_Set_Cursor(2,7);
-            LCD_Write_Character('|');
-            LCD_Set_Cursor(2,11);
-            LCD_Write_String("4");
-            LCD_Write_Character('m');
-            break;
-        case 5:
-            LCD_Set_Cursor(1, 0);
-            LCD_Write_String("Tomar datos:");
-            LCD_Set_Cursor(2,1);
-            LCD_Write_Character(tiempo + '0');
-            LCD_Write_String("min");
-            LCD_Set_Cursor(2,8);
-            LCD_Write_Character('0' + largo);
-            LCD_Write_String("x ");
-            LCD_Write_Character('0' + ancho);
-            break;
-        case 6:
-            LCD_Set_Cursor(2,0);
-            LCD_Write_Character(4);
-            LCD_Write_Character(tiempo + '0');
-            break;
-        case 7:
-            LCD_Set_Cursor(2,0);
-            LCD_Write_Character(' ');
-            LCD_Set_Cursor(2,7);
-            LCD_Write_Character(4);
-            LCD_Write_Character('0' + largo);
-            break;
-        case 8:
-            LCD_Set_Cursor(2,7);
-            LCD_Write_Character(' ');
-            LCD_Set_Cursor(2,10);
-            LCD_Write_Character(4);
-            LCD_Write_Character('0' + ancho);
-            break;
-        case 9:
-            LCD_Set_Cursor(2,10);
-            LCD_Write_Character(' ');
-            LCD_Set_Cursor(2,15);
-            LCD_Write_Character(1);
-            break;
-        case 10:
-            LCD_Set_Cursor(1,0);
-            LCD_Write_String("Vamonos Perros!");
-
-            _delay((unsigned long)((500)*(8000000/4000.0)));
-            LCD_clear();
-            estado = 0;
-            break;
-        default:
-            LCD_Set_Cursor(1,9);
-            LCD_Write_String("ERROR");
-    }
-}
-
-void pressBoton1(){
-    if (banderaBoton == 1){
-        if (banderaPUSH1 == 0){
-            if (PORTBbits.RB1 == 0){
-                switch (estado){
-                    case 6:
-                        tiempo ++;
-                        if (tiempo > 9){
-                            tiempo = 1;
-                        }
-                        break;
-                    case 7:
-                        largo ++;
-                        if (largo > 8){
-                            largo = 1;
-                        }
-                        break;
-                    case 8:
-                        ancho ++;
-                        if (ancho > 8){
-                            ancho = 1;
-                        }
-                        break;
-                    default:
-                        LCD_clear();
-                    _delay((unsigned long)((10)*(8000000/4000.0)));
-                    estado ++;
-                    if (estado > 5){
-                        estado = 0;
-                    }
-                }
-                banderaBoton = 0;
-                banderaPUSH1 = 1;
-                INTCONbits.RBIE = 1;
-            }
-        }
-    }
-    if (banderaPUSH1 == 1){
-        if (PORTBbits.RB1 == 1){
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-        banderaPUSH1 = 0;
-        }
-    }
-}
-
-void pressBoton2(void){
-    if (banderaBoton == 1){
-        if (banderaPUSH2 == 0){
-            if (PORTBbits.RB2 == 0){
-                switch(estado){
-                    case 5:
-                        estado = 6;
-                        break;
-                    case 6:
-                        LCD_Set_Cursor(2,0);
-                        LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
-                        estado = 7;
-                        break;
-                    case 7:
-                        LCD_Set_Cursor(2,7);
-                        LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
-                        estado = 8;
-                        break;
-                    case 8:
-                        LCD_Set_Cursor(2,10);
-                        LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
-                        estado = 9;
-                        break;
-                    case 9:
-                        LCD_clear();
-                        estado = 10;
-                        break;
-                    default:
-                        _delay((unsigned long)((10)*(8000000/4000.0)));
-                }
-            }
-                banderaBoton = 0;
-                banderaPUSH2 = 1;
-                INTCONbits.RBIE = 1;
-            }
-        }
-    if (banderaPUSH2 == 1){
-        if (PORTBbits.RB2 == 1){
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-        banderaPUSH2 = 0;
-        }
-    }
+    temp_MSB = temp_MSB <<8;
+    temp = (((temp_MSB+temp_LSB)*0.2)-273.15)/100;
+    return(temp);
 }

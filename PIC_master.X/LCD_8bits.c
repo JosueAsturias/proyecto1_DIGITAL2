@@ -121,62 +121,62 @@ void LCD_Create_Char(uint8_t charnum, const uint8_t * chardata){
 		LCD_Write_Character(chardata[n]);
 }
 
-char uint_to_char(uint8_t numero){
-    char numChr = 214;
-    switch (numero){
-        case 0:
-            numChr = 48;
-            break;
-        case 1:
-            numChr = 49;
-            break;
-        case 2:
-            numChr = 50;
-            break;
-        case 3:
-            numChr = 51;
-            break;
-        case 4:
-            numChr = 52;
-            break;
-        case 5:
-            numChr = 53;
-            break;
-        case 6:
-            numChr = 54;
-            break;
-        case 7:
-            numChr = 55;
-            break;
-        case 8:
-            numChr = 56;
-            break;
-        case 9:
-            numChr = 57;
-            break;
-        case 10:
-            numChr = 65;
-            break;
-        case 11:
-            numChr = 66;
-            break;
-        case 12:
-            numChr = 67;
-            break;
-        case 13:
-            numChr = 68;
-            break;
-        case 14:
-            numChr = 69;
-            break;
-        case 15:
-            numChr = 70;
-            break;
-        default:
-            numChr = 214;
-    }
-    return(numChr);
-}
+//char uint_to_char(uint8_t numero){
+//    char numChr = 214;
+//    switch (numero){
+//        case 0:
+//            numChr = 48;
+//            break;
+//        case 1:
+//            numChr = 49;
+//            break;
+//        case 2:
+//            numChr = 50;
+//            break;
+//        case 3:
+//            numChr = 51;
+//            break;
+//        case 4:
+//            numChr = 52;
+//            break;
+//        case 5:
+//            numChr = 53;
+//            break;
+//        case 6:
+//            numChr = 54;
+//            break;
+//        case 7:
+//            numChr = 55;
+//            break;
+//        case 8:
+//            numChr = 56;
+//            break;
+//        case 9:
+//            numChr = 57;
+//            break;
+//        case 10:
+//            numChr = 65;
+//            break;
+//        case 11:
+//            numChr = 66;
+//            break;
+//        case 12:
+//            numChr = 67;
+//            break;
+//        case 13:
+//            numChr = 68;
+//            break;
+//        case 14:
+//            numChr = 69;
+//            break;
+//        case 15:
+//            numChr = 70;
+//            break;
+//        default:
+//            numChr = 214;
+//    }
+//    return(numChr);
+//}
 
 uint16_t * uint_to_array(uint8_t numero){
     uint16_t resultado[3] = {0,0,0};

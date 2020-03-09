@@ -25,7 +25,7 @@ void LCD_Shift_rechts();
 void LCD_Cursor_rechts(uint8_t espacios);
 void LCD_Cursor_links(uint8_t espacios);
 void LCD_Create_Char(uint8_t charnum, const uint8_t * chardata);
-char uint_to_char(uint8_t numero);
+//char uint_to_char(uint8_t numero);
 uint16_t * uint_to_array(uint8_t numero);
 
 #endif	

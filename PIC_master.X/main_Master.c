@@ -26,8 +26,10 @@
 #include "I2C.h"
 #include "RTC.h"
 #include "LCD_8bits.h"
+#include "Temperatura_I2C.h"
 
 #define _XTAL_FREQ 8000000
+// variables 
 uint8_t estado = 0;
 uint8_t seg = 0;
 uint8_t min = 21;
@@ -36,12 +38,17 @@ uint8_t dia = 5;
 uint8_t datum = 6;
 uint8_t mes = 3;
 uint8_t jahr = 20;
-uint8_t temperatura = 0;
-uint16_t * temp_array;
+uint8_t temperatura;
+uint8_t temperatura_obj = 0;
+uint16_t * obj_array;
 uint8_t banderaBoton = 0;
 uint8_t banderaPUSH1 = 0;
 uint8_t banderaPUSH2 = 0;
 uint8_t tiempo = 5;
+uint8_t largo = 1;
+uint8_t ancho = 1;
+
+// caracteres especiales en LCD:
 const char arrowr[8] = {
     0x00,
     0x08,
@@ -115,14 +122,12 @@ void main(void) {
     while(1){
         /*Obtener valores de sensores -------------------*/
         get_Time();
-        temperatura = get_Temp();
+        temperatura = temp_ambiente();
+        temperatura_obj = temp_objeto();
         /*-----------------------------------------------*/
-        
         mostrarLCD(estado);
         pressBoton1();
         pressBoton2();
-        
-        
     }
     return;
 }
@@ -233,26 +238,40 @@ void mostrarLCD(uint8_t pantalla){
         case 1:
             LCD_Set_Cursor(1,0);
             LCD_Write_String("Ambiente:");
-            uint8_t signo = temperatura & 0b10000000; //ver que signo tiene la conv.
             LCD_Set_Cursor(2,5);
             LCD_Write_Character(2);
-            if (signo){ 
-                LCD_Write_Character('-'); 
+            obj_array = uint_to_array(temperatura);
+            if (obj_array[0] == 0){
+                LCD_Write_Character(' ');
             }
-            else{ 
-                LCD_Write_Character(' '); 
+            else {
+                LCD_Write_Character('0' + obj_array[0]);
             }
-            temp_array = uint_to_array(temperatura & 0b01111111); 
-            LCD_Write_Character(uint_to_char(temp_array[1]));
-            LCD_Write_Character(uint_to_char(temp_array[2]));
+            LCD_Write_Character('0' + obj_array[1]);
+            LCD_Write_Character('0' + obj_array[2]);
             LCD_Write_Character(223);
             LCD_Write_Character('C');
             break;
         case 2:
             LCD_Set_Cursor(1,0);
             LCD_Write_String("Temp. del Suelo:");
-            LCD_Set_Cursor(2,6);
-            LCD_Write_String("20");
+            LCD_Set_Cursor(2,5);
+            LCD_Write_Character(2);
+            obj_array = uint_to_array(temperatura_obj);
+            if (obj_array[0] == 0){
+                LCD_Write_Character(' ');
+            }
+            else {
+                LCD_Write_Character('0' + obj_array[0]);
+            }
+            
+            if (obj_array[1] == 0 && obj_array[0] == 0){
+                LCD_Write_Character(' ');
+            }
+            else{
+                LCD_Write_Character('0' + obj_array[1]);
+            }
+            LCD_Write_Character('0' + obj_array[2]);
             LCD_Write_Character(223);
             LCD_Write_Character('C');
             break;
@@ -286,28 +305,42 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_Character(tiempo + '0');
             LCD_Write_String("min");
             LCD_Set_Cursor(2,8);
-            LCD_Write_String("5x5");
+            LCD_Write_Character('0' + largo);
+            LCD_Write_String("x ");
+            LCD_Write_Character('0' + ancho);
             break;
         case 6:
-            LCD_Set_Cursor(1, 0);
-            LCD_Write_String("Tomar datos:");
             LCD_Set_Cursor(2,0);
             LCD_Write_Character(4);
             LCD_Write_Character(tiempo + '0');
-            LCD_Write_String("min");
-            LCD_Set_Cursor(2,8);
-            LCD_Write_String("5x5");
             break;
         case 7:
-            LCD_Set_Cursor(1, 0);
-            LCD_Write_String("Tomar datos:");
             LCD_Set_Cursor(2,0);
             LCD_Write_Character(' ');
-            LCD_Write_Character(tiempo + '0');
-            LCD_Write_String("min");
             LCD_Set_Cursor(2,7);
             LCD_Write_Character(4);
-            LCD_Write_String("5x5");
+            LCD_Write_Character('0' + largo);
+            break;
+        case 8:
+            LCD_Set_Cursor(2,7);
+            LCD_Write_Character(' ');
+            LCD_Set_Cursor(2,10);
+            LCD_Write_Character(4);
+            LCD_Write_Character('0' + ancho);
+            break;
+        case 9:
+            LCD_Set_Cursor(2,10);
+            LCD_Write_Character(' ');
+            LCD_Set_Cursor(2,15);
+            LCD_Write_Character(1);
+            break;
+        case 10:
+            LCD_Set_Cursor(1,0);
+            LCD_Write_String("Vamonos Perros!");
+            //mandar instruccion a slave de movimiento
+            __delay_ms(500);
+            LCD_clear();
+            estado = 0;
             break;
         default:
             LCD_Set_Cursor(1,9);
@@ -324,6 +357,18 @@ void pressBoton1(){
                         tiempo ++;
                         if (tiempo > 9){
                             tiempo = 1;
+                        }
+                        break;
+                    case 7:
+                        largo ++;
+                        if (largo > 8){
+                            largo = 1;
+                        }
+                        break;
+                    case 8:
+                        ancho ++;
+                        if (ancho > 8){
+                            ancho = 1;
                         }
                         break;
                     default:
@@ -366,7 +411,17 @@ void pressBoton2(void){
                         LCD_Set_Cursor(2,7);
                         LCD_Write_Character(1);
                         __delay_ms(100);
-                        estado = 0;//regresar a 8
+                        estado = 8;
+                        break;
+                    case 8:
+                        LCD_Set_Cursor(2,10);
+                        LCD_Write_Character(1);
+                        __delay_ms(100);
+                        estado = 9;
+                        break;
+                    case 9:
+                        LCD_clear();
+                        estado = 10;
                         break;
                     default:
                         __delay_ms(10);

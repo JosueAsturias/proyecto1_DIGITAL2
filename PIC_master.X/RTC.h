@@ -32,7 +32,7 @@ void get_Time(void);
 /****** obtiene hora y fecha   ****
  ****** --------------------   *****/
 
-uint8_t get_Temp();
+//uint8_t get_Temp();
 /****** obtiene temperatura    ****
  ****** ----valor entero----   *****/
 

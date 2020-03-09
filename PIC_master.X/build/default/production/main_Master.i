@@ -2757,7 +2757,7 @@ uint16_t * temp_array;
 uint8_t banderaBoton = 0;
 uint8_t banderaPUSH1 = 0;
 uint8_t banderaPUSH2 = 0;
-
+uint8_t tiempo = 5;
 const char arrowr[8] = {
     0x00,
     0x08,
@@ -2765,6 +2765,16 @@ const char arrowr[8] = {
     0x0E,
     0x0F,
     0x0E,
+    0x0C,
+    0x08
+};
+const char arrowr_vacio[8] = {
+    0x00,
+    0x08,
+    0x0C,
+    0x0A,
+    0x09,
+    0x0A,
     0x0C,
     0x08
 };
@@ -2850,6 +2860,7 @@ void SetUp(void){
     LCD_Create_Char(1, arrowr);
     LCD_Create_Char(2, termometro);
     LCD_Create_Char(3, gota);
+    LCD_Create_Char(4, arrowr_vacio);
     LCD_clear();
     I2C_Master_Init(100000);
 
@@ -2987,11 +2998,31 @@ void mostrarLCD(uint8_t pantalla){
         case 5:
             LCD_Set_Cursor(1, 0);
             LCD_Write_String("Tomar datos:");
-            LCD_Set_Cursor(2,0);
-            LCD_Write_Character(1);
             LCD_Set_Cursor(2,1);
-            LCD_Write_String("10min");
+            LCD_Write_Character(tiempo + '0');
+            LCD_Write_String("min");
             LCD_Set_Cursor(2,8);
+            LCD_Write_String("5x5");
+            break;
+        case 6:
+            LCD_Set_Cursor(1, 0);
+            LCD_Write_String("Tomar datos:");
+            LCD_Set_Cursor(2,0);
+            LCD_Write_Character(4);
+            LCD_Write_Character(tiempo + '0');
+            LCD_Write_String("min");
+            LCD_Set_Cursor(2,8);
+            LCD_Write_String("5x5");
+            break;
+        case 7:
+            LCD_Set_Cursor(1, 0);
+            LCD_Write_String("Tomar datos:");
+            LCD_Set_Cursor(2,0);
+            LCD_Write_Character(' ');
+            LCD_Write_Character(tiempo + '0');
+            LCD_Write_String("min");
+            LCD_Set_Cursor(2,7);
+            LCD_Write_Character(4);
             LCD_Write_String("5x5");
             break;
         default:
@@ -3004,11 +3035,20 @@ void pressBoton1(){
     if (banderaBoton == 1){
         if (banderaPUSH1 == 0){
             if (PORTBbits.RB1 == 0){
-                LCD_clear();
-                _delay((unsigned long)((10)*(8000000/4000.0)));
-                estado ++;
-                if (estado > 5){
-                    estado = 0;
+                switch (estado){
+                    case 6:
+                        tiempo ++;
+                        if (tiempo > 9){
+                            tiempo = 1;
+                        }
+                        break;
+                    default:
+                        LCD_clear();
+                    _delay((unsigned long)((10)*(8000000/4000.0)));
+                    estado ++;
+                    if (estado > 5){
+                        estado = 0;
+                    }
                 }
                 banderaBoton = 0;
                 banderaPUSH1 = 1;
@@ -3028,18 +3068,31 @@ void pressBoton2(void){
     if (banderaBoton == 1){
         if (banderaPUSH2 == 0){
             if (PORTBbits.RB2 == 0){
-                LCD_clear();
-                _delay((unsigned long)((10)*(8000000/4000.0)));
-                estado --;
-                if (estado <= 255 && estado > 250){
-                    estado = 5;
+                switch(estado){
+                    case 5:
+                        estado = 6;
+                        break;
+                    case 6:
+                        LCD_Set_Cursor(2,0);
+                        LCD_Write_Character(1);
+                        _delay((unsigned long)((100)*(8000000/4000.0)));
+                        estado = 7;
+                        break;
+                    case 7:
+                        LCD_Set_Cursor(2,7);
+                        LCD_Write_Character(1);
+                        _delay((unsigned long)((100)*(8000000/4000.0)));
+                        estado = 0;
+                        break;
+                    default:
+                        _delay((unsigned long)((10)*(8000000/4000.0)));
                 }
+            }
                 banderaBoton = 0;
                 banderaPUSH2 = 1;
                 INTCONbits.RBIE = 1;
             }
         }
-    }
     if (banderaPUSH2 == 1){
         if (PORTBbits.RB2 == 1){
         _delay((unsigned long)((10)*(8000000/4000.0)));

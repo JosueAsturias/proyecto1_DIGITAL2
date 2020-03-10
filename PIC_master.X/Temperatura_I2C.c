@@ -13,7 +13,7 @@
 
 
 
-uint16_t temp_objeto(void){
+int16_t temp_objeto(void){
     uint16_t temp_MSB;
     uint8_t temp_LSB;
     uint8_t PEC;
@@ -32,11 +32,11 @@ uint16_t temp_objeto(void){
     __delay_ms(50);
 
     temp_MSB = temp_MSB <<8;
-    temp = (((temp_MSB+temp_LSB)*0.2)-273.15)/100;
+    temp = (((temp_MSB+temp_LSB)/50)-273.15);
     return(temp);
     }
 
-uint16_t temp_ambiente(void){
+int16_t temp_ambiente(void){
     uint16_t temp_MSB;
     uint8_t temp_LSB;
     uint8_t PEC;
@@ -55,7 +55,7 @@ uint16_t temp_ambiente(void){
     __delay_ms(50);
 
     temp_MSB = temp_MSB <<8;
-    temp = (((temp_MSB+temp_LSB)*0.2)-273.15)/100;
+    temp = (((temp_MSB+temp_LSB)/50)-273.15);
     return(temp);
 }
 	//temperatura ambiente dirección 0x06

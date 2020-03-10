@@ -2744,8 +2744,8 @@ uint16_t * uint_to_array(uint8_t numero);
 # 13 "./Temperatura_I2C.h" 2
 
 
-uint16_t temp_objeto(void);
-uint16_t temp_ambiente(void);
+int16_t temp_objeto(void);
+int16_t temp_ambiente(void);
 # 29 "main_Master.c" 2
 
 
@@ -2759,8 +2759,8 @@ uint8_t dia = 5;
 uint8_t datum = 6;
 uint8_t mes = 3;
 uint8_t jahr = 20;
-uint8_t temperatura;
-uint8_t temperatura_obj = 0;
+int8_t temperatura;
+int8_t temperatura_obj = 0;
 uint16_t * obj_array;
 uint8_t banderaBoton = 0;
 uint8_t banderaPUSH1 = 0;
@@ -2846,12 +2846,9 @@ void main(void) {
         temperatura = temp_ambiente();
         temperatura_obj = temp_objeto();
 
-
         mostrarLCD(estado);
         pressBoton1();
         pressBoton2();
-
-
     }
     return;
 }

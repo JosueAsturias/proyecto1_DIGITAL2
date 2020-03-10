@@ -12,7 +12,7 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
 
-uint16_t temp_objeto(void);
-uint16_t temp_ambiente(void);
+int16_t temp_objeto(void);
+int16_t temp_ambiente(void);
 
 #endif	/* __TEMPERATURA_H */

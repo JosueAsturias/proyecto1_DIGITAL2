@@ -2636,9 +2636,9 @@ typedef uint16_t uintptr_t;
 # 9 "funciones.c" 2
 
 # 1 "./funciones.h" 1
-# 35 "./funciones.h"
+# 33 "./funciones.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 35 "./funciones.h" 2
+# 33 "./funciones.h" 2
 
 
 
@@ -2648,12 +2648,17 @@ void servoRotate0(void);
 void servoRotate90(void);
 void servoRotate180(void);
 uint16_t Distancia();
+uint16_t Distancia_1();
+void oscillator(uint8_t a);
+
+void Lcd_Init(void);
+void Lcd_Cmd(int a);
+void Lcd_Clear(void);
+void Lcd_Set_Cursor(int a, int b);
+void Lcd_Write_String(char *a);
+void Lcd_Write_Char(char a);
 # 10 "funciones.c" 2
-
-
-
-
-
+# 33 "funciones.c"
 void init_PWM_1 (void){
     TRISCbits.TRISC1 = 1;
 
@@ -2680,13 +2685,15 @@ void init_PWM_1 (void){
     TRISCbits.TRISC1 = 0;
 }
 
+
+
 void servoRotate0(void){
     uint8_t a;
     for(a=0;a<50;a++){
         PORTAbits.RA0 = 1;
-        _delay((unsigned long)((800)*(1000000/4000000.0)));
+        _delay((unsigned long)((800)*(8000000/4000000.0)));
         PORTAbits.RA0 = 0;
-        _delay((unsigned long)((19200)*(1000000/4000000.0)));
+        _delay((unsigned long)((19200)*(8000000/4000000.0)));
     }
 }
 
@@ -2694,9 +2701,9 @@ void servoRotate90(void){
     uint8_t a;
     for(a=0;a<50;a++){
         PORTAbits.RA0 = 1;
-        _delay((unsigned long)((1500)*(1000000/4000000.0)));
+        _delay((unsigned long)((1500)*(8000000/4000000.0)));
         PORTAbits.RA0 = 0;
-        _delay((unsigned long)((18500)*(1000000/4000000.0)));
+        _delay((unsigned long)((18500)*(8000000/4000000.0)));
     }
 }
 
@@ -2704,9 +2711,9 @@ void servoRotate180(void){
     uint8_t a;
     for(a=0;a<50;a++){
         PORTAbits.RA0 = 1;
-        _delay((unsigned long)((2200)*(1000000/4000000.0)));
+        _delay((unsigned long)((2200)*(8000000/4000000.0)));
         PORTAbits.RA0 = 0;
-        _delay((unsigned long)((17800)*(1000000/4000000.0)));
+        _delay((unsigned long)((17800)*(8000000/4000000.0)));
     }
 }
 
@@ -2717,7 +2724,7 @@ uint16_t Distancia()
     TMR1H = 0;
 
     PORTAbits.RA2 = 1;
-    _delay((unsigned long)((10)*(1000000/4000000.0)));
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
     PORTAbits.RA2 = 0;
     while(!PORTAbits.RA1){
     }
@@ -2727,8 +2734,146 @@ uint16_t Distancia()
     T1CONbits.TMR1ON = 0;
 
     a = (TMR1L | (TMR1H<<8));
-    a = a/7.35;
-    a = a + 1;
+    a = a - 69;
+    a = a / 22;
 
   return (a);
+}
+
+uint16_t Distancia_1()
+{
+    uint16_t a;
+    TMR1L = 0;
+    TMR1H = 0;
+
+    PORTAbits.RA3 = 1;
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    PORTAbits.RA3 = 0;
+    while(!PORTAbits.RA4){
+    }
+    T1CONbits.TMR1ON = 1;
+    while(PORTAbits.RA4){
+    }
+    T1CONbits.TMR1ON = 0;
+
+    a = (TMR1L | (TMR1H<<8));
+    a = a - 69;
+    a = a / 22;
+
+  return (a);
+}
+
+
+void oscillator(uint8_t a){
+    switch(a){
+        case 0:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 0;
+        case 1:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 1;
+        case 2:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+        case 3:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 1;
+        case 4:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 0;
+        case 5:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 1;
+        case 6:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+        case 7:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 1;
+        default:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+    }
+}
+
+
+void Lcd_Init(void) {
+    _delay((unsigned long)((20)*(8000000/4000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    Lcd_Cmd(0x38);
+    _delay((unsigned long)((53)*(8000000/4000000.0)));
+    Lcd_Cmd(0x08);
+    _delay((unsigned long)((53)*(8000000/4000000.0)));
+    Lcd_Cmd(0x01);
+    _delay((unsigned long)((3)*(8000000/4000.0)));
+    Lcd_Cmd(0x06);
+    _delay((unsigned long)((53)*(8000000/4000000.0)));
+    Lcd_Cmd(0x0C);
+    _delay((unsigned long)((53)*(8000000/4000000.0)));
+}
+
+void Lcd_Cmd(int a) {
+ PORTDbits.RD6 = 0;
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    PORTDbits.RD7 = 1;
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+ PORTB = a;
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    PORTDbits.RD7 = 0;
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+}
+
+void Lcd_Clear(void)
+{
+    Lcd_Cmd(0x00);
+    Lcd_Cmd(0x01);
+    _delay((unsigned long)((4)*(8000000/4000.0)));
+}
+
+void Lcd_Set_Cursor(int a, int b)
+{
+ int d;
+ if(a == 1)
+ {
+        d = 0x80 + b - 1;
+  Lcd_Cmd(d);
+ }
+ else if(a == 2)
+ {
+  d = 0xC0 + b - 1;
+  Lcd_Cmd(d);
+ }
+}
+
+
+void Lcd_Write_Char(char a)
+{
+    PORTDbits.RD6 = 1;
+
+    PORTB = a;
+    PORTDbits.RD7 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    PORTDbits.RD7 = 0;
+}
+
+void Lcd_Write_String(char *a)
+{
+    int n;
+    for(n = 0; a[n] != '\0'; n++){
+        Lcd_Write_Char(a[n]);
+    }
 }

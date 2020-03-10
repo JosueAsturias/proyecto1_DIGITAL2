@@ -3,23 +3,41 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
+"505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"26 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\Parte_1.X\newmain.c
+"91 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Parte_1.X\funciones.c
+[v _Distancia Distancia `(ui  1 e 2 0 ]
+"114
+[v _Distancia_1 Distancia_1 `(ui  1 e 2 0 ]
+"138
+[v _oscillator oscillator `(v  1 e 1 0 ]
+"180
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+"200
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"211
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"218
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"234
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+"244
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+"32 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Parte_1.X\newmain.c
 [v _main main `(v  1 e 1 0 ]
-[s S126 . 1 `uc 1 RA0 1 0 :1:0 
+[s S187 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -29,9 +47,25 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "183 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[u S135 . 1 `S126 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES135  1 e 1 @5 ]
-[s S79 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S196 . 1 `S187 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES196  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S286 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S295 . 1 `S286 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES295  1 e 1 @8 ]
+[s S140 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -40,13 +74,15 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S87 . 1 `S79 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES87  1 e 1 @12 ]
+[u S148 . 1 `S140 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES148  1 e 1 @12 ]
 "657
 [v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
 "664
 [v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
-[s S155 . 1 `uc 1 TMR1ON 1 0 :1:0 
+"671
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+[s S212 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -55,7 +91,7 @@
 `uc 1 T1GINV 1 0 :1:7 
 ]
 "700
-[s S163 . 1 `uc 1 . 1 0 :2:0 
+[s S220 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1INSYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
@@ -63,17 +99,17 @@
 `uc 1 . 1 0 :1:6 
 `uc 1 T1GIV 1 0 :1:7 
 ]
-[s S171 . 1 `uc 1 . 1 0 :2:0 
+[s S228 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 ]
-[u S174 . 1 `S155 1 . 1 0 `S163 1 . 1 0 `S171 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES174  1 e 1 @16 ]
-[s S98 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[u S231 . 1 `S212 1 . 1 0 `S220 1 . 1 0 `S228 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES231  1 e 1 @16 ]
+[s S159 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 TOUTPS 1 0 :4:3 
 ]
 "793
-[s S102 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S163 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TOUTPS0 1 0 :1:3 
@@ -81,27 +117,29 @@
 `uc 1 TOUTPS2 1 0 :1:5 
 `uc 1 TOUTPS3 1 0 :1:6 
 ]
-[u S110 . 1 `S98 1 . 1 0 `S102 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES110  1 e 1 @18 ]
+[u S171 . 1 `S159 1 . 1 0 `S163 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES171  1 e 1 @18 ]
 "1154
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
-[s S52 . 1 `uc 1 CCP2M 1 0 :4:0 
+[s S113 . 1 `uc 1 CCP2M 1 0 :4:0 
 `uc 1 DC2B0 1 0 :1:4 
 `uc 1 DC2B1 1 0 :1:5 
 ]
 "1188
-[s S56 . 1 `uc 1 CCP2M0 1 0 :1:0 
+[s S117 . 1 `uc 1 CCP2M0 1 0 :1:0 
 `uc 1 CCP2M1 1 0 :1:1 
 `uc 1 CCP2M2 1 0 :1:2 
 `uc 1 CCP2M3 1 0 :1:3 
 `uc 1 CCP2Y 1 0 :1:4 
 `uc 1 CCP2X 1 0 :1:5 
 ]
-[u S63 . 1 `S52 1 . 1 0 `S56 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES63  1 e 1 @29 ]
+[u S124 . 1 `S113 1 . 1 0 `S117 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES124  1 e 1 @29 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S30 . 1 `uc 1 TRISC0 1 0 :1:0 
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S91 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -111,14 +149,151 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S39 . 1 `S30 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES39  1 e 1 @135 ]
+[u S100 . 1 `S91 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES100  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S255 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1882
+[s S261 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S266 . 1 `S255 1 . 1 0 `S261 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES266  1 e 1 @143 ]
 "2041
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-"26 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\Parte_1.X\newmain.c
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"358 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"27 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Parte_1.X\newmain.c
+[v _distancia_1 distancia_1 `ui  1 e 2 0 ]
+"28
+[v _distancia_2 distancia_2 `ui  1 e 2 0 ]
+"29
+[v _print_lcd print_lcd `[16]uc  1 e 16 0 ]
+"30
+[v _print_lcd_1 print_lcd_1 `[16]uc  1 e 16 0 ]
+"32
 [v _main main `(v  1 e 1 0 ]
 {
-"35
+"84
+} 0
+"505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"545
+[v sprintf@val val `ui  1 a 2 9 ]
+"512
+[v sprintf@c c `uc  1 a 1 12 ]
+"521
+[v sprintf@prec prec `c  1 a 1 8 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 7 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 6 ]
+"505
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 0 ]
+"550
+[v sprintf@sp sp `*.4uc  1 a 1 11 ]
+"1567
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"138 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Parte_1.X\funciones.c
+[v _oscillator oscillator `(v  1 e 1 0 ]
+{
+[v oscillator@a a `uc  1 a 1 wreg ]
+[v oscillator@a a `uc  1 a 1 wreg ]
+[v oscillator@a a `uc  1 a 1 2 ]
+"177
+} 0
+"244
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+{
+"246
+[v Lcd_Write_String@n n `i  1 a 2 7 ]
+"244
+[v Lcd_Write_String@a a `*.26uc  1 p 2 2 ]
+"250
+} 0
+"234
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+"236
+[v Lcd_Write_Char@a a `uc  1 a 1 1 ]
+"242
+} 0
+"218
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+"220
+[v Lcd_Set_Cursor@d d `i  1 a 2 8 ]
+"218
+[v Lcd_Set_Cursor@a a `i  1 p 2 4 ]
+[v Lcd_Set_Cursor@b b `i  1 p 2 6 ]
+"231
+} 0
+"180
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+{
+"198
+} 0
+"211
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"216
+} 0
+"200
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v Lcd_Cmd@a a `i  1 p 2 0 ]
+"209
+} 0
+"114
+[v _Distancia_1 Distancia_1 `(ui  1 e 2 0 ]
+{
+"116
+[v Distancia_1@a a `ui  1 a 2 11 ]
+"135
+} 0
+"91
+[v _Distancia Distancia `(ui  1 e 2 0 ]
+{
+"93
+[v Distancia@a a `ui  1 a 2 11 ]
+"112
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
 } 0

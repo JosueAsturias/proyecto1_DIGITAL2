@@ -20,16 +20,65 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdio.h>
 #include "funciones.h"
-#define _XTAL_FREQ 1000000
+#define _XTAL_FREQ 8000000
+
+uint16_t distancia_1;
+uint16_t distancia_2;
+char print_lcd[16];
+char print_lcd_1[16];
 
 void main(void) {
-    uint16_t a;
-    TRISA = 0b00000010;
+    oscillator(7);
+    TRISA = 0b00010010;
     ANSEL = 0;   
+    PORTB = 0x00;
+    TRISB = 0x00;
+    ANSELH = 0x00;
+    PORTD = 0x00;
+    TRISD = 0x00;
+    
+    Lcd_Init();
+    Lcd_Clear();
+    
+    T1CON = 0x10;
+    
     while(1){
-
+        distancia_1 = Distancia();
         
+        
+        if (distancia_1>= 2 && distancia_1<=400){
+            //Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("DIS_1 = ");
+            sprintf(print_lcd, "%i",distancia_1);
+            Lcd_Write_String(print_lcd);
+            Lcd_Write_String(" cm     ");
+        }
+        else{
+            //Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("FUERA DE RANGO     ");
+        }
+        
+        __delay_ms(100);
+        distancia_2 = Distancia_1();
+        
+        if (distancia_2>= 2 && distancia_2<=400){
+            //Lcd_Clear();
+            Lcd_Set_Cursor(2,1);
+            Lcd_Write_String("DIS_2 = ");
+            sprintf(print_lcd_1, "%i",distancia_2);
+            Lcd_Write_String(print_lcd_1);
+            Lcd_Write_String(" cm     ");
+        }
+        else{
+            //Lcd_Clear();
+            Lcd_Set_Cursor(2,1);
+            Lcd_Write_String("FUERA DE RANGO     ");
+        }        
+        __delay_ms(500);
     }
     return;
 }

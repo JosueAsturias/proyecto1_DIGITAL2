@@ -2649,10 +2649,109 @@ typedef int16_t intptr_t;
 typedef uint16_t uintptr_t;
 # 22 "newmain.c" 2
 
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 23 "newmain.c" 2
+
 # 1 "./funciones.h" 1
-# 35 "./funciones.h"
+# 33 "./funciones.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 35 "./funciones.h" 2
+# 33 "./funciones.h" 2
 
 
 
@@ -2662,17 +2761,74 @@ void servoRotate0(void);
 void servoRotate90(void);
 void servoRotate180(void);
 uint16_t Distancia();
-# 23 "newmain.c" 2
+uint16_t Distancia_1();
+void oscillator(uint8_t a);
+
+void Lcd_Init(void);
+void Lcd_Cmd(int a);
+void Lcd_Clear(void);
+void Lcd_Set_Cursor(int a, int b);
+void Lcd_Write_String(char *a);
+void Lcd_Write_Char(char a);
+# 24 "newmain.c" 2
 
 
+
+uint16_t distancia_1;
+uint16_t distancia_2;
+char print_lcd[16];
+char print_lcd_1[16];
 
 void main(void) {
-    uint16_t a;
-    TRISA = 0b00000010;
+    oscillator(7);
+    TRISA = 0b00010010;
     ANSEL = 0;
+    PORTB = 0x00;
+    TRISB = 0x00;
+    ANSELH = 0x00;
+    PORTD = 0x00;
+    TRISD = 0x00;
+
+    Lcd_Init();
+    Lcd_Clear();
+
+    T1CON = 0x10;
+
     while(1){
+        distancia_1 = Distancia();
 
 
+        if (distancia_1>= 2 && distancia_1<=400){
+
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("DIS_1 = ");
+            sprintf(print_lcd, "%i",distancia_1);
+            Lcd_Write_String(print_lcd);
+            Lcd_Write_String(" cm     ");
+        }
+        else{
+
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("FUERA DE RANGO     ");
+        }
+
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        distancia_2 = Distancia_1();
+
+        if (distancia_2>= 2 && distancia_2<=400){
+
+            Lcd_Set_Cursor(2,1);
+            Lcd_Write_String("DIS_2 = ");
+            sprintf(print_lcd_1, "%i",distancia_2);
+            Lcd_Write_String(print_lcd_1);
+            Lcd_Write_String(" cm     ");
+        }
+        else{
+
+            Lcd_Set_Cursor(2,1);
+            Lcd_Write_String("FUERA DE RANGO     ");
+        }
+        _delay((unsigned long)((500)*(8000000/4000.0)));
     }
     return;
 }

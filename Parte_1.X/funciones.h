@@ -19,11 +19,9 @@
  * TERMS. 
  */
 
-/* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
+/*
+ * File:   Proyecto_1_2.c
+ * Author: MIGUEL GARCÍA
  */
 
 // This is a guard condition so that contents of this file are not included
@@ -41,6 +39,15 @@ void servoRotate0(void);
 void servoRotate90(void);
 void servoRotate180(void);
 uint16_t Distancia();
+uint16_t Distancia_1();
+void oscillator(uint8_t a);
+
+void Lcd_Init(void);
+void Lcd_Cmd(int a);
+void Lcd_Clear(void);
+void Lcd_Set_Cursor(int a, int b);
+void Lcd_Write_String(char *a);
+void Lcd_Write_Char(char a);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

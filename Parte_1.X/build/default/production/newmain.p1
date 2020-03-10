@@ -1,11 +1,56 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
+"43 ./funciones.h
+[; ;./funciones.h: 43: void oscillator(uint8_t a);
+[v _oscillator `(v ~T0 @X0 0 ef1`uc ]
 "1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "3387
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"1478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"3449
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1602
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"45 ./funciones.h
+[; ;./funciones.h: 45: void Lcd_Init(void);
+[v _Lcd_Init `(v ~T0 @X0 0 ef ]
+"47
+[; ;./funciones.h: 47: void Lcd_Clear(void);
+[v _Lcd_Clear `(v ~T0 @X0 0 ef ]
+"671 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 671: extern volatile unsigned char T1CON __attribute__((address(0x010)));
+[v _T1CON `Vuc ~T0 @X0 0 e@16 ]
+"41 ./funciones.h
+[; ;./funciones.h: 41: uint16_t Distancia();
+[v _Distancia `(ui ~T0 @X0 0 e? ]
+"48
+[; ;./funciones.h: 48: void Lcd_Set_Cursor(int a, int b);
+[v _Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`i`i ]
+"49
+[; ;./funciones.h: 49: void Lcd_Write_String(char *a);
+[v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
+"194 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"42 ./funciones.h
+[; ;./funciones.h: 42: uint16_t Distancia_1();
+[v _Distancia_1 `(ui ~T0 @X0 0 e? ]
 "6 newmain.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "7
@@ -264,36 +309,167 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
+"27 newmain.c
+[; ;newmain.c: 27: uint16_t distancia_1;
+[v _distancia_1 `ui ~T0 @X0 1 e ]
+"28
+[; ;newmain.c: 28: uint16_t distancia_2;
+[v _distancia_2 `ui ~T0 @X0 1 e ]
+"29
+[; ;newmain.c: 29: char print_lcd[16];
+[v _print_lcd `uc ~T0 @X0 -> 16 `i e ]
+"30
+[; ;newmain.c: 30: char print_lcd_1[16];
+[v _print_lcd_1 `uc ~T0 @X0 -> 16 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"26 newmain.c
-[; ;newmain.c: 26: void main(void) {
+"32
+[; ;newmain.c: 32: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"27
-[; ;newmain.c: 27:     uint16_t a;
-[v _a `ui ~T0 @X0 1 a ]
-"28
-[; ;newmain.c: 28:     TRISA = 0b00000010;
-[e = _TRISA -> -> 2 `i `uc ]
-"29
-[; ;newmain.c: 29:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"30
-[; ;newmain.c: 30:     while(1){
-[e :U 140 ]
-{
 "33
-[; ;newmain.c: 33:     }
-}
-[e :U 139 ]
-[e $U 140  ]
-[e :U 141 ]
+[; ;newmain.c: 33:     oscillator(7);
+[e ( _oscillator (1 -> -> 7 `i `uc ]
 "34
-[; ;newmain.c: 34:     return;
-[e $UE 138  ]
+[; ;newmain.c: 34:     TRISA = 0b00010010;
+[e = _TRISA -> -> 18 `i `uc ]
 "35
-[; ;newmain.c: 35: }
-[e :UE 138 ]
+[; ;newmain.c: 35:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"36
+[; ;newmain.c: 36:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"37
+[; ;newmain.c: 37:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
+"38
+[; ;newmain.c: 38:     ANSELH = 0x00;
+[e = _ANSELH -> -> 0 `i `uc ]
+"39
+[; ;newmain.c: 39:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"40
+[; ;newmain.c: 40:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"42
+[; ;newmain.c: 42:     Lcd_Init();
+[e ( _Lcd_Init ..  ]
+"43
+[; ;newmain.c: 43:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"45
+[; ;newmain.c: 45:     T1CON = 0x10;
+[e = _T1CON -> -> 16 `i `uc ]
+"47
+[; ;newmain.c: 47:     while(1){
+[e :U 141 ]
+{
+"48
+[; ;newmain.c: 48:         distancia_1 = Distancia();
+[e = _distancia_1 ( _Distancia ..  ]
+"51
+[; ;newmain.c: 51:         if (distancia_1>= 2 && distancia_1<=400){
+[e $ ! && >= _distancia_1 -> -> 2 `i `ui <= _distancia_1 -> -> 400 `i `ui 143  ]
+{
+"53
+[; ;newmain.c: 53:             Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> 1 `i -> 1 `i ]
+"54
+[; ;newmain.c: 54:             Lcd_Write_String("DIS_1 = ");
+[e ( _Lcd_Write_String (1 :s 1C ]
+"55
+[; ;newmain.c: 55:             sprintf(print_lcd, "%i",distancia_1);
+[e ( _sprintf (1 , (. , &U _print_lcd :s 2C _distancia_1 ]
+"56
+[; ;newmain.c: 56:             Lcd_Write_String(print_lcd);
+[e ( _Lcd_Write_String (1 &U _print_lcd ]
+"57
+[; ;newmain.c: 57:             Lcd_Write_String(" cm     ");
+[e ( _Lcd_Write_String (1 :s 3C ]
+"58
+[; ;newmain.c: 58:         }
 }
+[e $U 144  ]
+"59
+[; ;newmain.c: 59:         else{
+[e :U 143 ]
+{
+"61
+[; ;newmain.c: 61:             Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> 1 `i -> 1 `i ]
+"62
+[; ;newmain.c: 62:             Lcd_Write_String("FUERA DE RANGO     ");
+[e ( _Lcd_Write_String (1 :s 4C ]
+"63
+[; ;newmain.c: 63:         }
+}
+[e :U 144 ]
+"65
+[; ;newmain.c: 65:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"66
+[; ;newmain.c: 66:         distancia_2 = Distancia_1();
+[e = _distancia_2 ( _Distancia_1 ..  ]
+"68
+[; ;newmain.c: 68:         if (distancia_2>= 2 && distancia_2<=400){
+[e $ ! && >= _distancia_2 -> -> 2 `i `ui <= _distancia_2 -> -> 400 `i `ui 145  ]
+{
+"70
+[; ;newmain.c: 70:             Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> 2 `i -> 1 `i ]
+"71
+[; ;newmain.c: 71:             Lcd_Write_String("DIS_2 = ");
+[e ( _Lcd_Write_String (1 :s 5C ]
+"72
+[; ;newmain.c: 72:             sprintf(print_lcd_1, "%i",distancia_2);
+[e ( _sprintf (1 , (. , &U _print_lcd_1 :s 6C _distancia_2 ]
+"73
+[; ;newmain.c: 73:             Lcd_Write_String(print_lcd_1);
+[e ( _Lcd_Write_String (1 &U _print_lcd_1 ]
+"74
+[; ;newmain.c: 74:             Lcd_Write_String(" cm     ");
+[e ( _Lcd_Write_String (1 :s 7C ]
+"75
+[; ;newmain.c: 75:         }
+}
+[e $U 146  ]
+"76
+[; ;newmain.c: 76:         else{
+[e :U 145 ]
+{
+"78
+[; ;newmain.c: 78:             Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> 2 `i -> 1 `i ]
+"79
+[; ;newmain.c: 79:             Lcd_Write_String("FUERA DE RANGO     ");
+[e ( _Lcd_Write_String (1 :s 8C ]
+"80
+[; ;newmain.c: 80:         }
+}
+[e :U 146 ]
+"81
+[; ;newmain.c: 81:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"82
+[; ;newmain.c: 82:     }
+}
+[e :U 140 ]
+[e $U 141  ]
+[e :U 142 ]
+"83
+[; ;newmain.c: 83:     return;
+[e $UE 139  ]
+"84
+[; ;newmain.c: 84: }
+[e :UE 139 ]
+}
+[p f _sprintf 8388736 ]
+[a 2C 37 105 0 ]
+[a 6C 37 105 0 ]
+[a 5C 68 73 83 95 50 32 61 32 0 ]
+[a 1C 68 73 83 95 49 32 61 32 0 ]
+[a 3C 32 99 109 32 32 32 32 32 0 ]
+[a 7C 32 99 109 32 32 32 32 32 0 ]
+[a 4C 70 85 69 82 65 32 68 69 32 82 65 78 71 79 32 32 32 32 32 0 ]
+[a 8C 70 85 69 82 65 32 68 69 32 82 65 78 71 79 32 32 32 32 32 0 ]

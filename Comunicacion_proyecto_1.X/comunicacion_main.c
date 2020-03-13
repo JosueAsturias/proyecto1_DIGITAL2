@@ -44,7 +44,7 @@ void main(void) {
     TRISC = 0x00;
     oscillator(6);
     init_serial();
-    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);  //MASTER  
+    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);  
     
     while(1){
       
@@ -73,41 +73,46 @@ void main(void) {
         
         __delay_ms(10);
         
-        if (mandar_rasp = 1){
-            spiWrite(110);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
-            
-            spiWrite(distancia_atr);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
-            
+    }
+    return;
+}
+
+
+void __interrupt() isr(void){
+    if (PIR1bits.SSPIF == 1){ 
+        recibir_rasp = spiRead();
+                
+        if (recibir_rasp == 0x11){
             spiWrite(distancia_ade);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
-            
-            spiWrite(temp_amb);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
-            
-            spiWrite(temp_obj);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
-            
-            spiWrite(posicion);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
-            
-            spiWrite(tiempo);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
-            
+        }
+        
+        if (recibir_rasp == 0x22){
+            spiWrite(distancia_atr);
+        }
+        
+        if (recibir_rasp == 0x33){
             spiWrite(humedad);
-            recibir_rasp = spiRead();
-            __delay_ms(10);
+        }
+        
+        if (recibir_rasp == 0x44){
+            spiWrite(posicion);
+        }
+        
+        if (recibir_rasp == 0x55){
+            spiWrite(temp_amb);
+        }
+        
+        if (recibir_rasp == 0x66){
+            spiWrite(temp_obj);
+        }
+        
+        if (recibir_rasp == 0x77){
+            spiWrite(tiempo);
         }
         
         
-    }
+        
+        PIR1bits.SSPIF = 0;
+        }
     return;
 }

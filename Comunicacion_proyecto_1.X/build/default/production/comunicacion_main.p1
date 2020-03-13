@@ -13,7 +13,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./serial.h: 39: void init_serial(void);
 [v _init_serial `(v ~T0 @X0 0 ef ]
 "47 comunicacion_main.c
-[; ;comunicacion_main.c: 47:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[; ;comunicacion_main.c: 47:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1295 32 33 34 35 36 37 .. ]
 [n E1295 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1303 0 128 .. ]
@@ -43,12 +43,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"46 ./SPI.h
-[; ;./SPI.h: 46: void spiWrite(char);
-[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"48
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"48 ./SPI.h
 [; ;./SPI.h: 48: char spiRead();
 [v _spiRead `(uc ~T0 @X0 0 e? ]
+"46
+[; ;./SPI.h: 46: void spiWrite(char);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
 "6 comunicacion_main.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "7
@@ -387,8 +389,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comunicacion_main.c: 46:     init_serial();
 [e ( _init_serial ..  ]
 "47
-[; ;comunicacion_main.c: 47:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1295 0 . `E1303 0 . `E1307 1 . `E1311 0 ]
+[; ;comunicacion_main.c: 47:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1295 5 . `E1303 0 . `E1307 1 . `E1311 0 ]
 "49
 [; ;comunicacion_main.c: 49:     while(1){
 [e :U 140 ]
@@ -492,95 +494,120 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;comunicacion_main.c: 74:         _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "76
-[; ;comunicacion_main.c: 76:         if (mandar_rasp = 1){
-[e $ ! != -> = _mandar_rasp -> -> 1 `i `uc `i -> 0 `i 165  ]
-{
-"77
-[; ;comunicacion_main.c: 77:             spiWrite(110);
-[e ( _spiWrite (1 -> -> 110 `i `uc ]
-"78
-[; ;comunicacion_main.c: 78:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"79
-[; ;comunicacion_main.c: 79:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"81
-[; ;comunicacion_main.c: 81:             spiWrite(distancia_atr);
-[e ( _spiWrite (1 -> _distancia_atr `uc ]
-"82
-[; ;comunicacion_main.c: 82:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"83
-[; ;comunicacion_main.c: 83:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"85
-[; ;comunicacion_main.c: 85:             spiWrite(distancia_ade);
-[e ( _spiWrite (1 -> _distancia_ade `uc ]
-"86
-[; ;comunicacion_main.c: 86:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"87
-[; ;comunicacion_main.c: 87:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"89
-[; ;comunicacion_main.c: 89:             spiWrite(temp_amb);
-[e ( _spiWrite (1 -> _temp_amb `uc ]
-"90
-[; ;comunicacion_main.c: 90:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"91
-[; ;comunicacion_main.c: 91:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"93
-[; ;comunicacion_main.c: 93:             spiWrite(temp_obj);
-[e ( _spiWrite (1 -> _temp_obj `uc ]
-"94
-[; ;comunicacion_main.c: 94:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"95
-[; ;comunicacion_main.c: 95:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"97
-[; ;comunicacion_main.c: 97:             spiWrite(posicion);
-[e ( _spiWrite (1 -> _posicion `uc ]
-"98
-[; ;comunicacion_main.c: 98:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"99
-[; ;comunicacion_main.c: 99:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"101
-[; ;comunicacion_main.c: 101:             spiWrite(tiempo);
-[e ( _spiWrite (1 -> _tiempo `uc ]
-"102
-[; ;comunicacion_main.c: 102:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"103
-[; ;comunicacion_main.c: 103:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"105
-[; ;comunicacion_main.c: 105:             spiWrite(humedad);
-[e ( _spiWrite (1 -> _humedad `uc ]
-"106
-[; ;comunicacion_main.c: 106:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"107
-[; ;comunicacion_main.c: 107:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"108
-[; ;comunicacion_main.c: 108:         }
-}
-[e :U 165 ]
-"111
-[; ;comunicacion_main.c: 111:     }
+[; ;comunicacion_main.c: 76:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"112
-[; ;comunicacion_main.c: 112:     return;
+"77
+[; ;comunicacion_main.c: 77:     return;
 [e $UE 138  ]
-"113
-[; ;comunicacion_main.c: 113: }
+"78
+[; ;comunicacion_main.c: 78: }
 [e :UE 138 ]
+}
+[v $root$_isr `(v ~T0 @X0 0 e ]
+"81
+[; ;comunicacion_main.c: 81: void __attribute__((picinterrupt(("")))) isr(void){
+[v _isr `(v ~T1 @X0 1 ef ]
+{
+[e :U _isr ]
+[f ]
+"82
+[; ;comunicacion_main.c: 82:     if (PIR1bits.SSPIF == 1){
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 166  ]
+{
+"83
+[; ;comunicacion_main.c: 83:         recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"85
+[; ;comunicacion_main.c: 85:         if (recibir_rasp == 0x11){
+[e $ ! == -> _recibir_rasp `i -> 17 `i 167  ]
+{
+"86
+[; ;comunicacion_main.c: 86:             spiWrite(distancia_ade);
+[e ( _spiWrite (1 -> _distancia_ade `uc ]
+"87
+[; ;comunicacion_main.c: 87:         }
+}
+[e :U 167 ]
+"89
+[; ;comunicacion_main.c: 89:         if (recibir_rasp == 0x22){
+[e $ ! == -> _recibir_rasp `i -> 34 `i 168  ]
+{
+"90
+[; ;comunicacion_main.c: 90:             spiWrite(distancia_atr);
+[e ( _spiWrite (1 -> _distancia_atr `uc ]
+"91
+[; ;comunicacion_main.c: 91:         }
+}
+[e :U 168 ]
+"93
+[; ;comunicacion_main.c: 93:         if (recibir_rasp == 0x33){
+[e $ ! == -> _recibir_rasp `i -> 51 `i 169  ]
+{
+"94
+[; ;comunicacion_main.c: 94:             spiWrite(humedad);
+[e ( _spiWrite (1 -> _humedad `uc ]
+"95
+[; ;comunicacion_main.c: 95:         }
+}
+[e :U 169 ]
+"97
+[; ;comunicacion_main.c: 97:         if (recibir_rasp == 0x44){
+[e $ ! == -> _recibir_rasp `i -> 68 `i 170  ]
+{
+"98
+[; ;comunicacion_main.c: 98:             spiWrite(posicion);
+[e ( _spiWrite (1 -> _posicion `uc ]
+"99
+[; ;comunicacion_main.c: 99:         }
+}
+[e :U 170 ]
+"101
+[; ;comunicacion_main.c: 101:         if (recibir_rasp == 0x55){
+[e $ ! == -> _recibir_rasp `i -> 85 `i 171  ]
+{
+"102
+[; ;comunicacion_main.c: 102:             spiWrite(temp_amb);
+[e ( _spiWrite (1 -> _temp_amb `uc ]
+"103
+[; ;comunicacion_main.c: 103:         }
+}
+[e :U 171 ]
+"105
+[; ;comunicacion_main.c: 105:         if (recibir_rasp == 0x66){
+[e $ ! == -> _recibir_rasp `i -> 102 `i 172  ]
+{
+"106
+[; ;comunicacion_main.c: 106:             spiWrite(temp_obj);
+[e ( _spiWrite (1 -> _temp_obj `uc ]
+"107
+[; ;comunicacion_main.c: 107:         }
+}
+[e :U 172 ]
+"109
+[; ;comunicacion_main.c: 109:         if (recibir_rasp == 0x77){
+[e $ ! == -> _recibir_rasp `i -> 119 `i 173  ]
+{
+"110
+[; ;comunicacion_main.c: 110:             spiWrite(tiempo);
+[e ( _spiWrite (1 -> _tiempo `uc ]
+"111
+[; ;comunicacion_main.c: 111:         }
+}
+[e :U 173 ]
+"115
+[; ;comunicacion_main.c: 115:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"116
+[; ;comunicacion_main.c: 116:         }
+}
+[e :U 166 ]
+"117
+[; ;comunicacion_main.c: 117:     return;
+[e $UE 165  ]
+"118
+[; ;comunicacion_main.c: 118: }
+[e :UE 165 ]
 }

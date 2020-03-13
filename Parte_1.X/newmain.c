@@ -24,10 +24,48 @@
 #include "funciones.h"
 #define _XTAL_FREQ 8000000
 
+uint8_t recibir1;
 uint16_t distancia_1;
 uint16_t distancia_2;
 char print_lcd[16];
 char print_lcd_1[16];
+short z;
+
+void __interrupt() isr(void){
+   if(PIR1bits.SSPIF == 1){ 
+
+        SSPCONbits.CKP = 0;
+       
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;                 // Read the previous value to clear the buffer
+            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+            SSPCONbits.WCOL = 0;        // Clear the collision bit
+            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+            //__delay_us(7);
+            z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            //__delay_us(2);
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+            SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
+            while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
+            recibir1 = SSPBUF;             // Guardar en recibir1 el valor del buffer de recepción
+            __delay_us(250);
+            
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = distancia_1;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+        }
+        
+        PIR1bits.SSPIF = 0;    
+    }
+    return;
+}
 
 void main(void) {
     oscillator(7);
@@ -39,6 +77,7 @@ void main(void) {
     PORTD = 0x00;
     TRISD = 0x00;
     
+    I2C_Slave_Init(0x30);
     Lcd_Init();
     Lcd_Clear();
     

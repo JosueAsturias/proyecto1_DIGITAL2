@@ -2770,14 +2770,53 @@ void Lcd_Clear(void);
 void Lcd_Set_Cursor(int a, int b);
 void Lcd_Write_String(char *a);
 void Lcd_Write_Char(char a);
+void I2C_Slave_Init(short address);
 # 24 "newmain.c" 2
 
 
 
+uint8_t recibir1;
 uint16_t distancia_1;
 uint16_t distancia_2;
 char print_lcd[16];
 char print_lcd_1[16];
+short z;
+
+void __attribute__((picinterrupt(("")))) isr(void){
+   if(PIR1bits.SSPIF == 1){
+
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;
+            SSPCONbits.SSPOV = 0;
+            SSPCONbits.WCOL = 0;
+            SSPCONbits.CKP = 1;
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+
+            z = SSPBUF;
+
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            recibir1 = SSPBUF;
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
+
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = distancia_1;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
+            while(SSPSTATbits.BF);
+        }
+
+        PIR1bits.SSPIF = 0;
+    }
+    return;
+}
 
 void main(void) {
     oscillator(7);
@@ -2789,6 +2828,7 @@ void main(void) {
     PORTD = 0x00;
     TRISD = 0x00;
 
+    I2C_Slave_Init(0x30);
     Lcd_Init();
     Lcd_Clear();
 

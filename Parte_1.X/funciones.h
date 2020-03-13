@@ -48,6 +48,7 @@ void Lcd_Clear(void);
 void Lcd_Set_Cursor(int a, int b);
 void Lcd_Write_String(char *a);
 void Lcd_Write_Char(char a);
+void I2C_Slave_Init(short address);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

@@ -2657,8 +2657,24 @@ void Lcd_Clear(void);
 void Lcd_Set_Cursor(int a, int b);
 void Lcd_Write_String(char *a);
 void Lcd_Write_Char(char a);
+void I2C_Slave_Init(short address);
 # 10 "funciones.c" 2
-# 33 "funciones.c"
+# 34 "funciones.c"
+void I2C_Slave_Init(short address)
+{
+  SSPSTAT = 0x80;
+  SSPADD = address;
+  SSPCON = 0x36;
+  SSPCON2 = 0x01;
+  TRISC3 = 1;
+  TRISC4 = 1;
+  GIE = 1;
+  PEIE = 1;
+  SSPIF = 0;
+  SSPIE = 1;
+}
+
+
 void init_PWM_1 (void){
     TRISCbits.TRISC1 = 1;
 

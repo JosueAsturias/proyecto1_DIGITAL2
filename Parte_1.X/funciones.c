@@ -30,6 +30,22 @@
 
 #define DATA PORTB 
 
+
+void I2C_Slave_Init(short address) 
+{
+  SSPSTAT = 0x80;    
+  SSPADD = address; //Setting address
+  SSPCON = 0x36;    //As a slave device
+  SSPCON2 = 0x01;
+  TRISC3 = 1;       //Setting as input as given in datasheet
+  TRISC4 = 1;       //Setting as input as given in datasheet
+  GIE = 1;          //Global interrupt enable
+  PEIE = 1;         //Peripheral interrupt enable
+  SSPIF = 0;        //Clear interrupt flag
+  SSPIE = 1;        //Synchronous serial port interrupt enable
+}
+
+
 void init_PWM_1 (void){
     TRISCbits.TRISC1 = 1;       //RC1-CCP2 como entrada
     

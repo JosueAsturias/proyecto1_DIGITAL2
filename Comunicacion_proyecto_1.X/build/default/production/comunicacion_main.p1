@@ -6,14 +6,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1540
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"1478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"3449
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"465
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 465:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"475
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 475:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"464
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 464: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"482
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"1708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1708:     struct {
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
+"1707
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1707: typedef union {
+[u S62 `S63 1 ]
+[n S62 . . ]
+"1718
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1718: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
+[v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+"543
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
 "40 ./serial.h
 [; ;./serial.h: 40: void oscillator(uint8_t a);
 [v _oscillator `(v ~T0 @X0 0 ef1`uc ]
 "39
 [; ;./serial.h: 39: void init_serial(void);
 [v _init_serial `(v ~T0 @X0 0 ef ]
-"47 comunicacion_main.c
-[; ;comunicacion_main.c: 47:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"53 comunicacion_main.c
+[; ;comunicacion_main.c: 53:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_HIGH, SPI_ACTIVE_2_IDLE);
 [c E1295 32 33 34 35 36 37 .. ]
 [n E1295 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1303 0 128 .. ]
@@ -25,18 +71,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45 ./SPI.h
 [; ;./SPI.h: 45: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 [v _spiInit `(v ~T0 @X0 0 ef4`E1295`E1303`E1307`E1311 ]
-"543 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
-[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
-"542
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
-[u S18 `S19 1 ]
-[n S18 . . ]
-"553
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
-[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-"1140
+"1140 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
@@ -310,304 +345,322 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "27 comunicacion_main.c
-[; ;comunicacion_main.c: 27: uint8_t mandar_rasp = 0;
-[v _mandar_rasp `uc ~T0 @X0 1 e ]
-[i _mandar_rasp
--> -> 0 `i `uc
-]
-"28
-[; ;comunicacion_main.c: 28: uint8_t recibir_rasp = 0;
+[; ;comunicacion_main.c: 27: uint8_t recibir_rasp = 0;
 [v _recibir_rasp `uc ~T0 @X0 1 e ]
 [i _recibir_rasp
 -> -> 0 `i `uc
 ]
-"29
-[; ;comunicacion_main.c: 29: uint8_t bandera_1 = 0;
+"28
+[; ;comunicacion_main.c: 28: uint8_t bandera_1 = 0;
 [v _bandera_1 `uc ~T0 @X0 1 e ]
 [i _bandera_1
 -> -> 0 `i `uc
 ]
-"32
-[; ;comunicacion_main.c: 32: uint8_t distancia_atr = 0;
-[v _distancia_atr `uc ~T0 @X0 1 e ]
-[i _distancia_atr
--> -> 0 `i `uc
-]
-"33
-[; ;comunicacion_main.c: 33: uint8_t distancia_ade = 0;
+"31
+[; ;comunicacion_main.c: 31: uint8_t distancia_ade = 10;
 [v _distancia_ade `uc ~T0 @X0 1 e ]
 [i _distancia_ade
--> -> 0 `i `uc
+-> -> 10 `i `uc
 ]
-"34
-[; ;comunicacion_main.c: 34: uint8_t temp_amb = 0;
-[v _temp_amb `uc ~T0 @X0 1 e ]
-[i _temp_amb
--> -> 0 `i `uc
+"32
+[; ;comunicacion_main.c: 32: uint8_t distancia_atr = 20;
+[v _distancia_atr `uc ~T0 @X0 1 e ]
+[i _distancia_atr
+-> -> 20 `i `uc
 ]
-"35
-[; ;comunicacion_main.c: 35: uint8_t temp_obj = 0;
-[v _temp_obj `uc ~T0 @X0 1 e ]
-[i _temp_obj
--> -> 0 `i `uc
-]
-"36
-[; ;comunicacion_main.c: 36: uint8_t posicion = 0;
-[v _posicion `uc ~T0 @X0 1 e ]
-[i _posicion
--> -> 0 `i `uc
-]
-"37
-[; ;comunicacion_main.c: 37: uint8_t tiempo = 0;
-[v _tiempo `uc ~T0 @X0 1 e ]
-[i _tiempo
--> -> 0 `i `uc
-]
-"38
-[; ;comunicacion_main.c: 38: uint8_t humedad = 0;
+"33
+[; ;comunicacion_main.c: 33: uint8_t humedad = 30;
 [v _humedad `uc ~T0 @X0 1 e ]
 [i _humedad
--> -> 0 `i `uc
+-> -> 30 `i `uc
+]
+"34
+[; ;comunicacion_main.c: 34: uint8_t posicion = 40;
+[v _posicion `uc ~T0 @X0 1 e ]
+[i _posicion
+-> -> 40 `i `uc
+]
+"35
+[; ;comunicacion_main.c: 35: uint8_t temp_amb = 50;
+[v _temp_amb `uc ~T0 @X0 1 e ]
+[i _temp_amb
+-> -> 50 `i `uc
+]
+"36
+[; ;comunicacion_main.c: 36: uint8_t temp_obj = 60;
+[v _temp_obj `uc ~T0 @X0 1 e ]
+[i _temp_obj
+-> -> 60 `i `uc
+]
+"37
+[; ;comunicacion_main.c: 37: uint8_t tiempo = 70;
+[v _tiempo `uc ~T0 @X0 1 e ]
+[i _tiempo
+-> -> 70 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"42
-[; ;comunicacion_main.c: 42: void main(void) {
+"41
+[; ;comunicacion_main.c: 41: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"43
-[; ;comunicacion_main.c: 43:     PORTC = 0x00;
+"42
+[; ;comunicacion_main.c: 42:     PORTC = 0x00;
 [e = _PORTC -> -> 0 `i `uc ]
-"44
-[; ;comunicacion_main.c: 44:     TRISC = 0x00;
+"43
+[; ;comunicacion_main.c: 43:     TRISC = 0x00;
 [e = _TRISC -> -> 0 `i `uc ]
+"44
+[; ;comunicacion_main.c: 44:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
 "45
-[; ;comunicacion_main.c: 45:     oscillator(6);
-[e ( _oscillator (1 -> -> 6 `i `uc ]
+[; ;comunicacion_main.c: 45:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
 "46
-[; ;comunicacion_main.c: 46:     init_serial();
-[e ( _init_serial ..  ]
+[; ;comunicacion_main.c: 46:     ANSELH = 0x00;
+[e = _ANSELH -> -> 0 `i `uc ]
 "47
-[; ;comunicacion_main.c: 47:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1295 5 . `E1303 0 . `E1307 1 . `E1311 0 ]
+[; ;comunicacion_main.c: 47:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"48
+[; ;comunicacion_main.c: 48:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "49
-[; ;comunicacion_main.c: 49:     while(1){
+[; ;comunicacion_main.c: 49:     PIE1bits.SSPIE = 1;
+[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
+"50
+[; ;comunicacion_main.c: 50:     PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"51
+[; ;comunicacion_main.c: 51:     oscillator(6);
+[e ( _oscillator (1 -> -> 6 `i `uc ]
+"52
+[; ;comunicacion_main.c: 52:     init_serial();
+[e ( _init_serial ..  ]
+"53
+[; ;comunicacion_main.c: 53:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_HIGH, SPI_ACTIVE_2_IDLE);
+[e ( _spiInit (4 , , , . `E1295 5 . `E1303 0 . `E1307 0 . `E1311 1 ]
+"54
+[; ;comunicacion_main.c: 54:     PORTB = 0xFF;
+[e = _PORTB -> -> 255 `i `uc ]
+"56
+[; ;comunicacion_main.c: 56:     while(1){
 [e :U 140 ]
 {
-"52
-[; ;comunicacion_main.c: 52:         if (PIR1bits.RCIF == 1){
+"59
+[; ;comunicacion_main.c: 59:         if (PIR1bits.RCIF == 1){
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 142  ]
 {
-"53
-[; ;comunicacion_main.c: 53:             bandera_1 = RCREG;
+"60
+[; ;comunicacion_main.c: 60:             bandera_1 = RCREG;
 [e = _bandera_1 _RCREG ]
-"54
-[; ;comunicacion_main.c: 54:         }
+"62
+[; ;comunicacion_main.c: 62:         }
 }
 [e :U 142 ]
-"55
-[; ;comunicacion_main.c: 55:         if (bandera_1 == 110){
+"63
+[; ;comunicacion_main.c: 63:         if (bandera_1 == 110){
 [e $ ! == -> _bandera_1 `i -> 110 `i 143  ]
 {
-"56
-[; ;comunicacion_main.c: 56:             while (PIR1bits.RCIF == 0);
+"64
+[; ;comunicacion_main.c: 64:             while (PIR1bits.RCIF == 0);
 [e $U 144  ]
 [e :U 145 ]
 [e :U 144 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 145  ]
 [e :U 146 ]
-"57
-[; ;comunicacion_main.c: 57:             distancia_atr = RCREG;
+"65
+[; ;comunicacion_main.c: 65:             distancia_atr = RCREG;
 [e = _distancia_atr _RCREG ]
-"58
-[; ;comunicacion_main.c: 58:             while (PIR1bits.RCIF == 0);
+"66
+[; ;comunicacion_main.c: 66:             while (PIR1bits.RCIF == 0);
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 148  ]
 [e :U 149 ]
-"59
-[; ;comunicacion_main.c: 59:             distancia_ade = RCREG;
+"67
+[; ;comunicacion_main.c: 67:             distancia_ade = RCREG;
 [e = _distancia_ade _RCREG ]
-"60
-[; ;comunicacion_main.c: 60:             while (PIR1bits.RCIF == 0);
+"68
+[; ;comunicacion_main.c: 68:             while (PIR1bits.RCIF == 0);
 [e $U 150  ]
 [e :U 151 ]
 [e :U 150 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 151  ]
 [e :U 152 ]
-"61
-[; ;comunicacion_main.c: 61:             temp_amb = RCREG;
+"69
+[; ;comunicacion_main.c: 69:             temp_amb = RCREG;
 [e = _temp_amb _RCREG ]
-"62
-[; ;comunicacion_main.c: 62:             while (PIR1bits.RCIF == 0);
+"70
+[; ;comunicacion_main.c: 70:             while (PIR1bits.RCIF == 0);
 [e $U 153  ]
 [e :U 154 ]
 [e :U 153 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 154  ]
 [e :U 155 ]
-"63
-[; ;comunicacion_main.c: 63:             temp_obj = RCREG;
+"71
+[; ;comunicacion_main.c: 71:             temp_obj = RCREG;
 [e = _temp_obj _RCREG ]
-"64
-[; ;comunicacion_main.c: 64:             while (PIR1bits.RCIF == 0);
+"72
+[; ;comunicacion_main.c: 72:             while (PIR1bits.RCIF == 0);
 [e $U 156  ]
 [e :U 157 ]
 [e :U 156 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 157  ]
 [e :U 158 ]
-"65
-[; ;comunicacion_main.c: 65:             posicion = RCREG;
+"73
+[; ;comunicacion_main.c: 73:             posicion = RCREG;
 [e = _posicion _RCREG ]
-"66
-[; ;comunicacion_main.c: 66:             while (PIR1bits.RCIF == 0);
+"74
+[; ;comunicacion_main.c: 74:             while (PIR1bits.RCIF == 0);
 [e $U 159  ]
 [e :U 160 ]
 [e :U 159 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 160  ]
 [e :U 161 ]
-"67
-[; ;comunicacion_main.c: 67:             tiempo = RCREG;
+"75
+[; ;comunicacion_main.c: 75:             tiempo = RCREG;
 [e = _tiempo _RCREG ]
-"68
-[; ;comunicacion_main.c: 68:             while (PIR1bits.RCIF == 0);
+"76
+[; ;comunicacion_main.c: 76:             while (PIR1bits.RCIF == 0);
 [e $U 162  ]
 [e :U 163 ]
 [e :U 162 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 163  ]
 [e :U 164 ]
-"69
-[; ;comunicacion_main.c: 69:             humedad = RCREG;
+"77
+[; ;comunicacion_main.c: 77:             humedad = RCREG;
 [e = _humedad _RCREG ]
-"70
-[; ;comunicacion_main.c: 70:             bandera_1 = 0;
+"78
+[; ;comunicacion_main.c: 78:             bandera_1 = 0;
 [e = _bandera_1 -> -> 0 `i `uc ]
-"71
-[; ;comunicacion_main.c: 71:             mandar_rasp = 1;
-[e = _mandar_rasp -> -> 1 `i `uc ]
-"72
-[; ;comunicacion_main.c: 72:         }
+"79
+[; ;comunicacion_main.c: 79:         }
 }
 [e :U 143 ]
-"74
-[; ;comunicacion_main.c: 74:         _delay((unsigned long)((10)*(4000000/4000.0)));
+"81
+[; ;comunicacion_main.c: 81:         _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"76
-[; ;comunicacion_main.c: 76:     }
+"83
+[; ;comunicacion_main.c: 83:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"77
-[; ;comunicacion_main.c: 77:     return;
+"84
+[; ;comunicacion_main.c: 84:     return;
 [e $UE 138  ]
-"78
-[; ;comunicacion_main.c: 78: }
+"85
+[; ;comunicacion_main.c: 85: }
 [e :UE 138 ]
 }
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"81
-[; ;comunicacion_main.c: 81: void __attribute__((picinterrupt(("")))) isr(void){
+"88
+[; ;comunicacion_main.c: 88: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"82
-[; ;comunicacion_main.c: 82:     if (PIR1bits.SSPIF == 1){
+"89
+[; ;comunicacion_main.c: 89:     if (PIR1bits.SSPIF == 1){
 [e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 166  ]
 {
-"83
-[; ;comunicacion_main.c: 83:         recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"85
-[; ;comunicacion_main.c: 85:         if (recibir_rasp == 0x11){
-[e $ ! == -> _recibir_rasp `i -> 17 `i 167  ]
-{
-"86
-[; ;comunicacion_main.c: 86:             spiWrite(distancia_ade);
+"90
+[; ;comunicacion_main.c: 90:         PORTB = spiRead();
+[e = _PORTB -> ( _spiRead ..  `uc ]
+"91
+[; ;comunicacion_main.c: 91:         spiWrite(distancia_ade);
 [e ( _spiWrite (1 -> _distancia_ade `uc ]
-"87
-[; ;comunicacion_main.c: 87:         }
+"94
+[; ;comunicacion_main.c: 94:         if (recibir_rasp == 11){
+[e $ ! == -> _recibir_rasp `i -> 11 `i 167  ]
+{
+"95
+[; ;comunicacion_main.c: 95:             spiWrite(distancia_ade);
+[e ( _spiWrite (1 -> _distancia_ade `uc ]
+"96
+[; ;comunicacion_main.c: 96:         }
 }
 [e :U 167 ]
-"89
-[; ;comunicacion_main.c: 89:         if (recibir_rasp == 0x22){
-[e $ ! == -> _recibir_rasp `i -> 34 `i 168  ]
+"98
+[; ;comunicacion_main.c: 98:         if (recibir_rasp == 22){
+[e $ ! == -> _recibir_rasp `i -> 22 `i 168  ]
 {
-"90
-[; ;comunicacion_main.c: 90:             spiWrite(distancia_atr);
+"99
+[; ;comunicacion_main.c: 99:             spiWrite(distancia_atr);
 [e ( _spiWrite (1 -> _distancia_atr `uc ]
-"91
-[; ;comunicacion_main.c: 91:         }
+"100
+[; ;comunicacion_main.c: 100:         }
 }
 [e :U 168 ]
-"93
-[; ;comunicacion_main.c: 93:         if (recibir_rasp == 0x33){
-[e $ ! == -> _recibir_rasp `i -> 51 `i 169  ]
+"102
+[; ;comunicacion_main.c: 102:         if (recibir_rasp == 33){
+[e $ ! == -> _recibir_rasp `i -> 33 `i 169  ]
 {
-"94
-[; ;comunicacion_main.c: 94:             spiWrite(humedad);
+"103
+[; ;comunicacion_main.c: 103:             spiWrite(humedad);
 [e ( _spiWrite (1 -> _humedad `uc ]
-"95
-[; ;comunicacion_main.c: 95:         }
+"104
+[; ;comunicacion_main.c: 104:         }
 }
 [e :U 169 ]
-"97
-[; ;comunicacion_main.c: 97:         if (recibir_rasp == 0x44){
-[e $ ! == -> _recibir_rasp `i -> 68 `i 170  ]
+"106
+[; ;comunicacion_main.c: 106:         if (recibir_rasp == 44){
+[e $ ! == -> _recibir_rasp `i -> 44 `i 170  ]
 {
-"98
-[; ;comunicacion_main.c: 98:             spiWrite(posicion);
+"107
+[; ;comunicacion_main.c: 107:             spiWrite(posicion);
 [e ( _spiWrite (1 -> _posicion `uc ]
-"99
-[; ;comunicacion_main.c: 99:         }
+"108
+[; ;comunicacion_main.c: 108:         }
 }
 [e :U 170 ]
-"101
-[; ;comunicacion_main.c: 101:         if (recibir_rasp == 0x55){
-[e $ ! == -> _recibir_rasp `i -> 85 `i 171  ]
+"110
+[; ;comunicacion_main.c: 110:         if (recibir_rasp == 55){
+[e $ ! == -> _recibir_rasp `i -> 55 `i 171  ]
 {
-"102
-[; ;comunicacion_main.c: 102:             spiWrite(temp_amb);
+"111
+[; ;comunicacion_main.c: 111:             spiWrite(temp_amb);
 [e ( _spiWrite (1 -> _temp_amb `uc ]
-"103
-[; ;comunicacion_main.c: 103:         }
+"112
+[; ;comunicacion_main.c: 112:         }
 }
 [e :U 171 ]
-"105
-[; ;comunicacion_main.c: 105:         if (recibir_rasp == 0x66){
-[e $ ! == -> _recibir_rasp `i -> 102 `i 172  ]
+"114
+[; ;comunicacion_main.c: 114:         if (recibir_rasp == 66){
+[e $ ! == -> _recibir_rasp `i -> 66 `i 172  ]
 {
-"106
-[; ;comunicacion_main.c: 106:             spiWrite(temp_obj);
-[e ( _spiWrite (1 -> _temp_obj `uc ]
-"107
-[; ;comunicacion_main.c: 107:         }
-}
-[e :U 172 ]
-"109
-[; ;comunicacion_main.c: 109:         if (recibir_rasp == 0x77){
-[e $ ! == -> _recibir_rasp `i -> 119 `i 173  ]
-{
-"110
-[; ;comunicacion_main.c: 110:             spiWrite(tiempo);
-[e ( _spiWrite (1 -> _tiempo `uc ]
-"111
-[; ;comunicacion_main.c: 111:         }
-}
-[e :U 173 ]
 "115
-[; ;comunicacion_main.c: 115:         PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;comunicacion_main.c: 115:             spiWrite(temp_obj);
+[e ( _spiWrite (1 -> _temp_obj `uc ]
 "116
 [; ;comunicacion_main.c: 116:         }
 }
-[e :U 166 ]
-"117
-[; ;comunicacion_main.c: 117:     return;
-[e $UE 165  ]
+[e :U 172 ]
 "118
-[; ;comunicacion_main.c: 118: }
+[; ;comunicacion_main.c: 118:         if (recibir_rasp == 77){
+[e $ ! == -> _recibir_rasp `i -> 77 `i 173  ]
+{
+"119
+[; ;comunicacion_main.c: 119:             spiWrite(tiempo);
+[e ( _spiWrite (1 -> _tiempo `uc ]
+"120
+[; ;comunicacion_main.c: 120:         }
+}
+[e :U 173 ]
+"123
+[; ;comunicacion_main.c: 123:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"124
+[; ;comunicacion_main.c: 124:         }
+}
+[e :U 166 ]
+"125
+[; ;comunicacion_main.c: 125:     return;
+[e $UE 165  ]
+"126
+[; ;comunicacion_main.c: 126: }
 [e :UE 165 ]
 }

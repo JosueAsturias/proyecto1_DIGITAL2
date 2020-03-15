@@ -24,33 +24,41 @@
 #include <stdint.h>
 #define _XTAL_FREQ 4000000
 
-uint8_t mandar_rasp = 0;
 uint8_t recibir_rasp = 0;
 uint8_t bandera_1 = 0;
 
 //      LECTURAS
-uint8_t distancia_atr = 0;
-uint8_t distancia_ade = 0;
-uint8_t temp_amb = 0;
-uint8_t temp_obj = 0;
-uint8_t posicion = 0;
-uint8_t tiempo = 0;
-uint8_t humedad = 0;
+uint8_t distancia_ade = 10;
+uint8_t distancia_atr = 20;
+uint8_t humedad = 30;
+uint8_t posicion = 40;
+uint8_t temp_amb = 50;
+uint8_t temp_obj = 60;
+uint8_t tiempo = 70;
 
 
 
 void main(void) {
     PORTC = 0x00;
     TRISC = 0x00;
+    PORTB = 0x00;
+    TRISB = 0x00;
+    ANSELH = 0x00;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.SSPIE = 1;
+    PIR1bits.SSPIF = 0;
     oscillator(6);
     init_serial();
-    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);  
+    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_HIGH, SPI_ACTIVE_2_IDLE);  
+    PORTB = 0xFF;
     
     while(1){
       
         
         if (PIR1bits.RCIF == 1){
             bandera_1 = RCREG;
+            
         }  
         if (bandera_1 == 110){
             while (PIR1bits.RCIF == 0);
@@ -68,9 +76,8 @@ void main(void) {
             while (PIR1bits.RCIF == 0);
             humedad = RCREG;
             bandera_1 = 0;
-            mandar_rasp = 1;
         }
-        
+
         __delay_ms(10);
         
     }
@@ -80,36 +87,37 @@ void main(void) {
 
 void __interrupt() isr(void){
     if (PIR1bits.SSPIF == 1){ 
-        recibir_rasp = spiRead();
-                
-        if (recibir_rasp == 0x11){
+        PORTB = spiRead();
+        spiWrite(distancia_ade);
+        //PORTB = recibir_rasp;
+        
+        if (recibir_rasp == 11){
             spiWrite(distancia_ade);
         }
         
-        if (recibir_rasp == 0x22){
+        if (recibir_rasp == 22){
             spiWrite(distancia_atr);
         }
         
-        if (recibir_rasp == 0x33){
+        if (recibir_rasp == 33){
             spiWrite(humedad);
         }
         
-        if (recibir_rasp == 0x44){
+        if (recibir_rasp == 44){
             spiWrite(posicion);
         }
         
-        if (recibir_rasp == 0x55){
+        if (recibir_rasp == 55){
             spiWrite(temp_amb);
         }
         
-        if (recibir_rasp == 0x66){
+        if (recibir_rasp == 66){
             spiWrite(temp_obj);
         }
         
-        if (recibir_rasp == 0x77){
+        if (recibir_rasp == 77){
             spiWrite(tiempo);
         }
-        
         
         
         PIR1bits.SSPIF = 0;

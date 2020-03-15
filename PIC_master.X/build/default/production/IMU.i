@@ -1,4 +1,4 @@
-# 1 "UART.c"
+# 1 "IMU.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "UART.c" 2
+# 1 "IMU.c" 2
 
 
 
@@ -2499,10 +2499,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 9 "UART.c" 2
+# 9 "IMU.c" 2
 
-# 1 "./UART.h" 1
-# 14 "./UART.h"
+# 1 "./IMU.h" 1
+# 12 "./IMU.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2636,45 +2636,224 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 14 "./UART.h" 2
+# 12 "./IMU.h" 2
 
-void uart_init();
-char uartRC_Read();
-void uartTX_Write(char dato);
-void uartTX_Write_Str(char * string);
-# 10 "UART.c" 2
+# 1 "./I2C.h" 1
+# 19 "./I2C.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
+# 19 "./I2C.h" 2
+# 28 "./I2C.h"
+void I2C_Master_Init(const unsigned long c);
 
 
 
-void uart_init(){
-    TXSTAbits.SYNC = 0;
-    TXSTAbits.BRGH = 1;
-    BAUDCTLbits.BRG16 = 1;
-    SPBRG = 103;
-    SPBRGH = 0;
 
-    RCSTAbits.SPEN = 1;
-    RCSTAbits.RX9 = 0;
-    RCSTAbits.CREN = 1;
 
-    TXSTAbits.TXEN = 1;
+
+
+void I2C_Master_Wait(void);
+
+
+
+void I2C_Master_Start(void);
+
+
+
+void I2C_Master_RepeatedStart(void);
+
+
+
+void I2C_Master_Stop(void);
+
+
+
+
+
+void I2C_Master_Write(unsigned d);
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a);
+
+
+
+void I2C_Slave_Init(uint8_t address);
+# 13 "./IMU.h" 2
+
+
+void IMU_init(void);
+int16_t Acc_X(void);
+
+int16_t Acc_Y(void);
+
+int16_t Acc_Z(void);
+
+int16_t Gy_X(void);
+
+int16_t Gy_Y(void);
+
+int16_t Gy_Z(void);
+# 10 "IMU.c" 2
+# 126 "IMU.c"
+void IMU_init(void){
+    _delay((unsigned long)((150)*(4000000/4000.0)));
+ I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+ I2C_Master_Write(0x19);
+ I2C_Master_Write(0x07);
+ I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+ I2C_Master_Write(0x6B);
+ I2C_Master_Write(0x01);
+ I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+ I2C_Master_Write(0x1A);
+ I2C_Master_Write(0x00);
+ I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+ I2C_Master_Write(0x1B);
+ I2C_Master_Write(0x18);
+ I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+ I2C_Master_Write(0x1C);
+ I2C_Master_Write(0x18);
+ I2C_Master_Stop();
 }
 
 
+int16_t Acc_X(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x3B);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    int16_t acc = I2C_Master_Read(0) << 8;
+    I2C_Master_Stop();
 
-char uartRC_Read(){
-    return RCREG;
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x3C);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    acc = acc | I2C_Master_Read(0) ;
+    I2C_Master_Stop();
+    return acc;
 }
 
-void uartTX_Write(char dato){
-    while(!TRMT);
-    TXREG = dato;
+int16_t Acc_Y(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x3D);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    int16_t acc = I2C_Master_Read(0) << 8;
+    I2C_Master_Stop();
 
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x3E);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    acc = acc | I2C_Master_Read(0) ;
+    I2C_Master_Stop();
+    return acc;
 }
 
-void uartTX_Write_Str(char * string){
-    int n;
-    for (n=0; string[n] != '\n'; n++){
-        uartTX_Write(string[n]);
-    }
+int16_t Acc_Z(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x3F);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    int16_t acc = I2C_Master_Read(0) << 8;
+    I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x40);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    acc = acc | I2C_Master_Read(0) ;
+    I2C_Master_Stop();
+    return acc;
+}
+
+
+int16_t Gy_X(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x43);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    int16_t giro = I2C_Master_Read(0) << 8;
+    I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x44);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    giro = giro | I2C_Master_Read(0) ;
+    I2C_Master_Stop();
+    giro = giro - 240;
+    return giro;
+}
+
+int16_t Gy_Y(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x45);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    int16_t giro = I2C_Master_Read(0) << 8;
+    I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x46);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    giro = giro | I2C_Master_Read(0) ;
+    I2C_Master_Stop();
+    return giro;
+}
+
+int16_t Gy_Z(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x47);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    int16_t giro = I2C_Master_Read(0) << 8;
+    I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010010);
+    I2C_Master_Write(0x48);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+    I2C_Master_Write(0b11010011);
+    giro = giro | I2C_Master_Read(0) ;
+    I2C_Master_Stop();
+    return giro;
 }

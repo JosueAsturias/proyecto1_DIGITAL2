@@ -2656,45 +2656,45 @@ uint16_t * uint_to_array(uint8_t numero);
 # 21 "LCD_8bits.c"
 void LCD_Cmd(uint8_t comando){
     PORTCbits.RC0 = 0;
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     PORTCbits.RC1 = 1;
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     PORTD = comando;
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     PORTCbits.RC1 = 0;
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
 }
 
 void LCD_clear(void){
     LCD_Cmd(0x00);
     LCD_Cmd(0x01);
-    _delay((unsigned long)((4)*(8000000/4000.0)));
+    _delay((unsigned long)((4)*(4000000/4000.0)));
 }
 
 void LCD_home(void){
     LCD_Cmd(0x00);
     LCD_Cmd(0x02);
-    _delay((unsigned long)((4)*(8000000/4000.0)));
+    _delay((unsigned long)((4)*(4000000/4000.0)));
 }
 
 void LCD_init(void){
-    _delay((unsigned long)((20)*(8000000/4000.0)));
+    _delay((unsigned long)((20)*(4000000/4000.0)));
     LCD_Cmd(0x30);
-    _delay((unsigned long)((5)*(8000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     LCD_Cmd(0x30);
-    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    _delay((unsigned long)((100)*(4000000/4000000.0)));
     LCD_Cmd(0x30);
-    _delay((unsigned long)((100)*(8000000/4000000.0)));
+    _delay((unsigned long)((100)*(4000000/4000000.0)));
     LCD_Cmd(0x38);
-    _delay((unsigned long)((53)*(8000000/4000000.0)));
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
     LCD_Cmd(0x08);
-    _delay((unsigned long)((53)*(8000000/4000000.0)));
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
     LCD_Cmd(0x01);
-    _delay((unsigned long)((3)*(8000000/4000.0)));
+    _delay((unsigned long)((3)*(4000000/4000.0)));
     LCD_Cmd(0x06);
-    _delay((unsigned long)((53)*(8000000/4000000.0)));
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
     LCD_Cmd(0x0C);
-    _delay((unsigned long)((53)*(8000000/4000000.0)));
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
 }
 
 void LCD_Write_Character(char caracter){
@@ -2702,7 +2702,7 @@ void LCD_Write_Character(char caracter){
 
     PORTD = caracter;
     PORTCbits.RC1 = 1;
-    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    _delay((unsigned long)((40)*(4000000/4000000.0)));
     PORTCbits.RC1 = 0;
 }
 

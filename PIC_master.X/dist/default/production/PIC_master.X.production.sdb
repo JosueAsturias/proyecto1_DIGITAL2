@@ -39,6 +39,10 @@
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
+"126 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\IMU.c
+[v _IMU_init IMU_init `(v  1 e 1 0 ]
+"202
+[v _Acc_Z Acc_Z `(i  1 e 2 0 ]
 "21 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _LCD_Cmd LCD_Cmd `(v  1 e 1 0 ]
 "32
@@ -55,24 +59,26 @@
 [v _LCD_Create_Char LCD_Create_Char `(v  1 e 1 0 ]
 "181
 [v _uint_to_array uint_to_array `(*.4ui  1 e 1 0 ]
-"110 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"130 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"120
+"140
 [v _main main `(v  1 e 1 0 ]
-"135
+"168
 [v _SetUp SetUp `(v  1 e 1 0 ]
-"158
+"197
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
-"190
+"229
 [v _display_Uhrzeit display_Uhrzeit `(v  1 e 1 0 ]
-"210
+"249
 [v _display_Datum display_Datum `(v  1 e 1 0 ]
-"231
+"270
 [v _mostrarLCD mostrarLCD `(v  1 e 1 0 ]
-"351
+"447
 [v _pressBoton1 pressBoton1 `(v  1 e 1 0 ]
-"396
+"492
 [v _pressBoton2 pressBoton2 `(v  1 e 1 0 ]
+"539
+[v _ver_inclinacion ver_inclinacion `(uc  1 e 1 0 ]
 "27 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
 [v _BCD_a_DEC BCD_a_DEC `(uc  1 e 1 0 ]
 "32
@@ -83,7 +89,11 @@
 [v _temp_objeto temp_objeto `(i  1 e 2 0 ]
 "39
 [v _temp_ambiente temp_ambiente `(i  1 e 2 0 ]
-[s S193 . 1 `uc 1 RB0 1 0 :1:0 
+"13 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\UART.c
+[v _uart_init uart_init `(v  1 e 1 0 ]
+"33
+[v _uartTX_Write uartTX_Write `(v  1 e 1 0 ]
+[s S230 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -93,9 +103,11 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f887.h
-[u S202 . 1 `S193 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES202  1 e 1 @6 ]
-[s S431 . 1 `uc 1 RC0 1 0 :1:0 
+[u S239 . 1 `S230 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES239  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S476 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -105,8 +117,8 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S440 . 1 `S431 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES440  1 e 1 @7 ]
+[u S485 . 1 `S476 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES485  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -130,7 +142,33 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S91 . 1 `uc 1 PS 1 0 :3:0 
+[s S617 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1068
+[s S626 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S630 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S633 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S636 . 1 `S617 1 . 1 0 `S626 1 . 1 0 `S630 1 . 1 0 `S633 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES636  1 e 1 @24 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+[s S107 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -138,15 +176,17 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S98 . 1 `uc 1 PS0 1 0 :1:0 
+[s S114 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S102 . 1 `S91 1 . 1 0 `S98 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES102  1 e 1 @129 ]
+[u S118 . 1 `S107 1 . 1 0 `S114 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES118  1 e 1 @129 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S352 . 1 `uc 1 TRISC0 1 0 :1:0 
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S397 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -156,27 +196,27 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S361 . 1 `S352 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES361  1 e 1 @135 ]
+[u S406 . 1 `S397 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES406  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S140 . 1 `uc 1 SCS 1 0 :1:0 
+[s S164 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S146 . 1 `uc 1 . 1 0 :4:0 
+[s S170 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S151 . 1 `S140 1 . 1 0 `S146 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES151  1 e 1 @143 ]
+[u S175 . 1 `S164 1 . 1 0 `S170 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES175  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S373 . 1 `uc 1 SEN 1 0 :1:0 
+[s S418 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -186,8 +226,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S382 . 1 `S373 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES382  1 e 1 @145 ]
+[u S427 . 1 `S418 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES427  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -196,6 +236,41 @@
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
+[s S557 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2582
+[s S566 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S570 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[u S573 . 1 `S557 1 . 1 0 `S566 1 . 1 0 `S570 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES573  1 e 1 @152 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2704
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
+[s S594 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"3352
+[u S603 . 1 `S594 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES603  1 e 1 @391 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3896
@@ -214,35 +289,41 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"33 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"4508
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"45 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _estado estado `uc  1 e 1 0 ]
-"41
+"53
+[v _velocidad velocidad `uc  1 e 1 0 ]
+"55
+[v _inclinacion inclinacion `uc  1 e 1 0 ]
+"58
 [v _temperatura temperatura `c  1 e 1 0 ]
-"42
+"59
 [v _temperatura_obj temperatura_obj `c  1 e 1 0 ]
-"43
+"60
 [v _obj_array obj_array `*.4ui  1 e 1 0 ]
-"44
+"61
 [v _banderaBoton banderaBoton `uc  1 e 1 0 ]
-"45
-[v _banderaPUSH1 banderaPUSH1 `uc  1 e 1 0 ]
-"46
-[v _banderaPUSH2 banderaPUSH2 `uc  1 e 1 0 ]
-"47
-[v _tiempo tiempo `uc  1 e 1 0 ]
-"48
-[v _largo largo `uc  1 e 1 0 ]
-"49
-[v _ancho ancho `uc  1 e 1 0 ]
-"52
-[v _arrowr arrowr `DC[8]uc  1 e 8 0 ]
 "62
+[v _banderaPUSH1 banderaPUSH1 `uc  1 e 1 0 ]
+"63
+[v _banderaPUSH2 banderaPUSH2 `uc  1 e 1 0 ]
+"65
+[v _largo largo `uc  1 e 1 0 ]
+"66
+[v _ancho ancho `uc  1 e 1 0 ]
+"67
+[v _accZ accZ `i  1 e 2 0 ]
+"71
+[v _arrowr arrowr `DC[8]uc  1 e 8 0 ]
+"81
 [v _arrowr_vacio arrowr_vacio `DC[8]uc  1 e 8 0 ]
-"72
+"91
 [v _atilde atilde `DC[8]uc  1 e 8 0 ]
-"82
+"101
 [v _termometro termometro `DC[8]uc  1 e 8 0 ]
-"92
+"111
 [v _gota gota `DC[8]uc  1 e 8 0 ]
 "18 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
 [v _seg seg `uc  1 e 1 0 ]
@@ -258,10 +339,27 @@
 [v _mes mes `uc  1 e 1 0 ]
 "24
 [v _jahr jahr `uc  1 e 1 0 ]
-"120 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"140 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _main main `(v  1 e 1 0 ]
 {
-"133
+"166
+} 0
+"539
+[v _ver_inclinacion ver_inclinacion `(uc  1 e 1 0 ]
+{
+"540
+[v ver_inclinacion@posicion posicion `uc  1 a 1 5 ]
+"539
+[v ver_inclinacion@valor valor `i  1 p 2 2 ]
+"551
+} 0
+"33 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\UART.c
+[v _uartTX_Write uartTX_Write `(v  1 e 1 0 ]
+{
+[v uartTX_Write@dato dato `uc  1 a 1 wreg ]
+[v uartTX_Write@dato dato `uc  1 a 1 wreg ]
+[v uartTX_Write@dato dato `uc  1 a 1 2 ]
+"37
 } 0
 "16 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\Temperatura_I2C.c
 [v _temp_objeto temp_objeto `(i  1 e 2 0 ]
@@ -338,23 +436,23 @@
 [v ___fladd@a a `d  1 p 4 18 ]
 "237
 } 0
-"396 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"492 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _pressBoton2 pressBoton2 `(v  1 e 1 0 ]
 {
-"441
+"537
 } 0
-"351
+"447
 [v _pressBoton1 pressBoton1 `(v  1 e 1 0 ]
 {
-"394
+"490
 } 0
-"231
+"270
 [v _mostrarLCD mostrarLCD `(v  1 e 1 0 ]
 {
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 wreg ]
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 wreg ]
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 26 ]
-"349
+"445
 } 0
 "181 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _uint_to_array uint_to_array `(*.4ui  1 e 1 0 ]
@@ -381,49 +479,49 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
 "53
 } 0
-"190 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"229 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _display_Uhrzeit display_Uhrzeit `(v  1 e 1 0 ]
 {
 [v display_Uhrzeit@fila fila `uc  1 a 1 wreg ]
-"196
+"235
 [v display_Uhrzeit@Uhr_d Uhr_d `uc  1 a 1 18 ]
-"195
+"234
 [v display_Uhrzeit@Uhr_u Uhr_u `uc  1 a 1 17 ]
-"194
+"233
 [v display_Uhrzeit@min_d min_d `uc  1 a 1 16 ]
-"193
+"232
 [v display_Uhrzeit@min_u min_u `uc  1 a 1 15 ]
-"192
+"231
 [v display_Uhrzeit@seg_d seg_d `uc  1 a 1 14 ]
-"191
+"230
 [v display_Uhrzeit@seg_u seg_u `uc  1 a 1 13 ]
-"190
+"229
 [v display_Uhrzeit@fila fila `uc  1 a 1 wreg ]
 [v display_Uhrzeit@columna columna `uc  1 p 1 8 ]
 [v display_Uhrzeit@fila fila `uc  1 a 1 12 ]
-"208
+"247
 } 0
-"210
+"249
 [v _display_Datum display_Datum `(v  1 e 1 0 ]
 {
 [v display_Datum@fila fila `uc  1 a 1 wreg ]
-"216
+"255
 [v display_Datum@jahr_d jahr_d `uc  1 a 1 18 ]
-"215
+"254
 [v display_Datum@jahr_u jahr_u `uc  1 a 1 17 ]
-"214
+"253
 [v display_Datum@mes_d mes_d `uc  1 a 1 16 ]
-"213
+"252
 [v display_Datum@mes_u mes_u `uc  1 a 1 15 ]
-"212
+"251
 [v display_Datum@dia_d dia_d `uc  1 a 1 14 ]
-"211
+"250
 [v display_Datum@dia_u dia_u `uc  1 a 1 13 ]
-"210
+"249
 [v display_Datum@fila fila `uc  1 a 1 wreg ]
 [v display_Datum@columna columna `uc  1 p 1 8 ]
 [v display_Datum@fila fila `uc  1 a 1 12 ]
-"229
+"268
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -478,37 +576,7 @@
 {
 "142
 } 0
-"65 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\I2C.c
-[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
-{
-[v I2C_Master_Write@d d `ui  1 p 2 2 ]
-"69
-} 0
-"55
-[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
-{
-"59
-} 0
-"39
-[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
-{
-"43
-} 0
-"74
-[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-{
-"76
-[v I2C_Master_Read@temp temp `us  1 a 2 6 ]
-"74
-[v I2C_Master_Read@a a `us  1 p 2 2 ]
-"89
-} 0
-"32
-[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
-{
-"35
-} 0
-"27 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
+"27
 [v _BCD_a_DEC BCD_a_DEC `(uc  1 e 1 0 ]
 {
 [v BCD_a_DEC@numBCD numBCD `uc  1 a 1 wreg ]
@@ -529,16 +597,21 @@
 [v ___bmul@multiplier multiplier `uc  1 a 1 5 ]
 "51
 } 0
-"135 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"168 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _SetUp SetUp `(v  1 e 1 0 ]
 {
-"156
+"195
 } 0
-"158
+"13 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\UART.c
+[v _uart_init uart_init `(v  1 e 1 0 ]
+{
+"25
+} 0
+"197 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
 {
 [v OSC_config@frecuencia frecuencia `ul  1 p 4 2 ]
-"187
+"226
 } 0
 "44 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
@@ -579,6 +652,11 @@
 [v LCD_Cmd@comando comando `uc  1 a 1 4 ]
 "30
 } 0
+"126 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\IMU.c
+[v _IMU_init IMU_init `(v  1 e 1 0 ]
+{
+"157
+} 0
 "16 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
 {
@@ -597,8 +675,45 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 6 ]
 "30
 } 0
-"110 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"202 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\IMU.c
+[v _Acc_Z Acc_Z `(i  1 e 2 0 ]
+{
+"209
+[v Acc_Z@acc acc `i  1 a 2 2 ]
+"221
+} 0
+"65 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\I2C.c
+[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+{
+[v I2C_Master_Write@d d `ui  1 p 2 2 ]
+"69
+} 0
+"55
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+{
+"59
+} 0
+"39
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"43
+} 0
+"74
+[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
+{
+"76
+[v I2C_Master_Read@temp temp `us  1 a 2 6 ]
+"74
+[v I2C_Master_Read@a a `us  1 p 2 2 ]
+"89
+} 0
+"32
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+{
+"35
+} 0
+"130 C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"118
+"138
 } 0

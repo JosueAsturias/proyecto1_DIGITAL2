@@ -10,7 +10,7 @@
 #include <stdint.h>
 #include "LCD_8bits.h"
 
-#define _XTAL_FREQ 8000000   // cambiar de acuerdo a la configuracion del OSC
+#define _XTAL_FREQ 4000000   // cambiar de acuerdo a la configuracion del OSC
 
 #define RS PORTCbits.RC0
 #define EN PORTCbits.RC1

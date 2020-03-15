@@ -2652,6 +2652,105 @@ typedef int16_t intptr_t;
 typedef uint16_t uintptr_t;
 # 25 "main_Master.c" 2
 
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 26 "main_Master.c" 2
+
 # 1 "./I2C.h" 1
 # 19 "./I2C.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
@@ -2693,7 +2792,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 26 "main_Master.c" 2
+# 27 "main_Master.c" 2
 
 # 1 "./RTC.h" 1
 # 13 "./RTC.h"
@@ -2718,7 +2817,18 @@ void get_hora(void);
 
 
 void get_Time(void);
-# 27 "main_Master.c" 2
+# 28 "main_Master.c" 2
+
+# 1 "./UART.h" 1
+# 14 "./UART.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
+# 14 "./UART.h" 2
+
+void uart_init();
+char uartRC_Read();
+void uartTX_Write(char dato);
+void uartTX_Write_Str(char * string);
+# 29 "main_Master.c" 2
 
 # 1 "./LCD_8bits.h" 1
 # 16 "./LCD_8bits.h"
@@ -2736,7 +2846,7 @@ void LCD_Cursor_links(uint8_t espacios);
 void LCD_Create_Char(uint8_t charnum, const uint8_t * chardata);
 
 uint16_t * uint_to_array(uint8_t numero);
-# 28 "main_Master.c" 2
+# 30 "main_Master.c" 2
 
 # 1 "./Temperatura_I2C.h" 1
 # 13 "./Temperatura_I2C.h"
@@ -2746,11 +2856,29 @@ uint16_t * uint_to_array(uint8_t numero);
 
 int16_t temp_objeto(void);
 int16_t temp_ambiente(void);
-# 29 "main_Master.c" 2
+# 31 "main_Master.c" 2
+
+# 1 "./IMU.h" 1
+# 12 "./IMU.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
+# 12 "./IMU.h" 2
 
 
 
+void IMU_init(void);
+int16_t Acc_X(void);
 
+int16_t Acc_Y(void);
+
+int16_t Acc_Z(void);
+
+int16_t Gy_X(void);
+
+int16_t Gy_Y(void);
+
+int16_t Gy_Z(void);
+# 32 "main_Master.c" 2
+# 45 "main_Master.c"
 uint8_t estado = 0;
 uint8_t seg = 0;
 uint8_t min = 21;
@@ -2759,15 +2887,22 @@ uint8_t dia = 5;
 uint8_t datum = 6;
 uint8_t mes = 3;
 uint8_t jahr = 20;
-int8_t temperatura;
+uint8_t velocidad = 0;
+uint8_t humedad = 5;
+uint8_t inclinacion = 4;
+uint8_t d_frente = 102;
+uint8_t d_atras = 102;
+int8_t temperatura = 0;
 int8_t temperatura_obj = 0;
 uint16_t * obj_array;
 uint8_t banderaBoton = 0;
 uint8_t banderaPUSH1 = 0;
 uint8_t banderaPUSH2 = 0;
-uint8_t tiempo = 5;
-uint8_t largo = 1;
-uint8_t ancho = 1;
+
+uint8_t largo = 0;
+uint8_t ancho = 0;
+int16_t accZ = 0;
+char sprintbuffer[];
 
 
 const char arrowr[8] = {
@@ -2827,6 +2962,7 @@ void pressBoton1(void);
 void pressBoton2(void);
 void SetUp(void);
 void OSC_config(uint32_t frecuencia);
+uint8_t ver_inclinacion(int16_t valor);
 
 void __attribute__((picinterrupt(("")))) ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){
@@ -2845,16 +2981,32 @@ void main(void) {
         get_Time();
         temperatura = temp_ambiente();
         temperatura_obj = temp_objeto();
+        accZ = Acc_Z();
+        inclinacion = ver_inclinacion(accZ);
 
         mostrarLCD(estado);
         pressBoton1();
         pressBoton2();
+
+        uartTX_Write(125);
+        uartTX_Write(hora);
+        uartTX_Write(min);
+        uartTX_Write(seg);
+        uartTX_Write(temperatura);
+        uartTX_Write(temperatura_obj);
+        uartTX_Write(inclinacion);
+        uartTX_Write(humedad);
+        uartTX_Write(d_frente);
+        uartTX_Write(d_atras);
     }
     return;
 }
 
 void SetUp(void){
-    OSC_config(8000000);
+    TRISC = 0;
+    PORTC = 0;
+    TRISB = 0;
+    OSC_config(4000000);
     TRISB = 0b00000110;
     ANSELH = 0;
     WPUB = 0b00000110;
@@ -2872,7 +3024,10 @@ void SetUp(void){
     LCD_Create_Char(3, gota);
     LCD_Create_Char(4, arrowr_vacio);
     LCD_clear();
+    uart_init(9600);
     I2C_Master_Init(100000);
+    IMU_init();
+
 
 }
 
@@ -2954,12 +3109,11 @@ void mostrarLCD(uint8_t pantalla){
         case 0:
             display_Uhrzeit(2,4);
             display_Datum(1,3);
-            LCD_Set_Cursor(2, 15);
             break;
         case 1:
             LCD_Set_Cursor(1,0);
-            LCD_Write_String("Ambiente:");
-            LCD_Set_Cursor(2,5);
+            LCD_Write_String("Ambiente: Suelo:");
+            LCD_Set_Cursor(2,2);
             LCD_Write_Character(2);
             obj_array = uint_to_array(temperatura);
             if (obj_array[0] == 0){
@@ -2972,11 +3126,8 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_Character('0' + obj_array[2]);
             LCD_Write_Character(223);
             LCD_Write_Character('C');
-            break;
-        case 2:
-            LCD_Set_Cursor(1,0);
-            LCD_Write_String("Temp. del Suelo:");
-            LCD_Set_Cursor(2,5);
+
+            LCD_Set_Cursor(2,10);
             LCD_Write_Character(2);
             obj_array = uint_to_array(temperatura_obj);
             if (obj_array[0] == 0){
@@ -2996,13 +3147,40 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_Character(223);
             LCD_Write_Character('C');
             break;
+        case 2:
+            LCD_Set_Cursor(1,0);
+            LCD_Write_String("Inclinacion:");
+            LCD_Set_Cursor(2, 5);
+
+
+
+            LCD_Set_Cursor(2, 5);
+            if(inclinacion == 0){
+                LCD_Write_String("Estable   ");
+            }
+            else if (inclinacion == 90){
+                LCD_Write_String("Peligro!   ");
+            }
+            else if (inclinacion == 180){
+                LCD_Write_String("EMERGENCIA!  ");
+            }
+
+            break;
         case 3:
             LCD_Set_Cursor(1,0);
             LCD_Write_String("Humedad:");
             LCD_Set_Cursor(2,4);
             LCD_Write_Character(3);
             LCD_Write_Character(' ');
-            LCD_Write_String("80");
+            uint8_t decenas_humedad = humedad/10;
+            uint8_t unidades_humedad = humedad%10;
+            if(decenas_humedad == 0){
+                LCD_Write_Character(' ');
+            }
+            else{
+                LCD_Write_Character('0'+decenas_humedad);
+            }
+            LCD_Write_Character('0'+unidades_humedad);
             LCD_Write_Character('%');
             break;
         case 4:
@@ -3011,20 +3189,46 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_Character(0);
             LCD_Write_String("s: | Frente:");
             LCD_Set_Cursor(2,2);
-            LCD_Write_String("3");
-            LCD_Write_Character('m');
+            if(d_frente < 100){
+                uint8_t dec_frente = d_frente/10;
+                uint8_t uni_frente = d_frente%10;
+                if(dec_frente == 0){
+                    LCD_Write_Character(' ');
+                }
+                else{
+                    LCD_Write_Character('0' + dec_frente);
+                }
+                LCD_Write_Character('0' + uni_frente);
+                LCD_Write_String("cm");
+            }
+            else{
+                LCD_Write_String("----");
+            }
+
             LCD_Set_Cursor(2,7);
             LCD_Write_Character('|');
             LCD_Set_Cursor(2,11);
-            LCD_Write_String("4");
-            LCD_Write_Character('m');
+            if(d_atras < 100){
+                uint8_t dec_atras = d_atras/10;
+                uint8_t uni_atras = d_atras%10;
+                if(dec_atras == 0){
+                    LCD_Write_Character(' ');
+                }
+                else{
+                    LCD_Write_Character('0' + dec_atras);
+                }
+                LCD_Write_Character('0' + uni_atras);
+                LCD_Write_String("cm");
+            }
+            else{
+                LCD_Write_String("----");
+            }
             break;
         case 5:
             LCD_Set_Cursor(1, 0);
             LCD_Write_String("Tomar datos:");
             LCD_Set_Cursor(2,1);
-            LCD_Write_Character(tiempo + '0');
-            LCD_Write_String("min");
+            LCD_Write_Character(velocidad + '0');
             LCD_Set_Cursor(2,8);
             LCD_Write_Character('0' + largo);
             LCD_Write_String("x ");
@@ -3033,7 +3237,7 @@ void mostrarLCD(uint8_t pantalla){
         case 6:
             LCD_Set_Cursor(2,0);
             LCD_Write_Character(4);
-            LCD_Write_Character(tiempo + '0');
+            LCD_Write_Character(velocidad + '0');
             break;
         case 7:
             LCD_Set_Cursor(2,0);
@@ -3059,7 +3263,15 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Set_Cursor(1,0);
             LCD_Write_String("Vamonos Perros!");
 
-            _delay((unsigned long)((500)*(8000000/4000.0)));
+            I2C_Master_Start();
+            I2C_Master_Write(0x30);
+            I2C_Master_Write(0x69);
+            I2C_Master_Write(largo);
+            I2C_Master_Write(ancho);
+            I2C_Master_Write(velocidad);
+            I2C_Master_Stop();
+
+            _delay((unsigned long)((500)*(4000000/4000.0)));
             LCD_clear();
             estado = 0;
             break;
@@ -3075,9 +3287,9 @@ void pressBoton1(){
             if (PORTBbits.RB1 == 0){
                 switch (estado){
                     case 6:
-                        tiempo ++;
-                        if (tiempo > 9){
-                            tiempo = 1;
+                        velocidad ++;
+                        if (velocidad > 3){
+                            velocidad = 1;
                         }
                         break;
                     case 7:
@@ -3094,7 +3306,7 @@ void pressBoton1(){
                         break;
                     default:
                         LCD_clear();
-                    _delay((unsigned long)((10)*(8000000/4000.0)));
+                    _delay((unsigned long)((10)*(4000000/4000.0)));
                     estado ++;
                     if (estado > 5){
                         estado = 0;
@@ -3108,7 +3320,7 @@ void pressBoton1(){
     }
     if (banderaPUSH1 == 1){
         if (PORTBbits.RB1 == 1){
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         banderaPUSH1 = 0;
         }
     }
@@ -3125,19 +3337,19 @@ void pressBoton2(void){
                     case 6:
                         LCD_Set_Cursor(2,0);
                         LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
+                        _delay((unsigned long)((100)*(4000000/4000.0)));
                         estado = 7;
                         break;
                     case 7:
                         LCD_Set_Cursor(2,7);
                         LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
+                        _delay((unsigned long)((100)*(4000000/4000.0)));
                         estado = 8;
                         break;
                     case 8:
                         LCD_Set_Cursor(2,10);
                         LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
+                        _delay((unsigned long)((100)*(4000000/4000.0)));
                         estado = 9;
                         break;
                     case 9:
@@ -3145,7 +3357,7 @@ void pressBoton2(void){
                         estado = 10;
                         break;
                     default:
-                        _delay((unsigned long)((10)*(8000000/4000.0)));
+                        _delay((unsigned long)((10)*(4000000/4000.0)));
                 }
             }
                 banderaBoton = 0;
@@ -3155,8 +3367,22 @@ void pressBoton2(void){
         }
     if (banderaPUSH2 == 1){
         if (PORTBbits.RB2 == 1){
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         banderaPUSH2 = 0;
         }
     }
+}
+
+uint8_t ver_inclinacion(int16_t valor){
+    uint8_t posicion = 0;
+    if (valor>1900){
+        posicion = 0;
+    }
+    else if (valor<1900 && valor > -800){
+        posicion = 90;
+    }
+    else if (valor < -800){
+        posicion = 180;
+    }
+    return posicion;
 }

@@ -2708,7 +2708,7 @@ int16_t temp_objeto(void){
     temp_MSB = I2C_Master_Read(0);
     PEC = I2C_Master_Read(0);
     I2C_Master_Stop();
-    _delay((unsigned long)((50)*(8000000/4000.0)));
+    _delay((unsigned long)((50)*(4000000/4000.0)));
 
     temp_MSB = temp_MSB <<8;
     temp = (((temp_MSB+temp_LSB)/50)-273.15);
@@ -2731,7 +2731,7 @@ int16_t temp_ambiente(void){
     temp_MSB = I2C_Master_Read(0);
     PEC = I2C_Master_Read(0);
     I2C_Master_Stop();
-    _delay((unsigned long)((50)*(8000000/4000.0)));
+    _delay((unsigned long)((50)*(4000000/4000.0)));
 
     temp_MSB = temp_MSB <<8;
     temp = (((temp_MSB+temp_LSB)/50)-273.15);

@@ -295,8 +295,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Temperatura_I2C.c: 31:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "32
-[; ;Temperatura_I2C.c: 32:     _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Temperatura_I2C.c: 32:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "34
 [; ;Temperatura_I2C.c: 34:     temp_MSB = temp_MSB <<8;
 [e = _temp_MSB << _temp_MSB -> 8 `i ]
@@ -357,8 +357,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Temperatura_I2C.c: 54:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "55
-[; ;Temperatura_I2C.c: 55:     _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Temperatura_I2C.c: 55:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "57
 [; ;Temperatura_I2C.c: 57:     temp_MSB = temp_MSB <<8;
 [e = _temp_MSB << _temp_MSB -> 8 `i ]

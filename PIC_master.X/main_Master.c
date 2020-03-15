@@ -23,13 +23,25 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdio.h>
 #include "I2C.h"
 #include "RTC.h"
+#include "UART.h"
 #include "LCD_8bits.h"
 #include "Temperatura_I2C.h"
+#include "IMU.h"
 
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 // variables 
+
+#define _ADDRESS_SLAVE_1_W 0x20
+#define _ADDRESS_SLAVE_1_R 0x21   // slave chino
+#define _ADDRESS_SLAVE_2_W 0x30
+#define _ADDRESS_SLAVE_2_R 0x31   //salve miguel
+
+#define EMPEZAR_S2 0x69
+#define TOMAR_DATOS_SUELO 0x25
+
 uint8_t estado = 0;
 uint8_t seg = 0;
 uint8_t min = 21;
@@ -38,15 +50,22 @@ uint8_t dia = 5;
 uint8_t datum = 6;
 uint8_t mes = 3;
 uint8_t jahr = 20;
-int8_t temperatura;
+uint8_t velocidad = 0;
+uint8_t humedad = 5;
+uint8_t inclinacion = 4;
+uint8_t d_frente = 102;
+uint8_t d_atras = 102;
+int8_t temperatura = 0;
 int8_t temperatura_obj = 0;
 uint16_t * obj_array;
 uint8_t banderaBoton = 0;
 uint8_t banderaPUSH1 = 0;
 uint8_t banderaPUSH2 = 0;
-uint8_t tiempo = 5;
-uint8_t largo = 1;
-uint8_t ancho = 1;
+
+uint8_t largo = 0;
+uint8_t ancho = 0;
+int16_t accZ = 0;
+char sprintbuffer[];
 
 // caracteres especiales en LCD:
 const char arrowr[8] = {
@@ -106,6 +125,7 @@ void pressBoton1(void);
 void pressBoton2(void);
 void SetUp(void);
 void OSC_config(uint32_t frecuencia);
+uint8_t ver_inclinacion(int16_t valor);
 
 void __interrupt() ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){   //atencion IOCB
@@ -124,15 +144,31 @@ void main(void) {
         get_Time();
         temperatura = temp_ambiente();
         temperatura_obj = temp_objeto();
+        accZ = Acc_Z();
+        inclinacion = ver_inclinacion(accZ);
         /*-----------------------------------------------*/
         mostrarLCD(estado);
         pressBoton1();
         pressBoton2();
+        
+        uartTX_Write(125);
+        uartTX_Write(hora);
+        uartTX_Write(min);
+        uartTX_Write(seg);
+        uartTX_Write(temperatura);
+        uartTX_Write(temperatura_obj);  //signed int **
+        uartTX_Write(inclinacion);
+        uartTX_Write(humedad);
+        uartTX_Write(d_frente);
+        uartTX_Write(d_atras);
     }
     return;
 }
 
 void SetUp(void){
+    TRISC = 0;
+    PORTC = 0;
+    TRISB = 0;
     OSC_config(_XTAL_FREQ);
     TRISB = 0b00000110;
     ANSELH = 0;
@@ -151,7 +187,10 @@ void SetUp(void){
     LCD_Create_Char(3, gota);
     LCD_Create_Char(4, arrowr_vacio);
     LCD_clear();
+    uart_init(9600);
     I2C_Master_Init(100000);
+    IMU_init();
+    
     //Zeit_Datum_Set();
 }
 
@@ -233,12 +272,11 @@ void mostrarLCD(uint8_t pantalla){
         case 0:
             display_Uhrzeit(2,4);
             display_Datum(1,3);
-            LCD_Set_Cursor(2, 15);
             break;
         case 1:
             LCD_Set_Cursor(1,0);
-            LCD_Write_String("Ambiente:");
-            LCD_Set_Cursor(2,5);
+            LCD_Write_String("Ambiente: Suelo:");
+            LCD_Set_Cursor(2,2);
             LCD_Write_Character(2);
             obj_array = uint_to_array(temperatura);
             if (obj_array[0] == 0){
@@ -251,11 +289,8 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_Character('0' + obj_array[2]);
             LCD_Write_Character(223);
             LCD_Write_Character('C');
-            break;
-        case 2:
-            LCD_Set_Cursor(1,0);
-            LCD_Write_String("Temp. del Suelo:");
-            LCD_Set_Cursor(2,5);
+            
+            LCD_Set_Cursor(2,10);
             LCD_Write_Character(2);
             obj_array = uint_to_array(temperatura_obj);
             if (obj_array[0] == 0){
@@ -275,13 +310,40 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_Character(223);
             LCD_Write_Character('C');
             break;
+        case 2:
+            LCD_Set_Cursor(1,0);
+            LCD_Write_String("Inclinacion:");
+            LCD_Set_Cursor(2, 5);
+//            sprintf(sprintbuffer, " %d   ", accZ);
+//            LCD_Write_String(sprintbuffer);
+            
+            LCD_Set_Cursor(2, 5);
+            if(inclinacion == 0){
+                LCD_Write_String("Estable   ");
+            }
+            else if (inclinacion == 90){
+                LCD_Write_String("Peligro!   ");
+            }
+            else if (inclinacion == 180){
+                LCD_Write_String("EMERGENCIA!  ");
+            }
+            
+            break;
         case 3:
             LCD_Set_Cursor(1,0);
             LCD_Write_String("Humedad:");
             LCD_Set_Cursor(2,4);
             LCD_Write_Character(3);
             LCD_Write_Character(' ');
-            LCD_Write_String("80");
+            uint8_t decenas_humedad = humedad/10;
+            uint8_t unidades_humedad = humedad%10;
+            if(decenas_humedad == 0){
+                LCD_Write_Character(' ');
+            }
+            else{
+                LCD_Write_Character('0'+decenas_humedad);
+            }
+            LCD_Write_Character('0'+unidades_humedad);
             LCD_Write_Character('%');
             break;
         case 4:
@@ -290,20 +352,46 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_Character(0);
             LCD_Write_String("s: | Frente:");
             LCD_Set_Cursor(2,2);
-            LCD_Write_String("3");
-            LCD_Write_Character('m');
+            if(d_frente < 100){
+                uint8_t dec_frente = d_frente/10;
+                uint8_t uni_frente = d_frente%10;
+                if(dec_frente == 0){
+                    LCD_Write_Character(' ');
+                }
+                else{
+                    LCD_Write_Character('0' + dec_frente);
+                }
+                LCD_Write_Character('0' + uni_frente);
+                LCD_Write_String("cm");
+            }
+            else{
+                LCD_Write_String("----");
+            }
+            
             LCD_Set_Cursor(2,7);
             LCD_Write_Character('|');
             LCD_Set_Cursor(2,11);
-            LCD_Write_String("4");
-            LCD_Write_Character('m');
+            if(d_atras < 100){
+                uint8_t dec_atras = d_atras/10;
+                uint8_t uni_atras = d_atras%10;
+                if(dec_atras == 0){
+                    LCD_Write_Character(' ');
+                }
+                else{
+                    LCD_Write_Character('0' + dec_atras);
+                }
+                LCD_Write_Character('0' + uni_atras);
+                LCD_Write_String("cm");
+            }
+            else{
+                LCD_Write_String("----");
+            }
             break;
         case 5:
             LCD_Set_Cursor(1, 0);
             LCD_Write_String("Tomar datos:");
             LCD_Set_Cursor(2,1);
-            LCD_Write_Character(tiempo + '0');
-            LCD_Write_String("min");
+            LCD_Write_Character(velocidad + '0');
             LCD_Set_Cursor(2,8);
             LCD_Write_Character('0' + largo);
             LCD_Write_String("x ");
@@ -312,7 +400,7 @@ void mostrarLCD(uint8_t pantalla){
         case 6:
             LCD_Set_Cursor(2,0);
             LCD_Write_Character(4);
-            LCD_Write_Character(tiempo + '0');
+            LCD_Write_Character(velocidad + '0');
             break;
         case 7:
             LCD_Set_Cursor(2,0);
@@ -338,6 +426,14 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Set_Cursor(1,0);
             LCD_Write_String("Vamonos Perros!");
             //mandar instruccion a slave de movimiento
+            I2C_Master_Start();
+            I2C_Master_Write(_ADDRESS_SLAVE_2_W);
+            I2C_Master_Write(EMPEZAR_S2);	
+            I2C_Master_Write(largo);
+            I2C_Master_Write(ancho);
+            I2C_Master_Write(velocidad);
+            I2C_Master_Stop();
+            
             __delay_ms(500);
             LCD_clear();
             estado = 0;
@@ -354,9 +450,9 @@ void pressBoton1(){
             if (PORTBbits.RB1 == 0){
                 switch (estado){
                     case 6:
-                        tiempo ++;
-                        if (tiempo > 9){
-                            tiempo = 1;
+                        velocidad ++;
+                        if (velocidad > 3){
+                            velocidad = 1;
                         }
                         break;
                     case 7:
@@ -438,4 +534,18 @@ void pressBoton2(void){
         banderaPUSH2 = 0;
         }
     } 
+}
+
+uint8_t ver_inclinacion(int16_t valor){
+    uint8_t posicion = 0;
+    if (valor>1900){
+        posicion = 0;
+    }
+    else if (valor<1900 && valor > -800){
+        posicion = 90;
+    }
+    else if (valor < -800){
+        posicion = 180;
+    }
+    return posicion;
 }

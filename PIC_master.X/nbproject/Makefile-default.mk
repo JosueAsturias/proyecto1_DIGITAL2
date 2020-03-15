@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main_Master.c RTC.c I2C.c LCD_8bits.c Temperatura_I2C.c UART.c
+SOURCEFILES_QUOTED_IF_SPACED=main_Master.c RTC.c I2C.c LCD_8bits.c Temperatura_I2C.c UART.c IMU.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main_Master.p1 ${OBJECTDIR}/RTC.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD_8bits.p1 ${OBJECTDIR}/Temperatura_I2C.p1 ${OBJECTDIR}/UART.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main_Master.p1.d ${OBJECTDIR}/RTC.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/LCD_8bits.p1.d ${OBJECTDIR}/Temperatura_I2C.p1.d ${OBJECTDIR}/UART.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main_Master.p1 ${OBJECTDIR}/RTC.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD_8bits.p1 ${OBJECTDIR}/Temperatura_I2C.p1 ${OBJECTDIR}/UART.p1 ${OBJECTDIR}/IMU.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main_Master.p1.d ${OBJECTDIR}/RTC.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/LCD_8bits.p1.d ${OBJECTDIR}/Temperatura_I2C.p1.d ${OBJECTDIR}/UART.p1.d ${OBJECTDIR}/IMU.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main_Master.p1 ${OBJECTDIR}/RTC.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD_8bits.p1 ${OBJECTDIR}/Temperatura_I2C.p1 ${OBJECTDIR}/UART.p1
+OBJECTFILES=${OBJECTDIR}/main_Master.p1 ${OBJECTDIR}/RTC.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD_8bits.p1 ${OBJECTDIR}/Temperatura_I2C.p1 ${OBJECTDIR}/UART.p1 ${OBJECTDIR}/IMU.p1
 
 # Source Files
-SOURCEFILES=main_Master.c RTC.c I2C.c LCD_8bits.c Temperatura_I2C.c UART.c
+SOURCEFILES=main_Master.c RTC.c I2C.c LCD_8bits.c Temperatura_I2C.c UART.c IMU.c
 
 
 CFLAGS=
@@ -141,6 +141,14 @@ ${OBJECTDIR}/UART.p1: UART.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/UART.d ${OBJECTDIR}/UART.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/IMU.p1: IMU.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/IMU.p1.d 
+	@${RM} ${OBJECTDIR}/IMU.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/IMU.p1 IMU.c 
+	@-${MV} ${OBJECTDIR}/IMU.d ${OBJECTDIR}/IMU.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/IMU.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/main_Master.p1: main_Master.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -189,6 +197,14 @@ ${OBJECTDIR}/UART.p1: UART.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/UART.p1 UART.c 
 	@-${MV} ${OBJECTDIR}/UART.d ${OBJECTDIR}/UART.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/IMU.p1: IMU.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/IMU.p1.d 
+	@${RM} ${OBJECTDIR}/IMU.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/IMU.p1 IMU.c 
+	@-${MV} ${OBJECTDIR}/IMU.d ${OBJECTDIR}/IMU.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/IMU.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

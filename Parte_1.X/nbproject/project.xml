@@ -6,9 +6,9 @@
             <name>Parte_1</name>
             <creation-uuid>25961634-b206-4c5c-956d-b0653514d77b</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
+            <c-extensions/>
             <cpp-extensions/>
-            <header-extensions>h</header-extensions>
+            <header-extensions>c,h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>

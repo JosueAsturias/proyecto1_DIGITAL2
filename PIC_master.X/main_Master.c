@@ -66,7 +66,7 @@ uint8_t largo = 0;
 uint8_t ancho = 0;
 int16_t accZ = 0;
 char sprintbuffer[];
-
+ 
 // caracteres especiales en LCD:
 const char arrowr[8] = {
     0x00,

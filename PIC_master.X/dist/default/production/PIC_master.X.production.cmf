@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\jotas\AppData\Local\Temp\sgbg.o
+$C:\Users\jotas\AppData\Local\Temp\s2rc.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -122,45 +122,45 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC_master.X.production.o
-F cinit CODE >1874:C:\Users\jotas\AppData\Local\Temp\sgbg.
-F cinit CODE >1877:C:\Users\jotas\AppData\Local\Temp\sgbg.
-F cinit CODE >2023:C:\Users\jotas\AppData\Local\Temp\sgbg.
-10 cinit CODE >2024:C:\Users\jotas\AppData\Local\Temp\sgbg.
-11 cinit CODE >2025:C:\Users\jotas\AppData\Local\Temp\sgbg.
-12 cinit CODE >2026:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13 cinit CODE >2027:C:\Users\jotas\AppData\Local\Temp\sgbg.
-14 cinit CODE >2028:C:\Users\jotas\AppData\Local\Temp\sgbg.
-15 cinit CODE >2029:C:\Users\jotas\AppData\Local\Temp\sgbg.
-16 cinit CODE >2030:C:\Users\jotas\AppData\Local\Temp\sgbg.
-17 cinit CODE >2031:C:\Users\jotas\AppData\Local\Temp\sgbg.
-18 cinit CODE >2032:C:\Users\jotas\AppData\Local\Temp\sgbg.
-1B cinit CODE >2036:C:\Users\jotas\AppData\Local\Temp\sgbg.
-1C cinit CODE >2037:C:\Users\jotas\AppData\Local\Temp\sgbg.
-1D cinit CODE >2038:C:\Users\jotas\AppData\Local\Temp\sgbg.
-1E cinit CODE >2039:C:\Users\jotas\AppData\Local\Temp\sgbg.
-1F cinit CODE >2040:C:\Users\jotas\AppData\Local\Temp\sgbg.
-20 cinit CODE >2041:C:\Users\jotas\AppData\Local\Temp\sgbg.
-21 cinit CODE >2042:C:\Users\jotas\AppData\Local\Temp\sgbg.
-22 cinit CODE >2043:C:\Users\jotas\AppData\Local\Temp\sgbg.
-23 cinit CODE >2046:C:\Users\jotas\AppData\Local\Temp\sgbg.
-24 cinit CODE >2047:C:\Users\jotas\AppData\Local\Temp\sgbg.
-25 cinit CODE >2048:C:\Users\jotas\AppData\Local\Temp\sgbg.
-26 cinit CODE >2049:C:\Users\jotas\AppData\Local\Temp\sgbg.
-27 cinit CODE >2050:C:\Users\jotas\AppData\Local\Temp\sgbg.
-28 cinit CODE >2051:C:\Users\jotas\AppData\Local\Temp\sgbg.
-29 cinit CODE >2052:C:\Users\jotas\AppData\Local\Temp\sgbg.
-2A cinit CODE >2053:C:\Users\jotas\AppData\Local\Temp\sgbg.
-2B cinit CODE >2054:C:\Users\jotas\AppData\Local\Temp\sgbg.
-2C cinit CODE >2055:C:\Users\jotas\AppData\Local\Temp\sgbg.
-2D cinit CODE >2056:C:\Users\jotas\AppData\Local\Temp\sgbg.
-2E cinit CODE >2057:C:\Users\jotas\AppData\Local\Temp\sgbg.
-2F cinit CODE >2058:C:\Users\jotas\AppData\Local\Temp\sgbg.
-30 cinit CODE >2059:C:\Users\jotas\AppData\Local\Temp\sgbg.
-31 cinit CODE >2062:C:\Users\jotas\AppData\Local\Temp\sgbg.
-32 cinit CODE >2063:C:\Users\jotas\AppData\Local\Temp\sgbg.
-33 cinit CODE >2069:C:\Users\jotas\AppData\Local\Temp\sgbg.
-33 cinit CODE >2071:C:\Users\jotas\AppData\Local\Temp\sgbg.
-34 cinit CODE >2072:C:\Users\jotas\AppData\Local\Temp\sgbg.
+F cinit CODE >1874:C:\Users\jotas\AppData\Local\Temp\s2rc.
+F cinit CODE >1877:C:\Users\jotas\AppData\Local\Temp\s2rc.
+F cinit CODE >2023:C:\Users\jotas\AppData\Local\Temp\s2rc.
+10 cinit CODE >2024:C:\Users\jotas\AppData\Local\Temp\s2rc.
+11 cinit CODE >2025:C:\Users\jotas\AppData\Local\Temp\s2rc.
+12 cinit CODE >2026:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13 cinit CODE >2027:C:\Users\jotas\AppData\Local\Temp\s2rc.
+14 cinit CODE >2028:C:\Users\jotas\AppData\Local\Temp\s2rc.
+15 cinit CODE >2029:C:\Users\jotas\AppData\Local\Temp\s2rc.
+16 cinit CODE >2030:C:\Users\jotas\AppData\Local\Temp\s2rc.
+17 cinit CODE >2031:C:\Users\jotas\AppData\Local\Temp\s2rc.
+18 cinit CODE >2032:C:\Users\jotas\AppData\Local\Temp\s2rc.
+1B cinit CODE >2036:C:\Users\jotas\AppData\Local\Temp\s2rc.
+1C cinit CODE >2037:C:\Users\jotas\AppData\Local\Temp\s2rc.
+1D cinit CODE >2038:C:\Users\jotas\AppData\Local\Temp\s2rc.
+1E cinit CODE >2039:C:\Users\jotas\AppData\Local\Temp\s2rc.
+1F cinit CODE >2040:C:\Users\jotas\AppData\Local\Temp\s2rc.
+20 cinit CODE >2041:C:\Users\jotas\AppData\Local\Temp\s2rc.
+21 cinit CODE >2042:C:\Users\jotas\AppData\Local\Temp\s2rc.
+22 cinit CODE >2043:C:\Users\jotas\AppData\Local\Temp\s2rc.
+23 cinit CODE >2046:C:\Users\jotas\AppData\Local\Temp\s2rc.
+24 cinit CODE >2047:C:\Users\jotas\AppData\Local\Temp\s2rc.
+25 cinit CODE >2048:C:\Users\jotas\AppData\Local\Temp\s2rc.
+26 cinit CODE >2049:C:\Users\jotas\AppData\Local\Temp\s2rc.
+27 cinit CODE >2050:C:\Users\jotas\AppData\Local\Temp\s2rc.
+28 cinit CODE >2051:C:\Users\jotas\AppData\Local\Temp\s2rc.
+29 cinit CODE >2052:C:\Users\jotas\AppData\Local\Temp\s2rc.
+2A cinit CODE >2053:C:\Users\jotas\AppData\Local\Temp\s2rc.
+2B cinit CODE >2054:C:\Users\jotas\AppData\Local\Temp\s2rc.
+2C cinit CODE >2055:C:\Users\jotas\AppData\Local\Temp\s2rc.
+2D cinit CODE >2056:C:\Users\jotas\AppData\Local\Temp\s2rc.
+2E cinit CODE >2057:C:\Users\jotas\AppData\Local\Temp\s2rc.
+2F cinit CODE >2058:C:\Users\jotas\AppData\Local\Temp\s2rc.
+30 cinit CODE >2059:C:\Users\jotas\AppData\Local\Temp\s2rc.
+31 cinit CODE >2062:C:\Users\jotas\AppData\Local\Temp\s2rc.
+32 cinit CODE >2063:C:\Users\jotas\AppData\Local\Temp\s2rc.
+33 cinit CODE >2069:C:\Users\jotas\AppData\Local\Temp\s2rc.
+33 cinit CODE >2071:C:\Users\jotas\AppData\Local\Temp\s2rc.
+34 cinit CODE >2072:C:\Users\jotas\AppData\Local\Temp\s2rc.
 4 intentry CODE >130:C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 13AF text40 CODE >130:C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 13AF text40 CODE >131:C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
@@ -973,23 +973,23 @@ ABF maintext CODE >160:C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digi
 AC7 maintext CODE >161:C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 ACD maintext CODE >162:C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 AD3 maintext CODE >163:C:\Users\jotas\OneDrive\Documents\U\séptimo semestre\Digital 2\Proyecto1_DIGITAL2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
-139E inittext CODE >1997:C:\Users\jotas\AppData\Local\Temp\sgbg.
-139E inittext CODE >1998:C:\Users\jotas\AppData\Local\Temp\sgbg.
-139F inittext CODE >1999:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A0 inittext CODE >2000:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A1 inittext CODE >2001:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A2 inittext CODE >2008:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A2 inittext CODE >2009:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A5 inittext CODE >2010:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A6 inittext CODE >2011:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A7 inittext CODE >2012:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A8 inittext CODE >2013:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13A9 inittext CODE >2014:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13AA inittext CODE >2015:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13AB inittext CODE >2016:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13AC inittext CODE >2017:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13AD inittext CODE >2018:C:\Users\jotas\AppData\Local\Temp\sgbg.
-13AE inittext CODE >2019:C:\Users\jotas\AppData\Local\Temp\sgbg.
+139E inittext CODE >1997:C:\Users\jotas\AppData\Local\Temp\s2rc.
+139E inittext CODE >1998:C:\Users\jotas\AppData\Local\Temp\s2rc.
+139F inittext CODE >1999:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A0 inittext CODE >2000:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A1 inittext CODE >2001:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A2 inittext CODE >2008:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A2 inittext CODE >2009:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A5 inittext CODE >2010:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A6 inittext CODE >2011:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A7 inittext CODE >2012:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A8 inittext CODE >2013:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13A9 inittext CODE >2014:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13AA inittext CODE >2015:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13AB inittext CODE >2016:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13AC inittext CODE >2017:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13AD inittext CODE >2018:C:\Users\jotas\AppData\Local\Temp\s2rc.
+13AE inittext CODE >2019:C:\Users\jotas\AppData\Local\Temp\s2rc.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1028,7 +1028,7 @@ _IOCB 96 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 _TRMT 4C1 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 _WPUB 95 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\jotas\AppData\Local\Temp\sgbg.o
+___sp 0 0 STACK 2 stack C:\Users\jotas\AppData\Local\Temp\s2rc.o
 _accZ 5A 0 BANK0 1 bssBANK0 dist/default/production\PIC_master.X.production.o
 _gota 100C 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
 _hora 6E 0 BANK0 1 dataBANK0 dist/default/production\PIC_master.X.production.o
@@ -1036,7 +1036,7 @@ _jahr 6A 0 BANK0 1 dataBANK0 dist/default/production\PIC_master.X.production.o
 _main 1494 0 CODE 0 maintext dist/default/production\PIC_master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 __end_of_ver_inclinacion 2ACC 0 CODE 0 text1 dist/default/production\PIC_master.X.production.o
-start 18 0 CODE 0 init C:\Users\jotas\AppData\Local\Temp\sgbg.o
+start 18 0 CODE 0 init C:\Users\jotas\AppData\Local\Temp\s2rc.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 __size_of___fladd 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
@@ -1062,12 +1062,12 @@ I2C_Master_Read@a 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.
 _arrowr_vacio 103C 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
 _velocidad 65 0 BANK0 1 bssBANK0 dist/default/production\PIC_master.X.production.o
 __size_of_LCD_Set_Cursor 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\sgbg.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\sgbg.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\sgbg.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\sgbg.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\sgbg.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\sgbg.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\s2rc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\s2rc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\s2rc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\s2rc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\s2rc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\jotas\AppData\Local\Temp\s2rc.o
 __end_of_LCD_init 2E1E 0 CODE 0 text26 dist/default/production\PIC_master.X.production.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 ___bmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.X.production.o
@@ -1104,8 +1104,8 @@ __end_of___lldiv 2D50 0 CODE 0 text33 dist/default/production\PIC_master.X.produ
 __end_of___lwdiv 2B44 0 CODE 0 text6 dist/default/production\PIC_master.X.production.o
 _inclinacion 68 0 BANK0 1 dataBANK0 dist/default/production\PIC_master.X.production.o
 __size_of_uint_to_array 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\jotas\AppData\Local\Temp\sgbg.o
-___stacklo 0 0 ABS 0 - C:\Users\jotas\AppData\Local\Temp\sgbg.o
+___stackhi 0 0 ABS 0 - C:\Users\jotas\AppData\Local\Temp\s2rc.o
+___stacklo 0 0 ABS 0 - C:\Users\jotas\AppData\Local\Temp\s2rc.o
 __end_of_LCD_Cmd 29F2 0 CODE 0 text30 dist/default/production\PIC_master.X.production.o
 __size_of_Acc_Z 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 __end_of_arrowr_vacio 104C 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
@@ -1147,7 +1147,7 @@ __end_of_LCD_Write_Character 1196 0 CODE 0 text29 dist/default/production\PIC_ma
 LCD_Set_Cursor@corrimiento 79 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.X.production.o
 __end_of_LCD_Create_Char 293C 0 CODE 0 text28 dist/default/production\PIC_master.X.production.o
 __end_of_uartTX_Write 2706 0 CODE 0 text2 dist/default/production\PIC_master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\jotas\AppData\Local\Temp\sgbg.o
+___int_sp 0 0 STACK 2 stack C:\Users\jotas\AppData\Local\Temp\s2rc.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1242,7 +1242,7 @@ __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.X.production.o
 __stringtab 1000 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
 __size_of_get_Time 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\jotas\AppData\Local\Temp\sgbg.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\jotas\AppData\Local\Temp\s2rc.o
 __end_of___xxtofl 16FE 0 CODE 0 text5 dist/default/production\PIC_master.X.production.o
 __pdataBANK0 66 0 BANK0 1 dataBANK0 dist/default/production\PIC_master.X.production.o
 _LCD_Set_Cursor 293C 0 CODE 0 text19 dist/default/production\PIC_master.X.production.o

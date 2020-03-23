@@ -2827,9 +2827,13 @@ void robot_STOP(void);
 
 
 
-uint16_t distancia_1;
-uint16_t distancia_2;
+uint16_t distancia_1 = 20;
+uint16_t distancia_2 = 30;
+uint8_t enviar = 0;
 uint8_t z = 0;
+uint8_t ind_reg = 0;
+uint8_t registro[2] = {23,20};
+uint8_t instr = 0x00;
 
 
 
@@ -2844,14 +2848,25 @@ void __attribute__((picinterrupt(("")))) ISR(){
             SSPCONbits.WCOL = 0;
             SSPCONbits.CKP = 1;
         }
-# 57 "newmain.c"
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+            _delay((unsigned long)((20)*(8000000/4000000.0)));
+            z = SSPBUF;
+            _delay((unsigned long)((20)*(8000000/4000000.0)));
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            instr = SSPBUF;
+            _delay((unsigned long)((500)*(8000000/4000000.0)));
+        }
         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = distancia_1;
+            SSPBUF = registro[ind_reg & 0b00000001];
             SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(8000000/4000000.0)));
+            _delay((unsigned long)((500)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
+            ind_reg ++;
         }
 
         PIR1bits.SSPIF = 0;
@@ -2876,24 +2891,15 @@ void main(void) {
 
     T1CON = 0x10;
     I2C_Slave_Init(0x30);
-    _delay((unsigned long)((500)*(8000000/4000.0)));
-    _delay((unsigned long)((500)*(8000000/4000.0)));
-    _delay((unsigned long)((500)*(8000000/4000.0)));
-    _delay((unsigned long)((500)*(8000000/4000.0)));
+
+
+
+
     while(1){
-
-
-
-
-
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-        robot_CCW90();
-        robot_CCW90();
-        robot_CW90();
-        robot_CW90();
-
-        while(1);
-# 140 "newmain.c"
+        PORTB = instr;
+        registro[0] = distancia_1;
+        registro[1] = distancia_2;
+# 153 "newmain.c"
     }
     return;
 }

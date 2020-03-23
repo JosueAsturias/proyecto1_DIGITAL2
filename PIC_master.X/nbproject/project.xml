@@ -6,9 +6,9 @@
             <name>PIC_master</name>
             <creation-uuid>4acdd6f5-6e08-4fe0-981e-a6984c911fec</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions>c,h</header-extensions>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>

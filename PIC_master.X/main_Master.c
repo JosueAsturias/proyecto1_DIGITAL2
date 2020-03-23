@@ -39,6 +39,7 @@
 #define _ADDRESS_SLAVE_2_W 0x30
 #define _ADDRESS_SLAVE_2_R 0x31   //salve miguel
 
+
 #define EMPEZAR_S2 0x69
 #define TOMAR_DATOS_SUELO 0x25
 
@@ -53,8 +54,8 @@ uint8_t jahr = 20;
 uint8_t velocidad = 0;
 uint8_t humedad = 5;
 uint8_t inclinacion = 4;
-uint8_t d_frente = 102;
-uint8_t d_atras = 102;
+uint8_t d_frente = 15;
+uint8_t d_atras = 15;
 int8_t temperatura = 0;
 int8_t temperatura_obj = 0;
 uint16_t * obj_array;
@@ -126,6 +127,7 @@ void pressBoton2(void);
 void SetUp(void);
 void OSC_config(uint32_t frecuencia);
 uint8_t ver_inclinacion(int16_t valor);
+uint8_t get_PICslave(uint8_t address);
 
 void __interrupt() ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){   //atencion IOCB
@@ -141,11 +143,19 @@ void main(void) {
     SetUp();
     while(1){
         /*Obtener valores de sensores -------------------*/
+        d_atras = get_PICslave(_ADDRESS_SLAVE_2_R);
+         
+        
+        
         get_Time();
         temperatura = temp_ambiente();
         temperatura_obj = temp_objeto();
+        d_frente = get_PICslave(_ADDRESS_SLAVE_2_R); 
         accZ = Acc_Z();
         inclinacion = ver_inclinacion(accZ);
+        
+        
+        //humedad = get_PICslave(_ADDRESS_SLAVE_1_W, 0x01);
         /*-----------------------------------------------*/
         mostrarLCD(estado);
         pressBoton1();
@@ -351,7 +361,7 @@ void mostrarLCD(uint8_t pantalla){
             LCD_Write_String("Atr");
             LCD_Write_Character(0);
             LCD_Write_String("s: | Frente:");
-            LCD_Set_Cursor(2,2);
+            LCD_Set_Cursor(2,11);
             if(d_frente < 100){
                 uint8_t dec_frente = d_frente/10;
                 uint8_t uni_frente = d_frente%10;
@@ -370,7 +380,7 @@ void mostrarLCD(uint8_t pantalla){
             
             LCD_Set_Cursor(2,7);
             LCD_Write_Character('|');
-            LCD_Set_Cursor(2,11);
+            LCD_Set_Cursor(2,2);
             if(d_atras < 100){
                 uint8_t dec_atras = d_atras/10;
                 uint8_t uni_atras = d_atras%10;
@@ -429,9 +439,9 @@ void mostrarLCD(uint8_t pantalla){
             I2C_Master_Start();
             I2C_Master_Write(_ADDRESS_SLAVE_2_W);
             I2C_Master_Write(EMPEZAR_S2);	
-            I2C_Master_Write(largo);
-            I2C_Master_Write(ancho);
-            I2C_Master_Write(velocidad);
+//            I2C_Master_Write(largo);
+//            I2C_Master_Write(ancho);
+//            I2C_Master_Write(velocidad);
             I2C_Master_Stop();
             
             __delay_ms(500);
@@ -548,4 +558,12 @@ uint8_t ver_inclinacion(int16_t valor){
         posicion = 180;
     }
     return posicion;
+}
+
+uint8_t get_PICslave(uint8_t address){
+    I2C_Master_Start();
+    I2C_Master_Write(address);
+    uint8_t dato = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    return dato;
 }

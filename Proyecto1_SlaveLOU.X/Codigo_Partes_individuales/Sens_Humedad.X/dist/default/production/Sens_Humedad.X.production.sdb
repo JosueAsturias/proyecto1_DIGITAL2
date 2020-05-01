@@ -1,0 +1,330 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"13 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"26 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\Lib_LCD.c
+[v _LCD_iniciar LCD_iniciar `(v  1 e 1 0 ]
+"46
+[v _LCD_DATO LCD_DATO `(v  1 e 1 0 ]
+"56
+[v _LCD_CLEAR LCD_CLEAR `(v  1 e 1 0 ]
+"63
+[v _LCD_CURSOR LCD_CURSOR `(v  1 e 1 0 ]
+"80
+[v _LCD_CHAR LCD_CHAR `(v  1 e 1 0 ]
+"90
+[v _LCD_STRING LCD_STRING `(v  1 e 1 0 ]
+"98
+[v _uint_to_char uint_to_char `(uc  1 e 1 0 ]
+"80 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\YL69_humedad.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+"92
+[v _main main `(v  1 e 1 0 ]
+"272
+[v _config_PORTS config_PORTS `(v  1 e 1 0 ]
+"297
+[v _config_ADC config_ADC `(v  1 e 1 0 ]
+"323
+[v _OSC_config OSC_config `(v  1 e 1 0 ]
+"366
+[v _mapeo mapeo `(*.4ui  1 e 1 0 ]
+"166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S153 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"307
+[u S162 . 1 `S153 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES162  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S134 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S139 . 1 `S134 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES139  1 e 1 @9 ]
+[s S246 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S255 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S260 . 1 `S246 1 . 1 0 `S255 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES260  1 e 1 @11 ]
+[s S23 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S31 . 1 `S23 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES31  1 e 1 @12 ]
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S69 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1276
+[s S74 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S83 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S86 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S89 . 1 `S69 1 . 1 0 `S74 1 . 1 0 `S83 1 . 1 0 `S86 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES89  1 e 1 @31 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+[s S203 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1433
+[u S212 . 1 `S203 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES212  1 e 1 @133 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+[s S278 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S286 . 1 `S278 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES286  1 e 1 @140 ]
+[s S297 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1882
+[s S303 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S308 . 1 `S297 1 . 1 0 `S303 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES308  1 e 1 @143 ]
+"2970
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+[s S231 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2991
+[u S237 . 1 `S231 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES237  1 e 1 @159 ]
+[s S182 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+`uc 1 ANS7 1 0 :1:7 
+]
+"3404
+[u S191 . 1 `S182 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES191  1 e 1 @392 ]
+"3587
+[v _ADIF ADIF `VEb  1 e 0 @102 ]
+"4088
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"4091
+[v _RA4 RA4 `VEb  1 e 0 @44 ]
+"47 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\YL69_humedad.c
+[v _Humedad_H Humedad_H `ui  1 e 2 0 ]
+"48
+[v _Humedad_L Humedad_L `ui  1 e 2 0 ]
+"49
+[v _voltaje_map voltaje_map `*.4ui  1 e 1 0 ]
+"54
+[v _Sens_Humedad Sens_Humedad `ui  1 e 2 0 ]
+"56
+[v _uni uni `uc  1 e 1 0 ]
+"57
+[v _dec dec `uc  1 e 1 0 ]
+"58
+[v _cen cen `uc  1 e 1 0 ]
+"62
+[v _ESTADO3 ESTADO3 `uc  1 e 1 0 ]
+"65
+[v _centena centena `uc  1 e 1 0 ]
+"66
+[v _decena decena `uc  1 e 1 0 ]
+"67
+[v _unidad unidad `uc  1 e 1 0 ]
+"92
+[v _main main `(v  1 e 1 0 ]
+{
+"269
+} 0
+"98 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\Lib_LCD.c
+[v _uint_to_char uint_to_char `(uc  1 e 1 0 ]
+{
+[v uint_to_char@numero numero `uc  1 a 1 wreg ]
+"99
+[v uint_to_char@numChr numChr `uc  1 a 1 5 ]
+"98
+[v uint_to_char@numero numero `uc  1 a 1 wreg ]
+[v uint_to_char@numero numero `uc  1 a 1 4 ]
+"153
+} 0
+"366 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\YL69_humedad.c
+[v _mapeo mapeo `(*.4ui  1 e 1 0 ]
+{
+[v mapeo@valor valor `uc  1 a 1 wreg ]
+"367
+[v mapeo@result result `[3]ui  1 a 6 5 ]
+"368
+[v mapeo@dividendo dividendo `ui  1 a 2 11 ]
+"366
+[v mapeo@valor valor `uc  1 a 1 wreg ]
+[v mapeo@limPIC limPIC `uc  1 p 1 8 ]
+[v mapeo@limFisico limFisico `uc  1 p 1 9 ]
+[v mapeo@valor valor `uc  1 a 1 4 ]
+"385
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 6 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 2 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
+"53
+} 0
+"272 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\YL69_humedad.c
+[v _config_PORTS config_PORTS `(v  1 e 1 0 ]
+{
+"295
+} 0
+"323
+[v _OSC_config OSC_config `(v  1 e 1 0 ]
+{
+[v OSC_config@frecuencia frecuencia `ul  1 p 4 2 ]
+"352
+} 0
+"297
+[v _config_ADC config_ADC `(v  1 e 1 0 ]
+{
+"321
+} 0
+"26 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\Lib_LCD.c
+[v _LCD_iniciar LCD_iniciar `(v  1 e 1 0 ]
+{
+"44
+} 0
+"90
+[v _LCD_STRING LCD_STRING `(v  1 e 1 0 ]
+{
+"92
+[v LCD_STRING@n n `i  1 a 2 0 ]
+"90
+[v LCD_STRING@a a `*.26uc  1 p 2 4 ]
+"96
+} 0
+"80
+[v _LCD_CHAR LCD_CHAR `(v  1 e 1 0 ]
+{
+[v LCD_CHAR@a a `uc  1 a 1 wreg ]
+[v LCD_CHAR@a a `uc  1 a 1 wreg ]
+"82
+[v LCD_CHAR@a a `uc  1 a 1 3 ]
+"88
+} 0
+"63
+[v _LCD_CURSOR LCD_CURSOR `(v  1 e 1 0 ]
+{
+"65
+[v LCD_CURSOR@d d `i  1 a 2 0 ]
+"63
+[v LCD_CURSOR@a a `i  1 p 2 6 ]
+[v LCD_CURSOR@b b `i  1 p 2 8 ]
+"76
+} 0
+"56
+[v _LCD_CLEAR LCD_CLEAR `(v  1 e 1 0 ]
+{
+"60
+} 0
+"46
+[v _LCD_DATO LCD_DATO `(v  1 e 1 0 ]
+{
+[v LCD_DATO@var var `i  1 p 2 2 ]
+"54
+} 0
+"80 C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Sens_Humedad.X\YL69_humedad.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"89
+} 0

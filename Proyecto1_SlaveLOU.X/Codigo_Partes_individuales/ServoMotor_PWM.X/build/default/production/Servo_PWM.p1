@@ -1,0 +1,1187 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"42 Servo_PWM.c
+[; ;Servo_PWM.c: 42: void config_PORTS(void);
+[v _config_PORTS `(v ~T0 @X0 0 ef ]
+"44
+[; ;Servo_PWM.c: 44: void init_PWM_1 (void);
+[v _init_PWM_1 `(v ~T0 @X0 0 ef ]
+"45
+[; ;Servo_PWM.c: 45: void init_PWM_2 (void);
+[v _init_PWM_2 `(v ~T0 @X0 0 ef ]
+"420 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 420:     struct {
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . RE0 RE1 RE2 RE3 ]
+"419
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 419: typedef union {
+[u S13 `S14 1 ]
+[n S13 . . ]
+"427
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 427: extern volatile PORTEbits_t PORTEbits __attribute__((address(0x009)));
+[v _PORTEbits `VS13 ~T0 @X0 0 e@9 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"51 Servo_PWM.c
+[; ;Servo_PWM.c: 51: void Servo1_grados(uint8_t Servo1_grados);
+[v _Servo1_grados `(v ~T0 @X0 0 ef1`uc ]
+"52
+[; ;Servo_PWM.c: 52: void Servo2_grados(uint8_t Servo2_grados);
+[v _Servo2_grados `(v ~T0 @X0 0 ef1`uc ]
+"43
+[; ;Servo_PWM.c: 43: void OSC_config(uint32_t frecuencia);
+[v _OSC_config `(v ~T0 @X0 0 ef1`ul ]
+"3387 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"1664
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
+"166
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"414
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
+[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"1546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1546:     struct {
+[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S57 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1545
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1545: typedef union {
+[u S56 `S57 1 ]
+[n S56 . . ]
+"1557
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1557: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
+[v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
+"2041
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2041: extern volatile unsigned char PR2 __attribute__((address(0x092)));
+[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
+"1174
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1174:     struct {
+[s S42 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S42 . CCP2M DC2B0 DC2B1 ]
+"1179
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1179:     struct {
+[s S43 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S43 . CCP2M0 CCP2M1 CCP2M2 CCP2M3 CCP2Y CCP2X ]
+"1173
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1173: typedef union {
+[u S41 `S42 1 `S43 1 ]
+[n S41 . . . ]
+"1188
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1188: extern volatile CCP2CONbits_t CCP2CONbits __attribute__((address(0x01D)));
+[v _CCP2CONbits `VS41 ~T0 @X0 0 e@29 ]
+"1154
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1154: extern volatile unsigned char CCPR2L __attribute__((address(0x01B)));
+[v _CCPR2L `Vuc ~T0 @X0 0 e@27 ]
+"543
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"778
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 778:     struct {
+[s S27 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S27 . T2CKPS TMR2ON TOUTPS ]
+"783
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 783:     struct {
+[s S28 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S28 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+"777
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 777: typedef union {
+[u S26 `S27 1 `S28 1 ]
+[n S26 . . . ]
+"793
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 793: extern volatile T2CONbits_t T2CONbits __attribute__((address(0x012)));
+[v _T2CONbits `VS26 ~T0 @X0 0 e@18 ]
+"947
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 947:     struct {
+[s S33 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S33 . CCP1M DC1B P1M ]
+"952
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 952:     struct {
+[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 DC1B0 DC1B1 P1M0 P1M1 ]
+"962
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 962:     struct {
+[s S35 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . . CCP1Y CCP1X ]
+"946
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 946: typedef union {
+[u S32 `S33 1 `S34 1 `S35 1 ]
+[n S32 . . . . ]
+"968
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 968: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0x017)));
+[v _CCP1CONbits `VS32 ~T0 @X0 0 e@23 ]
+"1868
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1868:     struct {
+[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S70 . SCS LTS HTS OSTS IRCF ]
+"1875
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1875:     struct {
+[s S71 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S71 . . IRCF0 IRCF1 IRCF2 ]
+"1867
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1867: typedef union {
+[u S69 `S70 1 `S71 1 ]
+[n S69 . . . ]
+"1882
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1882: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
+[v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"927
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 927: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
+"9 Servo_PWM.c
+[p x FOSC = INTRC_CLKOUT ]
+"10
+[p x WDTE = OFF ]
+"11
+[p x PWRTE = OFF ]
+"12
+[p x MCLRE = ON ]
+"13
+[p x CP = OFF ]
+"14
+[p x CPD = OFF ]
+"15
+[p x BOREN = OFF ]
+"16
+[p x IESO = OFF ]
+"17
+[p x FCMEN = OFF ]
+"18
+[p x LVP = OFF ]
+"21
+[p x BOR4V = BOR40V ]
+"22
+[p x WRT = OFF ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"230
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 230: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"292
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 292: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"354
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 354: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 416: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"454
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 454: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 461: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 539: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 595: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 652: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 659: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 666: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 673: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"767
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 767: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"774
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 774: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"845
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 845: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 852: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"922
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 922: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 929: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 936: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 943: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1040: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1135: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1142
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1142: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1149: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1156: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1163: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1170: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1240: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1247: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1348: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1418: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1480
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1480: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1542: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1604
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1604: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1666: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1704
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1704: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1760: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1817: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1864: __asm("OSCCON equ 08Fh");
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1929: __asm("OSCTUNE equ 090h");
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1981: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2043: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"2050
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2050: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2057: __asm("SSPMSK equ 093h");
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2062: __asm("MSK equ 093h");
+[; <" MSK equ 093h ;# ">
+"2179
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2179: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2348: __asm("WPUB equ 095h");
+[; <" WPUB equ 095h ;# ">
+"2418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2418: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"2488
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2488: __asm("VRCON equ 097h");
+[; <" VRCON equ 097h ;# ">
+"2558
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2558: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2644: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2706: __asm("SPBRGH equ 09Ah");
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2776: __asm("PWM1CON equ 09Bh");
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2846: __asm("ECCPAS equ 09Ch");
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2928: __asm("PSTRCON equ 09Dh");
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2972: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2979: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3013: __asm("WDTCON equ 0105h");
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3066: __asm("CM1CON0 equ 0107h");
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3131: __asm("CM2CON0 equ 0108h");
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3196: __asm("CM2CON1 equ 0109h");
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3247: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3252: __asm("EEDAT equ 010Ch");
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3259: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3266: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3273: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3280: __asm("SRCON equ 0185h");
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3337: __asm("BAUDCTL equ 0187h");
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3389: __asm("ANSEL equ 0188h");
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3451: __asm("ANSELH equ 0189h");
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3501: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"35 Servo_PWM.c
+[; ;Servo_PWM.c: 35: uint8_t ESTADO = 0;
+[v _ESTADO `uc ~T0 @X0 1 e ]
+[i _ESTADO
+-> -> 0 `i `uc
+]
+"36
+[; ;Servo_PWM.c: 36: uint8_t ESTADO2 = 0;
+[v _ESTADO2 `uc ~T0 @X0 1 e ]
+[i _ESTADO2
+-> -> 0 `i `uc
+]
+"37
+[; ;Servo_PWM.c: 37: uint8_t ESTADO3 = 0;
+[v _ESTADO3 `uc ~T0 @X0 1 e ]
+[i _ESTADO3
+-> -> 0 `i `uc
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"54
+[; ;Servo_PWM.c: 54: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"55
+[; ;Servo_PWM.c: 55:     config_PORTS();
+[e ( _config_PORTS ..  ]
+"56
+[; ;Servo_PWM.c: 56:     init_PWM_1();
+[e ( _init_PWM_1 ..  ]
+"57
+[; ;Servo_PWM.c: 57:     init_PWM_2();
+[e ( _init_PWM_2 ..  ]
+"60
+[; ;Servo_PWM.c: 60:     while (1){
+[e :U 141 ]
+{
+"63
+[; ;Servo_PWM.c: 63:         if (PORTEbits.RE0 == 1){
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 1 `i 143  ]
+{
+"64
+[; ;Servo_PWM.c: 64:             ESTADO = 1;
+[e = _ESTADO -> -> 1 `i `uc ]
+"65
+[; ;Servo_PWM.c: 65:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"68
+[; ;Servo_PWM.c: 68:             if (ESTADO == 1 && PORTEbits.RE0 == 0) {
+[e $ ! && == -> _ESTADO `i -> 1 `i == -> . . _PORTEbits 0 0 `i -> 0 `i 144  ]
+{
+"69
+[; ;Servo_PWM.c: 69:                 Servo1_grados(0);
+[e ( _Servo1_grados (1 -> -> 0 `i `uc ]
+"70
+[; ;Servo_PWM.c: 70:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"71
+[; ;Servo_PWM.c: 71:                 Servo1_grados(10);
+[e ( _Servo1_grados (1 -> -> 10 `i `uc ]
+"72
+[; ;Servo_PWM.c: 72:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"73
+[; ;Servo_PWM.c: 73:                 Servo1_grados(30);
+[e ( _Servo1_grados (1 -> -> 30 `i `uc ]
+"74
+[; ;Servo_PWM.c: 74:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"75
+[; ;Servo_PWM.c: 75:                 Servo1_grados(45);
+[e ( _Servo1_grados (1 -> -> 45 `i `uc ]
+"77
+[; ;Servo_PWM.c: 77:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"78
+[; ;Servo_PWM.c: 78:                 Servo1_grados(90);
+[e ( _Servo1_grados (1 -> -> 90 `i `uc ]
+"79
+[; ;Servo_PWM.c: 79:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"80
+[; ;Servo_PWM.c: 80:                 Servo1_grados(120);
+[e ( _Servo1_grados (1 -> -> 120 `i `uc ]
+"81
+[; ;Servo_PWM.c: 81:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"82
+[; ;Servo_PWM.c: 82:                 Servo1_grados(150);
+[e ( _Servo1_grados (1 -> -> 150 `i `uc ]
+"83
+[; ;Servo_PWM.c: 83:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"84
+[; ;Servo_PWM.c: 84:                 Servo1_grados(180);
+[e ( _Servo1_grados (1 -> -> 180 `i `uc ]
+"87
+[; ;Servo_PWM.c: 87:             }
+}
+[e :U 144 ]
+"88
+[; ;Servo_PWM.c: 88:             ESTADO = 0;
+[e = _ESTADO -> -> 0 `i `uc ]
+"89
+[; ;Servo_PWM.c: 89:         }
+}
+[e :U 143 ]
+"92
+[; ;Servo_PWM.c: 92:         if (PORTEbits.RE1 == 1){
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 1 `i 145  ]
+{
+"93
+[; ;Servo_PWM.c: 93:             ESTADO2 = 1;
+[e = _ESTADO2 -> -> 1 `i `uc ]
+"94
+[; ;Servo_PWM.c: 94:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"97
+[; ;Servo_PWM.c: 97:             if (ESTADO2 == 1 && PORTEbits.RE1 == 0) {
+[e $ ! && == -> _ESTADO2 `i -> 1 `i == -> . . _PORTEbits 0 1 `i -> 0 `i 146  ]
+{
+"99
+[; ;Servo_PWM.c: 99:                 Servo1_grados(90);
+[e ( _Servo1_grados (1 -> -> 90 `i `uc ]
+"103
+[; ;Servo_PWM.c: 103:             }
+}
+[e :U 146 ]
+"104
+[; ;Servo_PWM.c: 104:             ESTADO2 = 0;
+[e = _ESTADO2 -> -> 0 `i `uc ]
+"105
+[; ;Servo_PWM.c: 105:         }
+}
+[e :U 145 ]
+"109
+[; ;Servo_PWM.c: 109:         if (PORTEbits.RE2 == 1){
+[e $ ! == -> . . _PORTEbits 0 2 `i -> 1 `i 147  ]
+{
+"110
+[; ;Servo_PWM.c: 110:             ESTADO3 = 1;
+[e = _ESTADO3 -> -> 1 `i `uc ]
+"111
+[; ;Servo_PWM.c: 111:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"113
+[; ;Servo_PWM.c: 113:             if (ESTADO3 == 1 && PORTEbits.RE2 == 0) {
+[e $ ! && == -> _ESTADO3 `i -> 1 `i == -> . . _PORTEbits 0 2 `i -> 0 `i 148  ]
+{
+"114
+[; ;Servo_PWM.c: 114:                  Servo2_grados(0);
+[e ( _Servo2_grados (1 -> -> 0 `i `uc ]
+"115
+[; ;Servo_PWM.c: 115:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"116
+[; ;Servo_PWM.c: 116:                 Servo2_grados(10);
+[e ( _Servo2_grados (1 -> -> 10 `i `uc ]
+"117
+[; ;Servo_PWM.c: 117:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"118
+[; ;Servo_PWM.c: 118:                 Servo2_grados(30);
+[e ( _Servo2_grados (1 -> -> 30 `i `uc ]
+"119
+[; ;Servo_PWM.c: 119:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"120
+[; ;Servo_PWM.c: 120:                 Servo2_grados(45);
+[e ( _Servo2_grados (1 -> -> 45 `i `uc ]
+"122
+[; ;Servo_PWM.c: 122:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"123
+[; ;Servo_PWM.c: 123:                 Servo2_grados(90);
+[e ( _Servo2_grados (1 -> -> 90 `i `uc ]
+"124
+[; ;Servo_PWM.c: 124:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"125
+[; ;Servo_PWM.c: 125:                 Servo2_grados(120);
+[e ( _Servo2_grados (1 -> -> 120 `i `uc ]
+"126
+[; ;Servo_PWM.c: 126:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"127
+[; ;Servo_PWM.c: 127:                 Servo2_grados(150);
+[e ( _Servo2_grados (1 -> -> 150 `i `uc ]
+"128
+[; ;Servo_PWM.c: 128:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"129
+[; ;Servo_PWM.c: 129:                 Servo2_grados(180);
+[e ( _Servo2_grados (1 -> -> 180 `i `uc ]
+"133
+[; ;Servo_PWM.c: 133:             }
+}
+[e :U 148 ]
+"134
+[; ;Servo_PWM.c: 134:             ESTADO3 = 0;
+[e = _ESTADO3 -> -> 0 `i `uc ]
+"135
+[; ;Servo_PWM.c: 135:         }
+}
+[e :U 147 ]
+"139
+[; ;Servo_PWM.c: 139:     }
+}
+[e :U 140 ]
+[e $U 141  ]
+[e :U 142 ]
+"140
+[; ;Servo_PWM.c: 140:     return;
+[e $UE 139  ]
+"141
+[; ;Servo_PWM.c: 141: }
+[e :UE 139 ]
+}
+"145
+[; ;Servo_PWM.c: 145: void config_PORTS(void){
+[v _config_PORTS `(v ~T0 @X0 1 ef ]
+{
+[e :U _config_PORTS ]
+[f ]
+"146
+[; ;Servo_PWM.c: 146:     OSC_config(1000000);
+[e ( _OSC_config (1 -> -> 1000000 `l `ul ]
+"147
+[; ;Servo_PWM.c: 147:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"149
+[; ;Servo_PWM.c: 149:     TRISE = 0b11111111;
+[e = _TRISE -> -> 255 `i `uc ]
+"151
+[; ;Servo_PWM.c: 151:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
+"152
+[; ;Servo_PWM.c: 152:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"153
+[; ;Servo_PWM.c: 153:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+"154
+[; ;Servo_PWM.c: 154:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"155
+[; ;Servo_PWM.c: 155:     PORTE = 0x00;
+[e = _PORTE -> -> 0 `i `uc ]
+"158
+[; ;Servo_PWM.c: 158:    }
+[e :UE 149 ]
+}
+"160
+[; ;Servo_PWM.c: 160: void init_PWM_1(void){
+[v _init_PWM_1 `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_PWM_1 ]
+[f ]
+"161
+[; ;Servo_PWM.c: 161:     TRISCbits.TRISC1 = 1;
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+"164
+[; ;Servo_PWM.c: 164:     PR2 = 200;
+[e = _PR2 -> -> 200 `i `uc ]
+"166
+[; ;Servo_PWM.c: 166:     CCP2CONbits.CCP2M3 = 1;
+[e = . . _CCP2CONbits 1 3 -> -> 1 `i `uc ]
+"167
+[; ;Servo_PWM.c: 167:     CCP2CONbits.CCP2M2 = 1;
+[e = . . _CCP2CONbits 1 2 -> -> 1 `i `uc ]
+"168
+[; ;Servo_PWM.c: 168:     CCP2CONbits.CCP2M1 = 1;
+[e = . . _CCP2CONbits 1 1 -> -> 1 `i `uc ]
+"169
+[; ;Servo_PWM.c: 169:     CCP2CONbits.CCP2M0 = 1;
+[e = . . _CCP2CONbits 1 0 -> -> 1 `i `uc ]
+"172
+[; ;Servo_PWM.c: 172:     CCPR2L = 0b00011011;
+[e = _CCPR2L -> -> 27 `i `uc ]
+"173
+[; ;Servo_PWM.c: 173:     CCP2CONbits.DC2B0 = 1;
+[e = . . _CCP2CONbits 0 1 -> -> 1 `i `uc ]
+"174
+[; ;Servo_PWM.c: 174:     CCP2CONbits.DC2B1 = 1;
+[e = . . _CCP2CONbits 0 2 -> -> 1 `i `uc ]
+"176
+[; ;Servo_PWM.c: 176:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"177
+[; ;Servo_PWM.c: 177:     T2CONbits.T2CKPS1 = 1;
+[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+"178
+[; ;Servo_PWM.c: 178:     T2CONbits.T2CKPS0 = 1;
+[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
+"180
+[; ;Servo_PWM.c: 180:     T2CONbits.TMR2ON = 1;
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+"182
+[; ;Servo_PWM.c: 182:     while(PIR1bits.TMR2IF == 1){
+[e $U 151  ]
+[e :U 152 ]
+{
+"183
+[; ;Servo_PWM.c: 183:         PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"184
+[; ;Servo_PWM.c: 184:     }
+}
+[e :U 151 ]
+"182
+[; ;Servo_PWM.c: 182:     while(PIR1bits.TMR2IF == 1){
+[e $ == -> . . _PIR1bits 0 1 `i -> 1 `i 152  ]
+[e :U 153 ]
+"186
+[; ;Servo_PWM.c: 186:     TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+"187
+[; ;Servo_PWM.c: 187: }
+[e :UE 150 ]
+}
+"189
+[; ;Servo_PWM.c: 189: void init_PWM_2(void){
+[v _init_PWM_2 `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_PWM_2 ]
+[f ]
+"190
+[; ;Servo_PWM.c: 190:     TRISCbits.TRISC2 = 1;
+[e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
+"193
+[; ;Servo_PWM.c: 193:     PR2 = 200;
+[e = _PR2 -> -> 200 `i `uc ]
+"195
+[; ;Servo_PWM.c: 195:     CCP1CONbits.CCP1M3 = 1;
+[e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
+"196
+[; ;Servo_PWM.c: 196:     CCP1CONbits.CCP1M2 = 1;
+[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
+"197
+[; ;Servo_PWM.c: 197:     CCP1CONbits.CCP1M1 = 0;
+[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
+"198
+[; ;Servo_PWM.c: 198:     CCP1CONbits.CCP1M0 = 0;
+[e = . . _CCP1CONbits 1 0 -> -> 0 `i `uc ]
+"200
+[; ;Servo_PWM.c: 200:     CCP1CONbits.P1M1 = 0;
+[e = . . _CCP1CONbits 1 7 -> -> 0 `i `uc ]
+"201
+[; ;Servo_PWM.c: 201:     CCP1CONbits.P1M0 = 0;
+[e = . . _CCP1CONbits 1 6 -> -> 0 `i `uc ]
+"204
+[; ;Servo_PWM.c: 204:     CCPR2L = 0b00011011;
+[e = _CCPR2L -> -> 27 `i `uc ]
+"205
+[; ;Servo_PWM.c: 205:     CCP1CONbits.DC1B0 = 1;
+[e = . . _CCP1CONbits 1 4 -> -> 1 `i `uc ]
+"206
+[; ;Servo_PWM.c: 206:     CCP1CONbits.DC1B1 = 1;
+[e = . . _CCP1CONbits 1 5 -> -> 1 `i `uc ]
+"208
+[; ;Servo_PWM.c: 208:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"209
+[; ;Servo_PWM.c: 209:     T2CONbits.T2CKPS1 = 1;
+[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+"210
+[; ;Servo_PWM.c: 210:     T2CONbits.T2CKPS0 = 1;
+[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
+"212
+[; ;Servo_PWM.c: 212:     T2CONbits.TMR2ON = 1;
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+"214
+[; ;Servo_PWM.c: 214:     while(PIR1bits.TMR2IF == 1){
+[e $U 155  ]
+[e :U 156 ]
+{
+"215
+[; ;Servo_PWM.c: 215:         PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"216
+[; ;Servo_PWM.c: 216:     }
+}
+[e :U 155 ]
+"214
+[; ;Servo_PWM.c: 214:     while(PIR1bits.TMR2IF == 1){
+[e $ == -> . . _PIR1bits 0 1 `i -> 1 `i 156  ]
+[e :U 157 ]
+"218
+[; ;Servo_PWM.c: 218:     TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"219
+[; ;Servo_PWM.c: 219: }
+[e :UE 154 ]
+}
+"222
+[; ;Servo_PWM.c: 222: void OSC_config(uint32_t frecuencia){
+[v _OSC_config `(v ~T0 @X0 1 ef1`ul ]
+{
+[e :U _OSC_config ]
+[v _frecuencia `ul ~T0 @X0 1 r1 ]
+[f ]
+"223
+[; ;Servo_PWM.c: 223:     switch(frecuencia){
+[e $U 160  ]
+{
+"224
+[; ;Servo_PWM.c: 224:         case 8000000:
+[e :U 161 ]
+"225
+[; ;Servo_PWM.c: 225:             OSCCONbits.IRCF = 0b111;
+[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
+"226
+[; ;Servo_PWM.c: 226:             break;
+[e $U 159  ]
+"227
+[; ;Servo_PWM.c: 227:         case 4000000:
+[e :U 162 ]
+"228
+[; ;Servo_PWM.c: 228:             OSCCONbits.IRCF = 0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+"229
+[; ;Servo_PWM.c: 229:             break;
+[e $U 159  ]
+"230
+[; ;Servo_PWM.c: 230:         case 2000000:
+[e :U 163 ]
+"231
+[; ;Servo_PWM.c: 231:             OSCCONbits.IRCF = 0b101;
+[e = . . _OSCCONbits 0 4 -> -> 5 `i `uc ]
+"232
+[; ;Servo_PWM.c: 232:             break;
+[e $U 159  ]
+"233
+[; ;Servo_PWM.c: 233:         case 1000000:
+[e :U 164 ]
+"234
+[; ;Servo_PWM.c: 234:             OSCCONbits.IRCF = 0b100;
+[e = . . _OSCCONbits 0 4 -> -> 4 `i `uc ]
+"235
+[; ;Servo_PWM.c: 235:             break;
+[e $U 159  ]
+"236
+[; ;Servo_PWM.c: 236:         case 500000:
+[e :U 165 ]
+"237
+[; ;Servo_PWM.c: 237:             OSCCONbits.IRCF = 0b011;
+[e = . . _OSCCONbits 0 4 -> -> 3 `i `uc ]
+"238
+[; ;Servo_PWM.c: 238:             break;
+[e $U 159  ]
+"239
+[; ;Servo_PWM.c: 239:         case 250000:
+[e :U 166 ]
+"240
+[; ;Servo_PWM.c: 240:             OSCCONbits.IRCF = 0b010;
+[e = . . _OSCCONbits 0 4 -> -> 2 `i `uc ]
+"241
+[; ;Servo_PWM.c: 241:             break;
+[e $U 159  ]
+"242
+[; ;Servo_PWM.c: 242:         case 125000:
+[e :U 167 ]
+"243
+[; ;Servo_PWM.c: 243:             OSCCONbits.IRCF = 0b001;
+[e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
+"244
+[; ;Servo_PWM.c: 244:             break;
+[e $U 159  ]
+"245
+[; ;Servo_PWM.c: 245:         case 32000:
+[e :U 168 ]
+"246
+[; ;Servo_PWM.c: 246:             OSCCONbits.IRCF = 0b000;
+[e = . . _OSCCONbits 0 4 -> -> 0 `i `uc ]
+"247
+[; ;Servo_PWM.c: 247:             break;
+[e $U 159  ]
+"248
+[; ;Servo_PWM.c: 248:         default:
+[e :U 169 ]
+"249
+[; ;Servo_PWM.c: 249:             OSCCONbits.IRCF = 0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+"250
+[; ;Servo_PWM.c: 250:     }
+}
+[e $U 159  ]
+[e :U 160 ]
+[e [\ _frecuencia , $ -> -> 8000000 `l `ul 161
+ , $ -> -> 4000000 `l `ul 162
+ , $ -> -> 2000000 `l `ul 163
+ , $ -> -> 1000000 `l `ul 164
+ , $ -> -> 500000 `l `ul 165
+ , $ -> -> 250000 `l `ul 166
+ , $ -> -> 125000 `l `ul 167
+ , $ -> -> -> 32000 `i `l `ul 168
+ 169 ]
+[e :U 159 ]
+"251
+[; ;Servo_PWM.c: 251: }
+[e :UE 158 ]
+}
+"253
+[; ;Servo_PWM.c: 253: void Servo_0(void){
+[v _Servo_0 `(v ~T0 @X0 1 ef ]
+{
+[e :U _Servo_0 ]
+[f ]
+"254
+[; ;Servo_PWM.c: 254:     CCPR2L = 10;
+[e = _CCPR2L -> -> 10 `i `uc ]
+"255
+[; ;Servo_PWM.c: 255: }
+[e :UE 170 ]
+}
+"257
+[; ;Servo_PWM.c: 257: void Servo_90(void){
+[v _Servo_90 `(v ~T0 @X0 1 ef ]
+{
+[e :U _Servo_90 ]
+[f ]
+"258
+[; ;Servo_PWM.c: 258:     CCPR2L = 25;
+[e = _CCPR2L -> -> 25 `i `uc ]
+"259
+[; ;Servo_PWM.c: 259: }
+[e :UE 171 ]
+}
+"261
+[; ;Servo_PWM.c: 261: void Servo_180(void){
+[v _Servo_180 `(v ~T0 @X0 1 ef ]
+{
+[e :U _Servo_180 ]
+[f ]
+"262
+[; ;Servo_PWM.c: 262:      CCPR2L = 40;
+[e = _CCPR2L -> -> 40 `i `uc ]
+"263
+[; ;Servo_PWM.c: 263: }
+[e :UE 172 ]
+}
+"265
+[; ;Servo_PWM.c: 265: void Servo1_grados(uint8_t Servo1_grados){
+[v _Servo1_grados `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _Servo1_grados ]
+[v _Servo1_grados `uc ~T0 @X0 1 r1 ]
+[f ]
+"266
+[; ;Servo_PWM.c: 266:     switch(Servo1_grados){
+[e $U 175  ]
+{
+"267
+[; ;Servo_PWM.c: 267:         case 0:
+[e :U 176 ]
+"268
+[; ;Servo_PWM.c: 268:             CCPR2L = 10;
+[e = _CCPR2L -> -> 10 `i `uc ]
+"269
+[; ;Servo_PWM.c: 269:             break;
+[e $U 174  ]
+"271
+[; ;Servo_PWM.c: 271:         case 10:
+[e :U 177 ]
+"272
+[; ;Servo_PWM.c: 272:             CCPR2L = 12;
+[e = _CCPR2L -> -> 12 `i `uc ]
+"273
+[; ;Servo_PWM.c: 273:             break;
+[e $U 174  ]
+"275
+[; ;Servo_PWM.c: 275:         case 30:
+[e :U 178 ]
+"276
+[; ;Servo_PWM.c: 276:             CCPR2L = 14;
+[e = _CCPR2L -> -> 14 `i `uc ]
+"277
+[; ;Servo_PWM.c: 277:             break;
+[e $U 174  ]
+"279
+[; ;Servo_PWM.c: 279:         case 45:
+[e :U 179 ]
+"280
+[; ;Servo_PWM.c: 280:             CCPR2L = 18;
+[e = _CCPR2L -> -> 18 `i `uc ]
+"281
+[; ;Servo_PWM.c: 281:             break;
+[e $U 174  ]
+"283
+[; ;Servo_PWM.c: 283:         case 90:
+[e :U 180 ]
+"284
+[; ;Servo_PWM.c: 284:             CCPR2L = 25;
+[e = _CCPR2L -> -> 25 `i `uc ]
+"285
+[; ;Servo_PWM.c: 285:             break;
+[e $U 174  ]
+"287
+[; ;Servo_PWM.c: 287:         case 120:
+[e :U 181 ]
+"288
+[; ;Servo_PWM.c: 288:             CCPR2L = 30;
+[e = _CCPR2L -> -> 30 `i `uc ]
+"289
+[; ;Servo_PWM.c: 289:             break;
+[e $U 174  ]
+"291
+[; ;Servo_PWM.c: 291:         case 135:
+[e :U 182 ]
+"292
+[; ;Servo_PWM.c: 292:             CCPR2L = 33;
+[e = _CCPR2L -> -> 33 `i `uc ]
+"293
+[; ;Servo_PWM.c: 293:             break;
+[e $U 174  ]
+"295
+[; ;Servo_PWM.c: 295:         case 150:
+[e :U 183 ]
+"296
+[; ;Servo_PWM.c: 296:             CCPR2L = 37;
+[e = _CCPR2L -> -> 37 `i `uc ]
+"297
+[; ;Servo_PWM.c: 297:             break;
+[e $U 174  ]
+"299
+[; ;Servo_PWM.c: 299:         case 180:
+[e :U 184 ]
+"300
+[; ;Servo_PWM.c: 300:             CCPR2L = 40;
+[e = _CCPR2L -> -> 40 `i `uc ]
+"301
+[; ;Servo_PWM.c: 301:             break;
+[e $U 174  ]
+"303
+[; ;Servo_PWM.c: 303:         default:
+[e :U 185 ]
+"304
+[; ;Servo_PWM.c: 304:             CCPR2L = 10;
+[e = _CCPR2L -> -> 10 `i `uc ]
+"306
+[; ;Servo_PWM.c: 306:     }
+}
+[e $U 174  ]
+[e :U 175 ]
+[e [\ -> _Servo1_grados `i , $ -> 0 `i 176
+ , $ -> 10 `i 177
+ , $ -> 30 `i 178
+ , $ -> 45 `i 179
+ , $ -> 90 `i 180
+ , $ -> 120 `i 181
+ , $ -> 135 `i 182
+ , $ -> 150 `i 183
+ , $ -> 180 `i 184
+ 185 ]
+[e :U 174 ]
+"307
+[; ;Servo_PWM.c: 307: }
+[e :UE 173 ]
+}
+"309
+[; ;Servo_PWM.c: 309: void Servo2_grados(uint8_t Servo2_grados){
+[v _Servo2_grados `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _Servo2_grados ]
+[v _Servo2_grados `uc ~T0 @X0 1 r1 ]
+[f ]
+"310
+[; ;Servo_PWM.c: 310:     switch(Servo2_grados){
+[e $U 188  ]
+{
+"311
+[; ;Servo_PWM.c: 311:         case 0:
+[e :U 189 ]
+"312
+[; ;Servo_PWM.c: 312:             CCPR1L = 10;
+[e = _CCPR1L -> -> 10 `i `uc ]
+"313
+[; ;Servo_PWM.c: 313:             break;
+[e $U 187  ]
+"315
+[; ;Servo_PWM.c: 315:         case 10:
+[e :U 190 ]
+"316
+[; ;Servo_PWM.c: 316:             CCPR1L = 12;
+[e = _CCPR1L -> -> 12 `i `uc ]
+"317
+[; ;Servo_PWM.c: 317:             break;
+[e $U 187  ]
+"319
+[; ;Servo_PWM.c: 319:         case 30:
+[e :U 191 ]
+"320
+[; ;Servo_PWM.c: 320:             CCPR1L = 14;
+[e = _CCPR1L -> -> 14 `i `uc ]
+"321
+[; ;Servo_PWM.c: 321:             break;
+[e $U 187  ]
+"323
+[; ;Servo_PWM.c: 323:         case 45:
+[e :U 192 ]
+"324
+[; ;Servo_PWM.c: 324:             CCPR1L = 18;
+[e = _CCPR1L -> -> 18 `i `uc ]
+"325
+[; ;Servo_PWM.c: 325:             break;
+[e $U 187  ]
+"327
+[; ;Servo_PWM.c: 327:         case 90:
+[e :U 193 ]
+"328
+[; ;Servo_PWM.c: 328:             CCPR1L = 25;
+[e = _CCPR1L -> -> 25 `i `uc ]
+"329
+[; ;Servo_PWM.c: 329:             break;
+[e $U 187  ]
+"331
+[; ;Servo_PWM.c: 331:         case 120:
+[e :U 194 ]
+"332
+[; ;Servo_PWM.c: 332:             CCPR1L = 30;
+[e = _CCPR1L -> -> 30 `i `uc ]
+"333
+[; ;Servo_PWM.c: 333:             break;
+[e $U 187  ]
+"335
+[; ;Servo_PWM.c: 335:         case 135:
+[e :U 195 ]
+"336
+[; ;Servo_PWM.c: 336:             CCPR1L = 33;
+[e = _CCPR1L -> -> 33 `i `uc ]
+"337
+[; ;Servo_PWM.c: 337:             break;
+[e $U 187  ]
+"339
+[; ;Servo_PWM.c: 339:         case 150:
+[e :U 196 ]
+"340
+[; ;Servo_PWM.c: 340:             CCPR1L = 37;
+[e = _CCPR1L -> -> 37 `i `uc ]
+"341
+[; ;Servo_PWM.c: 341:             break;
+[e $U 187  ]
+"343
+[; ;Servo_PWM.c: 343:         case 180:
+[e :U 197 ]
+"344
+[; ;Servo_PWM.c: 344:             CCPR1L = 40;
+[e = _CCPR1L -> -> 40 `i `uc ]
+"345
+[; ;Servo_PWM.c: 345:             break;
+[e $U 187  ]
+"347
+[; ;Servo_PWM.c: 347:         default:
+[e :U 198 ]
+"348
+[; ;Servo_PWM.c: 348:             CCPR1L = 10;
+[e = _CCPR1L -> -> 10 `i `uc ]
+"350
+[; ;Servo_PWM.c: 350:     }
+}
+[e $U 187  ]
+[e :U 188 ]
+[e [\ -> _Servo2_grados `i , $ -> 0 `i 189
+ , $ -> 10 `i 190
+ , $ -> 30 `i 191
+ , $ -> 45 `i 192
+ , $ -> 90 `i 193
+ , $ -> 120 `i 194
+ , $ -> 135 `i 195
+ , $ -> 150 `i 196
+ , $ -> 180 `i 197
+ 198 ]
+[e :U 187 ]
+"351
+[; ;Servo_PWM.c: 351: }
+[e :UE 186 ]
+}

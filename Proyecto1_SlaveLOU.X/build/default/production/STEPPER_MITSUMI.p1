@@ -1,0 +1,836 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"352 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"230
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 230: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"292
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 292: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"354
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 354: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 416: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"454
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 454: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 461: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 539: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 595: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 652: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 659: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 666: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 673: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"767
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 767: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"774
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 774: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"845
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 845: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 852: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"922
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 922: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 929: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 936: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 943: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1040: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1135: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1142
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1142: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1149: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1156: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1163: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1170: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1240: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1247: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1348: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1418: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1480
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1480: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1542: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1604
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1604: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1666: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1704
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1704: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1760: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1817: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1864: __asm("OSCCON equ 08Fh");
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1929: __asm("OSCTUNE equ 090h");
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1981: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2043: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"2050
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2050: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2057: __asm("SSPMSK equ 093h");
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2062: __asm("MSK equ 093h");
+[; <" MSK equ 093h ;# ">
+"2179
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2179: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2348: __asm("WPUB equ 095h");
+[; <" WPUB equ 095h ;# ">
+"2418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2418: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"2488
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2488: __asm("VRCON equ 097h");
+[; <" VRCON equ 097h ;# ">
+"2558
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2558: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2644: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2706: __asm("SPBRGH equ 09Ah");
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2776: __asm("PWM1CON equ 09Bh");
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2846: __asm("ECCPAS equ 09Ch");
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2928: __asm("PSTRCON equ 09Dh");
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2972: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2979: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3013: __asm("WDTCON equ 0105h");
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3066: __asm("CM1CON0 equ 0107h");
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3131: __asm("CM2CON0 equ 0108h");
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3196: __asm("CM2CON1 equ 0109h");
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3247: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3252: __asm("EEDAT equ 010Ch");
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3259: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3266: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3273: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3280: __asm("SRCON equ 0185h");
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3337: __asm("BAUDCTL equ 0187h");
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3389: __asm("ANSEL equ 0188h");
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3451: __asm("ANSELH equ 0189h");
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3501: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"12 STEPPER_MITSUMI.c
+[; ;STEPPER_MITSUMI.c: 12: int i = 0 ;
+[v _i `i ~T0 @X0 1 e ]
+[i _i
+-> 0 `i
+]
+"14
+[; ;STEPPER_MITSUMI.c: 14: void Stepper_CW(uint16_t Step_grados_cw){
+[v _Stepper_CW `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _Stepper_CW ]
+[v _Step_grados_cw `ui ~T0 @X0 1 r1 ]
+[f ]
+"15
+[; ;STEPPER_MITSUMI.c: 15:     switch(Step_grados_cw){
+[e $U 140  ]
+{
+"16
+[; ;STEPPER_MITSUMI.c: 16:         case 360:
+[e :U 141 ]
+"17
+[; ;STEPPER_MITSUMI.c: 17:             for(i=0; i<25; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 25 `i 142  ]
+[e $U 143  ]
+[e :U 142 ]
+{
+"18
+[; ;STEPPER_MITSUMI.c: 18:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"19
+[; ;STEPPER_MITSUMI.c: 19:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"20
+[; ;STEPPER_MITSUMI.c: 20:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"21
+[; ;STEPPER_MITSUMI.c: 21:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"22
+[; ;STEPPER_MITSUMI.c: 22:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"23
+[; ;STEPPER_MITSUMI.c: 23:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"24
+[; ;STEPPER_MITSUMI.c: 24:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"25
+[; ;STEPPER_MITSUMI.c: 25:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"27
+[; ;STEPPER_MITSUMI.c: 27:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 25 `i 142  ]
+[e :U 143 ]
+}
+"28
+[; ;STEPPER_MITSUMI.c: 28:             break;
+[e $U 139  ]
+"30
+[; ;STEPPER_MITSUMI.c: 30:         case 180:
+[e :U 145 ]
+"31
+[; ;STEPPER_MITSUMI.c: 31:             for(i=0; i<12; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 12 `i 146  ]
+[e $U 147  ]
+[e :U 146 ]
+{
+"32
+[; ;STEPPER_MITSUMI.c: 32:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"33
+[; ;STEPPER_MITSUMI.c: 33:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"34
+[; ;STEPPER_MITSUMI.c: 34:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"35
+[; ;STEPPER_MITSUMI.c: 35:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"36
+[; ;STEPPER_MITSUMI.c: 36:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"37
+[; ;STEPPER_MITSUMI.c: 37:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"38
+[; ;STEPPER_MITSUMI.c: 38:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"39
+[; ;STEPPER_MITSUMI.c: 39:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"41
+[; ;STEPPER_MITSUMI.c: 41:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 12 `i 146  ]
+[e :U 147 ]
+}
+"42
+[; ;STEPPER_MITSUMI.c: 42:             break;
+[e $U 139  ]
+"44
+[; ;STEPPER_MITSUMI.c: 44:         case 90:
+[e :U 149 ]
+"45
+[; ;STEPPER_MITSUMI.c: 45:             for(i=0; i<6; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 6 `i 150  ]
+[e $U 151  ]
+[e :U 150 ]
+{
+"46
+[; ;STEPPER_MITSUMI.c: 46:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"47
+[; ;STEPPER_MITSUMI.c: 47:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"48
+[; ;STEPPER_MITSUMI.c: 48:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"49
+[; ;STEPPER_MITSUMI.c: 49:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"50
+[; ;STEPPER_MITSUMI.c: 50:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"51
+[; ;STEPPER_MITSUMI.c: 51:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"52
+[; ;STEPPER_MITSUMI.c: 52:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"53
+[; ;STEPPER_MITSUMI.c: 53:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"55
+[; ;STEPPER_MITSUMI.c: 55:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 6 `i 150  ]
+[e :U 151 ]
+}
+"56
+[; ;STEPPER_MITSUMI.c: 56:             break;
+[e $U 139  ]
+"58
+[; ;STEPPER_MITSUMI.c: 58:         case 45:
+[e :U 153 ]
+"59
+[; ;STEPPER_MITSUMI.c: 59:             for(i=0; i<3; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 3 `i 154  ]
+[e $U 155  ]
+[e :U 154 ]
+{
+"60
+[; ;STEPPER_MITSUMI.c: 60:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"61
+[; ;STEPPER_MITSUMI.c: 61:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"62
+[; ;STEPPER_MITSUMI.c: 62:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"63
+[; ;STEPPER_MITSUMI.c: 63:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"64
+[; ;STEPPER_MITSUMI.c: 64:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"65
+[; ;STEPPER_MITSUMI.c: 65:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"66
+[; ;STEPPER_MITSUMI.c: 66:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"67
+[; ;STEPPER_MITSUMI.c: 67:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"69
+[; ;STEPPER_MITSUMI.c: 69:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 154  ]
+[e :U 155 ]
+}
+"70
+[; ;STEPPER_MITSUMI.c: 70:             break;
+[e $U 139  ]
+"72
+[; ;STEPPER_MITSUMI.c: 72:         case 15:
+[e :U 157 ]
+"73
+[; ;STEPPER_MITSUMI.c: 73:             for(i=0; i<1; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 1 `i 158  ]
+[e $U 159  ]
+[e :U 158 ]
+{
+"74
+[; ;STEPPER_MITSUMI.c: 74:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"75
+[; ;STEPPER_MITSUMI.c: 75:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"76
+[; ;STEPPER_MITSUMI.c: 76:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"77
+[; ;STEPPER_MITSUMI.c: 77:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"78
+[; ;STEPPER_MITSUMI.c: 78:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"79
+[; ;STEPPER_MITSUMI.c: 79:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"80
+[; ;STEPPER_MITSUMI.c: 80:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"81
+[; ;STEPPER_MITSUMI.c: 81:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"83
+[; ;STEPPER_MITSUMI.c: 83:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1 `i 158  ]
+[e :U 159 ]
+}
+"84
+[; ;STEPPER_MITSUMI.c: 84:             break;
+[e $U 139  ]
+"86
+[; ;STEPPER_MITSUMI.c: 86:         default:
+[e :U 161 ]
+"87
+[; ;STEPPER_MITSUMI.c: 87:             for(i=0; i<2; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 2 `i 162  ]
+[e $U 163  ]
+[e :U 162 ]
+{
+"88
+[; ;STEPPER_MITSUMI.c: 88:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"89
+[; ;STEPPER_MITSUMI.c: 89:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"90
+[; ;STEPPER_MITSUMI.c: 90:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"91
+[; ;STEPPER_MITSUMI.c: 91:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"92
+[; ;STEPPER_MITSUMI.c: 92:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"93
+[; ;STEPPER_MITSUMI.c: 93:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"94
+[; ;STEPPER_MITSUMI.c: 94:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"95
+[; ;STEPPER_MITSUMI.c: 95:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"97
+[; ;STEPPER_MITSUMI.c: 97:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 2 `i 162  ]
+[e :U 163 ]
+}
+"99
+[; ;STEPPER_MITSUMI.c: 99:     }
+}
+[e $U 139  ]
+[e :U 140 ]
+[e [\ _Step_grados_cw , $ -> -> 360 `i `ui 141
+ , $ -> -> 180 `i `ui 145
+ , $ -> -> 90 `i `ui 149
+ , $ -> -> 45 `i `ui 153
+ , $ -> -> 15 `i `ui 157
+ 161 ]
+[e :U 139 ]
+"100
+[; ;STEPPER_MITSUMI.c: 100: }
+[e :UE 138 ]
+}
+"102
+[; ;STEPPER_MITSUMI.c: 102: void Stepper_CCW(uint16_t Step_grados_ccw){
+[v _Stepper_CCW `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _Stepper_CCW ]
+[v _Step_grados_ccw `ui ~T0 @X0 1 r1 ]
+[f ]
+"103
+[; ;STEPPER_MITSUMI.c: 103:     switch(Step_grados_ccw){
+[e $U 167  ]
+{
+"104
+[; ;STEPPER_MITSUMI.c: 104:         case 360:
+[e :U 168 ]
+"105
+[; ;STEPPER_MITSUMI.c: 105:             for(i=0; i<25; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 25 `i 169  ]
+[e $U 170  ]
+[e :U 169 ]
+{
+"106
+[; ;STEPPER_MITSUMI.c: 106:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"107
+[; ;STEPPER_MITSUMI.c: 107:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"108
+[; ;STEPPER_MITSUMI.c: 108:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"109
+[; ;STEPPER_MITSUMI.c: 109:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"110
+[; ;STEPPER_MITSUMI.c: 110:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"111
+[; ;STEPPER_MITSUMI.c: 111:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"112
+[; ;STEPPER_MITSUMI.c: 112:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"113
+[; ;STEPPER_MITSUMI.c: 113:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"114
+[; ;STEPPER_MITSUMI.c: 114:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 25 `i 169  ]
+[e :U 170 ]
+}
+"115
+[; ;STEPPER_MITSUMI.c: 115:             break;
+[e $U 166  ]
+"117
+[; ;STEPPER_MITSUMI.c: 117:         case 180:
+[e :U 172 ]
+"118
+[; ;STEPPER_MITSUMI.c: 118:             for(i=0; i<12; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 12 `i 173  ]
+[e $U 174  ]
+[e :U 173 ]
+{
+"119
+[; ;STEPPER_MITSUMI.c: 119:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"120
+[; ;STEPPER_MITSUMI.c: 120:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"121
+[; ;STEPPER_MITSUMI.c: 121:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"122
+[; ;STEPPER_MITSUMI.c: 122:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"123
+[; ;STEPPER_MITSUMI.c: 123:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"124
+[; ;STEPPER_MITSUMI.c: 124:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"125
+[; ;STEPPER_MITSUMI.c: 125:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"126
+[; ;STEPPER_MITSUMI.c: 126:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"127
+[; ;STEPPER_MITSUMI.c: 127:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 12 `i 173  ]
+[e :U 174 ]
+}
+"128
+[; ;STEPPER_MITSUMI.c: 128:             break;
+[e $U 166  ]
+"130
+[; ;STEPPER_MITSUMI.c: 130:         case 90:
+[e :U 176 ]
+"131
+[; ;STEPPER_MITSUMI.c: 131:             for(i=0; i<6; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 6 `i 177  ]
+[e $U 178  ]
+[e :U 177 ]
+{
+"132
+[; ;STEPPER_MITSUMI.c: 132:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"133
+[; ;STEPPER_MITSUMI.c: 133:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"134
+[; ;STEPPER_MITSUMI.c: 134:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"135
+[; ;STEPPER_MITSUMI.c: 135:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"136
+[; ;STEPPER_MITSUMI.c: 136:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"137
+[; ;STEPPER_MITSUMI.c: 137:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"138
+[; ;STEPPER_MITSUMI.c: 138:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"139
+[; ;STEPPER_MITSUMI.c: 139:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"140
+[; ;STEPPER_MITSUMI.c: 140:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 6 `i 177  ]
+[e :U 178 ]
+}
+"141
+[; ;STEPPER_MITSUMI.c: 141:             break;
+[e $U 166  ]
+"143
+[; ;STEPPER_MITSUMI.c: 143:         case 45:
+[e :U 180 ]
+"144
+[; ;STEPPER_MITSUMI.c: 144:             for(i=0; i<3; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 3 `i 181  ]
+[e $U 182  ]
+[e :U 181 ]
+{
+"145
+[; ;STEPPER_MITSUMI.c: 145:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"146
+[; ;STEPPER_MITSUMI.c: 146:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"147
+[; ;STEPPER_MITSUMI.c: 147:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"148
+[; ;STEPPER_MITSUMI.c: 148:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"149
+[; ;STEPPER_MITSUMI.c: 149:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"150
+[; ;STEPPER_MITSUMI.c: 150:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"151
+[; ;STEPPER_MITSUMI.c: 151:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"152
+[; ;STEPPER_MITSUMI.c: 152:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"153
+[; ;STEPPER_MITSUMI.c: 153:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 3 `i 181  ]
+[e :U 182 ]
+}
+"154
+[; ;STEPPER_MITSUMI.c: 154:             break;
+[e $U 166  ]
+"156
+[; ;STEPPER_MITSUMI.c: 156:         case 15:
+[e :U 184 ]
+"157
+[; ;STEPPER_MITSUMI.c: 157:             for(i=0; i<1; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 1 `i 185  ]
+[e $U 186  ]
+[e :U 185 ]
+{
+"158
+[; ;STEPPER_MITSUMI.c: 158:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"159
+[; ;STEPPER_MITSUMI.c: 159:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"160
+[; ;STEPPER_MITSUMI.c: 160:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"161
+[; ;STEPPER_MITSUMI.c: 161:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"162
+[; ;STEPPER_MITSUMI.c: 162:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"163
+[; ;STEPPER_MITSUMI.c: 163:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"164
+[; ;STEPPER_MITSUMI.c: 164:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"165
+[; ;STEPPER_MITSUMI.c: 165:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"166
+[; ;STEPPER_MITSUMI.c: 166:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1 `i 185  ]
+[e :U 186 ]
+}
+"167
+[; ;STEPPER_MITSUMI.c: 167:             break;
+[e $U 166  ]
+"169
+[; ;STEPPER_MITSUMI.c: 169:         default:
+[e :U 188 ]
+"170
+[; ;STEPPER_MITSUMI.c: 170:             for(i=0; i<2; i++){
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 2 `i 189  ]
+[e $U 190  ]
+[e :U 189 ]
+{
+"171
+[; ;STEPPER_MITSUMI.c: 171:                     PORTD = 0b1001;
+[e = _PORTD -> -> 9 `i `uc ]
+"172
+[; ;STEPPER_MITSUMI.c: 172:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"173
+[; ;STEPPER_MITSUMI.c: 173:                     PORTD = 0b0101;
+[e = _PORTD -> -> 5 `i `uc ]
+"174
+[; ;STEPPER_MITSUMI.c: 174:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"175
+[; ;STEPPER_MITSUMI.c: 175:                     PORTD = 0b0110;
+[e = _PORTD -> -> 6 `i `uc ]
+"176
+[; ;STEPPER_MITSUMI.c: 176:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"177
+[; ;STEPPER_MITSUMI.c: 177:                     PORTD = 0b1010;
+[e = _PORTD -> -> 10 `i `uc ]
+"178
+[; ;STEPPER_MITSUMI.c: 178:                     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"179
+[; ;STEPPER_MITSUMI.c: 179:                 };
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 2 `i 189  ]
+[e :U 190 ]
+}
+"181
+[; ;STEPPER_MITSUMI.c: 181:     }
+}
+[e $U 166  ]
+[e :U 167 ]
+[e [\ _Step_grados_ccw , $ -> -> 360 `i `ui 168
+ , $ -> -> 180 `i `ui 172
+ , $ -> -> 90 `i `ui 176
+ , $ -> -> 45 `i `ui 180
+ , $ -> -> 15 `i `ui 184
+ 188 ]
+[e :U 166 ]
+"182
+[; ;STEPPER_MITSUMI.c: 182: }
+[e :UE 165 ]
+}

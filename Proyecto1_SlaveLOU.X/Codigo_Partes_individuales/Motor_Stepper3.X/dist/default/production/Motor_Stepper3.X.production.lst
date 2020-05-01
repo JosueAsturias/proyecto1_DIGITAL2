@@ -1,0 +1,3255 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Thu Apr 30 16:08:27 2020
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	16F887
+     2                           	opt	pw 120
+     3                           	opt	flic
+     4                           	psect	idataBANK0,global,class=CODE,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+     8                           	psect	inittext,global,class=CODE,delta=2
+     9                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    10                           	psect	maintext,global,class=CODE,split=1,delta=2
+    11                           	psect	text1,local,class=CODE,merge=1,delta=2
+    12                           	psect	text2,local,class=CODE,merge=1,delta=2
+    13                           	psect	text3,local,class=CODE,merge=1,delta=2
+    14                           	psect	text4,local,class=CODE,merge=1,delta=2
+    15                           	dabs	1,0x7E,2
+    16  0000                     
+    17                           ; Version 2.10
+    18                           ; Generated 31/07/2019 GMT
+    19                           ; 
+    20                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    21                           ; All rights reserved.
+    22                           ; 
+    23                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    24                           ; 
+    25                           ; Redistribution and use in source and binary forms, with or without modification, are
+    26                           ; permitted provided that the following conditions are met:
+    27                           ; 
+    28                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    29                           ;        conditions and the following disclaimer.
+    30                           ; 
+    31                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    32                           ;        of conditions and the following disclaimer in the documentation and/or other
+    33                           ;        materials provided with the distribution.
+    34                           ; 
+    35                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    36                           ;        software without specific prior written permission.
+    37                           ; 
+    38                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    39                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    40                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    41                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    42                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    43                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    44                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    45                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    46                           ; 
+    47                           ; 
+    48                           ; Code-generator required, PIC16F887 Definitions
+    49                           ; 
+    50                           ; SFR Addresses
+    51  0000                     	;# 
+    52  0001                     	;# 
+    53  0002                     	;# 
+    54  0003                     	;# 
+    55  0004                     	;# 
+    56  0005                     	;# 
+    57  0006                     	;# 
+    58  0007                     	;# 
+    59  0008                     	;# 
+    60  0009                     	;# 
+    61  000A                     	;# 
+    62  000B                     	;# 
+    63  000C                     	;# 
+    64  000D                     	;# 
+    65  000E                     	;# 
+    66  000E                     	;# 
+    67  000F                     	;# 
+    68  0010                     	;# 
+    69  0011                     	;# 
+    70  0012                     	;# 
+    71  0013                     	;# 
+    72  0014                     	;# 
+    73  0015                     	;# 
+    74  0015                     	;# 
+    75  0016                     	;# 
+    76  0017                     	;# 
+    77  0018                     	;# 
+    78  0019                     	;# 
+    79  001A                     	;# 
+    80  001B                     	;# 
+    81  001B                     	;# 
+    82  001C                     	;# 
+    83  001D                     	;# 
+    84  001E                     	;# 
+    85  001F                     	;# 
+    86  0081                     	;# 
+    87  0085                     	;# 
+    88  0086                     	;# 
+    89  0087                     	;# 
+    90  0088                     	;# 
+    91  0089                     	;# 
+    92  008C                     	;# 
+    93  008D                     	;# 
+    94  008E                     	;# 
+    95  008F                     	;# 
+    96  0090                     	;# 
+    97  0091                     	;# 
+    98  0092                     	;# 
+    99  0093                     	;# 
+   100  0093                     	;# 
+   101  0093                     	;# 
+   102  0094                     	;# 
+   103  0095                     	;# 
+   104  0096                     	;# 
+   105  0097                     	;# 
+   106  0098                     	;# 
+   107  0099                     	;# 
+   108  009A                     	;# 
+   109  009B                     	;# 
+   110  009C                     	;# 
+   111  009D                     	;# 
+   112  009E                     	;# 
+   113  009F                     	;# 
+   114  0105                     	;# 
+   115  0107                     	;# 
+   116  0108                     	;# 
+   117  0109                     	;# 
+   118  010C                     	;# 
+   119  010C                     	;# 
+   120  010D                     	;# 
+   121  010E                     	;# 
+   122  010F                     	;# 
+   123  0185                     	;# 
+   124  0187                     	;# 
+   125  0188                     	;# 
+   126  0189                     	;# 
+   127  018C                     	;# 
+   128  018D                     	;# 
+   129  0000                     	;# 
+   130  0001                     	;# 
+   131  0002                     	;# 
+   132  0003                     	;# 
+   133  0004                     	;# 
+   134  0005                     	;# 
+   135  0006                     	;# 
+   136  0007                     	;# 
+   137  0008                     	;# 
+   138  0009                     	;# 
+   139  000A                     	;# 
+   140  000B                     	;# 
+   141  000C                     	;# 
+   142  000D                     	;# 
+   143  000E                     	;# 
+   144  000E                     	;# 
+   145  000F                     	;# 
+   146  0010                     	;# 
+   147  0011                     	;# 
+   148  0012                     	;# 
+   149  0013                     	;# 
+   150  0014                     	;# 
+   151  0015                     	;# 
+   152  0015                     	;# 
+   153  0016                     	;# 
+   154  0017                     	;# 
+   155  0018                     	;# 
+   156  0019                     	;# 
+   157  001A                     	;# 
+   158  001B                     	;# 
+   159  001B                     	;# 
+   160  001C                     	;# 
+   161  001D                     	;# 
+   162  001E                     	;# 
+   163  001F                     	;# 
+   164  0081                     	;# 
+   165  0085                     	;# 
+   166  0086                     	;# 
+   167  0087                     	;# 
+   168  0088                     	;# 
+   169  0089                     	;# 
+   170  008C                     	;# 
+   171  008D                     	;# 
+   172  008E                     	;# 
+   173  008F                     	;# 
+   174  0090                     	;# 
+   175  0091                     	;# 
+   176  0092                     	;# 
+   177  0093                     	;# 
+   178  0093                     	;# 
+   179  0093                     	;# 
+   180  0094                     	;# 
+   181  0095                     	;# 
+   182  0096                     	;# 
+   183  0097                     	;# 
+   184  0098                     	;# 
+   185  0099                     	;# 
+   186  009A                     	;# 
+   187  009B                     	;# 
+   188  009C                     	;# 
+   189  009D                     	;# 
+   190  009E                     	;# 
+   191  009F                     	;# 
+   192  0105                     	;# 
+   193  0107                     	;# 
+   194  0108                     	;# 
+   195  0109                     	;# 
+   196  010C                     	;# 
+   197  010C                     	;# 
+   198  010D                     	;# 
+   199  010E                     	;# 
+   200  010F                     	;# 
+   201  0185                     	;# 
+   202  0187                     	;# 
+   203  0188                     	;# 
+   204  0189                     	;# 
+   205  018C                     	;# 
+   206  018D                     	;# 
+   207  0000                     	;# 
+   208  0001                     	;# 
+   209  0002                     	;# 
+   210  0003                     	;# 
+   211  0004                     	;# 
+   212  0005                     	;# 
+   213  0006                     	;# 
+   214  0007                     	;# 
+   215  0008                     	;# 
+   216  0009                     	;# 
+   217  000A                     	;# 
+   218  000B                     	;# 
+   219  000C                     	;# 
+   220  000D                     	;# 
+   221  000E                     	;# 
+   222  000E                     	;# 
+   223  000F                     	;# 
+   224  0010                     	;# 
+   225  0011                     	;# 
+   226  0012                     	;# 
+   227  0013                     	;# 
+   228  0014                     	;# 
+   229  0015                     	;# 
+   230  0015                     	;# 
+   231  0016                     	;# 
+   232  0017                     	;# 
+   233  0018                     	;# 
+   234  0019                     	;# 
+   235  001A                     	;# 
+   236  001B                     	;# 
+   237  001B                     	;# 
+   238  001C                     	;# 
+   239  001D                     	;# 
+   240  001E                     	;# 
+   241  001F                     	;# 
+   242  0081                     	;# 
+   243  0085                     	;# 
+   244  0086                     	;# 
+   245  0087                     	;# 
+   246  0088                     	;# 
+   247  0089                     	;# 
+   248  008C                     	;# 
+   249  008D                     	;# 
+   250  008E                     	;# 
+   251  008F                     	;# 
+   252  0090                     	;# 
+   253  0091                     	;# 
+   254  0092                     	;# 
+   255  0093                     	;# 
+   256  0093                     	;# 
+   257  0093                     	;# 
+   258  0094                     	;# 
+   259  0095                     	;# 
+   260  0096                     	;# 
+   261  0097                     	;# 
+   262  0098                     	;# 
+   263  0099                     	;# 
+   264  009A                     	;# 
+   265  009B                     	;# 
+   266  009C                     	;# 
+   267  009D                     	;# 
+   268  009E                     	;# 
+   269  009F                     	;# 
+   270  0105                     	;# 
+   271  0107                     	;# 
+   272  0108                     	;# 
+   273  0109                     	;# 
+   274  010C                     	;# 
+   275  010C                     	;# 
+   276  010D                     	;# 
+   277  010E                     	;# 
+   278  010F                     	;# 
+   279  0185                     	;# 
+   280  0187                     	;# 
+   281  0188                     	;# 
+   282  0189                     	;# 
+   283  018C                     	;# 
+   284  018D                     	;# 
+   285                           
+   286                           	psect	idataBANK0
+   287  01DE                     __pidataBANK0:	
+   288                           
+   289                           ;initializer for _Paso2BLE_CCW
+   290  01DE  3409               	retlw	9
+   291  01DF  3400               	retlw	0
+   292  01E0  3405               	retlw	5
+   293  01E1  3400               	retlw	0
+   294  01E2  3406               	retlw	6
+   295  01E3  3400               	retlw	0
+   296  01E4  340A               	retlw	10
+   297  01E5  3400               	retlw	0
+   298                           
+   299                           ;initializer for _Paso2BLE_CW
+   300  01E6  340A               	retlw	10
+   301  01E7  3400               	retlw	0
+   302  01E8  3406               	retlw	6
+   303  01E9  3400               	retlw	0
+   304  01EA  3405               	retlw	5
+   305  01EB  3400               	retlw	0
+   306  01EC  3409               	retlw	9
+   307  01ED  3400               	retlw	0
+   308  0009                     _PORTE	set	9
+   309  0007                     _PORTC	set	7
+   310  0006                     _PORTB	set	6
+   311  0005                     _PORTA	set	5
+   312  0008                     _PORTD	set	8
+   313  0005                     _PORTAbits	set	5
+   314  008F                     _OSCCONbits	set	143
+   315  0085                     _TRISA	set	133
+   316  0088                     _TRISD	set	136
+   317  0189                     _ANSELH	set	393
+   318  0188                     _ANSEL	set	392
+   319                           
+   320                           ; #config settings
+   321  0000                     
+   322                           	psect	cinit
+   323  07E7                     start_initialization:	
+   324  07E7                     __initialization:	
+   325                           
+   326                           ; Initialize objects allocated to BANK0
+   327  07E7  1383               	bcf	3,7	;select IRP bank0
+   328  07E8  3030               	movlw	low (__pdataBANK0+16)
+   329  07E9  00FD               	movwf	btemp+-1
+   330  07EA  3001               	movlw	high __pidataBANK0
+   331  07EB  00FE               	movwf	btemp
+   332  07EC  30DE               	movlw	low __pidataBANK0
+   333  07ED  00FF               	movwf	btemp+1
+   334  07EE  3020               	movlw	low __pdataBANK0
+   335  07EF  0084               	movwf	4
+   336  07F0  120A  118A  21F2  120A  118A  	fcall	init_ram0
+   337                           
+   338                           ; Clear objects allocated to COMMON
+   339  07F5  01F0               	clrf	__pbssCOMMON& (0+127)
+   340  07F6  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+   341  07F7  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+   342  07F8  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+   343  07F9  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+   344  07FA  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
+   345  07FB  01F6               	clrf	(__pbssCOMMON+6)& (0+127)
+   346  07FC                     end_of_initialization:	
+   347                           ;End of C runtime variable initialization code
+   348                           
+   349  07FC                     __end_of__initialization:	
+   350  07FC  0183               	clrf	3
+   351  07FD  120A  118A  2ACB   	ljmp	_main	;jump to C main() function
+   352                           
+   353                           	psect	bssCOMMON
+   354  0070                     __pbssCOMMON:	
+   355  0070                     _i:	
+   356  0070                     	ds	2
+   357  0072                     _ESTADO3:	
+   358  0072                     	ds	1
+   359  0073                     _ESTADO2:	
+   360  0073                     	ds	1
+   361  0074                     _ESTADO:	
+   362  0074                     	ds	1
+   363  0075                     _flag:	
+   364  0075                     	ds	1
+   365  0076                     _count:	
+   366  0076                     	ds	1
+   367                           
+   368                           	psect	dataBANK0
+   369  0020                     __pdataBANK0:	
+   370  0020                     _Paso2BLE_CCW:	
+   371  0020                     	ds	8
+   372  0028                     _Paso2BLE_CW:	
+   373  0028                     	ds	8
+   374                           
+   375                           	psect	inittext
+   376  01EE                     init_fetch0:	
+   377                           ;	Called with low address in FSR and high address in W
+   378                           
+   379  01EE  087E               	movf	btemp,w
+   380  01EF  008A               	movwf	10
+   381  01F0  087F               	movf	btemp+1,w
+   382  01F1  0082               	movwf	2
+   383  01F2                     init_ram0:	
+   384                           ;Called with:
+   385                           ;	high address of idata address in btemp 
+   386                           ;	low address of idata address in btemp+1 
+   387                           ;	low address of data in FSR
+   388                           ;	high address + 1 of data in btemp-1
+   389                           
+   390  01F2  120A  118A  21EE  120A  118A  	fcall	init_fetch0
+   391  01F7  0080               	movwf	0
+   392  01F8  0A84               	incf	4,f
+   393  01F9  0804               	movf	4,w
+   394  01FA  067D               	xorwf	btemp+-1,w
+   395  01FB  1903               	btfsc	3,2
+   396  01FC  3400               	retlw	0
+   397  01FD  0AFF               	incf	btemp+1,f
+   398  01FE  1903               	btfsc	3,2
+   399  01FF  0AFE               	incf	btemp,f
+   400  0200  29F2               	goto	init_ram0
+   401                           
+   402                           	psect	cstackCOMMON
+   403  0077                     __pcstackCOMMON:	
+   404  0077                     ?_config_PORTS:	
+   405  0077                     ?_Stepper_CW:	
+   406                           ; 1 bytes @ 0x0
+   407                           
+   408  0077                     ?_Stepper_CCW:	
+   409                           ; 1 bytes @ 0x0
+   410                           
+   411  0077                     ?_OSC_config:	
+   412                           ; 1 bytes @ 0x0
+   413                           
+   414  0077                     ?_main:	
+   415                           ; 1 bytes @ 0x0
+   416                           
+   417  0077                     Stepper_CW@Step_grados_cw:	
+   418                           ; 1 bytes @ 0x0
+   419                           
+   420  0077                     Stepper_CCW@Step_grados_ccw:	
+   421                           ; 2 bytes @ 0x0
+   422                           
+   423  0077                     OSC_config@frecuencia:	
+   424                           ; 2 bytes @ 0x0
+   425                           
+   426                           
+   427                           ; 4 bytes @ 0x0
+   428  0077                     	ds	2
+   429  0079                     ??_Stepper_CW:	
+   430  0079                     ??_Stepper_CCW:	
+   431                           ; 1 bytes @ 0x2
+   432                           
+   433                           
+   434                           ; 1 bytes @ 0x2
+   435  0079                     	ds	2
+   436  007B                     ??_config_PORTS:	
+   437  007B                     ??_OSC_config:	
+   438                           ; 1 bytes @ 0x4
+   439                           
+   440  007B                     ??_main:	
+   441                           ; 1 bytes @ 0x4
+   442                           
+   443                           
+   444                           ; 1 bytes @ 0x4
+   445  007B                     	ds	3
+   446                           
+   447                           	psect	maintext
+   448  02CB                     __pmaintext:	
+   449 ;;
+   450 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   451 ;;
+   452 ;; *************** function _main *****************
+   453 ;; Defined at:
+   454 ;;		line 64 in file "Stepper3.c"
+   455 ;; Parameters:    Size  Location     Type
+   456 ;;		None
+   457 ;; Auto vars:     Size  Location     Type
+   458 ;;		None
+   459 ;; Return value:  Size  Location     Type
+   460 ;;                  1    wreg      void 
+   461 ;; Registers used:
+   462 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   463 ;; Tracked objects:
+   464 ;;		On entry : B00/0
+   465 ;;		On exit  : 0/0
+   466 ;;		Unchanged: 0/0
+   467 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   468 ;;      Params:         0       0       0       0       0
+   469 ;;      Locals:         0       0       0       0       0
+   470 ;;      Temps:          3       0       0       0       0
+   471 ;;      Totals:         3       0       0       0       0
+   472 ;;Total ram usage:        3 bytes
+   473 ;; Hardware stack levels required when called:    2
+   474 ;; This function calls:
+   475 ;;		_Stepper_CCW
+   476 ;;		_Stepper_CW
+   477 ;;		_config_PORTS
+   478 ;; This function is called by:
+   479 ;;		Startup code after reset
+   480 ;; This function uses a non-reentrant model
+   481 ;;
+   482                           
+   483                           
+   484                           ;psect for function _main
+   485  02CB                     _main:	
+   486  02CB                     l1738:	
+   487                           ;incstack = 0
+   488                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   489                           
+   490                           
+   491                           ;Stepper3.c: 65:     config_PORTS();
+   492  02CB  120A  118A  2201  120A  118A  	fcall	_config_PORTS
+   493  02D0                     l1740:	
+   494                           
+   495                           ;Stepper3.c: 70:         if (PORTAbits.RA0 == 1){
+   496  02D0  1283               	bcf	3,5	;RP0=0, select bank0
+   497  02D1  1303               	bcf	3,6	;RP1=0, select bank0
+   498  02D2  1C05               	btfss	5,0	;volatile
+   499  02D3  2AD5               	goto	u331
+   500  02D4  2AD6               	goto	u330
+   501  02D5                     u331:	
+   502  02D5  2B52               	goto	l1766
+   503  02D6                     u330:	
+   504  02D6                     l1742:	
+   505                           
+   506                           ;Stepper3.c: 71:             ESTADO = 1;
+   507  02D6  01F4               	clrf	_ESTADO
+   508  02D7  0AF4               	incf	_ESTADO,f
+   509  02D8                     l1744:	
+   510                           
+   511                           ;Stepper3.c: 72:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+   512  02D8  3014               	movlw	20
+   513  02D9  00FB               	movwf	??_main
+   514  02DA                     u417:	
+   515  02DA  0BFB               	decfsz	??_main,f
+   516  02DB  2ADA               	goto	u417
+   517  02DC  0000               	nop
+   518  02DD                     l1746:	
+   519  02DD                     l1748:	
+   520                           ;Stepper3.c: 75:             if (ESTADO == 1 && PORTAbits.RA0 == 0) {
+   521                           
+   522  02DD  1283               	bcf	3,5	;RP0=0, select bank0
+   523  02DE  1303               	bcf	3,6	;RP1=0, select bank0
+   524  02DF  1805               	btfsc	5,0	;volatile
+   525  02E0  2AE2               	goto	u341
+   526  02E1  2AE3               	goto	u340
+   527  02E2                     u341:	
+   528  02E2  2B51               	goto	l1764
+   529  02E3                     u340:	
+   530  02E3                     l1750:	
+   531                           
+   532                           ;Stepper3.c: 76:                  Stepper_CW(360);
+   533  02E3  3068               	movlw	104
+   534  02E4  00F7               	movwf	Stepper_CW@Step_grados_cw
+   535  02E5  3001               	movlw	1
+   536  02E6  00F8               	movwf	Stepper_CW@Step_grados_cw+1
+   537  02E7  120A  118A  2608  120A  118A  	fcall	_Stepper_CW
+   538  02EC                     l1752:	
+   539                           
+   540                           ;Stepper3.c: 77:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
+   541  02EC  3002               	movlw	2
+   542  02ED  00FD               	movwf	??_main+2
+   543  02EE  3045               	movlw	69
+   544  02EF  00FC               	movwf	??_main+1
+   545  02F0  30A9               	movlw	169
+   546  02F1  00FB               	movwf	??_main
+   547  02F2                     u427:	
+   548  02F2  0BFB               	decfsz	??_main,f
+   549  02F3  2AF2               	goto	u427
+   550  02F4  0BFC               	decfsz	??_main+1,f
+   551  02F5  2AF2               	goto	u427
+   552  02F6  0BFD               	decfsz	??_main+2,f
+   553  02F7  2AF2               	goto	u427
+   554  02F8  2AF9               	nop2
+   555  02F9                     l1754:	
+   556                           
+   557                           ;Stepper3.c: 78:                  Stepper_CW(180);
+   558  02F9  30B4               	movlw	180
+   559  02FA  00F7               	movwf	Stepper_CW@Step_grados_cw
+   560  02FB  3000               	movlw	0
+   561  02FC  00F8               	movwf	Stepper_CW@Step_grados_cw+1
+   562  02FD  120A  118A  2608  120A  118A  	fcall	_Stepper_CW
+   563                           
+   564                           ;Stepper3.c: 79:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
+   565  0302  3002               	movlw	2
+   566  0303  00FD               	movwf	??_main+2
+   567  0304  3045               	movlw	69
+   568  0305  00FC               	movwf	??_main+1
+   569  0306  30A9               	movlw	169
+   570  0307  00FB               	movwf	??_main
+   571  0308                     u437:	
+   572  0308  0BFB               	decfsz	??_main,f
+   573  0309  2B08               	goto	u437
+   574  030A  0BFC               	decfsz	??_main+1,f
+   575  030B  2B08               	goto	u437
+   576  030C  0BFD               	decfsz	??_main+2,f
+   577  030D  2B08               	goto	u437
+   578  030E  2B0F               	nop2
+   579  030F                     l1756:	
+   580                           
+   581                           ;Stepper3.c: 80:                  Stepper_CW(90);
+   582  030F  305A               	movlw	90
+   583  0310  00F7               	movwf	Stepper_CW@Step_grados_cw
+   584  0311  3000               	movlw	0
+   585  0312  00F8               	movwf	Stepper_CW@Step_grados_cw+1
+   586  0313  120A  118A  2608  120A  118A  	fcall	_Stepper_CW
+   587  0318                     l1758:	
+   588                           
+   589                           ;Stepper3.c: 81:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
+   590  0318  3002               	movlw	2
+   591  0319  00FD               	movwf	??_main+2
+   592  031A  3045               	movlw	69
+   593  031B  00FC               	movwf	??_main+1
+   594  031C  30A9               	movlw	169
+   595  031D  00FB               	movwf	??_main
+   596  031E                     u447:	
+   597  031E  0BFB               	decfsz	??_main,f
+   598  031F  2B1E               	goto	u447
+   599  0320  0BFC               	decfsz	??_main+1,f
+   600  0321  2B1E               	goto	u447
+   601  0322  0BFD               	decfsz	??_main+2,f
+   602  0323  2B1E               	goto	u447
+   603  0324  2B25               	nop2
+   604                           
+   605                           ;Stepper3.c: 82:                  Stepper_CW(45);
+   606  0325  302D               	movlw	45
+   607  0326  00F7               	movwf	Stepper_CW@Step_grados_cw
+   608  0327  3000               	movlw	0
+   609  0328  00F8               	movwf	Stepper_CW@Step_grados_cw+1
+   610  0329  120A  118A  2608  120A  118A  	fcall	_Stepper_CW
+   611  032E                     l1760:	
+   612                           
+   613                           ;Stepper3.c: 83:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
+   614  032E  3002               	movlw	2
+   615  032F  00FD               	movwf	??_main+2
+   616  0330  3045               	movlw	69
+   617  0331  00FC               	movwf	??_main+1
+   618  0332  30A9               	movlw	169
+   619  0333  00FB               	movwf	??_main
+   620  0334                     u457:	
+   621  0334  0BFB               	decfsz	??_main,f
+   622  0335  2B34               	goto	u457
+   623  0336  0BFC               	decfsz	??_main+1,f
+   624  0337  2B34               	goto	u457
+   625  0338  0BFD               	decfsz	??_main+2,f
+   626  0339  2B34               	goto	u457
+   627  033A  2B3B               	nop2
+   628  033B                     l1762:	
+   629                           
+   630                           ;Stepper3.c: 84:                  Stepper_CW(15);
+   631  033B  300F               	movlw	15
+   632  033C  00F7               	movwf	Stepper_CW@Step_grados_cw
+   633  033D  3000               	movlw	0
+   634  033E  00F8               	movwf	Stepper_CW@Step_grados_cw+1
+   635  033F  120A  118A  2608  120A  118A  	fcall	_Stepper_CW
+   636                           
+   637                           ;Stepper3.c: 85:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
+   638  0344  3002               	movlw	2
+   639  0345  00FD               	movwf	??_main+2
+   640  0346  3045               	movlw	69
+   641  0347  00FC               	movwf	??_main+1
+   642  0348  30A9               	movlw	169
+   643  0349  00FB               	movwf	??_main
+   644  034A                     u467:	
+   645  034A  0BFB               	decfsz	??_main,f
+   646  034B  2B4A               	goto	u467
+   647  034C  0BFC               	decfsz	??_main+1,f
+   648  034D  2B4A               	goto	u467
+   649  034E  0BFD               	decfsz	??_main+2,f
+   650  034F  2B4A               	goto	u467
+   651  0350  2B51               	nop2
+   652  0351                     l1764:	
+   653                           
+   654                           ;Stepper3.c: 88:             ESTADO = 0;
+   655  0351  01F4               	clrf	_ESTADO
+   656  0352                     l1766:	
+   657                           
+   658                           ;Stepper3.c: 92:         if (PORTAbits.RA1 == 1){
+   659  0352  1283               	bcf	3,5	;RP0=0, select bank0
+   660  0353  1303               	bcf	3,6	;RP1=0, select bank0
+   661  0354  1C85               	btfss	5,1	;volatile
+   662  0355  2B57               	goto	u351
+   663  0356  2B58               	goto	u350
+   664  0357                     u351:	
+   665  0357  2BA3               	goto	l1800
+   666  0358                     u350:	
+   667  0358                     l1768:	
+   668                           
+   669                           ;Stepper3.c: 93:             ESTADO2 = 1;
+   670  0358  01F3               	clrf	_ESTADO2
+   671  0359  0AF3               	incf	_ESTADO2,f
+   672  035A                     l1770:	
+   673                           
+   674                           ;Stepper3.c: 94:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+   675  035A  3014               	movlw	20
+   676  035B  00FB               	movwf	??_main
+   677  035C                     u477:	
+   678  035C  0BFB               	decfsz	??_main,f
+   679  035D  2B5C               	goto	u477
+   680  035E  0000               	nop
+   681  035F                     l1772:	
+   682  035F                     l1774:	
+   683                           ;Stepper3.c: 97:             if (ESTADO2 == 1 && PORTAbits.RA1 == 0) {
+   684                           
+   685  035F  1283               	bcf	3,5	;RP0=0, select bank0
+   686  0360  1303               	bcf	3,6	;RP1=0, select bank0
+   687  0361  1885               	btfsc	5,1	;volatile
+   688  0362  2B64               	goto	u361
+   689  0363  2B65               	goto	u360
+   690  0364                     u361:	
+   691  0364  2BA2               	goto	l1798
+   692  0365                     u360:	
+   693  0365                     l1776:	
+   694                           
+   695                           ;Stepper3.c: 99:                 for(i=0; i<8; i++){
+   696  0365  01F0               	clrf	_i
+   697  0366  01F1               	clrf	_i+1
+   698  0367                     l1778:	
+   699  0367  0871               	movf	_i+1,w
+   700  0368  3A80               	xorlw	128
+   701  0369  00FF               	movwf	btemp+1
+   702  036A  3080               	movlw	128
+   703  036B  027F               	subwf	btemp+1,w
+   704  036C  1D03               	skipz
+   705  036D  2B70               	goto	u375
+   706  036E  3008               	movlw	8
+   707  036F  0270               	subwf	_i,w
+   708  0370                     u375:	
+   709  0370  1C03               	skipc
+   710  0371  2B73               	goto	u371
+   711  0372  2B74               	goto	u370
+   712  0373                     u371:	
+   713  0373  2B75               	goto	l1782
+   714  0374                     u370:	
+   715  0374  2BA2               	goto	l1798
+   716  0375                     l1782:	
+   717                           
+   718                           ;Stepper3.c: 100:                     PORTD = Paso2BLE_CW[count];
+   719  0375  0876               	movf	_count,w
+   720  0376  00FB               	movwf	??_main
+   721  0377  077B               	addwf	??_main,w
+   722  0378  3E28               	addlw	(low (_Paso2BLE_CW| 0))& (0+255)
+   723  0379  0084               	movwf	4
+   724  037A  1383               	bcf	3,7	;select IRP bank0
+   725  037B  0800               	movf	0,w
+   726  037C  1283               	bcf	3,5	;RP0=0, select bank0
+   727  037D  1303               	bcf	3,6	;RP1=0, select bank0
+   728  037E  0088               	movwf	8	;volatile
+   729  037F                     l1784:	
+   730                           
+   731                           ;Stepper3.c: 101:                     _delay((unsigned long)((20)*(1000000/4000.0)));
+   732  037F  3007               	movlw	7
+   733  0380  00FC               	movwf	??_main+1
+   734  0381  307D               	movlw	125
+   735  0382  00FB               	movwf	??_main
+   736  0383                     u487:	
+   737  0383  0BFB               	decfsz	??_main,f
+   738  0384  2B83               	goto	u487
+   739  0385  0BFC               	decfsz	??_main+1,f
+   740  0386  2B83               	goto	u487
+   741  0387                     l1786:	
+   742                           
+   743                           ;Stepper3.c: 102:                     count++;
+   744  0387  3001               	movlw	1
+   745  0388  00FB               	movwf	??_main
+   746  0389  087B               	movf	??_main,w
+   747  038A  07F6               	addwf	_count,f
+   748  038B                     l1788:	
+   749                           
+   750                           ;Stepper3.c: 104:                     if (count == 4) {
+   751  038B  3004               	movlw	4
+   752  038C  0676               	xorwf	_count,w
+   753  038D  1D03               	btfss	3,2
+   754  038E  2B90               	goto	u381
+   755  038F  2B91               	goto	u380
+   756  0390                     u381:	
+   757  0390  2B9B               	goto	l1794
+   758  0391                     u380:	
+   759  0391                     l1790:	
+   760                           
+   761                           ;Stepper3.c: 105:                         _delay((unsigned long)((10)*(1000000/4000.0)))
+      +                          ;
+   762  0391  3004               	movlw	4
+   763  0392  00FC               	movwf	??_main+1
+   764  0393  303D               	movlw	61
+   765  0394  00FB               	movwf	??_main
+   766  0395                     u497:	
+   767  0395  0BFB               	decfsz	??_main,f
+   768  0396  2B95               	goto	u497
+   769  0397  0BFC               	decfsz	??_main+1,f
+   770  0398  2B95               	goto	u497
+   771  0399  2B9A               	nop2
+   772  039A                     l1792:	
+   773                           
+   774                           ;Stepper3.c: 106:                         count = 0;
+   775  039A  01F6               	clrf	_count
+   776  039B                     l1794:	
+   777                           
+   778                           ;Stepper3.c: 109:                 }
+   779  039B  3001               	movlw	1
+   780  039C  07F0               	addwf	_i,f
+   781  039D  1803               	skipnc
+   782  039E  0AF1               	incf	_i+1,f
+   783  039F  3000               	movlw	0
+   784  03A0  07F1               	addwf	_i+1,f
+   785  03A1  2B67               	goto	l1778
+   786  03A2                     l1798:	
+   787                           
+   788                           ;Stepper3.c: 112:             ESTADO2 = 0;
+   789  03A2  01F3               	clrf	_ESTADO2
+   790  03A3                     l1800:	
+   791                           
+   792                           ;Stepper3.c: 116:         if (PORTAbits.RA2 == 1){
+   793  03A3  1283               	bcf	3,5	;RP0=0, select bank0
+   794  03A4  1303               	bcf	3,6	;RP1=0, select bank0
+   795  03A5  1D05               	btfss	5,2	;volatile
+   796  03A6  2BA8               	goto	u391
+   797  03A7  2BA9               	goto	u390
+   798  03A8                     u391:	
+   799  03A8  2AD0               	goto	l1740
+   800  03A9                     u390:	
+   801  03A9                     l1802:	
+   802                           
+   803                           ;Stepper3.c: 117:             ESTADO3 = 1;
+   804  03A9  01F2               	clrf	_ESTADO3
+   805  03AA  0AF2               	incf	_ESTADO3,f
+   806  03AB                     l1804:	
+   807                           
+   808                           ;Stepper3.c: 118:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+   809  03AB  3014               	movlw	20
+   810  03AC  00FB               	movwf	??_main
+   811  03AD                     u507:	
+   812  03AD  0BFB               	decfsz	??_main,f
+   813  03AE  2BAD               	goto	u507
+   814  03AF  0000               	nop
+   815  03B0                     l1806:	
+   816  03B0                     l1808:	
+   817                           ;Stepper3.c: 120:             if (ESTADO3 == 1 && PORTAbits.RA2 == 0) {
+   818                           
+   819  03B0  1283               	bcf	3,5	;RP0=0, select bank0
+   820  03B1  1303               	bcf	3,6	;RP1=0, select bank0
+   821  03B2  1905               	btfsc	5,2	;volatile
+   822  03B3  2BB5               	goto	u401
+   823  03B4  2BB6               	goto	u400
+   824  03B5                     u401:	
+   825  03B5  2C24               	goto	l1824
+   826  03B6                     u400:	
+   827  03B6                     l1810:	
+   828                           
+   829                           ;Stepper3.c: 121:                 Stepper_CCW(360);
+   830  03B6  3068               	movlw	104
+   831  03B7  00F7               	movwf	Stepper_CCW@Step_grados_ccw
+   832  03B8  3001               	movlw	1
+   833  03B9  00F8               	movwf	Stepper_CCW@Step_grados_ccw+1
+   834  03BA  120A  118A  2429  120A  118A  	fcall	_Stepper_CCW
+   835  03BF                     l1812:	
+   836                           
+   837                           ;Stepper3.c: 122:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+   838  03BF  3002               	movlw	2
+   839  03C0  00FD               	movwf	??_main+2
+   840  03C1  3045               	movlw	69
+   841  03C2  00FC               	movwf	??_main+1
+   842  03C3  30A9               	movlw	169
+   843  03C4  00FB               	movwf	??_main
+   844  03C5                     u517:	
+   845  03C5  0BFB               	decfsz	??_main,f
+   846  03C6  2BC5               	goto	u517
+   847  03C7  0BFC               	decfsz	??_main+1,f
+   848  03C8  2BC5               	goto	u517
+   849  03C9  0BFD               	decfsz	??_main+2,f
+   850  03CA  2BC5               	goto	u517
+   851  03CB  2BCC               	nop2
+   852  03CC                     l1814:	
+   853                           
+   854                           ;Stepper3.c: 123:                 Stepper_CCW(180);
+   855  03CC  30B4               	movlw	180
+   856  03CD  00F7               	movwf	Stepper_CCW@Step_grados_ccw
+   857  03CE  3000               	movlw	0
+   858  03CF  00F8               	movwf	Stepper_CCW@Step_grados_ccw+1
+   859  03D0  120A  118A  2429  120A  118A  	fcall	_Stepper_CCW
+   860                           
+   861                           ;Stepper3.c: 124:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+   862  03D5  3002               	movlw	2
+   863  03D6  00FD               	movwf	??_main+2
+   864  03D7  3045               	movlw	69
+   865  03D8  00FC               	movwf	??_main+1
+   866  03D9  30A9               	movlw	169
+   867  03DA  00FB               	movwf	??_main
+   868  03DB                     u527:	
+   869  03DB  0BFB               	decfsz	??_main,f
+   870  03DC  2BDB               	goto	u527
+   871  03DD  0BFC               	decfsz	??_main+1,f
+   872  03DE  2BDB               	goto	u527
+   873  03DF  0BFD               	decfsz	??_main+2,f
+   874  03E0  2BDB               	goto	u527
+   875  03E1  2BE2               	nop2
+   876  03E2                     l1816:	
+   877                           
+   878                           ;Stepper3.c: 125:                 Stepper_CCW(90);
+   879  03E2  305A               	movlw	90
+   880  03E3  00F7               	movwf	Stepper_CCW@Step_grados_ccw
+   881  03E4  3000               	movlw	0
+   882  03E5  00F8               	movwf	Stepper_CCW@Step_grados_ccw+1
+   883  03E6  120A  118A  2429  120A  118A  	fcall	_Stepper_CCW
+   884  03EB                     l1818:	
+   885                           
+   886                           ;Stepper3.c: 126:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+   887  03EB  3002               	movlw	2
+   888  03EC  00FD               	movwf	??_main+2
+   889  03ED  3045               	movlw	69
+   890  03EE  00FC               	movwf	??_main+1
+   891  03EF  30A9               	movlw	169
+   892  03F0  00FB               	movwf	??_main
+   893  03F1                     u537:	
+   894  03F1  0BFB               	decfsz	??_main,f
+   895  03F2  2BF1               	goto	u537
+   896  03F3  0BFC               	decfsz	??_main+1,f
+   897  03F4  2BF1               	goto	u537
+   898  03F5  0BFD               	decfsz	??_main+2,f
+   899  03F6  2BF1               	goto	u537
+   900  03F7  2BF8               	nop2
+   901                           
+   902                           ;Stepper3.c: 127:                 Stepper_CCW(45);
+   903  03F8  302D               	movlw	45
+   904  03F9  00F7               	movwf	Stepper_CCW@Step_grados_ccw
+   905  03FA  3000               	movlw	0
+   906  03FB  00F8               	movwf	Stepper_CCW@Step_grados_ccw+1
+   907  03FC  120A  118A  2429  120A  118A  	fcall	_Stepper_CCW
+   908  0401                     l1820:	
+   909                           
+   910                           ;Stepper3.c: 128:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+   911  0401  3002               	movlw	2
+   912  0402  00FD               	movwf	??_main+2
+   913  0403  3045               	movlw	69
+   914  0404  00FC               	movwf	??_main+1
+   915  0405  30A9               	movlw	169
+   916  0406  00FB               	movwf	??_main
+   917  0407                     u547:	
+   918  0407  0BFB               	decfsz	??_main,f
+   919  0408  2C07               	goto	u547
+   920  0409  0BFC               	decfsz	??_main+1,f
+   921  040A  2C07               	goto	u547
+   922  040B  0BFD               	decfsz	??_main+2,f
+   923  040C  2C07               	goto	u547
+   924  040D  2C0E               	nop2
+   925  040E                     l1822:	
+   926                           
+   927                           ;Stepper3.c: 129:                 Stepper_CCW(15);
+   928  040E  300F               	movlw	15
+   929  040F  00F7               	movwf	Stepper_CCW@Step_grados_ccw
+   930  0410  3000               	movlw	0
+   931  0411  00F8               	movwf	Stepper_CCW@Step_grados_ccw+1
+   932  0412  120A  118A  2429  120A  118A  	fcall	_Stepper_CCW
+   933                           
+   934                           ;Stepper3.c: 130:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
+   935  0417  3002               	movlw	2
+   936  0418  00FD               	movwf	??_main+2
+   937  0419  3045               	movlw	69
+   938  041A  00FC               	movwf	??_main+1
+   939  041B  30A9               	movlw	169
+   940  041C  00FB               	movwf	??_main
+   941  041D                     u557:	
+   942  041D  0BFB               	decfsz	??_main,f
+   943  041E  2C1D               	goto	u557
+   944  041F  0BFC               	decfsz	??_main+1,f
+   945  0420  2C1D               	goto	u557
+   946  0421  0BFD               	decfsz	??_main+2,f
+   947  0422  2C1D               	goto	u557
+   948  0423  2C24               	nop2
+   949  0424                     l1824:	
+   950                           
+   951                           ;Stepper3.c: 133:             ESTADO3 = 0;
+   952  0424  01F2               	clrf	_ESTADO3
+   953  0425  2AD0               	goto	l1740
+   954  0426  120A  118A  2800   	ljmp	start
+   955  0429                     __end_of_main:	
+   956                           
+   957                           	psect	text1
+   958  0201                     __ptext1:	
+   959 ;; *************** function _config_PORTS *****************
+   960 ;; Defined at:
+   961 ;;		line 143 in file "Stepper3.c"
+   962 ;; Parameters:    Size  Location     Type
+   963 ;;		None
+   964 ;; Auto vars:     Size  Location     Type
+   965 ;;		None
+   966 ;; Return value:  Size  Location     Type
+   967 ;;                  1    wreg      void 
+   968 ;; Registers used:
+   969 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   970 ;; Tracked objects:
+   971 ;;		On entry : 0/0
+   972 ;;		On exit  : 0/0
+   973 ;;		Unchanged: 0/0
+   974 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   975 ;;      Params:         0       0       0       0       0
+   976 ;;      Locals:         0       0       0       0       0
+   977 ;;      Temps:          0       0       0       0       0
+   978 ;;      Totals:         0       0       0       0       0
+   979 ;;Total ram usage:        0 bytes
+   980 ;; Hardware stack levels used:    1
+   981 ;; Hardware stack levels required when called:    1
+   982 ;; This function calls:
+   983 ;;		_OSC_config
+   984 ;; This function is called by:
+   985 ;;		_main
+   986 ;; This function uses a non-reentrant model
+   987 ;;
+   988                           
+   989                           
+   990                           ;psect for function _config_PORTS
+   991  0201                     _config_PORTS:	
+   992  0201                     l1576:	
+   993                           ;incstack = 0
+   994                           ; Regs used in _config_PORTS: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   995                           
+   996                           
+   997                           ;Stepper3.c: 144:     OSC_config(1000000);
+   998  0201  3000               	movlw	0
+   999  0202  00FA               	movwf	OSC_config@frecuencia+3
+  1000  0203  300F               	movlw	15
+  1001  0204  00F9               	movwf	OSC_config@frecuencia+2
+  1002  0205  3042               	movlw	66
+  1003  0206  00F8               	movwf	OSC_config@frecuencia+1
+  1004  0207  3040               	movlw	64
+  1005  0208  00F7               	movwf	OSC_config@frecuencia
+  1006  0209  120A  118A  221F  120A  118A  	fcall	_OSC_config
+  1007  020E                     l1578:	
+  1008                           
+  1009                           ;Stepper3.c: 145:     ANSEL = ANSELH = 0;
+  1010  020E  1683               	bsf	3,5	;RP0=1, select bank3
+  1011  020F  1703               	bsf	3,6	;RP1=1, select bank3
+  1012  0210  0189               	clrf	9	;volatile
+  1013  0211  0188               	clrf	8	;volatile
+  1014  0212                     l1580:	
+  1015                           
+  1016                           ;Stepper3.c: 146:     TRISD = 0x00;
+  1017  0212  1683               	bsf	3,5	;RP0=1, select bank1
+  1018  0213  1303               	bcf	3,6	;RP1=0, select bank1
+  1019  0214  0188               	clrf	8	;volatile
+  1020  0215                     l1582:	
+  1021                           
+  1022                           ;Stepper3.c: 147:     TRISA = 0b00001111;
+  1023  0215  300F               	movlw	15
+  1024  0216  0085               	movwf	5	;volatile
+  1025  0217                     l1584:	
+  1026                           
+  1027                           ;Stepper3.c: 149:     PORTA = 0x00;
+  1028  0217  1283               	bcf	3,5	;RP0=0, select bank0
+  1029  0218  1303               	bcf	3,6	;RP1=0, select bank0
+  1030  0219  0185               	clrf	5	;volatile
+  1031  021A                     l1586:	
+  1032                           
+  1033                           ;Stepper3.c: 150:     PORTB = 0x00;
+  1034  021A  0186               	clrf	6	;volatile
+  1035  021B                     l1588:	
+  1036                           
+  1037                           ;Stepper3.c: 151:     PORTC = 0x00;
+  1038  021B  0187               	clrf	7	;volatile
+  1039  021C                     l1590:	
+  1040                           
+  1041                           ;Stepper3.c: 152:     PORTD = 0x00;
+  1042  021C  0188               	clrf	8	;volatile
+  1043  021D                     l1592:	
+  1044                           
+  1045                           ;Stepper3.c: 153:     PORTE = 0x00;
+  1046  021D  0189               	clrf	9	;volatile
+  1047  021E                     l68:	
+  1048  021E  0008               	return
+  1049  021F                     __end_of_config_PORTS:	
+  1050                           
+  1051                           	psect	text2
+  1052  021F                     __ptext2:	
+  1053 ;; *************** function _OSC_config *****************
+  1054 ;; Defined at:
+  1055 ;;		line 158 in file "Stepper3.c"
+  1056 ;; Parameters:    Size  Location     Type
+  1057 ;;  frecuencia      4    0[COMMON] unsigned long 
+  1058 ;; Auto vars:     Size  Location     Type
+  1059 ;;		None
+  1060 ;; Return value:  Size  Location     Type
+  1061 ;;                  1    wreg      void 
+  1062 ;; Registers used:
+  1063 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1064 ;; Tracked objects:
+  1065 ;;		On entry : 0/0
+  1066 ;;		On exit  : 0/0
+  1067 ;;		Unchanged: 0/0
+  1068 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1069 ;;      Params:         4       0       0       0       0
+  1070 ;;      Locals:         0       0       0       0       0
+  1071 ;;      Temps:          0       0       0       0       0
+  1072 ;;      Totals:         4       0       0       0       0
+  1073 ;;Total ram usage:        4 bytes
+  1074 ;; Hardware stack levels used:    1
+  1075 ;; This function calls:
+  1076 ;;		Nothing
+  1077 ;; This function is called by:
+  1078 ;;		_config_PORTS
+  1079 ;; This function uses a non-reentrant model
+  1080 ;;
+  1081                           
+  1082                           
+  1083                           ;psect for function _OSC_config
+  1084  021F                     _OSC_config:	
+  1085  021F                     l1486:	
+  1086                           ;incstack = 0
+  1087                           ; Regs used in _OSC_config: [wreg-fsr0h+status,2+status,0]
+  1088                           
+  1089                           
+  1090                           ;Stepper3.c: 159:     switch(frecuencia){
+  1091  021F  2A5B               	goto	l1506
+  1092  0220                     l1488:	
+  1093                           
+  1094                           ;Stepper3.c: 161:             OSCCONbits.IRCF = 0b111;
+  1095  0220  3070               	movlw	112
+  1096  0221  1683               	bsf	3,5	;RP0=1, select bank1
+  1097  0222  1303               	bcf	3,6	;RP1=0, select bank1
+  1098  0223  048F               	iorwf	15,f	;volatile
+  1099                           
+  1100                           ;Stepper3.c: 162:             break;
+  1101  0224  2ACA               	goto	l82
+  1102  0225                     l1490:	
+  1103                           
+  1104                           ;Stepper3.c: 164:             OSCCONbits.IRCF = 0b110;
+  1105  0225  1683               	bsf	3,5	;RP0=1, select bank1
+  1106  0226  1303               	bcf	3,6	;RP1=0, select bank1
+  1107  0227  080F               	movf	15,w	;volatile
+  1108  0228  398F               	andlw	-113
+  1109  0229  3860               	iorlw	96
+  1110  022A  008F               	movwf	15	;volatile
+  1111                           
+  1112                           ;Stepper3.c: 165:             break;
+  1113  022B  2ACA               	goto	l82
+  1114  022C                     l1492:	
+  1115                           
+  1116                           ;Stepper3.c: 167:             OSCCONbits.IRCF = 0b101;
+  1117  022C  1683               	bsf	3,5	;RP0=1, select bank1
+  1118  022D  1303               	bcf	3,6	;RP1=0, select bank1
+  1119  022E  080F               	movf	15,w	;volatile
+  1120  022F  398F               	andlw	-113
+  1121  0230  3850               	iorlw	80
+  1122  0231  008F               	movwf	15	;volatile
+  1123                           
+  1124                           ;Stepper3.c: 168:             break;
+  1125  0232  2ACA               	goto	l82
+  1126  0233                     l1494:	
+  1127                           
+  1128                           ;Stepper3.c: 170:             OSCCONbits.IRCF = 0b100;
+  1129  0233  1683               	bsf	3,5	;RP0=1, select bank1
+  1130  0234  1303               	bcf	3,6	;RP1=0, select bank1
+  1131  0235  080F               	movf	15,w	;volatile
+  1132  0236  398F               	andlw	-113
+  1133  0237  3840               	iorlw	64
+  1134  0238  008F               	movwf	15	;volatile
+  1135                           
+  1136                           ;Stepper3.c: 171:             break;
+  1137  0239  2ACA               	goto	l82
+  1138  023A                     l1496:	
+  1139                           
+  1140                           ;Stepper3.c: 173:             OSCCONbits.IRCF = 0b011;
+  1141  023A  1683               	bsf	3,5	;RP0=1, select bank1
+  1142  023B  1303               	bcf	3,6	;RP1=0, select bank1
+  1143  023C  080F               	movf	15,w	;volatile
+  1144  023D  398F               	andlw	-113
+  1145  023E  3830               	iorlw	48
+  1146  023F  008F               	movwf	15	;volatile
+  1147                           
+  1148                           ;Stepper3.c: 174:             break;
+  1149  0240  2ACA               	goto	l82
+  1150  0241                     l1498:	
+  1151                           
+  1152                           ;Stepper3.c: 176:             OSCCONbits.IRCF = 0b010;
+  1153  0241  1683               	bsf	3,5	;RP0=1, select bank1
+  1154  0242  1303               	bcf	3,6	;RP1=0, select bank1
+  1155  0243  080F               	movf	15,w	;volatile
+  1156  0244  398F               	andlw	-113
+  1157  0245  3820               	iorlw	32
+  1158  0246  008F               	movwf	15	;volatile
+  1159                           
+  1160                           ;Stepper3.c: 177:             break;
+  1161  0247  2ACA               	goto	l82
+  1162  0248                     l1500:	
+  1163                           
+  1164                           ;Stepper3.c: 179:             OSCCONbits.IRCF = 0b001;
+  1165  0248  1683               	bsf	3,5	;RP0=1, select bank1
+  1166  0249  1303               	bcf	3,6	;RP1=0, select bank1
+  1167  024A  080F               	movf	15,w	;volatile
+  1168  024B  398F               	andlw	-113
+  1169  024C  3810               	iorlw	16
+  1170  024D  008F               	movwf	15	;volatile
+  1171                           
+  1172                           ;Stepper3.c: 180:             break;
+  1173  024E  2ACA               	goto	l82
+  1174  024F                     l1502:	
+  1175                           
+  1176                           ;Stepper3.c: 182:             OSCCONbits.IRCF = 0b000;
+  1177  024F  308F               	movlw	-113
+  1178  0250  1683               	bsf	3,5	;RP0=1, select bank1
+  1179  0251  1303               	bcf	3,6	;RP1=0, select bank1
+  1180  0252  058F               	andwf	15,f	;volatile
+  1181                           
+  1182                           ;Stepper3.c: 183:             break;
+  1183  0253  2ACA               	goto	l82
+  1184  0254                     l1504:	
+  1185                           
+  1186                           ;Stepper3.c: 185:             OSCCONbits.IRCF = 0b110;
+  1187  0254  1683               	bsf	3,5	;RP0=1, select bank1
+  1188  0255  1303               	bcf	3,6	;RP1=0, select bank1
+  1189  0256  080F               	movf	15,w	;volatile
+  1190  0257  398F               	andlw	-113
+  1191  0258  3860               	iorlw	96
+  1192  0259  008F               	movwf	15	;volatile
+  1193                           
+  1194                           ;Stepper3.c: 186:     }
+  1195  025A  2ACA               	goto	l82
+  1196  025B                     l1506:	
+  1197                           
+  1198                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 9 sub-sw
+      +                          itches
+  1199                           ; Switch size 1, requested type "simple"
+  1200                           ; Number of cases is 1, Range of values is 0 to 0
+  1201                           ; switch strategies available:
+  1202                           ; Name         Instructions Cycles
+  1203                           ; simple_byte            4     3 (average)
+  1204                           ; direct_byte           11     8 (fixed)
+  1205                           ; jumptable            260     6 (fixed)
+  1206                           ;	Chosen strategy is simple_byte
+  1207  025B  087A               	movf	OSC_config@frecuencia+3,w
+  1208  025C  3A00               	xorlw	0	; case 0
+  1209  025D  1903               	skipnz
+  1210  025E  2AB0               	goto	l2262
+  1211  025F  2A54               	goto	l1504
+  1212  0260                     l2246:	
+  1213                           
+  1214                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1215                           ; Switch size 1, requested type "simple"
+  1216                           ; Number of cases is 1, Range of values is 125 to 125
+  1217                           ; switch strategies available:
+  1218                           ; Name         Instructions Cycles
+  1219                           ; simple_byte            4     3 (average)
+  1220                           ; direct_byte           14    11 (fixed)
+  1221                           ; jumptable            263     9 (fixed)
+  1222                           ;	Chosen strategy is simple_byte
+  1223  0260  0878               	movf	OSC_config@frecuencia+1,w
+  1224  0261  3A7D               	xorlw	125	; case 125
+  1225  0262  1903               	skipnz
+  1226  0263  2A65               	goto	l2264
+  1227  0264  2A54               	goto	l1504
+  1228  0265                     l2264:	
+  1229                           
+  1230                           ; Switch size 1, requested type "simple"
+  1231                           ; Number of cases is 1, Range of values is 0 to 0
+  1232                           ; switch strategies available:
+  1233                           ; Name         Instructions Cycles
+  1234                           ; simple_byte            4     3 (average)
+  1235                           ; direct_byte           11     8 (fixed)
+  1236                           ; jumptable            260     6 (fixed)
+  1237                           ;	Chosen strategy is simple_byte
+  1238  0265  0877               	movf	OSC_config@frecuencia,w
+  1239  0266  3A00               	xorlw	0	; case 0
+  1240  0267  1903               	skipnz
+  1241  0268  2A4F               	goto	l1502
+  1242  0269  2A54               	goto	l1504
+  1243  026A                     l2248:	
+  1244                           
+  1245                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1246                           ; Switch size 1, requested type "simple"
+  1247                           ; Number of cases is 1, Range of values is 232 to 232
+  1248                           ; switch strategies available:
+  1249                           ; Name         Instructions Cycles
+  1250                           ; simple_byte            4     3 (average)
+  1251                           ; direct_byte           14    11 (fixed)
+  1252                           ; jumptable            263     9 (fixed)
+  1253                           ;	Chosen strategy is simple_byte
+  1254  026A  0878               	movf	OSC_config@frecuencia+1,w
+  1255  026B  3AE8               	xorlw	232	; case 232
+  1256  026C  1903               	skipnz
+  1257  026D  2A6F               	goto	l2266
+  1258  026E  2A54               	goto	l1504
+  1259  026F                     l2266:	
+  1260                           
+  1261                           ; Switch size 1, requested type "simple"
+  1262                           ; Number of cases is 1, Range of values is 72 to 72
+  1263                           ; switch strategies available:
+  1264                           ; Name         Instructions Cycles
+  1265                           ; simple_byte            4     3 (average)
+  1266                           ; direct_byte           14    11 (fixed)
+  1267                           ; jumptable            263     9 (fixed)
+  1268                           ;	Chosen strategy is simple_byte
+  1269  026F  0877               	movf	OSC_config@frecuencia,w
+  1270  0270  3A48               	xorlw	72	; case 72
+  1271  0271  1903               	skipnz
+  1272  0272  2A48               	goto	l1500
+  1273  0273  2A54               	goto	l1504
+  1274  0274                     l2250:	
+  1275                           
+  1276                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1277                           ; Switch size 1, requested type "simple"
+  1278                           ; Number of cases is 1, Range of values is 208 to 208
+  1279                           ; switch strategies available:
+  1280                           ; Name         Instructions Cycles
+  1281                           ; simple_byte            4     3 (average)
+  1282                           ; direct_byte           14    11 (fixed)
+  1283                           ; jumptable            263     9 (fixed)
+  1284                           ;	Chosen strategy is simple_byte
+  1285  0274  0878               	movf	OSC_config@frecuencia+1,w
+  1286  0275  3AD0               	xorlw	208	; case 208
+  1287  0276  1903               	skipnz
+  1288  0277  2A79               	goto	l2268
+  1289  0278  2A54               	goto	l1504
+  1290  0279                     l2268:	
+  1291                           
+  1292                           ; Switch size 1, requested type "simple"
+  1293                           ; Number of cases is 1, Range of values is 144 to 144
+  1294                           ; switch strategies available:
+  1295                           ; Name         Instructions Cycles
+  1296                           ; simple_byte            4     3 (average)
+  1297                           ; direct_byte           14    11 (fixed)
+  1298                           ; jumptable            263     9 (fixed)
+  1299                           ;	Chosen strategy is simple_byte
+  1300  0279  0877               	movf	OSC_config@frecuencia,w
+  1301  027A  3A90               	xorlw	144	; case 144
+  1302  027B  1903               	skipnz
+  1303  027C  2A41               	goto	l1498
+  1304  027D  2A54               	goto	l1504
+  1305  027E                     l2252:	
+  1306                           
+  1307                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1308                           ; Switch size 1, requested type "simple"
+  1309                           ; Number of cases is 1, Range of values is 161 to 161
+  1310                           ; switch strategies available:
+  1311                           ; Name         Instructions Cycles
+  1312                           ; simple_byte            4     3 (average)
+  1313                           ; direct_byte           14    11 (fixed)
+  1314                           ; jumptable            263     9 (fixed)
+  1315                           ;	Chosen strategy is simple_byte
+  1316  027E  0878               	movf	OSC_config@frecuencia+1,w
+  1317  027F  3AA1               	xorlw	161	; case 161
+  1318  0280  1903               	skipnz
+  1319  0281  2A83               	goto	l2270
+  1320  0282  2A54               	goto	l1504
+  1321  0283                     l2270:	
+  1322                           
+  1323                           ; Switch size 1, requested type "simple"
+  1324                           ; Number of cases is 1, Range of values is 32 to 32
+  1325                           ; switch strategies available:
+  1326                           ; Name         Instructions Cycles
+  1327                           ; simple_byte            4     3 (average)
+  1328                           ; direct_byte           14    11 (fixed)
+  1329                           ; jumptable            263     9 (fixed)
+  1330                           ;	Chosen strategy is simple_byte
+  1331  0283  0877               	movf	OSC_config@frecuencia,w
+  1332  0284  3A20               	xorlw	32	; case 32
+  1333  0285  1903               	skipnz
+  1334  0286  2A3A               	goto	l1496
+  1335  0287  2A54               	goto	l1504
+  1336  0288                     l2254:	
+  1337                           
+  1338                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1339                           ; Switch size 1, requested type "simple"
+  1340                           ; Number of cases is 1, Range of values is 66 to 66
+  1341                           ; switch strategies available:
+  1342                           ; Name         Instructions Cycles
+  1343                           ; simple_byte            4     3 (average)
+  1344                           ; direct_byte           14    11 (fixed)
+  1345                           ; jumptable            263     9 (fixed)
+  1346                           ;	Chosen strategy is simple_byte
+  1347  0288  0878               	movf	OSC_config@frecuencia+1,w
+  1348  0289  3A42               	xorlw	66	; case 66
+  1349  028A  1903               	skipnz
+  1350  028B  2A8D               	goto	l2272
+  1351  028C  2A54               	goto	l1504
+  1352  028D                     l2272:	
+  1353                           
+  1354                           ; Switch size 1, requested type "simple"
+  1355                           ; Number of cases is 1, Range of values is 64 to 64
+  1356                           ; switch strategies available:
+  1357                           ; Name         Instructions Cycles
+  1358                           ; simple_byte            4     3 (average)
+  1359                           ; direct_byte           14    11 (fixed)
+  1360                           ; jumptable            263     9 (fixed)
+  1361                           ;	Chosen strategy is simple_byte
+  1362  028D  0877               	movf	OSC_config@frecuencia,w
+  1363  028E  3A40               	xorlw	64	; case 64
+  1364  028F  1903               	skipnz
+  1365  0290  2A33               	goto	l1494
+  1366  0291  2A54               	goto	l1504
+  1367  0292                     l2256:	
+  1368                           
+  1369                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1370                           ; Switch size 1, requested type "simple"
+  1371                           ; Number of cases is 1, Range of values is 132 to 132
+  1372                           ; switch strategies available:
+  1373                           ; Name         Instructions Cycles
+  1374                           ; simple_byte            4     3 (average)
+  1375                           ; direct_byte           14    11 (fixed)
+  1376                           ; jumptable            263     9 (fixed)
+  1377                           ;	Chosen strategy is simple_byte
+  1378  0292  0878               	movf	OSC_config@frecuencia+1,w
+  1379  0293  3A84               	xorlw	132	; case 132
+  1380  0294  1903               	skipnz
+  1381  0295  2A97               	goto	l2274
+  1382  0296  2A54               	goto	l1504
+  1383  0297                     l2274:	
+  1384                           
+  1385                           ; Switch size 1, requested type "simple"
+  1386                           ; Number of cases is 1, Range of values is 128 to 128
+  1387                           ; switch strategies available:
+  1388                           ; Name         Instructions Cycles
+  1389                           ; simple_byte            4     3 (average)
+  1390                           ; direct_byte           14    11 (fixed)
+  1391                           ; jumptable            263     9 (fixed)
+  1392                           ;	Chosen strategy is simple_byte
+  1393  0297  0877               	movf	OSC_config@frecuencia,w
+  1394  0298  3A80               	xorlw	128	; case 128
+  1395  0299  1903               	skipnz
+  1396  029A  2A2C               	goto	l1492
+  1397  029B  2A54               	goto	l1504
+  1398  029C                     l2258:	
+  1399                           
+  1400                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1401                           ; Switch size 1, requested type "simple"
+  1402                           ; Number of cases is 1, Range of values is 9 to 9
+  1403                           ; switch strategies available:
+  1404                           ; Name         Instructions Cycles
+  1405                           ; simple_byte            4     3 (average)
+  1406                           ; direct_byte           14    11 (fixed)
+  1407                           ; jumptable            263     9 (fixed)
+  1408                           ;	Chosen strategy is simple_byte
+  1409  029C  0878               	movf	OSC_config@frecuencia+1,w
+  1410  029D  3A09               	xorlw	9	; case 9
+  1411  029E  1903               	skipnz
+  1412  029F  2AA1               	goto	l2276
+  1413  02A0  2A54               	goto	l1504
+  1414  02A1                     l2276:	
+  1415                           
+  1416                           ; Switch size 1, requested type "simple"
+  1417                           ; Number of cases is 1, Range of values is 0 to 0
+  1418                           ; switch strategies available:
+  1419                           ; Name         Instructions Cycles
+  1420                           ; simple_byte            4     3 (average)
+  1421                           ; direct_byte           11     8 (fixed)
+  1422                           ; jumptable            260     6 (fixed)
+  1423                           ;	Chosen strategy is simple_byte
+  1424  02A1  0877               	movf	OSC_config@frecuencia,w
+  1425  02A2  3A00               	xorlw	0	; case 0
+  1426  02A3  1903               	skipnz
+  1427  02A4  2A25               	goto	l1490
+  1428  02A5  2A54               	goto	l1504
+  1429  02A6                     l2260:	
+  1430                           
+  1431                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1432                           ; Switch size 1, requested type "simple"
+  1433                           ; Number of cases is 1, Range of values is 18 to 18
+  1434                           ; switch strategies available:
+  1435                           ; Name         Instructions Cycles
+  1436                           ; simple_byte            4     3 (average)
+  1437                           ; direct_byte           14    11 (fixed)
+  1438                           ; jumptable            263     9 (fixed)
+  1439                           ;	Chosen strategy is simple_byte
+  1440  02A6  0878               	movf	OSC_config@frecuencia+1,w
+  1441  02A7  3A12               	xorlw	18	; case 18
+  1442  02A8  1903               	skipnz
+  1443  02A9  2AAB               	goto	l2278
+  1444  02AA  2A54               	goto	l1504
+  1445  02AB                     l2278:	
+  1446                           
+  1447                           ; Switch size 1, requested type "simple"
+  1448                           ; Number of cases is 1, Range of values is 0 to 0
+  1449                           ; switch strategies available:
+  1450                           ; Name         Instructions Cycles
+  1451                           ; simple_byte            4     3 (average)
+  1452                           ; direct_byte           11     8 (fixed)
+  1453                           ; jumptable            260     6 (fixed)
+  1454                           ;	Chosen strategy is simple_byte
+  1455  02AB  0877               	movf	OSC_config@frecuencia,w
+  1456  02AC  3A00               	xorlw	0	; case 0
+  1457  02AD  1903               	skipnz
+  1458  02AE  2A20               	goto	l1488
+  1459  02AF  2A54               	goto	l1504
+  1460  02B0                     l2262:	
+  1461                           
+  1462                           ; Switch size 1, requested type "simple"
+  1463                           ; Number of cases is 8, Range of values is 0 to 122
+  1464                           ; switch strategies available:
+  1465                           ; Name         Instructions Cycles
+  1466                           ; simple_byte           25    13 (average)
+  1467                           ; jumptable            260     6 (fixed)
+  1468                           ;	Chosen strategy is simple_byte
+  1469  02B0  0879               	movf	OSC_config@frecuencia+2,w
+  1470  02B1  3A00               	xorlw	0	; case 0
+  1471  02B2  1903               	skipnz
+  1472  02B3  2A60               	goto	l2246
+  1473  02B4  3A01               	xorlw	1	; case 1
+  1474  02B5  1903               	skipnz
+  1475  02B6  2A6A               	goto	l2248
+  1476  02B7  3A02               	xorlw	2	; case 3
+  1477  02B8  1903               	skipnz
+  1478  02B9  2A74               	goto	l2250
+  1479  02BA  3A04               	xorlw	4	; case 7
+  1480  02BB  1903               	skipnz
+  1481  02BC  2A7E               	goto	l2252
+  1482  02BD  3A08               	xorlw	8	; case 15
+  1483  02BE  1903               	skipnz
+  1484  02BF  2A88               	goto	l2254
+  1485  02C0  3A11               	xorlw	17	; case 30
+  1486  02C1  1903               	skipnz
+  1487  02C2  2A92               	goto	l2256
+  1488  02C3  3A23               	xorlw	35	; case 61
+  1489  02C4  1903               	skipnz
+  1490  02C5  2A9C               	goto	l2258
+  1491  02C6  3A47               	xorlw	71	; case 122
+  1492  02C7  1903               	skipnz
+  1493  02C8  2AA6               	goto	l2260
+  1494  02C9  2A54               	goto	l1504
+  1495  02CA                     l82:	
+  1496  02CA  0008               	return
+  1497  02CB                     __end_of_OSC_config:	
+  1498                           
+  1499                           	psect	text3
+  1500  0608                     __ptext3:	
+  1501 ;; *************** function _Stepper_CW *****************
+  1502 ;; Defined at:
+  1503 ;;		line 14 in file "STEPPER_MITSUMI.c"
+  1504 ;; Parameters:    Size  Location     Type
+  1505 ;;  Step_grados_    2    0[COMMON] unsigned int 
+  1506 ;; Auto vars:     Size  Location     Type
+  1507 ;;		None
+  1508 ;; Return value:  Size  Location     Type
+  1509 ;;                  1    wreg      void 
+  1510 ;; Registers used:
+  1511 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1
+  1512 ;; Tracked objects:
+  1513 ;;		On entry : 0/0
+  1514 ;;		On exit  : 0/0
+  1515 ;;		Unchanged: 0/0
+  1516 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1517 ;;      Params:         2       0       0       0       0
+  1518 ;;      Locals:         0       0       0       0       0
+  1519 ;;      Temps:          2       0       0       0       0
+  1520 ;;      Totals:         4       0       0       0       0
+  1521 ;;Total ram usage:        4 bytes
+  1522 ;; Hardware stack levels used:    1
+  1523 ;; This function calls:
+  1524 ;;		Nothing
+  1525 ;; This function is called by:
+  1526 ;;		_main
+  1527 ;; This function uses a non-reentrant model
+  1528 ;;
+  1529                           
+  1530                           
+  1531                           ;psect for function _Stepper_CW
+  1532  0608                     _Stepper_CW:	
+  1533  0608                     l1594:	
+  1534                           ;incstack = 0
+  1535                           ; Regs used in _Stepper_CW: [wreg-fsr0h+status,2+status,0+btemp+1]
+  1536                           
+  1537                           
+  1538                           ;STEPPER_MITSUMI.c: 15:     switch(Step_grados_cw){
+  1539  0608  2FCB               	goto	l1656
+  1540  0609                     l1596:	
+  1541                           
+  1542                           ;STEPPER_MITSUMI.c: 17:             for(i=0; i<25; i++){
+  1543  0609  01F0               	clrf	_i
+  1544  060A  01F1               	clrf	_i+1
+  1545  060B                     l1598:	
+  1546  060B  0871               	movf	_i+1,w
+  1547  060C  3A80               	xorlw	128
+  1548  060D  00FF               	movwf	btemp+1
+  1549  060E  3080               	movlw	128
+  1550  060F  027F               	subwf	btemp+1,w
+  1551  0610  1D03               	skipz
+  1552  0611  2E14               	goto	u215
+  1553  0612  3019               	movlw	25
+  1554  0613  0270               	subwf	_i,w
+  1555  0614                     u215:	
+  1556  0614  1C03               	skipc
+  1557  0615  2E17               	goto	u211
+  1558  0616  2E18               	goto	u210
+  1559  0617                     u211:	
+  1560  0617  2E19               	goto	l1602
+  1561  0618                     u210:	
+  1562  0618  2FE6               	goto	l111
+  1563  0619                     l1602:	
+  1564                           
+  1565                           ;STEPPER_MITSUMI.c: 18:                     PORTD = 0b1010;
+  1566  0619  300A               	movlw	10
+  1567  061A  1283               	bcf	3,5	;RP0=0, select bank0
+  1568  061B  1303               	bcf	3,6	;RP1=0, select bank0
+  1569  061C  0088               	movwf	8	;volatile
+  1570                           
+  1571                           ;STEPPER_MITSUMI.c: 19:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1572  061D  300D               	movlw	13
+  1573  061E  00FA               	movwf	??_Stepper_CW+1
+  1574  061F  30FB               	movlw	251
+  1575  0620  00F9               	movwf	??_Stepper_CW
+  1576  0621                     u567:	
+  1577  0621  0BF9               	decfsz	??_Stepper_CW,f
+  1578  0622  2E21               	goto	u567
+  1579  0623  0BFA               	decfsz	??_Stepper_CW+1,f
+  1580  0624  2E21               	goto	u567
+  1581  0625  2E26               	nop2
+  1582                           
+  1583                           ;STEPPER_MITSUMI.c: 20:                     PORTD = 0b0110;
+  1584  0626  3006               	movlw	6
+  1585  0627  1283               	bcf	3,5	;RP0=0, select bank0
+  1586  0628  1303               	bcf	3,6	;RP1=0, select bank0
+  1587  0629  0088               	movwf	8	;volatile
+  1588                           
+  1589                           ;STEPPER_MITSUMI.c: 21:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1590  062A  300D               	movlw	13
+  1591  062B  00FA               	movwf	??_Stepper_CW+1
+  1592  062C  30FB               	movlw	251
+  1593  062D  00F9               	movwf	??_Stepper_CW
+  1594  062E                     u577:	
+  1595  062E  0BF9               	decfsz	??_Stepper_CW,f
+  1596  062F  2E2E               	goto	u577
+  1597  0630  0BFA               	decfsz	??_Stepper_CW+1,f
+  1598  0631  2E2E               	goto	u577
+  1599  0632  2E33               	nop2
+  1600                           
+  1601                           ;STEPPER_MITSUMI.c: 22:                     PORTD = 0b0101;
+  1602  0633  3005               	movlw	5
+  1603  0634  1283               	bcf	3,5	;RP0=0, select bank0
+  1604  0635  1303               	bcf	3,6	;RP1=0, select bank0
+  1605  0636  0088               	movwf	8	;volatile
+  1606                           
+  1607                           ;STEPPER_MITSUMI.c: 23:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1608  0637  300D               	movlw	13
+  1609  0638  00FA               	movwf	??_Stepper_CW+1
+  1610  0639  30FB               	movlw	251
+  1611  063A  00F9               	movwf	??_Stepper_CW
+  1612  063B                     u587:	
+  1613  063B  0BF9               	decfsz	??_Stepper_CW,f
+  1614  063C  2E3B               	goto	u587
+  1615  063D  0BFA               	decfsz	??_Stepper_CW+1,f
+  1616  063E  2E3B               	goto	u587
+  1617  063F  2E40               	nop2
+  1618                           
+  1619                           ;STEPPER_MITSUMI.c: 24:                     PORTD = 0b1001;
+  1620  0640  3009               	movlw	9
+  1621  0641  1283               	bcf	3,5	;RP0=0, select bank0
+  1622  0642  1303               	bcf	3,6	;RP1=0, select bank0
+  1623  0643  0088               	movwf	8	;volatile
+  1624                           
+  1625                           ;STEPPER_MITSUMI.c: 25:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1626  0644  300D               	movlw	13
+  1627  0645  00FA               	movwf	??_Stepper_CW+1
+  1628  0646  30FB               	movlw	251
+  1629  0647  00F9               	movwf	??_Stepper_CW
+  1630  0648                     u597:	
+  1631  0648  0BF9               	decfsz	??_Stepper_CW,f
+  1632  0649  2E48               	goto	u597
+  1633  064A  0BFA               	decfsz	??_Stepper_CW+1,f
+  1634  064B  2E48               	goto	u597
+  1635  064C  2E4D               	nop2
+  1636                           
+  1637                           ;STEPPER_MITSUMI.c: 27:                 };
+  1638  064D  3001               	movlw	1
+  1639  064E  07F0               	addwf	_i,f
+  1640  064F  1803               	skipnc
+  1641  0650  0AF1               	incf	_i+1,f
+  1642  0651  3000               	movlw	0
+  1643  0652  07F1               	addwf	_i+1,f
+  1644  0653  2E0B               	goto	l1598
+  1645  0654                     l1606:	
+  1646                           
+  1647                           ;STEPPER_MITSUMI.c: 31:             for(i=0; i<12; i++){
+  1648  0654  01F0               	clrf	_i
+  1649  0655  01F1               	clrf	_i+1
+  1650  0656                     l1608:	
+  1651  0656  0871               	movf	_i+1,w
+  1652  0657  3A80               	xorlw	128
+  1653  0658  00FF               	movwf	btemp+1
+  1654  0659  3080               	movlw	128
+  1655  065A  027F               	subwf	btemp+1,w
+  1656  065B  1D03               	skipz
+  1657  065C  2E5F               	goto	u225
+  1658  065D  300C               	movlw	12
+  1659  065E  0270               	subwf	_i,w
+  1660  065F                     u225:	
+  1661  065F  1C03               	skipc
+  1662  0660  2E62               	goto	u221
+  1663  0661  2E63               	goto	u220
+  1664  0662                     u221:	
+  1665  0662  2E64               	goto	l1612
+  1666  0663                     u220:	
+  1667  0663  2FE6               	goto	l111
+  1668  0664                     l1612:	
+  1669                           
+  1670                           ;STEPPER_MITSUMI.c: 32:                     PORTD = 0b1010;
+  1671  0664  300A               	movlw	10
+  1672  0665  1283               	bcf	3,5	;RP0=0, select bank0
+  1673  0666  1303               	bcf	3,6	;RP1=0, select bank0
+  1674  0667  0088               	movwf	8	;volatile
+  1675                           
+  1676                           ;STEPPER_MITSUMI.c: 33:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1677  0668  300D               	movlw	13
+  1678  0669  00FA               	movwf	??_Stepper_CW+1
+  1679  066A  30FB               	movlw	251
+  1680  066B  00F9               	movwf	??_Stepper_CW
+  1681  066C                     u607:	
+  1682  066C  0BF9               	decfsz	??_Stepper_CW,f
+  1683  066D  2E6C               	goto	u607
+  1684  066E  0BFA               	decfsz	??_Stepper_CW+1,f
+  1685  066F  2E6C               	goto	u607
+  1686  0670  2E71               	nop2
+  1687                           
+  1688                           ;STEPPER_MITSUMI.c: 34:                     PORTD = 0b0110;
+  1689  0671  3006               	movlw	6
+  1690  0672  1283               	bcf	3,5	;RP0=0, select bank0
+  1691  0673  1303               	bcf	3,6	;RP1=0, select bank0
+  1692  0674  0088               	movwf	8	;volatile
+  1693                           
+  1694                           ;STEPPER_MITSUMI.c: 35:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1695  0675  300D               	movlw	13
+  1696  0676  00FA               	movwf	??_Stepper_CW+1
+  1697  0677  30FB               	movlw	251
+  1698  0678  00F9               	movwf	??_Stepper_CW
+  1699  0679                     u617:	
+  1700  0679  0BF9               	decfsz	??_Stepper_CW,f
+  1701  067A  2E79               	goto	u617
+  1702  067B  0BFA               	decfsz	??_Stepper_CW+1,f
+  1703  067C  2E79               	goto	u617
+  1704  067D  2E7E               	nop2
+  1705                           
+  1706                           ;STEPPER_MITSUMI.c: 36:                     PORTD = 0b0101;
+  1707  067E  3005               	movlw	5
+  1708  067F  1283               	bcf	3,5	;RP0=0, select bank0
+  1709  0680  1303               	bcf	3,6	;RP1=0, select bank0
+  1710  0681  0088               	movwf	8	;volatile
+  1711                           
+  1712                           ;STEPPER_MITSUMI.c: 37:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1713  0682  300D               	movlw	13
+  1714  0683  00FA               	movwf	??_Stepper_CW+1
+  1715  0684  30FB               	movlw	251
+  1716  0685  00F9               	movwf	??_Stepper_CW
+  1717  0686                     u627:	
+  1718  0686  0BF9               	decfsz	??_Stepper_CW,f
+  1719  0687  2E86               	goto	u627
+  1720  0688  0BFA               	decfsz	??_Stepper_CW+1,f
+  1721  0689  2E86               	goto	u627
+  1722  068A  2E8B               	nop2
+  1723                           
+  1724                           ;STEPPER_MITSUMI.c: 38:                     PORTD = 0b1001;
+  1725  068B  3009               	movlw	9
+  1726  068C  1283               	bcf	3,5	;RP0=0, select bank0
+  1727  068D  1303               	bcf	3,6	;RP1=0, select bank0
+  1728  068E  0088               	movwf	8	;volatile
+  1729                           
+  1730                           ;STEPPER_MITSUMI.c: 39:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1731  068F  300D               	movlw	13
+  1732  0690  00FA               	movwf	??_Stepper_CW+1
+  1733  0691  30FB               	movlw	251
+  1734  0692  00F9               	movwf	??_Stepper_CW
+  1735  0693                     u637:	
+  1736  0693  0BF9               	decfsz	??_Stepper_CW,f
+  1737  0694  2E93               	goto	u637
+  1738  0695  0BFA               	decfsz	??_Stepper_CW+1,f
+  1739  0696  2E93               	goto	u637
+  1740  0697  2E98               	nop2
+  1741                           
+  1742                           ;STEPPER_MITSUMI.c: 41:                 };
+  1743  0698  3001               	movlw	1
+  1744  0699  07F0               	addwf	_i,f
+  1745  069A  1803               	skipnc
+  1746  069B  0AF1               	incf	_i+1,f
+  1747  069C  3000               	movlw	0
+  1748  069D  07F1               	addwf	_i+1,f
+  1749  069E  2E56               	goto	l1608
+  1750  069F                     l1616:	
+  1751                           
+  1752                           ;STEPPER_MITSUMI.c: 45:             for(i=0; i<6; i++){
+  1753  069F  01F0               	clrf	_i
+  1754  06A0  01F1               	clrf	_i+1
+  1755  06A1                     l1618:	
+  1756  06A1  0871               	movf	_i+1,w
+  1757  06A2  3A80               	xorlw	128
+  1758  06A3  00FF               	movwf	btemp+1
+  1759  06A4  3080               	movlw	128
+  1760  06A5  027F               	subwf	btemp+1,w
+  1761  06A6  1D03               	skipz
+  1762  06A7  2EAA               	goto	u235
+  1763  06A8  3006               	movlw	6
+  1764  06A9  0270               	subwf	_i,w
+  1765  06AA                     u235:	
+  1766  06AA  1C03               	skipc
+  1767  06AB  2EAD               	goto	u231
+  1768  06AC  2EAE               	goto	u230
+  1769  06AD                     u231:	
+  1770  06AD  2EAF               	goto	l1622
+  1771  06AE                     u230:	
+  1772  06AE  2FE6               	goto	l111
+  1773  06AF                     l1622:	
+  1774                           
+  1775                           ;STEPPER_MITSUMI.c: 46:                     PORTD = 0b1010;
+  1776  06AF  300A               	movlw	10
+  1777  06B0  1283               	bcf	3,5	;RP0=0, select bank0
+  1778  06B1  1303               	bcf	3,6	;RP1=0, select bank0
+  1779  06B2  0088               	movwf	8	;volatile
+  1780                           
+  1781                           ;STEPPER_MITSUMI.c: 47:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1782  06B3  300D               	movlw	13
+  1783  06B4  00FA               	movwf	??_Stepper_CW+1
+  1784  06B5  30FB               	movlw	251
+  1785  06B6  00F9               	movwf	??_Stepper_CW
+  1786  06B7                     u647:	
+  1787  06B7  0BF9               	decfsz	??_Stepper_CW,f
+  1788  06B8  2EB7               	goto	u647
+  1789  06B9  0BFA               	decfsz	??_Stepper_CW+1,f
+  1790  06BA  2EB7               	goto	u647
+  1791  06BB  2EBC               	nop2
+  1792                           
+  1793                           ;STEPPER_MITSUMI.c: 48:                     PORTD = 0b0110;
+  1794  06BC  3006               	movlw	6
+  1795  06BD  1283               	bcf	3,5	;RP0=0, select bank0
+  1796  06BE  1303               	bcf	3,6	;RP1=0, select bank0
+  1797  06BF  0088               	movwf	8	;volatile
+  1798                           
+  1799                           ;STEPPER_MITSUMI.c: 49:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1800  06C0  300D               	movlw	13
+  1801  06C1  00FA               	movwf	??_Stepper_CW+1
+  1802  06C2  30FB               	movlw	251
+  1803  06C3  00F9               	movwf	??_Stepper_CW
+  1804  06C4                     u657:	
+  1805  06C4  0BF9               	decfsz	??_Stepper_CW,f
+  1806  06C5  2EC4               	goto	u657
+  1807  06C6  0BFA               	decfsz	??_Stepper_CW+1,f
+  1808  06C7  2EC4               	goto	u657
+  1809  06C8  2EC9               	nop2
+  1810                           
+  1811                           ;STEPPER_MITSUMI.c: 50:                     PORTD = 0b0101;
+  1812  06C9  3005               	movlw	5
+  1813  06CA  1283               	bcf	3,5	;RP0=0, select bank0
+  1814  06CB  1303               	bcf	3,6	;RP1=0, select bank0
+  1815  06CC  0088               	movwf	8	;volatile
+  1816                           
+  1817                           ;STEPPER_MITSUMI.c: 51:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1818  06CD  300D               	movlw	13
+  1819  06CE  00FA               	movwf	??_Stepper_CW+1
+  1820  06CF  30FB               	movlw	251
+  1821  06D0  00F9               	movwf	??_Stepper_CW
+  1822  06D1                     u667:	
+  1823  06D1  0BF9               	decfsz	??_Stepper_CW,f
+  1824  06D2  2ED1               	goto	u667
+  1825  06D3  0BFA               	decfsz	??_Stepper_CW+1,f
+  1826  06D4  2ED1               	goto	u667
+  1827  06D5  2ED6               	nop2
+  1828                           
+  1829                           ;STEPPER_MITSUMI.c: 52:                     PORTD = 0b1001;
+  1830  06D6  3009               	movlw	9
+  1831  06D7  1283               	bcf	3,5	;RP0=0, select bank0
+  1832  06D8  1303               	bcf	3,6	;RP1=0, select bank0
+  1833  06D9  0088               	movwf	8	;volatile
+  1834                           
+  1835                           ;STEPPER_MITSUMI.c: 53:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1836  06DA  300D               	movlw	13
+  1837  06DB  00FA               	movwf	??_Stepper_CW+1
+  1838  06DC  30FB               	movlw	251
+  1839  06DD  00F9               	movwf	??_Stepper_CW
+  1840  06DE                     u677:	
+  1841  06DE  0BF9               	decfsz	??_Stepper_CW,f
+  1842  06DF  2EDE               	goto	u677
+  1843  06E0  0BFA               	decfsz	??_Stepper_CW+1,f
+  1844  06E1  2EDE               	goto	u677
+  1845  06E2  2EE3               	nop2
+  1846                           
+  1847                           ;STEPPER_MITSUMI.c: 55:                 };
+  1848  06E3  3001               	movlw	1
+  1849  06E4  07F0               	addwf	_i,f
+  1850  06E5  1803               	skipnc
+  1851  06E6  0AF1               	incf	_i+1,f
+  1852  06E7  3000               	movlw	0
+  1853  06E8  07F1               	addwf	_i+1,f
+  1854  06E9  2EA1               	goto	l1618
+  1855  06EA                     l1626:	
+  1856                           
+  1857                           ;STEPPER_MITSUMI.c: 59:             for(i=0; i<3; i++){
+  1858  06EA  01F0               	clrf	_i
+  1859  06EB  01F1               	clrf	_i+1
+  1860  06EC                     l1628:	
+  1861  06EC  0871               	movf	_i+1,w
+  1862  06ED  3A80               	xorlw	128
+  1863  06EE  00FF               	movwf	btemp+1
+  1864  06EF  3080               	movlw	128
+  1865  06F0  027F               	subwf	btemp+1,w
+  1866  06F1  1D03               	skipz
+  1867  06F2  2EF5               	goto	u245
+  1868  06F3  3003               	movlw	3
+  1869  06F4  0270               	subwf	_i,w
+  1870  06F5                     u245:	
+  1871  06F5  1C03               	skipc
+  1872  06F6  2EF8               	goto	u241
+  1873  06F7  2EF9               	goto	u240
+  1874  06F8                     u241:	
+  1875  06F8  2EFA               	goto	l1632
+  1876  06F9                     u240:	
+  1877  06F9  2FE6               	goto	l111
+  1878  06FA                     l1632:	
+  1879                           
+  1880                           ;STEPPER_MITSUMI.c: 60:                     PORTD = 0b1010;
+  1881  06FA  300A               	movlw	10
+  1882  06FB  1283               	bcf	3,5	;RP0=0, select bank0
+  1883  06FC  1303               	bcf	3,6	;RP1=0, select bank0
+  1884  06FD  0088               	movwf	8	;volatile
+  1885                           
+  1886                           ;STEPPER_MITSUMI.c: 61:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1887  06FE  300D               	movlw	13
+  1888  06FF  00FA               	movwf	??_Stepper_CW+1
+  1889  0700  30FB               	movlw	251
+  1890  0701  00F9               	movwf	??_Stepper_CW
+  1891  0702                     u687:	
+  1892  0702  0BF9               	decfsz	??_Stepper_CW,f
+  1893  0703  2F02               	goto	u687
+  1894  0704  0BFA               	decfsz	??_Stepper_CW+1,f
+  1895  0705  2F02               	goto	u687
+  1896  0706  2F07               	nop2
+  1897                           
+  1898                           ;STEPPER_MITSUMI.c: 62:                     PORTD = 0b0110;
+  1899  0707  3006               	movlw	6
+  1900  0708  1283               	bcf	3,5	;RP0=0, select bank0
+  1901  0709  1303               	bcf	3,6	;RP1=0, select bank0
+  1902  070A  0088               	movwf	8	;volatile
+  1903                           
+  1904                           ;STEPPER_MITSUMI.c: 63:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1905  070B  300D               	movlw	13
+  1906  070C  00FA               	movwf	??_Stepper_CW+1
+  1907  070D  30FB               	movlw	251
+  1908  070E  00F9               	movwf	??_Stepper_CW
+  1909  070F                     u697:	
+  1910  070F  0BF9               	decfsz	??_Stepper_CW,f
+  1911  0710  2F0F               	goto	u697
+  1912  0711  0BFA               	decfsz	??_Stepper_CW+1,f
+  1913  0712  2F0F               	goto	u697
+  1914  0713  2F14               	nop2
+  1915                           
+  1916                           ;STEPPER_MITSUMI.c: 64:                     PORTD = 0b0101;
+  1917  0714  3005               	movlw	5
+  1918  0715  1283               	bcf	3,5	;RP0=0, select bank0
+  1919  0716  1303               	bcf	3,6	;RP1=0, select bank0
+  1920  0717  0088               	movwf	8	;volatile
+  1921                           
+  1922                           ;STEPPER_MITSUMI.c: 65:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1923  0718  300D               	movlw	13
+  1924  0719  00FA               	movwf	??_Stepper_CW+1
+  1925  071A  30FB               	movlw	251
+  1926  071B  00F9               	movwf	??_Stepper_CW
+  1927  071C                     u707:	
+  1928  071C  0BF9               	decfsz	??_Stepper_CW,f
+  1929  071D  2F1C               	goto	u707
+  1930  071E  0BFA               	decfsz	??_Stepper_CW+1,f
+  1931  071F  2F1C               	goto	u707
+  1932  0720  2F21               	nop2
+  1933                           
+  1934                           ;STEPPER_MITSUMI.c: 66:                     PORTD = 0b1001;
+  1935  0721  3009               	movlw	9
+  1936  0722  1283               	bcf	3,5	;RP0=0, select bank0
+  1937  0723  1303               	bcf	3,6	;RP1=0, select bank0
+  1938  0724  0088               	movwf	8	;volatile
+  1939                           
+  1940                           ;STEPPER_MITSUMI.c: 67:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1941  0725  300D               	movlw	13
+  1942  0726  00FA               	movwf	??_Stepper_CW+1
+  1943  0727  30FB               	movlw	251
+  1944  0728  00F9               	movwf	??_Stepper_CW
+  1945  0729                     u717:	
+  1946  0729  0BF9               	decfsz	??_Stepper_CW,f
+  1947  072A  2F29               	goto	u717
+  1948  072B  0BFA               	decfsz	??_Stepper_CW+1,f
+  1949  072C  2F29               	goto	u717
+  1950  072D  2F2E               	nop2
+  1951                           
+  1952                           ;STEPPER_MITSUMI.c: 69:                 };
+  1953  072E  3001               	movlw	1
+  1954  072F  07F0               	addwf	_i,f
+  1955  0730  1803               	skipnc
+  1956  0731  0AF1               	incf	_i+1,f
+  1957  0732  3000               	movlw	0
+  1958  0733  07F1               	addwf	_i+1,f
+  1959  0734  2EEC               	goto	l1628
+  1960  0735                     l1636:	
+  1961                           
+  1962                           ;STEPPER_MITSUMI.c: 73:             for(i=0; i<1; i++){
+  1963  0735  01F0               	clrf	_i
+  1964  0736  01F1               	clrf	_i+1
+  1965  0737                     l1638:	
+  1966  0737  0871               	movf	_i+1,w
+  1967  0738  3A80               	xorlw	128
+  1968  0739  00FF               	movwf	btemp+1
+  1969  073A  3080               	movlw	128
+  1970  073B  027F               	subwf	btemp+1,w
+  1971  073C  1D03               	skipz
+  1972  073D  2F40               	goto	u255
+  1973  073E  3001               	movlw	1
+  1974  073F  0270               	subwf	_i,w
+  1975  0740                     u255:	
+  1976  0740  1C03               	skipc
+  1977  0741  2F43               	goto	u251
+  1978  0742  2F44               	goto	u250
+  1979  0743                     u251:	
+  1980  0743  2F45               	goto	l1642
+  1981  0744                     u250:	
+  1982  0744  2FE6               	goto	l111
+  1983  0745                     l1642:	
+  1984                           
+  1985                           ;STEPPER_MITSUMI.c: 74:                     PORTD = 0b1010;
+  1986  0745  300A               	movlw	10
+  1987  0746  1283               	bcf	3,5	;RP0=0, select bank0
+  1988  0747  1303               	bcf	3,6	;RP1=0, select bank0
+  1989  0748  0088               	movwf	8	;volatile
+  1990                           
+  1991                           ;STEPPER_MITSUMI.c: 75:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  1992  0749  300D               	movlw	13
+  1993  074A  00FA               	movwf	??_Stepper_CW+1
+  1994  074B  30FB               	movlw	251
+  1995  074C  00F9               	movwf	??_Stepper_CW
+  1996  074D                     u727:	
+  1997  074D  0BF9               	decfsz	??_Stepper_CW,f
+  1998  074E  2F4D               	goto	u727
+  1999  074F  0BFA               	decfsz	??_Stepper_CW+1,f
+  2000  0750  2F4D               	goto	u727
+  2001  0751  2F52               	nop2
+  2002                           
+  2003                           ;STEPPER_MITSUMI.c: 76:                     PORTD = 0b0110;
+  2004  0752  3006               	movlw	6
+  2005  0753  1283               	bcf	3,5	;RP0=0, select bank0
+  2006  0754  1303               	bcf	3,6	;RP1=0, select bank0
+  2007  0755  0088               	movwf	8	;volatile
+  2008                           
+  2009                           ;STEPPER_MITSUMI.c: 77:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  2010  0756  300D               	movlw	13
+  2011  0757  00FA               	movwf	??_Stepper_CW+1
+  2012  0758  30FB               	movlw	251
+  2013  0759  00F9               	movwf	??_Stepper_CW
+  2014  075A                     u737:	
+  2015  075A  0BF9               	decfsz	??_Stepper_CW,f
+  2016  075B  2F5A               	goto	u737
+  2017  075C  0BFA               	decfsz	??_Stepper_CW+1,f
+  2018  075D  2F5A               	goto	u737
+  2019  075E  2F5F               	nop2
+  2020                           
+  2021                           ;STEPPER_MITSUMI.c: 78:                     PORTD = 0b0101;
+  2022  075F  3005               	movlw	5
+  2023  0760  1283               	bcf	3,5	;RP0=0, select bank0
+  2024  0761  1303               	bcf	3,6	;RP1=0, select bank0
+  2025  0762  0088               	movwf	8	;volatile
+  2026                           
+  2027                           ;STEPPER_MITSUMI.c: 79:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  2028  0763  300D               	movlw	13
+  2029  0764  00FA               	movwf	??_Stepper_CW+1
+  2030  0765  30FB               	movlw	251
+  2031  0766  00F9               	movwf	??_Stepper_CW
+  2032  0767                     u747:	
+  2033  0767  0BF9               	decfsz	??_Stepper_CW,f
+  2034  0768  2F67               	goto	u747
+  2035  0769  0BFA               	decfsz	??_Stepper_CW+1,f
+  2036  076A  2F67               	goto	u747
+  2037  076B  2F6C               	nop2
+  2038                           
+  2039                           ;STEPPER_MITSUMI.c: 80:                     PORTD = 0b1001;
+  2040  076C  3009               	movlw	9
+  2041  076D  1283               	bcf	3,5	;RP0=0, select bank0
+  2042  076E  1303               	bcf	3,6	;RP1=0, select bank0
+  2043  076F  0088               	movwf	8	;volatile
+  2044                           
+  2045                           ;STEPPER_MITSUMI.c: 81:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  2046  0770  300D               	movlw	13
+  2047  0771  00FA               	movwf	??_Stepper_CW+1
+  2048  0772  30FB               	movlw	251
+  2049  0773  00F9               	movwf	??_Stepper_CW
+  2050  0774                     u757:	
+  2051  0774  0BF9               	decfsz	??_Stepper_CW,f
+  2052  0775  2F74               	goto	u757
+  2053  0776  0BFA               	decfsz	??_Stepper_CW+1,f
+  2054  0777  2F74               	goto	u757
+  2055  0778  2F79               	nop2
+  2056                           
+  2057                           ;STEPPER_MITSUMI.c: 83:                 };
+  2058  0779  3001               	movlw	1
+  2059  077A  07F0               	addwf	_i,f
+  2060  077B  1803               	skipnc
+  2061  077C  0AF1               	incf	_i+1,f
+  2062  077D  3000               	movlw	0
+  2063  077E  07F1               	addwf	_i+1,f
+  2064  077F  2F37               	goto	l1638
+  2065  0780                     l1646:	
+  2066                           
+  2067                           ;STEPPER_MITSUMI.c: 87:             for(i=0; i<2; i++){
+  2068  0780  01F0               	clrf	_i
+  2069  0781  01F1               	clrf	_i+1
+  2070  0782                     l1648:	
+  2071  0782  0871               	movf	_i+1,w
+  2072  0783  3A80               	xorlw	128
+  2073  0784  00FF               	movwf	btemp+1
+  2074  0785  3080               	movlw	128
+  2075  0786  027F               	subwf	btemp+1,w
+  2076  0787  1D03               	skipz
+  2077  0788  2F8B               	goto	u265
+  2078  0789  3002               	movlw	2
+  2079  078A  0270               	subwf	_i,w
+  2080  078B                     u265:	
+  2081  078B  1C03               	skipc
+  2082  078C  2F8E               	goto	u261
+  2083  078D  2F8F               	goto	u260
+  2084  078E                     u261:	
+  2085  078E  2F90               	goto	l1652
+  2086  078F                     u260:	
+  2087  078F  2FE6               	goto	l111
+  2088  0790                     l1652:	
+  2089                           
+  2090                           ;STEPPER_MITSUMI.c: 88:                     PORTD = 0b1010;
+  2091  0790  300A               	movlw	10
+  2092  0791  1283               	bcf	3,5	;RP0=0, select bank0
+  2093  0792  1303               	bcf	3,6	;RP1=0, select bank0
+  2094  0793  0088               	movwf	8	;volatile
+  2095                           
+  2096                           ;STEPPER_MITSUMI.c: 89:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  2097  0794  300D               	movlw	13
+  2098  0795  00FA               	movwf	??_Stepper_CW+1
+  2099  0796  30FB               	movlw	251
+  2100  0797  00F9               	movwf	??_Stepper_CW
+  2101  0798                     u767:	
+  2102  0798  0BF9               	decfsz	??_Stepper_CW,f
+  2103  0799  2F98               	goto	u767
+  2104  079A  0BFA               	decfsz	??_Stepper_CW+1,f
+  2105  079B  2F98               	goto	u767
+  2106  079C  2F9D               	nop2
+  2107                           
+  2108                           ;STEPPER_MITSUMI.c: 90:                     PORTD = 0b0110;
+  2109  079D  3006               	movlw	6
+  2110  079E  1283               	bcf	3,5	;RP0=0, select bank0
+  2111  079F  1303               	bcf	3,6	;RP1=0, select bank0
+  2112  07A0  0088               	movwf	8	;volatile
+  2113                           
+  2114                           ;STEPPER_MITSUMI.c: 91:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  2115  07A1  300D               	movlw	13
+  2116  07A2  00FA               	movwf	??_Stepper_CW+1
+  2117  07A3  30FB               	movlw	251
+  2118  07A4  00F9               	movwf	??_Stepper_CW
+  2119  07A5                     u777:	
+  2120  07A5  0BF9               	decfsz	??_Stepper_CW,f
+  2121  07A6  2FA5               	goto	u777
+  2122  07A7  0BFA               	decfsz	??_Stepper_CW+1,f
+  2123  07A8  2FA5               	goto	u777
+  2124  07A9  2FAA               	nop2
+  2125                           
+  2126                           ;STEPPER_MITSUMI.c: 92:                     PORTD = 0b0101;
+  2127  07AA  3005               	movlw	5
+  2128  07AB  1283               	bcf	3,5	;RP0=0, select bank0
+  2129  07AC  1303               	bcf	3,6	;RP1=0, select bank0
+  2130  07AD  0088               	movwf	8	;volatile
+  2131                           
+  2132                           ;STEPPER_MITSUMI.c: 93:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  2133  07AE  300D               	movlw	13
+  2134  07AF  00FA               	movwf	??_Stepper_CW+1
+  2135  07B0  30FB               	movlw	251
+  2136  07B1  00F9               	movwf	??_Stepper_CW
+  2137  07B2                     u787:	
+  2138  07B2  0BF9               	decfsz	??_Stepper_CW,f
+  2139  07B3  2FB2               	goto	u787
+  2140  07B4  0BFA               	decfsz	??_Stepper_CW+1,f
+  2141  07B5  2FB2               	goto	u787
+  2142  07B6  2FB7               	nop2
+  2143                           
+  2144                           ;STEPPER_MITSUMI.c: 94:                     PORTD = 0b1001;
+  2145  07B7  3009               	movlw	9
+  2146  07B8  1283               	bcf	3,5	;RP0=0, select bank0
+  2147  07B9  1303               	bcf	3,6	;RP1=0, select bank0
+  2148  07BA  0088               	movwf	8	;volatile
+  2149                           
+  2150                           ;STEPPER_MITSUMI.c: 95:                     _delay((unsigned long)((10)*(4000000/4000.0)
+      +                          ));
+  2151  07BB  300D               	movlw	13
+  2152  07BC  00FA               	movwf	??_Stepper_CW+1
+  2153  07BD  30FB               	movlw	251
+  2154  07BE  00F9               	movwf	??_Stepper_CW
+  2155  07BF                     u797:	
+  2156  07BF  0BF9               	decfsz	??_Stepper_CW,f
+  2157  07C0  2FBF               	goto	u797
+  2158  07C1  0BFA               	decfsz	??_Stepper_CW+1,f
+  2159  07C2  2FBF               	goto	u797
+  2160  07C3  2FC4               	nop2
+  2161                           
+  2162                           ;STEPPER_MITSUMI.c: 97:                 };
+  2163  07C4  3001               	movlw	1
+  2164  07C5  07F0               	addwf	_i,f
+  2165  07C6  1803               	skipnc
+  2166  07C7  0AF1               	incf	_i+1,f
+  2167  07C8  3000               	movlw	0
+  2168  07C9  07F1               	addwf	_i+1,f
+  2169  07CA  2F82               	goto	l1648
+  2170  07CB                     l1656:	
+  2171                           
+  2172                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 2 sub-sw
+      +                          itches
+  2173                           ; Switch size 1, requested type "simple"
+  2174                           ; Number of cases is 2, Range of values is 0 to 1
+  2175                           ; switch strategies available:
+  2176                           ; Name         Instructions Cycles
+  2177                           ; simple_byte            7     4 (average)
+  2178                           ; direct_byte           14     8 (fixed)
+  2179                           ; jumptable            260     6 (fixed)
+  2180                           ;	Chosen strategy is simple_byte
+  2181  07CB  0878               	movf	Stepper_CW@Step_grados_cw+1,w
+  2182  07CC  3A00               	xorlw	0	; case 0
+  2183  07CD  1903               	skipnz
+  2184  07CE  2FD3               	goto	l2280
+  2185  07CF  3A01               	xorlw	1	; case 1
+  2186  07D0  1903               	skipnz
+  2187  07D1  2FE1               	goto	l2282
+  2188  07D2  2F80               	goto	l1646
+  2189  07D3                     l2280:	
+  2190                           
+  2191                           ; Switch size 1, requested type "simple"
+  2192                           ; Number of cases is 4, Range of values is 15 to 180
+  2193                           ; switch strategies available:
+  2194                           ; Name         Instructions Cycles
+  2195                           ; simple_byte           13     7 (average)
+  2196                           ; jumptable            263     9 (fixed)
+  2197                           ;	Chosen strategy is simple_byte
+  2198  07D3  0877               	movf	Stepper_CW@Step_grados_cw,w
+  2199  07D4  3A0F               	xorlw	15	; case 15
+  2200  07D5  1903               	skipnz
+  2201  07D6  2F35               	goto	l1636
+  2202  07D7  3A22               	xorlw	34	; case 45
+  2203  07D8  1903               	skipnz
+  2204  07D9  2EEA               	goto	l1626
+  2205  07DA  3A77               	xorlw	119	; case 90
+  2206  07DB  1903               	skipnz
+  2207  07DC  2E9F               	goto	l1616
+  2208  07DD  3AEE               	xorlw	238	; case 180
+  2209  07DE  1903               	skipnz
+  2210  07DF  2E54               	goto	l1606
+  2211  07E0  2F80               	goto	l1646
+  2212  07E1                     l2282:	
+  2213                           
+  2214                           ; Switch size 1, requested type "simple"
+  2215                           ; Number of cases is 1, Range of values is 104 to 104
+  2216                           ; switch strategies available:
+  2217                           ; Name         Instructions Cycles
+  2218                           ; simple_byte            4     3 (average)
+  2219                           ; direct_byte           14    11 (fixed)
+  2220                           ; jumptable            263     9 (fixed)
+  2221                           ;	Chosen strategy is simple_byte
+  2222  07E1  0877               	movf	Stepper_CW@Step_grados_cw,w
+  2223  07E2  3A68               	xorlw	104	; case 104
+  2224  07E3  1903               	skipnz
+  2225  07E4  2E09               	goto	l1596
+  2226  07E5  2F80               	goto	l1646
+  2227  07E6                     l111:	
+  2228  07E6  0008               	return
+  2229  07E7                     __end_of_Stepper_CW:	
+  2230                           
+  2231                           	psect	text4
+  2232  0429                     __ptext4:	
+  2233 ;; *************** function _Stepper_CCW *****************
+  2234 ;; Defined at:
+  2235 ;;		line 102 in file "STEPPER_MITSUMI.c"
+  2236 ;; Parameters:    Size  Location     Type
+  2237 ;;  Step_grados_    2    0[COMMON] unsigned int 
+  2238 ;; Auto vars:     Size  Location     Type
+  2239 ;;		None
+  2240 ;; Return value:  Size  Location     Type
+  2241 ;;                  1    wreg      void 
+  2242 ;; Registers used:
+  2243 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1
+  2244 ;; Tracked objects:
+  2245 ;;		On entry : 0/0
+  2246 ;;		On exit  : 0/0
+  2247 ;;		Unchanged: 0/0
+  2248 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2249 ;;      Params:         2       0       0       0       0
+  2250 ;;      Locals:         0       0       0       0       0
+  2251 ;;      Temps:          2       0       0       0       0
+  2252 ;;      Totals:         4       0       0       0       0
+  2253 ;;Total ram usage:        4 bytes
+  2254 ;; Hardware stack levels used:    1
+  2255 ;; This function calls:
+  2256 ;;		Nothing
+  2257 ;; This function is called by:
+  2258 ;;		_main
+  2259 ;; This function uses a non-reentrant model
+  2260 ;;
+  2261                           
+  2262                           
+  2263                           ;psect for function _Stepper_CCW
+  2264  0429                     _Stepper_CCW:	
+  2265  0429                     l1666:	
+  2266                           ;incstack = 0
+  2267                           ; Regs used in _Stepper_CCW: [wreg-fsr0h+status,2+status,0+btemp+1]
+  2268                           
+  2269                           
+  2270                           ;STEPPER_MITSUMI.c: 103:     switch(Step_grados_ccw){
+  2271  0429  2DEC               	goto	l1728
+  2272  042A                     l1668:	
+  2273                           
+  2274                           ;STEPPER_MITSUMI.c: 105:             for(i=0; i<25; i++){
+  2275  042A  01F0               	clrf	_i
+  2276  042B  01F1               	clrf	_i+1
+  2277  042C                     l1670:	
+  2278  042C  0871               	movf	_i+1,w
+  2279  042D  3A80               	xorlw	128
+  2280  042E  00FF               	movwf	btemp+1
+  2281  042F  3080               	movlw	128
+  2282  0430  027F               	subwf	btemp+1,w
+  2283  0431  1D03               	skipz
+  2284  0432  2C35               	goto	u275
+  2285  0433  3019               	movlw	25
+  2286  0434  0270               	subwf	_i,w
+  2287  0435                     u275:	
+  2288  0435  1C03               	skipc
+  2289  0436  2C38               	goto	u271
+  2290  0437  2C39               	goto	u270
+  2291  0438                     u271:	
+  2292  0438  2C3A               	goto	l1674
+  2293  0439                     u270:	
+  2294  0439  2E07               	goto	l134
+  2295  043A                     l1674:	
+  2296                           
+  2297                           ;STEPPER_MITSUMI.c: 106:                     PORTD = 0b1001;
+  2298  043A  3009               	movlw	9
+  2299  043B  1283               	bcf	3,5	;RP0=0, select bank0
+  2300  043C  1303               	bcf	3,6	;RP1=0, select bank0
+  2301  043D  0088               	movwf	8	;volatile
+  2302                           
+  2303                           ;STEPPER_MITSUMI.c: 107:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2304  043E  300D               	movlw	13
+  2305  043F  00FA               	movwf	??_Stepper_CCW+1
+  2306  0440  30FB               	movlw	251
+  2307  0441  00F9               	movwf	??_Stepper_CCW
+  2308  0442                     u807:	
+  2309  0442  0BF9               	decfsz	??_Stepper_CCW,f
+  2310  0443  2C42               	goto	u807
+  2311  0444  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2312  0445  2C42               	goto	u807
+  2313  0446  2C47               	nop2
+  2314                           
+  2315                           ;STEPPER_MITSUMI.c: 108:                     PORTD = 0b0101;
+  2316  0447  3005               	movlw	5
+  2317  0448  1283               	bcf	3,5	;RP0=0, select bank0
+  2318  0449  1303               	bcf	3,6	;RP1=0, select bank0
+  2319  044A  0088               	movwf	8	;volatile
+  2320                           
+  2321                           ;STEPPER_MITSUMI.c: 109:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2322  044B  300D               	movlw	13
+  2323  044C  00FA               	movwf	??_Stepper_CCW+1
+  2324  044D  30FB               	movlw	251
+  2325  044E  00F9               	movwf	??_Stepper_CCW
+  2326  044F                     u817:	
+  2327  044F  0BF9               	decfsz	??_Stepper_CCW,f
+  2328  0450  2C4F               	goto	u817
+  2329  0451  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2330  0452  2C4F               	goto	u817
+  2331  0453  2C54               	nop2
+  2332                           
+  2333                           ;STEPPER_MITSUMI.c: 110:                     PORTD = 0b0110;
+  2334  0454  3006               	movlw	6
+  2335  0455  1283               	bcf	3,5	;RP0=0, select bank0
+  2336  0456  1303               	bcf	3,6	;RP1=0, select bank0
+  2337  0457  0088               	movwf	8	;volatile
+  2338                           
+  2339                           ;STEPPER_MITSUMI.c: 111:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2340  0458  300D               	movlw	13
+  2341  0459  00FA               	movwf	??_Stepper_CCW+1
+  2342  045A  30FB               	movlw	251
+  2343  045B  00F9               	movwf	??_Stepper_CCW
+  2344  045C                     u827:	
+  2345  045C  0BF9               	decfsz	??_Stepper_CCW,f
+  2346  045D  2C5C               	goto	u827
+  2347  045E  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2348  045F  2C5C               	goto	u827
+  2349  0460  2C61               	nop2
+  2350                           
+  2351                           ;STEPPER_MITSUMI.c: 112:                     PORTD = 0b1010;
+  2352  0461  300A               	movlw	10
+  2353  0462  1283               	bcf	3,5	;RP0=0, select bank0
+  2354  0463  1303               	bcf	3,6	;RP1=0, select bank0
+  2355  0464  0088               	movwf	8	;volatile
+  2356                           
+  2357                           ;STEPPER_MITSUMI.c: 113:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2358  0465  300D               	movlw	13
+  2359  0466  00FA               	movwf	??_Stepper_CCW+1
+  2360  0467  30FB               	movlw	251
+  2361  0468  00F9               	movwf	??_Stepper_CCW
+  2362  0469                     u837:	
+  2363  0469  0BF9               	decfsz	??_Stepper_CCW,f
+  2364  046A  2C69               	goto	u837
+  2365  046B  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2366  046C  2C69               	goto	u837
+  2367  046D  2C6E               	nop2
+  2368                           
+  2369                           ;STEPPER_MITSUMI.c: 114:                 };
+  2370  046E  3001               	movlw	1
+  2371  046F  07F0               	addwf	_i,f
+  2372  0470  1803               	skipnc
+  2373  0471  0AF1               	incf	_i+1,f
+  2374  0472  3000               	movlw	0
+  2375  0473  07F1               	addwf	_i+1,f
+  2376  0474  2C2C               	goto	l1670
+  2377  0475                     l1678:	
+  2378                           
+  2379                           ;STEPPER_MITSUMI.c: 118:             for(i=0; i<12; i++){
+  2380  0475  01F0               	clrf	_i
+  2381  0476  01F1               	clrf	_i+1
+  2382  0477                     l1680:	
+  2383  0477  0871               	movf	_i+1,w
+  2384  0478  3A80               	xorlw	128
+  2385  0479  00FF               	movwf	btemp+1
+  2386  047A  3080               	movlw	128
+  2387  047B  027F               	subwf	btemp+1,w
+  2388  047C  1D03               	skipz
+  2389  047D  2C80               	goto	u285
+  2390  047E  300C               	movlw	12
+  2391  047F  0270               	subwf	_i,w
+  2392  0480                     u285:	
+  2393  0480  1C03               	skipc
+  2394  0481  2C83               	goto	u281
+  2395  0482  2C84               	goto	u280
+  2396  0483                     u281:	
+  2397  0483  2C85               	goto	l1684
+  2398  0484                     u280:	
+  2399  0484  2E07               	goto	l134
+  2400  0485                     l1684:	
+  2401                           
+  2402                           ;STEPPER_MITSUMI.c: 119:                     PORTD = 0b1001;
+  2403  0485  3009               	movlw	9
+  2404  0486  1283               	bcf	3,5	;RP0=0, select bank0
+  2405  0487  1303               	bcf	3,6	;RP1=0, select bank0
+  2406  0488  0088               	movwf	8	;volatile
+  2407                           
+  2408                           ;STEPPER_MITSUMI.c: 120:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2409  0489  300D               	movlw	13
+  2410  048A  00FA               	movwf	??_Stepper_CCW+1
+  2411  048B  30FB               	movlw	251
+  2412  048C  00F9               	movwf	??_Stepper_CCW
+  2413  048D                     u847:	
+  2414  048D  0BF9               	decfsz	??_Stepper_CCW,f
+  2415  048E  2C8D               	goto	u847
+  2416  048F  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2417  0490  2C8D               	goto	u847
+  2418  0491  2C92               	nop2
+  2419                           
+  2420                           ;STEPPER_MITSUMI.c: 121:                     PORTD = 0b0101;
+  2421  0492  3005               	movlw	5
+  2422  0493  1283               	bcf	3,5	;RP0=0, select bank0
+  2423  0494  1303               	bcf	3,6	;RP1=0, select bank0
+  2424  0495  0088               	movwf	8	;volatile
+  2425                           
+  2426                           ;STEPPER_MITSUMI.c: 122:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2427  0496  300D               	movlw	13
+  2428  0497  00FA               	movwf	??_Stepper_CCW+1
+  2429  0498  30FB               	movlw	251
+  2430  0499  00F9               	movwf	??_Stepper_CCW
+  2431  049A                     u857:	
+  2432  049A  0BF9               	decfsz	??_Stepper_CCW,f
+  2433  049B  2C9A               	goto	u857
+  2434  049C  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2435  049D  2C9A               	goto	u857
+  2436  049E  2C9F               	nop2
+  2437                           
+  2438                           ;STEPPER_MITSUMI.c: 123:                     PORTD = 0b0110;
+  2439  049F  3006               	movlw	6
+  2440  04A0  1283               	bcf	3,5	;RP0=0, select bank0
+  2441  04A1  1303               	bcf	3,6	;RP1=0, select bank0
+  2442  04A2  0088               	movwf	8	;volatile
+  2443                           
+  2444                           ;STEPPER_MITSUMI.c: 124:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2445  04A3  300D               	movlw	13
+  2446  04A4  00FA               	movwf	??_Stepper_CCW+1
+  2447  04A5  30FB               	movlw	251
+  2448  04A6  00F9               	movwf	??_Stepper_CCW
+  2449  04A7                     u867:	
+  2450  04A7  0BF9               	decfsz	??_Stepper_CCW,f
+  2451  04A8  2CA7               	goto	u867
+  2452  04A9  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2453  04AA  2CA7               	goto	u867
+  2454  04AB  2CAC               	nop2
+  2455                           
+  2456                           ;STEPPER_MITSUMI.c: 125:                     PORTD = 0b1010;
+  2457  04AC  300A               	movlw	10
+  2458  04AD  1283               	bcf	3,5	;RP0=0, select bank0
+  2459  04AE  1303               	bcf	3,6	;RP1=0, select bank0
+  2460  04AF  0088               	movwf	8	;volatile
+  2461                           
+  2462                           ;STEPPER_MITSUMI.c: 126:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2463  04B0  300D               	movlw	13
+  2464  04B1  00FA               	movwf	??_Stepper_CCW+1
+  2465  04B2  30FB               	movlw	251
+  2466  04B3  00F9               	movwf	??_Stepper_CCW
+  2467  04B4                     u877:	
+  2468  04B4  0BF9               	decfsz	??_Stepper_CCW,f
+  2469  04B5  2CB4               	goto	u877
+  2470  04B6  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2471  04B7  2CB4               	goto	u877
+  2472  04B8  2CB9               	nop2
+  2473                           
+  2474                           ;STEPPER_MITSUMI.c: 127:                 };
+  2475  04B9  3001               	movlw	1
+  2476  04BA  07F0               	addwf	_i,f
+  2477  04BB  1803               	skipnc
+  2478  04BC  0AF1               	incf	_i+1,f
+  2479  04BD  3000               	movlw	0
+  2480  04BE  07F1               	addwf	_i+1,f
+  2481  04BF  2C77               	goto	l1680
+  2482  04C0                     l1688:	
+  2483                           
+  2484                           ;STEPPER_MITSUMI.c: 131:             for(i=0; i<6; i++){
+  2485  04C0  01F0               	clrf	_i
+  2486  04C1  01F1               	clrf	_i+1
+  2487  04C2                     l1690:	
+  2488  04C2  0871               	movf	_i+1,w
+  2489  04C3  3A80               	xorlw	128
+  2490  04C4  00FF               	movwf	btemp+1
+  2491  04C5  3080               	movlw	128
+  2492  04C6  027F               	subwf	btemp+1,w
+  2493  04C7  1D03               	skipz
+  2494  04C8  2CCB               	goto	u295
+  2495  04C9  3006               	movlw	6
+  2496  04CA  0270               	subwf	_i,w
+  2497  04CB                     u295:	
+  2498  04CB  1C03               	skipc
+  2499  04CC  2CCE               	goto	u291
+  2500  04CD  2CCF               	goto	u290
+  2501  04CE                     u291:	
+  2502  04CE  2CD0               	goto	l1694
+  2503  04CF                     u290:	
+  2504  04CF  2E07               	goto	l134
+  2505  04D0                     l1694:	
+  2506                           
+  2507                           ;STEPPER_MITSUMI.c: 132:                     PORTD = 0b1001;
+  2508  04D0  3009               	movlw	9
+  2509  04D1  1283               	bcf	3,5	;RP0=0, select bank0
+  2510  04D2  1303               	bcf	3,6	;RP1=0, select bank0
+  2511  04D3  0088               	movwf	8	;volatile
+  2512                           
+  2513                           ;STEPPER_MITSUMI.c: 133:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2514  04D4  300D               	movlw	13
+  2515  04D5  00FA               	movwf	??_Stepper_CCW+1
+  2516  04D6  30FB               	movlw	251
+  2517  04D7  00F9               	movwf	??_Stepper_CCW
+  2518  04D8                     u887:	
+  2519  04D8  0BF9               	decfsz	??_Stepper_CCW,f
+  2520  04D9  2CD8               	goto	u887
+  2521  04DA  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2522  04DB  2CD8               	goto	u887
+  2523  04DC  2CDD               	nop2
+  2524                           
+  2525                           ;STEPPER_MITSUMI.c: 134:                     PORTD = 0b0101;
+  2526  04DD  3005               	movlw	5
+  2527  04DE  1283               	bcf	3,5	;RP0=0, select bank0
+  2528  04DF  1303               	bcf	3,6	;RP1=0, select bank0
+  2529  04E0  0088               	movwf	8	;volatile
+  2530                           
+  2531                           ;STEPPER_MITSUMI.c: 135:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2532  04E1  300D               	movlw	13
+  2533  04E2  00FA               	movwf	??_Stepper_CCW+1
+  2534  04E3  30FB               	movlw	251
+  2535  04E4  00F9               	movwf	??_Stepper_CCW
+  2536  04E5                     u897:	
+  2537  04E5  0BF9               	decfsz	??_Stepper_CCW,f
+  2538  04E6  2CE5               	goto	u897
+  2539  04E7  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2540  04E8  2CE5               	goto	u897
+  2541  04E9  2CEA               	nop2
+  2542                           
+  2543                           ;STEPPER_MITSUMI.c: 136:                     PORTD = 0b0110;
+  2544  04EA  3006               	movlw	6
+  2545  04EB  1283               	bcf	3,5	;RP0=0, select bank0
+  2546  04EC  1303               	bcf	3,6	;RP1=0, select bank0
+  2547  04ED  0088               	movwf	8	;volatile
+  2548                           
+  2549                           ;STEPPER_MITSUMI.c: 137:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2550  04EE  300D               	movlw	13
+  2551  04EF  00FA               	movwf	??_Stepper_CCW+1
+  2552  04F0  30FB               	movlw	251
+  2553  04F1  00F9               	movwf	??_Stepper_CCW
+  2554  04F2                     u907:	
+  2555  04F2  0BF9               	decfsz	??_Stepper_CCW,f
+  2556  04F3  2CF2               	goto	u907
+  2557  04F4  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2558  04F5  2CF2               	goto	u907
+  2559  04F6  2CF7               	nop2
+  2560                           
+  2561                           ;STEPPER_MITSUMI.c: 138:                     PORTD = 0b1010;
+  2562  04F7  300A               	movlw	10
+  2563  04F8  1283               	bcf	3,5	;RP0=0, select bank0
+  2564  04F9  1303               	bcf	3,6	;RP1=0, select bank0
+  2565  04FA  0088               	movwf	8	;volatile
+  2566                           
+  2567                           ;STEPPER_MITSUMI.c: 139:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2568  04FB  300D               	movlw	13
+  2569  04FC  00FA               	movwf	??_Stepper_CCW+1
+  2570  04FD  30FB               	movlw	251
+  2571  04FE  00F9               	movwf	??_Stepper_CCW
+  2572  04FF                     u917:	
+  2573  04FF  0BF9               	decfsz	??_Stepper_CCW,f
+  2574  0500  2CFF               	goto	u917
+  2575  0501  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2576  0502  2CFF               	goto	u917
+  2577  0503  2D04               	nop2
+  2578                           
+  2579                           ;STEPPER_MITSUMI.c: 140:                 };
+  2580  0504  3001               	movlw	1
+  2581  0505  07F0               	addwf	_i,f
+  2582  0506  1803               	skipnc
+  2583  0507  0AF1               	incf	_i+1,f
+  2584  0508  3000               	movlw	0
+  2585  0509  07F1               	addwf	_i+1,f
+  2586  050A  2CC2               	goto	l1690
+  2587  050B                     l1698:	
+  2588                           
+  2589                           ;STEPPER_MITSUMI.c: 144:             for(i=0; i<3; i++){
+  2590  050B  01F0               	clrf	_i
+  2591  050C  01F1               	clrf	_i+1
+  2592  050D                     l1700:	
+  2593  050D  0871               	movf	_i+1,w
+  2594  050E  3A80               	xorlw	128
+  2595  050F  00FF               	movwf	btemp+1
+  2596  0510  3080               	movlw	128
+  2597  0511  027F               	subwf	btemp+1,w
+  2598  0512  1D03               	skipz
+  2599  0513  2D16               	goto	u305
+  2600  0514  3003               	movlw	3
+  2601  0515  0270               	subwf	_i,w
+  2602  0516                     u305:	
+  2603  0516  1C03               	skipc
+  2604  0517  2D19               	goto	u301
+  2605  0518  2D1A               	goto	u300
+  2606  0519                     u301:	
+  2607  0519  2D1B               	goto	l1704
+  2608  051A                     u300:	
+  2609  051A  2E07               	goto	l134
+  2610  051B                     l1704:	
+  2611                           
+  2612                           ;STEPPER_MITSUMI.c: 145:                     PORTD = 0b1001;
+  2613  051B  3009               	movlw	9
+  2614  051C  1283               	bcf	3,5	;RP0=0, select bank0
+  2615  051D  1303               	bcf	3,6	;RP1=0, select bank0
+  2616  051E  0088               	movwf	8	;volatile
+  2617                           
+  2618                           ;STEPPER_MITSUMI.c: 146:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2619  051F  300D               	movlw	13
+  2620  0520  00FA               	movwf	??_Stepper_CCW+1
+  2621  0521  30FB               	movlw	251
+  2622  0522  00F9               	movwf	??_Stepper_CCW
+  2623  0523                     u927:	
+  2624  0523  0BF9               	decfsz	??_Stepper_CCW,f
+  2625  0524  2D23               	goto	u927
+  2626  0525  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2627  0526  2D23               	goto	u927
+  2628  0527  2D28               	nop2
+  2629                           
+  2630                           ;STEPPER_MITSUMI.c: 147:                     PORTD = 0b0101;
+  2631  0528  3005               	movlw	5
+  2632  0529  1283               	bcf	3,5	;RP0=0, select bank0
+  2633  052A  1303               	bcf	3,6	;RP1=0, select bank0
+  2634  052B  0088               	movwf	8	;volatile
+  2635                           
+  2636                           ;STEPPER_MITSUMI.c: 148:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2637  052C  300D               	movlw	13
+  2638  052D  00FA               	movwf	??_Stepper_CCW+1
+  2639  052E  30FB               	movlw	251
+  2640  052F  00F9               	movwf	??_Stepper_CCW
+  2641  0530                     u937:	
+  2642  0530  0BF9               	decfsz	??_Stepper_CCW,f
+  2643  0531  2D30               	goto	u937
+  2644  0532  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2645  0533  2D30               	goto	u937
+  2646  0534  2D35               	nop2
+  2647                           
+  2648                           ;STEPPER_MITSUMI.c: 149:                     PORTD = 0b0110;
+  2649  0535  3006               	movlw	6
+  2650  0536  1283               	bcf	3,5	;RP0=0, select bank0
+  2651  0537  1303               	bcf	3,6	;RP1=0, select bank0
+  2652  0538  0088               	movwf	8	;volatile
+  2653                           
+  2654                           ;STEPPER_MITSUMI.c: 150:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2655  0539  300D               	movlw	13
+  2656  053A  00FA               	movwf	??_Stepper_CCW+1
+  2657  053B  30FB               	movlw	251
+  2658  053C  00F9               	movwf	??_Stepper_CCW
+  2659  053D                     u947:	
+  2660  053D  0BF9               	decfsz	??_Stepper_CCW,f
+  2661  053E  2D3D               	goto	u947
+  2662  053F  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2663  0540  2D3D               	goto	u947
+  2664  0541  2D42               	nop2
+  2665                           
+  2666                           ;STEPPER_MITSUMI.c: 151:                     PORTD = 0b1010;
+  2667  0542  300A               	movlw	10
+  2668  0543  1283               	bcf	3,5	;RP0=0, select bank0
+  2669  0544  1303               	bcf	3,6	;RP1=0, select bank0
+  2670  0545  0088               	movwf	8	;volatile
+  2671                           
+  2672                           ;STEPPER_MITSUMI.c: 152:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2673  0546  300D               	movlw	13
+  2674  0547  00FA               	movwf	??_Stepper_CCW+1
+  2675  0548  30FB               	movlw	251
+  2676  0549  00F9               	movwf	??_Stepper_CCW
+  2677  054A                     u957:	
+  2678  054A  0BF9               	decfsz	??_Stepper_CCW,f
+  2679  054B  2D4A               	goto	u957
+  2680  054C  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2681  054D  2D4A               	goto	u957
+  2682  054E  2D4F               	nop2
+  2683                           
+  2684                           ;STEPPER_MITSUMI.c: 153:                 };
+  2685  054F  3001               	movlw	1
+  2686  0550  07F0               	addwf	_i,f
+  2687  0551  1803               	skipnc
+  2688  0552  0AF1               	incf	_i+1,f
+  2689  0553  3000               	movlw	0
+  2690  0554  07F1               	addwf	_i+1,f
+  2691  0555  2D0D               	goto	l1700
+  2692  0556                     l1708:	
+  2693                           
+  2694                           ;STEPPER_MITSUMI.c: 157:             for(i=0; i<1; i++){
+  2695  0556  01F0               	clrf	_i
+  2696  0557  01F1               	clrf	_i+1
+  2697  0558                     l1710:	
+  2698  0558  0871               	movf	_i+1,w
+  2699  0559  3A80               	xorlw	128
+  2700  055A  00FF               	movwf	btemp+1
+  2701  055B  3080               	movlw	128
+  2702  055C  027F               	subwf	btemp+1,w
+  2703  055D  1D03               	skipz
+  2704  055E  2D61               	goto	u315
+  2705  055F  3001               	movlw	1
+  2706  0560  0270               	subwf	_i,w
+  2707  0561                     u315:	
+  2708  0561  1C03               	skipc
+  2709  0562  2D64               	goto	u311
+  2710  0563  2D65               	goto	u310
+  2711  0564                     u311:	
+  2712  0564  2D66               	goto	l1714
+  2713  0565                     u310:	
+  2714  0565  2E07               	goto	l134
+  2715  0566                     l1714:	
+  2716                           
+  2717                           ;STEPPER_MITSUMI.c: 158:                     PORTD = 0b1001;
+  2718  0566  3009               	movlw	9
+  2719  0567  1283               	bcf	3,5	;RP0=0, select bank0
+  2720  0568  1303               	bcf	3,6	;RP1=0, select bank0
+  2721  0569  0088               	movwf	8	;volatile
+  2722                           
+  2723                           ;STEPPER_MITSUMI.c: 159:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2724  056A  300D               	movlw	13
+  2725  056B  00FA               	movwf	??_Stepper_CCW+1
+  2726  056C  30FB               	movlw	251
+  2727  056D  00F9               	movwf	??_Stepper_CCW
+  2728  056E                     u967:	
+  2729  056E  0BF9               	decfsz	??_Stepper_CCW,f
+  2730  056F  2D6E               	goto	u967
+  2731  0570  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2732  0571  2D6E               	goto	u967
+  2733  0572  2D73               	nop2
+  2734                           
+  2735                           ;STEPPER_MITSUMI.c: 160:                     PORTD = 0b0101;
+  2736  0573  3005               	movlw	5
+  2737  0574  1283               	bcf	3,5	;RP0=0, select bank0
+  2738  0575  1303               	bcf	3,6	;RP1=0, select bank0
+  2739  0576  0088               	movwf	8	;volatile
+  2740                           
+  2741                           ;STEPPER_MITSUMI.c: 161:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2742  0577  300D               	movlw	13
+  2743  0578  00FA               	movwf	??_Stepper_CCW+1
+  2744  0579  30FB               	movlw	251
+  2745  057A  00F9               	movwf	??_Stepper_CCW
+  2746  057B                     u977:	
+  2747  057B  0BF9               	decfsz	??_Stepper_CCW,f
+  2748  057C  2D7B               	goto	u977
+  2749  057D  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2750  057E  2D7B               	goto	u977
+  2751  057F  2D80               	nop2
+  2752                           
+  2753                           ;STEPPER_MITSUMI.c: 162:                     PORTD = 0b0110;
+  2754  0580  3006               	movlw	6
+  2755  0581  1283               	bcf	3,5	;RP0=0, select bank0
+  2756  0582  1303               	bcf	3,6	;RP1=0, select bank0
+  2757  0583  0088               	movwf	8	;volatile
+  2758                           
+  2759                           ;STEPPER_MITSUMI.c: 163:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2760  0584  300D               	movlw	13
+  2761  0585  00FA               	movwf	??_Stepper_CCW+1
+  2762  0586  30FB               	movlw	251
+  2763  0587  00F9               	movwf	??_Stepper_CCW
+  2764  0588                     u987:	
+  2765  0588  0BF9               	decfsz	??_Stepper_CCW,f
+  2766  0589  2D88               	goto	u987
+  2767  058A  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2768  058B  2D88               	goto	u987
+  2769  058C  2D8D               	nop2
+  2770                           
+  2771                           ;STEPPER_MITSUMI.c: 164:                     PORTD = 0b1010;
+  2772  058D  300A               	movlw	10
+  2773  058E  1283               	bcf	3,5	;RP0=0, select bank0
+  2774  058F  1303               	bcf	3,6	;RP1=0, select bank0
+  2775  0590  0088               	movwf	8	;volatile
+  2776                           
+  2777                           ;STEPPER_MITSUMI.c: 165:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2778  0591  300D               	movlw	13
+  2779  0592  00FA               	movwf	??_Stepper_CCW+1
+  2780  0593  30FB               	movlw	251
+  2781  0594  00F9               	movwf	??_Stepper_CCW
+  2782  0595                     u997:	
+  2783  0595  0BF9               	decfsz	??_Stepper_CCW,f
+  2784  0596  2D95               	goto	u997
+  2785  0597  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2786  0598  2D95               	goto	u997
+  2787  0599  2D9A               	nop2
+  2788                           
+  2789                           ;STEPPER_MITSUMI.c: 166:                 };
+  2790  059A  3001               	movlw	1
+  2791  059B  07F0               	addwf	_i,f
+  2792  059C  1803               	skipnc
+  2793  059D  0AF1               	incf	_i+1,f
+  2794  059E  3000               	movlw	0
+  2795  059F  07F1               	addwf	_i+1,f
+  2796  05A0  2D58               	goto	l1710
+  2797  05A1                     l1718:	
+  2798                           
+  2799                           ;STEPPER_MITSUMI.c: 170:             for(i=0; i<2; i++){
+  2800  05A1  01F0               	clrf	_i
+  2801  05A2  01F1               	clrf	_i+1
+  2802  05A3                     l1720:	
+  2803  05A3  0871               	movf	_i+1,w
+  2804  05A4  3A80               	xorlw	128
+  2805  05A5  00FF               	movwf	btemp+1
+  2806  05A6  3080               	movlw	128
+  2807  05A7  027F               	subwf	btemp+1,w
+  2808  05A8  1D03               	skipz
+  2809  05A9  2DAC               	goto	u325
+  2810  05AA  3002               	movlw	2
+  2811  05AB  0270               	subwf	_i,w
+  2812  05AC                     u325:	
+  2813  05AC  1C03               	skipc
+  2814  05AD  2DAF               	goto	u321
+  2815  05AE  2DB0               	goto	u320
+  2816  05AF                     u321:	
+  2817  05AF  2DB1               	goto	l1724
+  2818  05B0                     u320:	
+  2819  05B0  2E07               	goto	l134
+  2820  05B1                     l1724:	
+  2821                           
+  2822                           ;STEPPER_MITSUMI.c: 171:                     PORTD = 0b1001;
+  2823  05B1  3009               	movlw	9
+  2824  05B2  1283               	bcf	3,5	;RP0=0, select bank0
+  2825  05B3  1303               	bcf	3,6	;RP1=0, select bank0
+  2826  05B4  0088               	movwf	8	;volatile
+  2827                           
+  2828                           ;STEPPER_MITSUMI.c: 172:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2829  05B5  300D               	movlw	13
+  2830  05B6  00FA               	movwf	??_Stepper_CCW+1
+  2831  05B7  30FB               	movlw	251
+  2832  05B8  00F9               	movwf	??_Stepper_CCW
+  2833  05B9                     u1007:	
+  2834  05B9  0BF9               	decfsz	??_Stepper_CCW,f
+  2835  05BA  2DB9               	goto	u1007
+  2836  05BB  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2837  05BC  2DB9               	goto	u1007
+  2838  05BD  2DBE               	nop2
+  2839                           
+  2840                           ;STEPPER_MITSUMI.c: 173:                     PORTD = 0b0101;
+  2841  05BE  3005               	movlw	5
+  2842  05BF  1283               	bcf	3,5	;RP0=0, select bank0
+  2843  05C0  1303               	bcf	3,6	;RP1=0, select bank0
+  2844  05C1  0088               	movwf	8	;volatile
+  2845                           
+  2846                           ;STEPPER_MITSUMI.c: 174:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2847  05C2  300D               	movlw	13
+  2848  05C3  00FA               	movwf	??_Stepper_CCW+1
+  2849  05C4  30FB               	movlw	251
+  2850  05C5  00F9               	movwf	??_Stepper_CCW
+  2851  05C6                     u1017:	
+  2852  05C6  0BF9               	decfsz	??_Stepper_CCW,f
+  2853  05C7  2DC6               	goto	u1017
+  2854  05C8  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2855  05C9  2DC6               	goto	u1017
+  2856  05CA  2DCB               	nop2
+  2857                           
+  2858                           ;STEPPER_MITSUMI.c: 175:                     PORTD = 0b0110;
+  2859  05CB  3006               	movlw	6
+  2860  05CC  1283               	bcf	3,5	;RP0=0, select bank0
+  2861  05CD  1303               	bcf	3,6	;RP1=0, select bank0
+  2862  05CE  0088               	movwf	8	;volatile
+  2863                           
+  2864                           ;STEPPER_MITSUMI.c: 176:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2865  05CF  300D               	movlw	13
+  2866  05D0  00FA               	movwf	??_Stepper_CCW+1
+  2867  05D1  30FB               	movlw	251
+  2868  05D2  00F9               	movwf	??_Stepper_CCW
+  2869  05D3                     u1027:	
+  2870  05D3  0BF9               	decfsz	??_Stepper_CCW,f
+  2871  05D4  2DD3               	goto	u1027
+  2872  05D5  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2873  05D6  2DD3               	goto	u1027
+  2874  05D7  2DD8               	nop2
+  2875                           
+  2876                           ;STEPPER_MITSUMI.c: 177:                     PORTD = 0b1010;
+  2877  05D8  300A               	movlw	10
+  2878  05D9  1283               	bcf	3,5	;RP0=0, select bank0
+  2879  05DA  1303               	bcf	3,6	;RP1=0, select bank0
+  2880  05DB  0088               	movwf	8	;volatile
+  2881                           
+  2882                           ;STEPPER_MITSUMI.c: 178:                     _delay((unsigned long)((10)*(4000000/4000.0
+      +                          )));
+  2883  05DC  300D               	movlw	13
+  2884  05DD  00FA               	movwf	??_Stepper_CCW+1
+  2885  05DE  30FB               	movlw	251
+  2886  05DF  00F9               	movwf	??_Stepper_CCW
+  2887  05E0                     u1037:	
+  2888  05E0  0BF9               	decfsz	??_Stepper_CCW,f
+  2889  05E1  2DE0               	goto	u1037
+  2890  05E2  0BFA               	decfsz	??_Stepper_CCW+1,f
+  2891  05E3  2DE0               	goto	u1037
+  2892  05E4  2DE5               	nop2
+  2893                           
+  2894                           ;STEPPER_MITSUMI.c: 179:                 };
+  2895  05E5  3001               	movlw	1
+  2896  05E6  07F0               	addwf	_i,f
+  2897  05E7  1803               	skipnc
+  2898  05E8  0AF1               	incf	_i+1,f
+  2899  05E9  3000               	movlw	0
+  2900  05EA  07F1               	addwf	_i+1,f
+  2901  05EB  2DA3               	goto	l1720
+  2902  05EC                     l1728:	
+  2903                           
+  2904                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 2 sub-sw
+      +                          itches
+  2905                           ; Switch size 1, requested type "simple"
+  2906                           ; Number of cases is 2, Range of values is 0 to 1
+  2907                           ; switch strategies available:
+  2908                           ; Name         Instructions Cycles
+  2909                           ; simple_byte            7     4 (average)
+  2910                           ; direct_byte           14     8 (fixed)
+  2911                           ; jumptable            260     6 (fixed)
+  2912                           ;	Chosen strategy is simple_byte
+  2913  05EC  0878               	movf	Stepper_CCW@Step_grados_ccw+1,w
+  2914  05ED  3A00               	xorlw	0	; case 0
+  2915  05EE  1903               	skipnz
+  2916  05EF  2DF4               	goto	l2284
+  2917  05F0  3A01               	xorlw	1	; case 1
+  2918  05F1  1903               	skipnz
+  2919  05F2  2E02               	goto	l2286
+  2920  05F3  2DA1               	goto	l1718
+  2921  05F4                     l2284:	
+  2922                           
+  2923                           ; Switch size 1, requested type "simple"
+  2924                           ; Number of cases is 4, Range of values is 15 to 180
+  2925                           ; switch strategies available:
+  2926                           ; Name         Instructions Cycles
+  2927                           ; simple_byte           13     7 (average)
+  2928                           ; jumptable            263     9 (fixed)
+  2929                           ;	Chosen strategy is simple_byte
+  2930  05F4  0877               	movf	Stepper_CCW@Step_grados_ccw,w
+  2931  05F5  3A0F               	xorlw	15	; case 15
+  2932  05F6  1903               	skipnz
+  2933  05F7  2D56               	goto	l1708
+  2934  05F8  3A22               	xorlw	34	; case 45
+  2935  05F9  1903               	skipnz
+  2936  05FA  2D0B               	goto	l1698
+  2937  05FB  3A77               	xorlw	119	; case 90
+  2938  05FC  1903               	skipnz
+  2939  05FD  2CC0               	goto	l1688
+  2940  05FE  3AEE               	xorlw	238	; case 180
+  2941  05FF  1903               	skipnz
+  2942  0600  2C75               	goto	l1678
+  2943  0601  2DA1               	goto	l1718
+  2944  0602                     l2286:	
+  2945                           
+  2946                           ; Switch size 1, requested type "simple"
+  2947                           ; Number of cases is 1, Range of values is 104 to 104
+  2948                           ; switch strategies available:
+  2949                           ; Name         Instructions Cycles
+  2950                           ; simple_byte            4     3 (average)
+  2951                           ; direct_byte           14    11 (fixed)
+  2952                           ; jumptable            263     9 (fixed)
+  2953                           ;	Chosen strategy is simple_byte
+  2954  0602  0877               	movf	Stepper_CCW@Step_grados_ccw,w
+  2955  0603  3A68               	xorlw	104	; case 104
+  2956  0604  1903               	skipnz
+  2957  0605  2C2A               	goto	l1668
+  2958  0606  2DA1               	goto	l1718
+  2959  0607                     l134:	
+  2960  0607  0008               	return
+  2961  0608                     __end_of_Stepper_CCW:	
+  2962  007E                     btemp	set	126	;btemp
+  2963  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        16
+    BSS         7
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      7      14
+    BANK0            80      0      16
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_Stepper_CCW
+    _main->_Stepper_CW
+    _config_PORTS->_OSC_config
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0     902
+                                              4 COMMON     3     3      0
+                        _Stepper_CCW
+                         _Stepper_CW
+                       _config_PORTS
+ ---------------------------------------------------------------------------------
+ (1) _config_PORTS                                         0     0      0      98
+                         _OSC_config
+ ---------------------------------------------------------------------------------
+ (2) _OSC_config                                           4     0      4      98
+                                              0 COMMON     4     0      4
+ ---------------------------------------------------------------------------------
+ (1) _Stepper_CW                                           4     2      2     402
+                                              0 COMMON     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _Stepper_CCW                                          4     2      2     402
+                                              0 COMMON     4     2      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Stepper_CCW
+   _Stepper_CW
+   _config_PORTS
+     _OSC_config
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      0      10       5       20.0%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      7       E       1      100.0%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      1E      12        0.0%
+ABS                  0      0      1E       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Thu Apr 30 16:08:27 2020
+
+Stepper_CCW@Step_grados_ccw 0077                           _i 0070                           pc 0002  
+               __CFG_CP$OFF 0000                          l82 02CA                          l68 021E  
+                        fsr 0004                         l111 07E6                         l134 0607  
+                       u210 0618                         u211 0617                         u300 051A  
+                       u220 0663                         u301 0519                         u221 0662  
+                       u310 0565                         u230 06AE                         u311 0564  
+                       u231 06AD                         u215 0614                         u320 05B0  
+                       u240 06F9                         u400 03B6                         u321 05AF  
+                       u305 0516                         u241 06F8                         u225 065F  
+                       u401 03B5                         u250 0744                         u330 02D6  
+                       u315 0561                         u251 0743                         u235 06AA  
+                       u331 02D5                         u260 078F                         u340 02E3  
+                       u325 05AC                         u261 078E                         u245 06F5  
+                       u341 02E2                         u270 0439                         u350 0358  
+                       u271 0438                         u255 0740                         u351 0357  
+                       u280 0484                         u360 0365                         u281 0483  
+                       u265 078B                         u361 0364                         u417 02DA  
+                       u290 04CF                         u370 0374                __CFG_CPD$OFF 0000  
+                       u291 04CE                         u275 0435                         u507 03AD  
+                       u371 0373                         u427 02F2                         u380 0391  
+                       u285 0480                         u517 03C5                         u381 0390  
+                       u437 0308                         u390 03A9                         u295 04CB  
+                       u607 066C                         u527 03DB                         u391 03A8  
+                       u375 0370                         u447 031E                         u617 0679  
+                       u537 03F1                         u457 0334                         u707 071C  
+                       u627 0686                         u547 0407                         u467 034A  
+                       u717 0729                         u637 0693                         u557 041D  
+                       u477 035C                         u807 0442                         u727 074D  
+                       u647 06B7                         u567 0621                         u487 0383  
+                       u817 044F                         u737 075A                         u657 06C4  
+                       u577 062E                         u497 0395                         u907 04F2  
+                       u827 045C                         u747 0767                         u667 06D1  
+                       u587 063B                         u917 04FF                         u837 0469  
+                       u757 0774                         u677 06DE                         u597 0648  
+                       u927 0523                         u847 048D                         u767 0798  
+                       u687 0702                         u937 0530                         u857 049A  
+                       u777 07A5                         u697 070F                         u947 053D  
+                       u867 04A7                         u787 07B2                         u957 054A  
+                       u877 04B4                         u797 07BF                         u967 056E  
+                       u887 04D8                         u977 057B                         u897 04E5  
+                       u987 0588                         u997 0595                         fsr0 0004  
+                       indf 0000                __CFG_LVP$OFF 0000                        l1500 0248  
+                      l1502 024F                        l1504 0254                        l1602 0619  
+                      l2250 0274                        l1506 025B                        l1700 050D  
+                      l1612 0664                        l2260 02A6                        l2252 027E  
+                      l1710 0558                        l1622 06AF                        l1606 0654  
+                      l2254 0288                        l2270 0283                        l2246 0260  
+                      l2262 02B0                        l1720 05A3                        l1704 051B  
+                      l2280 07D3                        l1632 06FA                        l1616 069F  
+                      l1608 0656                        l2256 0292                        l2272 028D  
+                      l2248 026A                        l2264 0265                        l1800 03A3  
+                      l1714 0566                        l2282 07E1                        l1642 0745  
+                      l1626 06EA                        l1618 06A1                        l2258 029C  
+                      l2274 0297                        l2266 026F                        l1490 0225  
+                      l1810 03B6                        l1802 03A9                        l2284 05F4  
+                      l1724 05B1                        l1708 0556                        l1652 0790  
+                      l1636 0735                        l1628 06EC                        l2276 02A1  
+                      l2268 0279                        l1492 022C                        l1580 0212  
+                      l1820 0401                        l1812 03BF                        l1804 03AB  
+                      l1740 02D0                        l2286 0602                        l1718 05A1  
+                      l1670 042C                        l1646 0780                        l1638 0737  
+                      l2278 02AB                        l1494 0233                        l1486 021F  
+                      l1590 021C                        l1582 0215                        l1822 040E  
+                      l1814 03CC                        l1806 03B0                        l1750 02E3  
+                      l1742 02D6                        l1680 0477                        l1728 05EC  
+                      l1648 0782                        l1656 07CB                        l1496 023A  
+                      l1488 0220                        l1592 021D                        l1584 0217  
+                      l1576 0201                        l1816 03E2                        l1824 0424  
+                      l1808 03B0                        l1760 032E                        l1752 02EC  
+                      l1744 02D8                        l1690 04C2                        l1674 043A  
+                      l1666 0429                        l1594 0608                        l1498 0241  
+                      l1586 021A                        l1578 020E                        l1818 03EB  
+                      l1770 035A                        l1762 033B                        l1754 02F9  
+                      l1746 02DD                        l1738 02CB                        l1684 0485  
+                      l1668 042A                        l1596 0609                        l1588 021B  
+                      l1772 035F                        l1756 030F                        l1764 0351  
+                      l1748 02DD                        l1694 04D0                        l1678 0475  
+                      l1598 060B                        l1790 0391                        l1782 0375  
+                      l1774 035F                        l1758 0318                        l1766 0352  
+                      l1688 04C0                        l1792 039A                        l1784 037F  
+                      l1776 0365                        l1768 0358                        l1698 050B  
+                      l1794 039B                        l1786 0387                        l1778 0367  
+                      l1788 038B                        l1798 03A2              ??_config_PORTS 007B  
+                      u1007 05B9                        u1017 05C6                        u1027 05D3  
+                      u1037 05E0                __CFG_WRT$OFF 0000                        _flag 0075  
+                      _main 02CB                        btemp 007E                        start 0000  
+             __CFG_IESO$OFF 0000               __CFG_MCLRE$ON 0000                       ?_main 0077  
+             __CFG_WDTE$OFF 0000                       _ANSEL 0188                       _PORTA 0005  
+                     _PORTB 0006                       _PORTC 0007                       _PORTD 0008  
+                     _PORTE 0009                       _TRISA 0085                       _TRISD 0088  
+            __CFG_FCMEN$OFF 0000                       _count 0076              __CFG_BOREN$OFF 0000  
+               ?_OSC_config 0077                       pclath 000A                       status 0003  
+                     wtemp0 007E             __initialization 07E7                __end_of_main 0429  
+                    ??_main 007B                      _ANSELH 0189                      _ESTADO 0074  
+            __CFG_PWRTE$OFF 0000        __end_of_config_PORTS 021F         __size_of_OSC_config 00AC  
+               _Paso2BLE_CW 0028                  _Stepper_CW 0608     __end_of__initialization 07FC  
+            __pcstackCOMMON 0077                __pidataBANK0 01DE               ??_Stepper_CCW 0079  
+                __pmaintext 02CB        OSC_config@frecuencia 0077                     _ESTADO2 0073  
+                   _ESTADO3 0072         __end_of_Stepper_CCW 0608                ??_OSC_config 007B  
+               ?_Stepper_CW 0077       __size_of_config_PORTS 001E                     __ptext1 0201  
+                   __ptext2 021F                     __ptext3 0608                     __ptext4 0429  
+        __end_of_OSC_config 02CB        end_of_initialization 07FC                _config_PORTS 0201  
+              _Paso2BLE_CCW 0020         __size_of_Stepper_CW 01DF                   _PORTAbits 0005  
+               _Stepper_CCW 0429    Stepper_CW@Step_grados_cw 0077         start_initialization 07E7  
+                init_fetch0 01EE                 __pdataBANK0 0020                 __pbssCOMMON 0070  
+                 ___latbits 0002      __CFG_FOSC$INTRC_CLKOUT 0000                ??_Stepper_CW 0079  
+        __end_of_Stepper_CW 07E7                ?_Stepper_CCW 0077           __CFG_BOR4V$BOR40V 0000  
+             __size_of_main 015E                    init_ram0 01F2                  _OSCCONbits 008F  
+      __size_of_Stepper_CCW 01DF                  _OSC_config 021F               ?_config_PORTS 0077  

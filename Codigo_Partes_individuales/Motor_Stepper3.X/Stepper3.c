@@ -4,8 +4,8 @@
  * Este código es para un motor stepper bipolar (2 bobinas: 4 cables) 
  * MOTOR STEPPER MITSUMI M42SP-4TKC (3.6°/Paso)
  * Para el correcto funcionamiento de este codigo en el Stepper hay que utilizar un PUENTE H "L293D" (un Puente-H para cada bobina) 
- * Created on 10 de marzo de 2020, 01:29 PM
- */
+ * Created on 10 de marzo de 2020, 01:29 PM 
+ */ 
 
 
 //-------- Configuracion Inicial ---------------// 

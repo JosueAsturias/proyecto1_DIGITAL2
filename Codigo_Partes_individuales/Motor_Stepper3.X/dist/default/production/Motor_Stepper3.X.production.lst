@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Thu Apr 30 16:08:27 2020
+                                                                                               Fri May 01 16:03:29 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -3142,7 +3142,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Thu Apr 30 16:08:27 2020
+Symbol Table                                                                                   Fri May 01 16:03:29 2020
 
 Stepper_CCW@Step_grados_ccw 0077                           _i 0070                           pc 0002  
                __CFG_CP$OFF 0000                          l82 02CA                          l68 021E  

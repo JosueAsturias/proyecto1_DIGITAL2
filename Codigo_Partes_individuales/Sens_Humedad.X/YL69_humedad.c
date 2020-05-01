@@ -1,7 +1,7 @@
 /*
  * File:   YL69_humedad.c
- * Author: Josue
- *
+ * Author: Josue Castillo Lou
+ * Implementacion del sensor de humedad YL-69
  * Created on 14 de marzo de 2020, 09:23 PM
  */
 

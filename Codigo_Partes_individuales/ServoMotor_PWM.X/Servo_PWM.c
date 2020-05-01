@@ -1,8 +1,8 @@
 /*
  * File:   Servo_PWM.c
  * Author: Josue Castillo Lou
- *
- * Created on 11 de marzo de 2020, 12:46 PM
+ * Mover 2 Servomotores con el modo PWM (CCP1 y CCP2)
+ * Created on 11 de marzo de 2020, 12:46 PM 
  */
 
 //-------- Configuracion Inicial ---------------// 

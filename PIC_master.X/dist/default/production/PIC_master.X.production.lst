@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Sat May 02 00:15:08 2020
+                                                                                               Sat May 02 01:36:14 2020
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	16F887
@@ -1590,7 +1590,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1576                           ;incstack = 0
   1577                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
   1578  0C0B  120A  158A  2625  120A  158A  	fcall	_SetUp
-  1579  0C10                     l4270:	
+  1579  0C10                     l4266:	
   1580                           
   1581                           ;main_Master.c: 144:         get_Time();
   1582  0C10  120A  118A  232E  120A  158A  	fcall	_get_Time
@@ -1652,7 +1652,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1638                           ;main_Master.c: 163:         uartTX_Write(d_atras);
   1639  0C63  3066               	movlw	102
   1640  0C64  120A  158A  223D  120A  158A  	fcall	_uartTX_Write
-  1641  0C69  2C10               	goto	l4270
+  1641  0C69  2C10               	goto	l4266
   1642  0C6A                     __end_of_main:	
   1643                           
   1644                           	psect	text1
@@ -1696,20 +1696,20 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1682                           ; Regs used in _uartTX_Write: [wreg]
   1683                           ;uartTX_Write@dato stored from wreg
   1684  0A3D  00F2               	movwf	uartTX_Write@dato
-  1685  0A3E                     l436:	
-  1686                           ;UART.c: 34:     while(!TRMT);
-  1687                           
-  1688  0A3E  1683               	bsf	3,5	;RP0=1, select bank1
-  1689  0A3F  1303               	bcf	3,6	;RP1=0, select bank1
-  1690  0A40  1C98               	btfss	24,1	;volatile
-  1691  0A41  2A3E               	goto	l436
-  1692                           
-  1693                           ;UART.c: 35:     TXREG = dato;
-  1694  0A42  0872               	movf	uartTX_Write@dato,w
-  1695  0A43  1283               	bcf	3,5	;RP0=0, select bank0
-  1696  0A44  1303               	bcf	3,6	;RP1=0, select bank0
-  1697  0A45  0099               	movwf	25	;volatile
-  1698  0A46  0008               	return
+  1685                           
+  1686                           ;UART.c: 34:     TXREG = dato;
+  1687  0A3E  0872               	movf	uartTX_Write@dato,w
+  1688  0A3F  1283               	bcf	3,5	;RP0=0, select bank0
+  1689  0A40  1303               	bcf	3,6	;RP1=0, select bank0
+  1690  0A41  0099               	movwf	25	;volatile
+  1691  0A42                     l436:	
+  1692                           ;UART.c: 35:     while(!TRMT);
+  1693                           
+  1694  0A42  1683               	bsf	3,5	;RP0=1, select bank1
+  1695  0A43  1303               	bcf	3,6	;RP1=0, select bank1
+  1696  0A44  1898               	btfsc	24,1	;volatile
+  1697  0A45  0008               	return
+  1698  0A46  2A42               	goto	l436
   1699  0A47                     __end_of_uartTX_Write:	
   1700                           
   1701                           	psect	text2
@@ -1756,25 +1756,25 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1742                           ; Regs used in _pressBoton2: [wreg-fsr0h+status,2+status,0+pclath+cstack]
   1743  0EAB  037B               	decf	_banderaBoton,w
   1744  0EAC  1D03               	btfss	3,2
-  1745  0EAD  2F3F               	goto	l4252
+  1745  0EAD  2F3F               	goto	l4248
   1746                           
   1747                           ;main_Master.c: 494:         if (banderaPUSH2 == 0){
   1748  0EAE  1283               	bcf	3,5	;RP0=0, select bank0
   1749  0EAF  1303               	bcf	3,6	;RP1=0, select bank0
   1750  0EB0  0846               	movf	_banderaPUSH2,w
   1751  0EB1  1D03               	btfss	3,2
-  1752  0EB2  2F3F               	goto	l4252
+  1752  0EB2  2F3F               	goto	l4248
   1753                           
   1754                           ;main_Master.c: 495:             if (PORTBbits.RB2 == 0){
   1755  0EB3  1D06               	btfss	6,2	;volatile
-  1756  0EB4  2F20               	goto	l4244
-  1757  0EB5  2F39               	goto	l4246
-  1758  0EB6                     l4212:	
+  1756  0EB4  2F20               	goto	l4240
+  1757  0EB5  2F39               	goto	l4242
+  1758  0EB6                     l4208:	
   1759                           
   1760                           ;main_Master.c: 498:                         estado = 6;
   1761  0EB6  3006               	movlw	6
   1762  0EB7  2F11               	goto	L5
-  1763  0EB8                     l4214:	
+  1763  0EB8                     l4210:	
   1764                           ;main_Master.c: 499:                         break;
   1765                           
   1766                           
@@ -1804,7 +1804,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1789                           ;main_Master.c: 504:                         estado = 7;
   1790  0ECF  3007               	movlw	7
   1791  0ED0  2F0F               	goto	L6
-  1792  0ED1                     l4222:	
+  1792  0ED1                     l4218:	
   1793                           ;main_Master.c: 505:                         break;
   1794                           
   1795                           
@@ -1837,7 +1837,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1821                           ;main_Master.c: 510:                         estado = 8;
   1822  0EEB  3008               	movlw	8
   1823  0EEC  2F0F               	goto	L6
-  1824  0EED                     l4230:	
+  1824  0EED                     l4226:	
   1825                           ;main_Master.c: 511:                         break;
   1826                           
   1827                           
@@ -1870,7 +1870,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1853                           ;main_Master.c: 516:                         estado = 9;
   1854  0F07  3009               	movlw	9
   1855  0F08  2F0F               	goto	L6
-  1856  0F09                     l4238:	
+  1856  0F09                     l4234:	
   1857                           ;main_Master.c: 517:                         break;
   1858                           
   1859                           
@@ -1888,8 +1888,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1871  0F13  00CC               	movwf	_estado
   1872                           
   1873                           ;main_Master.c: 521:                         break;
-  1874  0F14  2F39               	goto	l4246
-  1875  0F15                     l4242:	
+  1874  0F14  2F39               	goto	l4242
+  1875  0F15                     l4238:	
   1876                           
   1877                           ;main_Master.c: 523:                         _delay((unsigned long)((10)*(4000000/4000.0
       +                          )));
@@ -1906,8 +1906,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1888  0F1E  2F1B               	goto	u1687
   1889                           
   1890                           ;main_Master.c: 524:                 }
-  1891  0F1F  2F39               	goto	l4246
-  1892  0F20                     l4244:	
+  1891  0F1F  2F39               	goto	l4242
+  1892  0F20                     l4240:	
   1893  0F20  084C               	movf	_estado,w
   1894  0F21  00A0               	movwf	??_pressBoton2
   1895  0F22  01A1               	clrf	??_pressBoton2+1
@@ -1925,9 +1925,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1906  0F23  0821               	movf	??_pressBoton2+1,w
   1907  0F24  3A00               	xorlw	0	; case 0
   1908  0F25  1903               	skipnz
-  1909  0F26  2F28               	goto	l4730
-  1910  0F27  2F15               	goto	l4242
-  1911  0F28                     l4730:	
+  1909  0F26  2F28               	goto	l4726
+  1910  0F27  2F15               	goto	l4238
+  1911  0F28                     l4726:	
   1912                           
   1913                           ; Switch size 1, requested type "simple"
   1914                           ; Number of cases is 5, Range of values is 5 to 9
@@ -1940,21 +1940,21 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1921  0F28  0820               	movf	??_pressBoton2,w
   1922  0F29  3A05               	xorlw	5	; case 5
   1923  0F2A  1903               	skipnz
-  1924  0F2B  2EB6               	goto	l4212
+  1924  0F2B  2EB6               	goto	l4208
   1925  0F2C  3A03               	xorlw	3	; case 6
   1926  0F2D  1903               	skipnz
-  1927  0F2E  2EB8               	goto	l4214
+  1927  0F2E  2EB8               	goto	l4210
   1928  0F2F  3A01               	xorlw	1	; case 7
   1929  0F30  1903               	skipnz
-  1930  0F31  2ED1               	goto	l4222
+  1930  0F31  2ED1               	goto	l4218
   1931  0F32  3A0F               	xorlw	15	; case 8
   1932  0F33  1903               	skipnz
-  1933  0F34  2EED               	goto	l4230
+  1933  0F34  2EED               	goto	l4226
   1934  0F35  3A01               	xorlw	1	; case 9
   1935  0F36  1903               	skipnz
-  1936  0F37  2F09               	goto	l4238
-  1937  0F38  2F15               	goto	l4242
-  1938  0F39                     l4246:	
+  1936  0F37  2F09               	goto	l4234
+  1937  0F38  2F15               	goto	l4238
+  1938  0F39                     l4242:	
   1939                           
   1940                           ;main_Master.c: 526:                 banderaBoton = 0;
   1941  0F39  01FB               	clrf	_banderaBoton
@@ -1967,7 +1967,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1948                           
   1949                           ;main_Master.c: 528:                 INTCONbits.RBIE = 1;
   1950  0F3E  158B               	bsf	11,3	;volatile
-  1951  0F3F                     l4252:	
+  1951  0F3F                     l4248:	
   1952                           
   1953                           ;main_Master.c: 531:     if (banderaPUSH2 == 1){
   1954  0F3F  1283               	bcf	3,5	;RP0=0, select bank0
@@ -2042,20 +2042,20 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2023                           ; Regs used in _pressBoton1: [wreg-fsr0h+status,2+status,0+pclath+cstack]
   2024  0D31  037B               	decf	_banderaBoton,w
   2025  0D32  1D03               	btfss	3,2
-  2026  0D33  2D8E               	goto	l3180
+  2026  0D33  2D8E               	goto	l3178
   2027                           
   2028                           ;main_Master.c: 449:         if (banderaPUSH1 == 0){
   2029  0D34  087A               	movf	_banderaPUSH1,w
   2030  0D35  1D03               	btfss	3,2
-  2031  0D36  2D8E               	goto	l3180
+  2031  0D36  2D8E               	goto	l3178
   2032                           
   2033                           ;main_Master.c: 450:             if (PORTBbits.RB1 == 0){
   2034  0D37  1283               	bcf	3,5	;RP0=0, select bank0
   2035  0D38  1303               	bcf	3,6	;RP1=0, select bank0
   2036  0D39  1C86               	btfss	6,1	;volatile
-  2037  0D3A  2D77               	goto	l3172
-  2038  0D3B  2D8E               	goto	l3180
-  2039  0D3C                     l3144:	
+  2037  0D3A  2D77               	goto	l3170
+  2038  0D3B  2D8E               	goto	l3178
+  2039  0D3C                     l3142:	
   2040                           
   2041                           ;main_Master.c: 453:                         velocidad ++;
   2042  0D3C  3001               	movlw	1
@@ -2067,13 +2067,13 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2048  0D40  3004               	movlw	4
   2049  0D41  024A               	subwf	_velocidad,w
   2050  0D42  1C03               	skipc
-  2051  0D43  2D8A               	goto	l3174
+  2051  0D43  2D8A               	goto	l3172
   2052                           
   2053                           ;main_Master.c: 455:                             velocidad = 1;
   2054  0D44  01CA               	clrf	_velocidad
   2055  0D45  0ACA               	incf	_velocidad,f
-  2056  0D46  2D8A               	goto	l3174
-  2057  0D47                     l3150:	
+  2056  0D46  2D8A               	goto	l3172
+  2057  0D47                     l3148:	
   2058                           
   2059                           ;main_Master.c: 459:                         largo ++;
   2060  0D47  3001               	movlw	1
@@ -2085,13 +2085,13 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2066  0D4B  3009               	movlw	9
   2067  0D4C  0245               	subwf	_largo,w
   2068  0D4D  1C03               	skipc
-  2069  0D4E  2D8A               	goto	l3174
+  2069  0D4E  2D8A               	goto	l3172
   2070                           
   2071                           ;main_Master.c: 461:                             largo = 1;
   2072  0D4F  01C5               	clrf	_largo
   2073  0D50  0AC5               	incf	_largo,f
-  2074  0D51  2D8A               	goto	l3174
-  2075  0D52                     l3156:	
+  2074  0D51  2D8A               	goto	l3172
+  2075  0D52                     l3154:	
   2076                           
   2077                           ;main_Master.c: 465:                         ancho ++;
   2078  0D52  3001               	movlw	1
@@ -2103,13 +2103,13 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2084  0D56  3009               	movlw	9
   2085  0D57  0244               	subwf	_ancho,w
   2086  0D58  1C03               	skipc
-  2087  0D59  2D8A               	goto	l3174
+  2087  0D59  2D8A               	goto	l3172
   2088                           
   2089                           ;main_Master.c: 467:                             ancho = 1;
   2090  0D5A  01C4               	clrf	_ancho
   2091  0D5B  0AC4               	incf	_ancho,f
-  2092  0D5C  2D8A               	goto	l3174
-  2093  0D5D                     l3162:	
+  2092  0D5C  2D8A               	goto	l3172
+  2093  0D5D                     l3160:	
   2094                           
   2095                           ;main_Master.c: 471:                         LCD_clear();
   2096  0D5D  120A  158A  229E  120A  158A  	fcall	_LCD_clear
@@ -2138,12 +2138,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2119  0D71  3006               	movlw	6
   2120  0D72  024C               	subwf	_estado,w
   2121  0D73  1C03               	skipc
-  2122  0D74  2D8A               	goto	l3174
+  2122  0D74  2D8A               	goto	l3172
   2123                           
   2124                           ;main_Master.c: 475:                         estado = 0;
   2125  0D75  01CC               	clrf	_estado
-  2126  0D76  2D8A               	goto	l3174
-  2127  0D77                     l3172:	
+  2126  0D76  2D8A               	goto	l3172
+  2127  0D77                     l3170:	
   2128  0D77  084C               	movf	_estado,w
   2129  0D78  00F7               	movwf	??_pressBoton1
   2130  0D79  01F8               	clrf	??_pressBoton1+1
@@ -2161,9 +2161,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2141  0D7A  0878               	movf	??_pressBoton1+1,w
   2142  0D7B  3A00               	xorlw	0	; case 0
   2143  0D7C  1903               	skipnz
-  2144  0D7D  2D7F               	goto	l4732
-  2145  0D7E  2D5D               	goto	l3162
-  2146  0D7F                     l4732:	
+  2144  0D7D  2D7F               	goto	l4728
+  2145  0D7E  2D5D               	goto	l3160
+  2146  0D7F                     l4728:	
   2147                           
   2148                           ; Switch size 1, requested type "simple"
   2149                           ; Number of cases is 3, Range of values is 6 to 8
@@ -2176,15 +2176,15 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2156  0D7F  0877               	movf	??_pressBoton1,w
   2157  0D80  3A06               	xorlw	6	; case 6
   2158  0D81  1903               	skipnz
-  2159  0D82  2D3C               	goto	l3144
+  2159  0D82  2D3C               	goto	l3142
   2160  0D83  3A01               	xorlw	1	; case 7
   2161  0D84  1903               	skipnz
-  2162  0D85  2D47               	goto	l3150
+  2162  0D85  2D47               	goto	l3148
   2163  0D86  3A0F               	xorlw	15	; case 8
   2164  0D87  1903               	skipnz
-  2165  0D88  2D52               	goto	l3156
-  2166  0D89  2D5D               	goto	l3162
-  2167  0D8A                     l3174:	
+  2165  0D88  2D52               	goto	l3154
+  2166  0D89  2D5D               	goto	l3160
+  2167  0D8A                     l3172:	
   2168                           
   2169                           ;main_Master.c: 478:                 banderaBoton = 0;
   2170  0D8A  01FB               	clrf	_banderaBoton
@@ -2195,7 +2195,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2175                           
   2176                           ;main_Master.c: 480:                 INTCONbits.RBIE = 1;
   2177  0D8D  158B               	bsf	11,3	;volatile
-  2178  0D8E                     l3180:	
+  2178  0D8E                     l3178:	
   2179                           
   2180                           ;main_Master.c: 484:     if (banderaPUSH1 == 1){
   2181  0D8E  037A               	decf	_banderaPUSH1,w
@@ -2284,8 +2284,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2264  002B  00BA               	movwf	mostrarLCD@pantalla
   2265                           
   2266                           ;main_Master.c: 271:     switch(pantalla){
-  2267  002C  2B02               	goto	l4196
-  2268  002D                     l4038:	
+  2267  002C  2B02               	goto	l4192
+  2268  002D                     l4034:	
   2269                           
   2270                           ;main_Master.c: 273:             display_Uhrzeit(2,4);
   2271  002D  3004               	movlw	4
@@ -2307,7 +2307,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2287                           
   2288                           ;main_Master.c: 275:             break;
   2289  0041  0008               	return
-  2290  0042                     l4040:	
+  2290  0042                     l4036:	
   2291                           
   2292                           ;main_Master.c: 277:             LCD_Set_Cursor(1,0);
   2293  0042  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2353,12 +2353,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2333  0074  0837               	movf	??_mostrarLCD,w
   2334  0075  0438               	iorwf	??_mostrarLCD+1,w
   2335  0076  1D03               	btfss	3,2
-  2336  0077  287A               	goto	l4050
+  2336  0077  287A               	goto	l4046
   2337                           
   2338                           ;main_Master.c: 283:                 LCD_Write_Character(' ');
   2339  0078  3020               	movlw	32
   2340  0079  287E               	goto	L7
-  2341  007A                     l4050:	
+  2341  007A                     l4046:	
   2342                           ;main_Master.c: 284:             }
   2343                           
   2344                           
@@ -2437,12 +2437,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2417  00CE  0837               	movf	??_mostrarLCD,w
   2418  00CF  0438               	iorwf	??_mostrarLCD+1,w
   2419  00D0  1D03               	btfss	3,2
-  2420  00D1  28D4               	goto	l4064
+  2420  00D1  28D4               	goto	l4060
   2421                           
   2422                           ;main_Master.c: 297:                 LCD_Write_Character(' ');
   2423  00D2  3020               	movlw	32
   2424  00D3  28D8               	goto	L8
-  2425  00D4                     l4064:	
+  2425  00D4                     l4060:	
   2426                           ;main_Master.c: 298:             }
   2427                           
   2428                           
@@ -2469,7 +2469,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2449  00E8  0837               	movf	??_mostrarLCD,w
   2450  00E9  0438               	iorwf	??_mostrarLCD+1,w
   2451  00EA  1D03               	btfss	3,2
-  2452  00EB  28F9               	goto	l4072
+  2452  00EB  28F9               	goto	l4068
   2453  00EC  0847               	movf	_obj_array,w
   2454  00ED  0084               	movwf	4
   2455  00EE  0800               	movf	0,w
@@ -2480,12 +2480,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2460  00F3  0837               	movf	??_mostrarLCD,w
   2461  00F4  0438               	iorwf	??_mostrarLCD+1,w
   2462  00F5  1D03               	btfss	3,2
-  2463  00F6  28F9               	goto	l4072
+  2463  00F6  28F9               	goto	l4068
   2464                           
   2465                           ;main_Master.c: 304:                 LCD_Write_Character(' ');
   2466  00F7  3020               	movlw	32
   2467  00F8  28FE               	goto	L9
-  2468  00F9                     l4072:	
+  2468  00F9                     l4068:	
   2469                           ;main_Master.c: 305:             }
   2470                           
   2471                           
@@ -2521,7 +2521,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2501                           
   2502                           ;main_Master.c: 312:             break;
   2503  011A  0008               	return
-  2504  011B                     l4078:	
+  2504  011B                     l4074:	
   2505                           
   2506                           ;main_Master.c: 314:             LCD_Set_Cursor(1,0);
   2507  011B  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2554,7 +2554,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2534                           
   2535                           ;main_Master.c: 321:             if(inclinacion == 0){
   2536  013E  0008               	return
-  2537  013F                     l4086:	
+  2537  013F                     l4082:	
   2538                           
   2539                           ;main_Master.c: 333:             LCD_Set_Cursor(1,0);
   2540  013F  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2601,7 +2601,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2581                           
   2582                           ;main_Master.c: 348:             break;
   2583  0174  0008               	return
-  2584  0175                     l4102:	
+  2584  0175                     l4098:	
   2585                           
   2586                           ;main_Master.c: 350:             LCD_Set_Cursor(1,0);
   2587  0175  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2668,7 +2668,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2648  01BE  30A5               	movlw	(low ((STR_11-__stringbase)| (0+32768)))& (0+255)
   2649  01BF  120A  158A  22EB   	fcall	_LCD_Write_String
   2650  01C2  0008               	return
-  2651  01C3                     l4138:	
+  2651  01C3                     l4134:	
   2652                           
   2653                           ;main_Master.c: 391:             LCD_Set_Cursor(1, 0);
   2654  01C3  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2722,7 +2722,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2702                           
   2703                           ;main_Master.c: 399:             break;
   2704  0203  0008               	return
-  2705  0204                     l4148:	
+  2705  0204                     l4144:	
   2706                           
   2707                           ;main_Master.c: 401:             LCD_Set_Cursor(2,0);
   2708  0204  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2742,7 +2742,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2722                           
   2723                           ;main_Master.c: 404:             break;
   2724  0218  0008               	return
-  2725  0219                     l4154:	
+  2725  0219                     l4150:	
   2726                           
   2727                           ;main_Master.c: 406:             LCD_Set_Cursor(2,0);
   2728  0219  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2776,7 +2776,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2756                           
   2757                           ;main_Master.c: 411:             break;
   2758  023F  0008               	return
-  2759  0240                     l4160:	
+  2759  0240                     l4156:	
   2760                           
   2761                           ;main_Master.c: 413:             LCD_Set_Cursor(2,7);
   2762  0240  3007               	movlw	7
@@ -2813,7 +2813,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2793                           
   2794                           ;main_Master.c: 418:             break;
   2795  0269  0008               	return
-  2796  026A                     l4166:	
+  2796  026A                     l4162:	
   2797                           
   2798                           ;main_Master.c: 420:             LCD_Set_Cursor(2,10);
   2799  026A  300A               	movlw	10
@@ -2843,7 +2843,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2823                           
   2824                           ;main_Master.c: 424:             break;
   2825  028A  0008               	return
-  2826  028B                     l4172:	
+  2826  028B                     l4168:	
   2827                           
   2828                           ;main_Master.c: 426:             LCD_Set_Cursor(1,0);
   2829  028B  01F5               	clrf	LCD_Set_Cursor@columna
@@ -2937,7 +2937,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2917                           
   2918                           ;main_Master.c: 440:             break;
   2919  02F2  0008               	return
-  2920  02F3                     l4194:	
+  2920  02F3                     l4190:	
   2921                           
   2922                           ;main_Master.c: 442:             LCD_Set_Cursor(1,9);
   2923  02F3  3009               	movlw	9
@@ -2953,7 +2953,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2933                           
   2934                           ;main_Master.c: 444:     }
   2935  0301  0008               	return
-  2936  0302                     l4196:	
+  2936  0302                     l4192:	
   2937  0302  083A               	movf	mostrarLCD@pantalla,w
   2938  0303  00B7               	movwf	??_mostrarLCD
   2939  0304  01B8               	clrf	??_mostrarLCD+1
@@ -2971,9 +2971,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2950  0305  0838               	movf	??_mostrarLCD+1,w
   2951  0306  3A00               	xorlw	0	; case 0
   2952  0307  1903               	skipnz
-  2953  0308  2B0A               	goto	l4734
-  2954  0309  2AF3               	goto	l4194
-  2955  030A                     l4734:	
+  2953  0308  2B0A               	goto	l4730
+  2954  0309  2AF3               	goto	l4190
+  2955  030A                     l4730:	
   2956                           
   2957                           ; Switch size 1, requested type "simple"
   2958                           ; Number of cases is 11, Range of values is 0 to 10
@@ -2986,38 +2986,38 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   2965  030A  0837               	movf	??_mostrarLCD,w
   2966  030B  3A00               	xorlw	0	; case 0
   2967  030C  1903               	skipnz
-  2968  030D  282D               	goto	l4038
+  2968  030D  282D               	goto	l4034
   2969  030E  3A01               	xorlw	1	; case 1
   2970  030F  1903               	skipnz
-  2971  0310  2842               	goto	l4040
+  2971  0310  2842               	goto	l4036
   2972  0311  3A03               	xorlw	3	; case 2
   2973  0312  1903               	skipnz
-  2974  0313  291B               	goto	l4078
+  2974  0313  291B               	goto	l4074
   2975  0314  3A01               	xorlw	1	; case 3
   2976  0315  1903               	skipnz
-  2977  0316  293F               	goto	l4086
+  2977  0316  293F               	goto	l4082
   2978  0317  3A07               	xorlw	7	; case 4
   2979  0318  1903               	skipnz
-  2980  0319  2975               	goto	l4102
+  2980  0319  2975               	goto	l4098
   2981  031A  3A01               	xorlw	1	; case 5
   2982  031B  1903               	skipnz
-  2983  031C  29C3               	goto	l4138
+  2983  031C  29C3               	goto	l4134
   2984  031D  3A03               	xorlw	3	; case 6
   2985  031E  1903               	skipnz
-  2986  031F  2A04               	goto	l4148
+  2986  031F  2A04               	goto	l4144
   2987  0320  3A01               	xorlw	1	; case 7
   2988  0321  1903               	skipnz
-  2989  0322  2A19               	goto	l4154
+  2989  0322  2A19               	goto	l4150
   2990  0323  3A0F               	xorlw	15	; case 8
   2991  0324  1903               	skipnz
-  2992  0325  2A40               	goto	l4160
+  2992  0325  2A40               	goto	l4156
   2993  0326  3A01               	xorlw	1	; case 9
   2994  0327  1903               	skipnz
-  2995  0328  2A6A               	goto	l4166
+  2995  0328  2A6A               	goto	l4162
   2996  0329  3A03               	xorlw	3	; case 10
   2997  032A  1903               	skipnz
-  2998  032B  2A8B               	goto	l4172
-  2999  032C  2AF3               	goto	l4194
+  2998  032B  2A8B               	goto	l4168
+  2999  032C  2AF3               	goto	l4190
   3000  032D  0008               	return
   3001  032E                     __end_of_mostrarLCD:	
   3002                           
@@ -3237,7 +3237,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3216                           ; Regs used in ___wmul: [wreg+status,2+status,0]
   3217  0ACA  01F6               	clrf	___wmul@product
   3218  0ACB  01F7               	clrf	___wmul@product+1
-  3219  0ACC                     l2546:	
+  3219  0ACC                     l2544:	
   3220  0ACC  1C72               	btfss	___wmul@multiplier,0
   3221  0ACD  2AD4               	goto	l562
   3222  0ACE  0874               	movf	___wmul@multiplicand,w
@@ -3266,7 +3266,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3245  0AE2  0872               	movf	___wmul@multiplier,w
   3246  0AE3  0473               	iorwf	___wmul@multiplier+1,w
   3247  0AE4  1D03               	btfss	3,2
-  3248  0AE5  2ACC               	goto	l2546
+  3248  0AE5  2ACC               	goto	l2544
   3249  0AE6  0877               	movf	___wmul@product+1,w
   3250  0AE7  00F3               	movwf	?___wmul+1
   3251  0AE8  0876               	movf	___wmul@product,w
@@ -3790,7 +3790,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3769                           ; Regs used in ___awmod: [wreg+status,2+status,0]
   3770  0BC0  01F8               	clrf	___awmod@sign
   3771  0BC1  1FF5               	btfss	___awmod@dividend+1,7
-  3772  0BC2  2BCA               	goto	l2648
+  3772  0BC2  2BCA               	goto	l2646
   3773  0BC3  09F4               	comf	___awmod@dividend,f
   3774  0BC4  09F5               	comf	___awmod@dividend+1,f
   3775  0BC5  0AF4               	incf	___awmod@dividend,f
@@ -3798,24 +3798,24 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3777  0BC7  0AF5               	incf	___awmod@dividend+1,f
   3778  0BC8  01F8               	clrf	___awmod@sign
   3779  0BC9  0AF8               	incf	___awmod@sign,f
-  3780  0BCA                     l2648:	
+  3780  0BCA                     l2646:	
   3781  0BCA  1FF3               	btfss	___awmod@divisor+1,7
-  3782  0BCB  2BD1               	goto	l2652
+  3782  0BCB  2BD1               	goto	l2650
   3783  0BCC  09F2               	comf	___awmod@divisor,f
   3784  0BCD  09F3               	comf	___awmod@divisor+1,f
   3785  0BCE  0AF2               	incf	___awmod@divisor,f
   3786  0BCF  1903               	skipnz
   3787  0BD0  0AF3               	incf	___awmod@divisor+1,f
-  3788  0BD1                     l2652:	
+  3788  0BD1                     l2650:	
   3789  0BD1  0872               	movf	___awmod@divisor,w
   3790  0BD2  0473               	iorwf	___awmod@divisor+1,w
   3791  0BD3  1903               	btfsc	3,2
-  3792  0BD4  2BFE               	goto	l2670
+  3792  0BD4  2BFE               	goto	l2668
   3793  0BD5  01F7               	clrf	___awmod@counter
   3794  0BD6  0AF7               	incf	___awmod@counter,f
-  3795  0BD7                     l2660:	
+  3795  0BD7                     l2658:	
   3796  0BD7  1BF3               	btfsc	___awmod@divisor+1,7
-  3797  0BD8  2BE5               	goto	l2662
+  3797  0BD8  2BE5               	goto	l2660
   3798  0BD9  3001               	movlw	1
   3799  0BDA                     u1015:	
   3800  0BDA  1003               	clrc
@@ -3828,8 +3828,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3807  0BE1  00F6               	movwf	??___awmod
   3808  0BE2  0876               	movf	??___awmod,w
   3809  0BE3  07F7               	addwf	___awmod@counter,f
-  3810  0BE4  2BD7               	goto	l2660
-  3811  0BE5                     l2662:	
+  3810  0BE4  2BD7               	goto	l2658
+  3811  0BE5                     l2660:	
   3812  0BE5  0873               	movf	___awmod@divisor+1,w
   3813  0BE6  0275               	subwf	___awmod@dividend+1,w
   3814  0BE7  1D03               	skipz
@@ -3838,14 +3838,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3817  0BEA  0274               	subwf	___awmod@dividend,w
   3818  0BEB                     u1035:	
   3819  0BEB  1C03               	skipc
-  3820  0BEC  2BF3               	goto	l2666
+  3820  0BEC  2BF3               	goto	l2664
   3821  0BED  0872               	movf	___awmod@divisor,w
   3822  0BEE  02F4               	subwf	___awmod@dividend,f
   3823  0BEF  0873               	movf	___awmod@divisor+1,w
   3824  0BF0  1C03               	skipc
   3825  0BF1  03F5               	decf	___awmod@dividend+1,f
   3826  0BF2  02F5               	subwf	___awmod@dividend+1,f
-  3827  0BF3                     l2666:	
+  3827  0BF3                     l2664:	
   3828  0BF3  3001               	movlw	1
   3829  0BF4                     u1045:	
   3830  0BF4  1003               	clrc
@@ -3857,17 +3857,17 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3836  0BFA  3001               	movlw	1
   3837  0BFB  02F7               	subwf	___awmod@counter,f
   3838  0BFC  1D03               	btfss	3,2
-  3839  0BFD  2BE5               	goto	l2662
-  3840  0BFE                     l2670:	
+  3839  0BFD  2BE5               	goto	l2660
+  3840  0BFE                     l2668:	
   3841  0BFE  0878               	movf	___awmod@sign,w
   3842  0BFF  1903               	btfsc	3,2
-  3843  0C00  2C06               	goto	l2674
+  3843  0C00  2C06               	goto	l2672
   3844  0C01  09F4               	comf	___awmod@dividend,f
   3845  0C02  09F5               	comf	___awmod@dividend+1,f
   3846  0C03  0AF4               	incf	___awmod@dividend,f
   3847  0C04  1903               	skipnz
   3848  0C05  0AF5               	incf	___awmod@dividend+1,f
-  3849  0C06                     l2674:	
+  3849  0C06                     l2672:	
   3850  0C06  0875               	movf	___awmod@dividend+1,w
   3851  0C07  00F3               	movwf	?___awmod+1
   3852  0C08  0874               	movf	___awmod@dividend,w
@@ -3924,7 +3924,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3903  06A5  1303               	bcf	3,6	;RP1=0, select bank0
   3904  06A6  01A5               	clrf	___awdiv@sign
   3905  06A7  1FA1               	btfss	___awdiv@divisor+1,7
-  3906  06A8  2EB0               	goto	l3890
+  3906  06A8  2EB0               	goto	l3886
   3907  06A9  09A0               	comf	___awdiv@divisor,f
   3908  06AA  09A1               	comf	___awdiv@divisor+1,f
   3909  06AB  0AA0               	incf	___awdiv@divisor,f
@@ -3932,9 +3932,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3911  06AD  0AA1               	incf	___awdiv@divisor+1,f
   3912  06AE  01A5               	clrf	___awdiv@sign
   3913  06AF  0AA5               	incf	___awdiv@sign,f
-  3914  06B0                     l3890:	
+  3914  06B0                     l3886:	
   3915  06B0  1FA3               	btfss	___awdiv@dividend+1,7
-  3916  06B1  2EBB               	goto	l3896
+  3916  06B1  2EBB               	goto	l3892
   3917  06B2  09A2               	comf	___awdiv@dividend,f
   3918  06B3  09A3               	comf	___awdiv@dividend+1,f
   3919  06B4  0AA2               	incf	___awdiv@dividend,f
@@ -3944,18 +3944,18 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3923  06B8  00F8               	movwf	??___awdiv
   3924  06B9  0878               	movf	??___awdiv,w
   3925  06BA  06A5               	xorwf	___awdiv@sign,f
-  3926  06BB                     l3896:	
+  3926  06BB                     l3892:	
   3927  06BB  01A6               	clrf	___awdiv@quotient
   3928  06BC  01A7               	clrf	___awdiv@quotient+1
   3929  06BD  0820               	movf	___awdiv@divisor,w
   3930  06BE  0421               	iorwf	___awdiv@divisor+1,w
   3931  06BF  1903               	btfsc	3,2
-  3932  06C0  2EF2               	goto	l3918
+  3932  06C0  2EF2               	goto	l3914
   3933  06C1  01A4               	clrf	___awdiv@counter
   3934  06C2  0AA4               	incf	___awdiv@counter,f
-  3935  06C3                     l3906:	
+  3935  06C3                     l3902:	
   3936  06C3  1BA1               	btfsc	___awdiv@divisor+1,7
-  3937  06C4  2ED1               	goto	l3908
+  3937  06C4  2ED1               	goto	l3904
   3938  06C5  3001               	movlw	1
   3939  06C6                     u1465:	
   3940  06C6  1003               	clrc
@@ -3968,8 +3968,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3947  06CD  00F8               	movwf	??___awdiv
   3948  06CE  0878               	movf	??___awdiv,w
   3949  06CF  07A4               	addwf	___awdiv@counter,f
-  3950  06D0  2EC3               	goto	l3906
-  3951  06D1                     l3908:	
+  3950  06D0  2EC3               	goto	l3902
+  3951  06D1                     l3904:	
   3952  06D1  3001               	movlw	1
   3953  06D2                     u1485:	
   3954  06D2  1003               	clrc
@@ -3986,7 +3986,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3965  06DD  0222               	subwf	___awdiv@dividend,w
   3966  06DE                     u1495:	
   3967  06DE  1C03               	skipc
-  3968  06DF  2EE7               	goto	l3914
+  3968  06DF  2EE7               	goto	l3910
   3969  06E0  0820               	movf	___awdiv@divisor,w
   3970  06E1  02A2               	subwf	___awdiv@dividend,f
   3971  06E2  0821               	movf	___awdiv@divisor+1,w
@@ -3994,7 +3994,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3973  06E4  03A3               	decf	___awdiv@dividend+1,f
   3974  06E5  02A3               	subwf	___awdiv@dividend+1,f
   3975  06E6  1426               	bsf	___awdiv@quotient,0
-  3976  06E7                     l3914:	
+  3976  06E7                     l3910:	
   3977  06E7  3001               	movlw	1
   3978  06E8                     u1505:	
   3979  06E8  1003               	clrc
@@ -4006,17 +4006,17 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3985  06EE  3001               	movlw	1
   3986  06EF  02A4               	subwf	___awdiv@counter,f
   3987  06F0  1D03               	btfss	3,2
-  3988  06F1  2ED1               	goto	l3908
-  3989  06F2                     l3918:	
+  3988  06F1  2ED1               	goto	l3904
+  3989  06F2                     l3914:	
   3990  06F2  0825               	movf	___awdiv@sign,w
   3991  06F3  1903               	btfsc	3,2
-  3992  06F4  2EFA               	goto	l3922
+  3992  06F4  2EFA               	goto	l3918
   3993  06F5  09A6               	comf	___awdiv@quotient,f
   3994  06F6  09A7               	comf	___awdiv@quotient+1,f
   3995  06F7  0AA6               	incf	___awdiv@quotient,f
   3996  06F8  1903               	skipnz
   3997  06F9  0AA7               	incf	___awdiv@quotient+1,f
-  3998  06FA                     l3922:	
+  3998  06FA                     l3918:	
   3999  06FA  0827               	movf	___awdiv@quotient+1,w
   4000  06FB  00A1               	movwf	?___awdiv+1
   4001  06FC  0826               	movf	___awdiv@quotient,w
@@ -4080,7 +4080,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4059                           ;LCD_8bits.c: 74:     int n;;LCD_8bits.c: 75:     for(n = 0; a[n] != '\0'; n++){
   4060  0AEC  01F4               	clrf	LCD_Write_String@n
   4061  0AED  01F5               	clrf	LCD_Write_String@n+1
-  4062  0AEE                     l2538:	
+  4062  0AEE                     l2536:	
   4063  0AEE  0874               	movf	LCD_Write_String@n,w
   4064  0AEF  0776               	addwf	LCD_Write_String@a,w
   4065  0AF0  0084               	movwf	4
@@ -4103,7 +4103,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4082  0B09  0AF5               	incf	LCD_Write_String@n+1,f
   4083  0B0A  3000               	movlw	0
   4084  0B0B  07F5               	addwf	LCD_Write_String@n+1,f
-  4085  0B0C  2AEE               	goto	l2538
+  4085  0B0C  2AEE               	goto	l2536
   4086  0B0D                     __end_of_LCD_Write_String:	
   4087                           
   4088                           	psect	text12
@@ -4153,8 +4153,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4132  0B65  00F8               	movwf	LCD_Set_Cursor@linea
   4133                           
   4134                           ;LCD_8bits.c: 82:     switch (linea){
-  4135  0B66  2B80               	goto	l2526
-  4136  0B67                     l2516:	
+  4135  0B66  2B80               	goto	l2524
+  4136  0B67                     l2514:	
   4137                           
   4138                           ;LCD_8bits.c: 84:             corrimiento = 0x80 + columna;
   4139  0B67  0875               	movf	LCD_Set_Cursor@columna,w
@@ -4169,7 +4169,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4148                           
   4149                           ;LCD_8bits.c: 86:             break;
   4150  0B70  0008               	return
-  4151  0B71                     l2520:	
+  4151  0B71                     l2518:	
   4152                           
   4153                           ;LCD_8bits.c: 88:             corrimiento = 0x80 + 0x40 + columna;
   4154  0B71  0875               	movf	LCD_Set_Cursor@columna,w
@@ -4184,7 +4184,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4163                           
   4164                           ;LCD_8bits.c: 90:             break;
   4165  0B7A  0008               	return
-  4166  0B7B                     l2524:	
+  4166  0B7B                     l2522:	
   4167                           
   4168                           ;LCD_8bits.c: 92:             LCD_Cmd(0x80);
   4169  0B7B  3080               	movlw	128
@@ -4192,7 +4192,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4171                           
   4172                           ;LCD_8bits.c: 93:     }
   4173  0B7F  0008               	return
-  4174  0B80                     l2526:	
+  4174  0B80                     l2524:	
   4175  0B80  0878               	movf	LCD_Set_Cursor@linea,w
   4176  0B81  00F6               	movwf	??_LCD_Set_Cursor
   4177  0B82  01F7               	clrf	??_LCD_Set_Cursor+1
@@ -4210,9 +4210,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4188  0B83  0877               	movf	??_LCD_Set_Cursor+1,w
   4189  0B84  3A00               	xorlw	0	; case 0
   4190  0B85  1903               	skipnz
-  4191  0B86  2B88               	goto	l4736
-  4192  0B87  2B7B               	goto	l2524
-  4193  0B88                     l4736:	
+  4191  0B86  2B88               	goto	l4732
+  4192  0B87  2B7B               	goto	l2522
+  4193  0B88                     l4732:	
   4194                           
   4195                           ; Switch size 1, requested type "simple"
   4196                           ; Number of cases is 2, Range of values is 1 to 2
@@ -4225,11 +4225,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4203  0B88  0876               	movf	??_LCD_Set_Cursor,w
   4204  0B89  3A01               	xorlw	1	; case 1
   4205  0B8A  1903               	skipnz
-  4206  0B8B  2B67               	goto	l2516
+  4206  0B8B  2B67               	goto	l2514
   4207  0B8C  3A03               	xorlw	3	; case 2
   4208  0B8D  1903               	skipnz
-  4209  0B8E  2B71               	goto	l2520
-  4210  0B8F  2B7B               	goto	l2524
+  4209  0B8E  2B71               	goto	l2518
+  4210  0B8F  2B7B               	goto	l2522
   4211  0B90  0008               	return
   4212  0B91                     __end_of_LCD_Set_Cursor:	
   4213                           
@@ -5056,21 +5056,21 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5032                           ;___bmul@multiplier stored from wreg
   5033  0A67  00F5               	movwf	___bmul@multiplier
   5034  0A68  01F4               	clrf	___bmul@product
-  5035  0A69                     l2560:	
+  5035  0A69                     l2558:	
   5036  0A69  1C75               	btfss	___bmul@multiplier,0
-  5037  0A6A  2A6F               	goto	l2564
+  5037  0A6A  2A6F               	goto	l2562
   5038  0A6B  0872               	movf	___bmul@multiplicand,w
   5039  0A6C  00F3               	movwf	??___bmul
   5040  0A6D  0873               	movf	??___bmul,w
   5041  0A6E  07F4               	addwf	___bmul@product,f
-  5042  0A6F                     l2564:	
+  5042  0A6F                     l2562:	
   5043  0A6F  1003               	clrc
   5044  0A70  0DF2               	rlf	___bmul@multiplicand,f
   5045  0A71  1003               	clrc
   5046  0A72  0CF5               	rrf	___bmul@multiplier,f
   5047  0A73  0875               	movf	___bmul@multiplier,w
   5048  0A74  1D03               	btfss	3,2
-  5049  0A75  2A69               	goto	l2560
+  5049  0A75  2A69               	goto	l2558
   5050  0A76  0874               	movf	___bmul@product,w
   5051  0A77  0008               	return
   5052  0A78                     __end_of___bmul:	
@@ -5381,8 +5381,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5357                           
   5358                           ;incstack = 0
   5359                           ; Regs used in _OSC_config: [wreg-fsr0h+status,2+status,0]
-  5360  0F54  2F90               	goto	l2698
-  5361  0F55                     l2680:	
+  5360  0F54  2F90               	goto	l2696
+  5361  0F55                     l2678:	
   5362                           
   5363                           ;main_Master.c: 200:             OSCCONbits.IRCF = 0b111;
   5364  0F55  3070               	movlw	112
@@ -5392,7 +5392,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5368                           
   5369                           ;main_Master.c: 201:             break;
   5370  0F59  0008               	return
-  5371  0F5A                     l2682:	
+  5371  0F5A                     l2680:	
   5372                           
   5373                           ;main_Master.c: 203:             OSCCONbits.IRCF = 0b110;
   5374  0F5A  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5404,7 +5404,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5380                           
   5381                           ;main_Master.c: 204:             break;
   5382  0F60  0008               	return
-  5383  0F61                     l2684:	
+  5383  0F61                     l2682:	
   5384                           
   5385                           ;main_Master.c: 206:             OSCCONbits.IRCF = 0b101;
   5386  0F61  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5416,7 +5416,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5392                           
   5393                           ;main_Master.c: 207:             break;
   5394  0F67  0008               	return
-  5395  0F68                     l2686:	
+  5395  0F68                     l2684:	
   5396                           
   5397                           ;main_Master.c: 209:             OSCCONbits.IRCF = 0b100;
   5398  0F68  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5428,7 +5428,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5404                           
   5405                           ;main_Master.c: 210:             break;
   5406  0F6E  0008               	return
-  5407  0F6F                     l2688:	
+  5407  0F6F                     l2686:	
   5408                           
   5409                           ;main_Master.c: 212:             OSCCONbits.IRCF = 0b011;
   5410  0F6F  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5440,7 +5440,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5416                           
   5417                           ;main_Master.c: 213:             break;
   5418  0F75  0008               	return
-  5419  0F76                     l2690:	
+  5419  0F76                     l2688:	
   5420                           
   5421                           ;main_Master.c: 215:             OSCCONbits.IRCF = 0b010;
   5422  0F76  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5452,7 +5452,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5428                           
   5429                           ;main_Master.c: 216:             break;
   5430  0F7C  0008               	return
-  5431  0F7D                     l2692:	
+  5431  0F7D                     l2690:	
   5432                           
   5433                           ;main_Master.c: 218:             OSCCONbits.IRCF = 0b001;
   5434  0F7D  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5464,7 +5464,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5440                           
   5441                           ;main_Master.c: 219:             break;
   5442  0F83  0008               	return
-  5443  0F84                     l2694:	
+  5443  0F84                     l2692:	
   5444                           
   5445                           ;main_Master.c: 221:             OSCCONbits.IRCF = 0b000;
   5446  0F84  308F               	movlw	-113
@@ -5474,7 +5474,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5450                           
   5451                           ;main_Master.c: 222:             break;
   5452  0F88  0008               	return
-  5453  0F89                     l2696:	
+  5453  0F89                     l2694:	
   5454                           
   5455                           ;main_Master.c: 224:             OSCCONbits.IRCF = 0b110;
   5456  0F89  1683               	bsf	3,5	;RP0=1, select bank1
@@ -5486,7 +5486,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5462                           
   5463                           ;main_Master.c: 225:     }
   5464  0F8F  0008               	return
-  5465  0F90                     l2698:	
+  5465  0F90                     l2696:	
   5466                           
   5467                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 9 sub-sw
       +                          itches
@@ -5501,9 +5501,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5476  0F90  0875               	movf	OSC_config@frecuencia+3,w
   5477  0F91  3A00               	xorlw	0	; case 0
   5478  0F92  1903               	skipnz
-  5479  0F93  2FE5               	goto	l4754
-  5480  0F94  2F89               	goto	l2696
-  5481  0F95                     l4738:	
+  5479  0F93  2FE5               	goto	l4750
+  5480  0F94  2F89               	goto	l2694
+  5481  0F95                     l4734:	
   5482                           
   5483                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5518,9 +5518,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5492  0F95  0873               	movf	OSC_config@frecuencia+1,w
   5493  0F96  3A7D               	xorlw	125	; case 125
   5494  0F97  1903               	skipnz
-  5495  0F98  2F9A               	goto	l4756
-  5496  0F99  2F89               	goto	l2696
-  5497  0F9A                     l4756:	
+  5495  0F98  2F9A               	goto	l4752
+  5496  0F99  2F89               	goto	l2694
+  5497  0F9A                     l4752:	
   5498                           
   5499                           ; Switch size 1, requested type "simple"
   5500                           ; Number of cases is 1, Range of values is 0 to 0
@@ -5533,9 +5533,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5507  0F9A  0872               	movf	OSC_config@frecuencia,w
   5508  0F9B  3A00               	xorlw	0	; case 0
   5509  0F9C  1903               	skipnz
-  5510  0F9D  2F84               	goto	l2694
-  5511  0F9E  2F89               	goto	l2696
-  5512  0F9F                     l4740:	
+  5510  0F9D  2F84               	goto	l2692
+  5511  0F9E  2F89               	goto	l2694
+  5512  0F9F                     l4736:	
   5513                           
   5514                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5550,9 +5550,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5523  0F9F  0873               	movf	OSC_config@frecuencia+1,w
   5524  0FA0  3AE8               	xorlw	232	; case 232
   5525  0FA1  1903               	skipnz
-  5526  0FA2  2FA4               	goto	l4758
-  5527  0FA3  2F89               	goto	l2696
-  5528  0FA4                     l4758:	
+  5526  0FA2  2FA4               	goto	l4754
+  5527  0FA3  2F89               	goto	l2694
+  5528  0FA4                     l4754:	
   5529                           
   5530                           ; Switch size 1, requested type "simple"
   5531                           ; Number of cases is 1, Range of values is 72 to 72
@@ -5565,9 +5565,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5538  0FA4  0872               	movf	OSC_config@frecuencia,w
   5539  0FA5  3A48               	xorlw	72	; case 72
   5540  0FA6  1903               	skipnz
-  5541  0FA7  2F7D               	goto	l2692
-  5542  0FA8  2F89               	goto	l2696
-  5543  0FA9                     l4742:	
+  5541  0FA7  2F7D               	goto	l2690
+  5542  0FA8  2F89               	goto	l2694
+  5543  0FA9                     l4738:	
   5544                           
   5545                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5582,9 +5582,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5554  0FA9  0873               	movf	OSC_config@frecuencia+1,w
   5555  0FAA  3AD0               	xorlw	208	; case 208
   5556  0FAB  1903               	skipnz
-  5557  0FAC  2FAE               	goto	l4760
-  5558  0FAD  2F89               	goto	l2696
-  5559  0FAE                     l4760:	
+  5557  0FAC  2FAE               	goto	l4756
+  5558  0FAD  2F89               	goto	l2694
+  5559  0FAE                     l4756:	
   5560                           
   5561                           ; Switch size 1, requested type "simple"
   5562                           ; Number of cases is 1, Range of values is 144 to 144
@@ -5597,9 +5597,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5569  0FAE  0872               	movf	OSC_config@frecuencia,w
   5570  0FAF  3A90               	xorlw	144	; case 144
   5571  0FB0  1903               	skipnz
-  5572  0FB1  2F76               	goto	l2690
-  5573  0FB2  2F89               	goto	l2696
-  5574  0FB3                     l4744:	
+  5572  0FB1  2F76               	goto	l2688
+  5573  0FB2  2F89               	goto	l2694
+  5574  0FB3                     l4740:	
   5575                           
   5576                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5614,9 +5614,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5585  0FB3  0873               	movf	OSC_config@frecuencia+1,w
   5586  0FB4  3AA1               	xorlw	161	; case 161
   5587  0FB5  1903               	skipnz
-  5588  0FB6  2FB8               	goto	l4762
-  5589  0FB7  2F89               	goto	l2696
-  5590  0FB8                     l4762:	
+  5588  0FB6  2FB8               	goto	l4758
+  5589  0FB7  2F89               	goto	l2694
+  5590  0FB8                     l4758:	
   5591                           
   5592                           ; Switch size 1, requested type "simple"
   5593                           ; Number of cases is 1, Range of values is 32 to 32
@@ -5629,9 +5629,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5600  0FB8  0872               	movf	OSC_config@frecuencia,w
   5601  0FB9  3A20               	xorlw	32	; case 32
   5602  0FBA  1903               	skipnz
-  5603  0FBB  2F6F               	goto	l2688
-  5604  0FBC  2F89               	goto	l2696
-  5605  0FBD                     l4746:	
+  5603  0FBB  2F6F               	goto	l2686
+  5604  0FBC  2F89               	goto	l2694
+  5605  0FBD                     l4742:	
   5606                           
   5607                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5646,9 +5646,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5616  0FBD  0873               	movf	OSC_config@frecuencia+1,w
   5617  0FBE  3A42               	xorlw	66	; case 66
   5618  0FBF  1903               	skipnz
-  5619  0FC0  2FC2               	goto	l4764
-  5620  0FC1  2F89               	goto	l2696
-  5621  0FC2                     l4764:	
+  5619  0FC0  2FC2               	goto	l4760
+  5620  0FC1  2F89               	goto	l2694
+  5621  0FC2                     l4760:	
   5622                           
   5623                           ; Switch size 1, requested type "simple"
   5624                           ; Number of cases is 1, Range of values is 64 to 64
@@ -5661,9 +5661,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5631  0FC2  0872               	movf	OSC_config@frecuencia,w
   5632  0FC3  3A40               	xorlw	64	; case 64
   5633  0FC4  1903               	skipnz
-  5634  0FC5  2F68               	goto	l2686
-  5635  0FC6  2F89               	goto	l2696
-  5636  0FC7                     l4748:	
+  5634  0FC5  2F68               	goto	l2684
+  5635  0FC6  2F89               	goto	l2694
+  5636  0FC7                     l4744:	
   5637                           
   5638                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5678,9 +5678,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5647  0FC7  0873               	movf	OSC_config@frecuencia+1,w
   5648  0FC8  3A84               	xorlw	132	; case 132
   5649  0FC9  1903               	skipnz
-  5650  0FCA  2FCC               	goto	l4766
-  5651  0FCB  2F89               	goto	l2696
-  5652  0FCC                     l4766:	
+  5650  0FCA  2FCC               	goto	l4762
+  5651  0FCB  2F89               	goto	l2694
+  5652  0FCC                     l4762:	
   5653                           
   5654                           ; Switch size 1, requested type "simple"
   5655                           ; Number of cases is 1, Range of values is 128 to 128
@@ -5693,9 +5693,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5662  0FCC  0872               	movf	OSC_config@frecuencia,w
   5663  0FCD  3A80               	xorlw	128	; case 128
   5664  0FCE  1903               	skipnz
-  5665  0FCF  2F61               	goto	l2684
-  5666  0FD0  2F89               	goto	l2696
-  5667  0FD1                     l4750:	
+  5665  0FCF  2F61               	goto	l2682
+  5666  0FD0  2F89               	goto	l2694
+  5667  0FD1                     l4746:	
   5668                           
   5669                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5710,9 +5710,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5678  0FD1  0873               	movf	OSC_config@frecuencia+1,w
   5679  0FD2  3A09               	xorlw	9	; case 9
   5680  0FD3  1903               	skipnz
-  5681  0FD4  2FD6               	goto	l4768
-  5682  0FD5  2F89               	goto	l2696
-  5683  0FD6                     l4768:	
+  5681  0FD4  2FD6               	goto	l4764
+  5682  0FD5  2F89               	goto	l2694
+  5683  0FD6                     l4764:	
   5684                           
   5685                           ; Switch size 1, requested type "simple"
   5686                           ; Number of cases is 1, Range of values is 0 to 0
@@ -5725,9 +5725,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5693  0FD6  0872               	movf	OSC_config@frecuencia,w
   5694  0FD7  3A00               	xorlw	0	; case 0
   5695  0FD8  1903               	skipnz
-  5696  0FD9  2F5A               	goto	l2682
-  5697  0FDA  2F89               	goto	l2696
-  5698  0FDB                     l4752:	
+  5696  0FD9  2F5A               	goto	l2680
+  5697  0FDA  2F89               	goto	l2694
+  5698  0FDB                     l4748:	
   5699                           
   5700                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -5742,9 +5742,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5709  0FDB  0873               	movf	OSC_config@frecuencia+1,w
   5710  0FDC  3A12               	xorlw	18	; case 18
   5711  0FDD  1903               	skipnz
-  5712  0FDE  2FE0               	goto	l4770
-  5713  0FDF  2F89               	goto	l2696
-  5714  0FE0                     l4770:	
+  5712  0FDE  2FE0               	goto	l4766
+  5713  0FDF  2F89               	goto	l2694
+  5714  0FE0                     l4766:	
   5715                           
   5716                           ; Switch size 1, requested type "simple"
   5717                           ; Number of cases is 1, Range of values is 0 to 0
@@ -5757,9 +5757,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5724  0FE0  0872               	movf	OSC_config@frecuencia,w
   5725  0FE1  3A00               	xorlw	0	; case 0
   5726  0FE2  1903               	skipnz
-  5727  0FE3  2F55               	goto	l2680
-  5728  0FE4  2F89               	goto	l2696
-  5729  0FE5                     l4754:	
+  5727  0FE3  2F55               	goto	l2678
+  5728  0FE4  2F89               	goto	l2694
+  5729  0FE5                     l4750:	
   5730                           
   5731                           ; Switch size 1, requested type "simple"
   5732                           ; Number of cases is 8, Range of values is 0 to 122
@@ -5771,29 +5771,29 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5738  0FE5  0874               	movf	OSC_config@frecuencia+2,w
   5739  0FE6  3A00               	xorlw	0	; case 0
   5740  0FE7  1903               	skipnz
-  5741  0FE8  2F95               	goto	l4738
+  5741  0FE8  2F95               	goto	l4734
   5742  0FE9  3A01               	xorlw	1	; case 1
   5743  0FEA  1903               	skipnz
-  5744  0FEB  2F9F               	goto	l4740
+  5744  0FEB  2F9F               	goto	l4736
   5745  0FEC  3A02               	xorlw	2	; case 3
   5746  0FED  1903               	skipnz
-  5747  0FEE  2FA9               	goto	l4742
+  5747  0FEE  2FA9               	goto	l4738
   5748  0FEF  3A04               	xorlw	4	; case 7
   5749  0FF0  1903               	skipnz
-  5750  0FF1  2FB3               	goto	l4744
+  5750  0FF1  2FB3               	goto	l4740
   5751  0FF2  3A08               	xorlw	8	; case 15
   5752  0FF3  1903               	skipnz
-  5753  0FF4  2FBD               	goto	l4746
+  5753  0FF4  2FBD               	goto	l4742
   5754  0FF5  3A11               	xorlw	17	; case 30
   5755  0FF6  1903               	skipnz
-  5756  0FF7  2FC7               	goto	l4748
+  5756  0FF7  2FC7               	goto	l4744
   5757  0FF8  3A23               	xorlw	35	; case 61
   5758  0FF9  1903               	skipnz
-  5759  0FFA  2FD1               	goto	l4750
+  5759  0FFA  2FD1               	goto	l4746
   5760  0FFB  3A47               	xorlw	71	; case 122
   5761  0FFC  1903               	skipnz
-  5762  0FFD  2FDB               	goto	l4752
-  5763  0FFE  2F89               	goto	l2696
+  5762  0FFD  2FDB               	goto	l4748
+  5763  0FFE  2F89               	goto	l2694
   5764  0FFF  0008               	return
   5765  1000                     __end_of_OSC_config:	
   5766                           
@@ -6084,7 +6084,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6051                           
   6052                           ;LCD_8bits.c: 120:  for (n = 0; n < 8; n++)
   6053  0B22  01F8               	clrf	LCD_Create_Char@n
-  6054  0B23                     l2802:	
+  6054  0B23                     l2800:	
   6055                           
   6056                           ;LCD_8bits.c: 121:   LCD_Write_Character(chardata[n]);
   6057  0B23  0878               	movf	LCD_Create_Char@n,w
@@ -6100,7 +6100,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6067  0B35  0278               	subwf	LCD_Create_Char@n,w
   6068  0B36  1803               	btfsc	3,0
   6069  0B37  0008               	return
-  6070  0B38  2B23               	goto	l2802
+  6070  0B38  2B23               	goto	l2800
   6071  0B39                     __end_of_LCD_Create_Char:	
   6072                           
   6073                           	psect	text27
@@ -6452,12 +6452,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6418  0C76  0473               	iorwf	___lldiv@divisor+1,w
   6419  0C77  0472               	iorwf	___lldiv@divisor,w
   6420  0C78  1903               	skipnz
-  6421  0C79  2CC1               	goto	l3878
+  6421  0C79  2CC1               	goto	l3874
   6422  0C7A  01A5               	clrf	___lldiv@counter
   6423  0C7B  0AA5               	incf	___lldiv@counter,f
-  6424  0C7C                     l3864:	
+  6424  0C7C                     l3860:	
   6425  0C7C  1BF5               	btfsc	___lldiv@divisor+3,7
-  6426  0C7D  2C8C               	goto	l3866
+  6426  0C7D  2C8C               	goto	l3862
   6427  0C7E  3001               	movlw	1
   6428  0C7F  00A0               	movwf	??___lldiv
   6429  0C80                     u1375:	
@@ -6472,8 +6472,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6438  0C88  00A0               	movwf	??___lldiv
   6439  0C89  0820               	movf	??___lldiv,w
   6440  0C8A  07A5               	addwf	___lldiv@counter,f
-  6441  0C8B  2C7C               	goto	l3864
-  6442  0C8C                     l3866:	
+  6441  0C8B  2C7C               	goto	l3860
+  6442  0C8C                     l3862:	
   6443  0C8C  3001               	movlw	1
   6444  0C8D  00A0               	movwf	??___lldiv
   6445  0C8E                     u1395:	
@@ -6500,7 +6500,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6466  0CA2  0276               	subwf	___lldiv@dividend,w
   6467  0CA3                     u1405:	
   6468  0CA3  1C03               	skipc
-  6469  0CA4  2CB4               	goto	l3874
+  6469  0CA4  2CB4               	goto	l3870
   6470  0CA5  0872               	movf	___lldiv@divisor,w
   6471  0CA6  02F6               	subwf	___lldiv@dividend,f
   6472  0CA7  0873               	movf	___lldiv@divisor+1,w
@@ -6516,7 +6516,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6482  0CB1  0F75               	incfsz	___lldiv@divisor+3,w
   6483  0CB2  02F9               	subwf	___lldiv@dividend+3,f
   6484  0CB3  1421               	bsf	___lldiv@quotient,0
-  6485  0CB4                     l3874:	
+  6485  0CB4                     l3870:	
   6486  0CB4  3001               	movlw	1
   6487  0CB5                     u1415:	
   6488  0CB5  1003               	clrc
@@ -6530,8 +6530,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   6496  0CBD  3001               	movlw	1
   6497  0CBE  02A5               	subwf	___lldiv@counter,f
   6498  0CBF  1D03               	btfss	3,2
-  6499  0CC0  2C8C               	goto	l3866
-  6500  0CC1                     l3878:	
+  6499  0CC0  2C8C               	goto	l3862
+  6500  0CC1                     l3874:	
   6501  0CC1  0824               	movf	___lldiv@quotient+3,w
   6502  0CC2  00F5               	movwf	?___lldiv+3
   6503  0CC3  0823               	movf	___lldiv@quotient+2,w
@@ -6983,50 +6983,50 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Sat May 02 00:15:08 2020
+Symbol Table                                                                                   Sat May 02 01:36:14 2020
 
                            pc 0002                ___bmul@product 0074       __end_of_LCD_Create_Char 0B39  
                  __CFG_CP$OFF 0000                  ___awdiv@sign 0025            __size_of_BCD_a_DEC 0016  
                           fsr 0004           ___wmul@multiplicand 0074            mostrarLCD@pantalla 003A  
                          l309 0A34                           l327 0B5C                           l328 0B5F  
-                         l436 0A3E                           l562 0AD4                           _GIE 005F  
+                         l436 0A42                           l562 0AD4                           _GIE 005F  
                 __CFG_CPD$OFF 0000                           _ISR 0A56                           u765 0AD5  
                          u775 0ADC       __end_of_display_Uhrzeit 06A4                           _dia 0054  
                          _mes 0052                           _min 0056                           _seg 004B  
                          fsr0 0004                           indf 0000                  ___awmod@sign 0078  
               ?_display_Datum 0028  __size_of_LCD_Write_Character 000F               __end_of_LCD_Cmd 0BC0  
                 __CFG_LVP$OFF 0000                          ?_ISR 0070                _LCD_Set_Cursor 0B65  
-                        l4102 0175                          l3150 0D47                          l2520 0B71  
-                        l4040 0042                          l3144 0D3C                          l4050 007A  
-                        l3162 0D5D                          l2524 0B7B                          l2516 0B67  
-                        l3156 0D52                          l3172 0D77                          l3180 0D8E  
-                        l4212 0EB6                          l2526 0B80                          l4038 002D  
-                        l3174 0D8A                          l4230 0EED                          l4222 0ED1  
-                        l4214 0EB8                          l2560 0A69                          l4160 0240  
-                        l4072 00F9                          l4064 00D4                          l2802 0B23  
-                        l2538 0AEE                          l2546 0ACC                          l4154 0219  
-                        l4138 01C3                          l4242 0F15                          l2564 0A6F  
-                        l2660 0BD7                          l2652 0BD1                          l4172 028B  
-                        l4148 0204                          l4244 0F20                          l4252 0F3F  
-                        l2662 0BE5                          l2670 0BFE                          l4166 026A  
-                        l4086 013F                          l4078 011B                          l4238 0F09  
-                        l4246 0F39                          l4270 0C10                          l2680 0F55  
-                        l2648 0BCA                          l2690 0F76                          l2682 0F5A  
-                        l2674 0C06                          l2666 0BF3                          l4194 02F3  
-                        l2692 0F7D                          l2684 0F61                          l4196 0302  
-                        l2694 0F84                          l2686 0F68                          l2696 0F89  
-                        l2688 0F6F                          l2698 0F90                          l3922 06FA  
-                        l3914 06E7                          l3906 06C3                          l4730 0F28  
-                        l4740 0F9F                          l3908 06D1                          l4732 0D7F  
-                        l4750 0FD1                          l4742 0FA9                          l3918 06F2  
-                        l4734 030A                          l3864 0C7C                          l4752 0FDB  
-                        l4744 0FB3                          l4760 0FAE                          l4736 0B88  
-                        l3874 0CB4                          l3866 0C8C                          l4770 0FE0  
-                        l4746 0FBD                          l4762 0FB8                          l4738 0F95  
-                        l4754 0FE5                          l3890 06B0                          l4748 0FC7  
-                        l4764 0FC2                          l4756 0F9A                          l3878 0CC1  
-                        l4766 0FCC                          l4758 0FA4                          l4768 0FD6  
-                        l3896 06BB                          STR_1 07B6                          STR_2 072E  
+                        l3142 0D3C                          l3160 0D5D                          l2522 0B7B  
+                        l2514 0B67                          l4034 002D                          l3154 0D52  
+                        l3170 0D77                          l4210 0EB8                          l2524 0B80  
+                        l4060 00D4                          l4036 0042                          l3148 0D47  
+                        l3172 0D8A                          l2518 0B71                          l4150 0219  
+                        l4134 01C3                          l4046 007A                          l2800 0B23  
+                        l2536 0AEE                          l2544 0ACC                          l4144 0204  
+                        l4208 0EB6                          l4240 0F20                          l2562 0A6F  
+                        l2650 0BD1                          l4162 026A                          l4082 013F  
+                        l4074 011B                          l3178 0D8E                          l4234 0F09  
+                        l4226 0EED                          l4218 0ED1                          l4242 0F39  
+                        l2660 0BE5                          l4156 0240                          l4068 00F9  
+                        l2558 0A69                          l2646 0BCA                          l4190 02F3  
+                        l4238 0F15                          l2680 0F5A                          l2672 0C06  
+                        l2664 0BF3                          l4168 028B                          l4192 0302  
+                        l4248 0F3F                          l2690 0F7D                          l2682 0F61  
+                        l2658 0BD7                          l4098 0175                          l4266 0C10  
+                        l2692 0F84                          l2684 0F68                          l2668 0BFE  
+                        l2694 0F89                          l2686 0F6F                          l2678 0F55  
+                        l3910 06E7                          l3902 06C3                          l2688 0F76  
+                        l2696 0F90                          l3904 06D1                          l3914 06F2  
+                        l4730 030A                          l3860 0C7C                          l4740 0FB3  
+                        l4732 0B88                          l3870 0CB4                          l3862 0C8C  
+                        l4742 0FBD                          l4734 0F95                          l4750 0FE5  
+                        l3918 06FA                          l4726 0F28                          l4744 0FC7  
+                        l4760 0FC2                          l4736 0F9F                          l4752 0F9A  
+                        l4728 0D7F                          l3874 0CC1                          l4746 0FD1  
+                        l4762 0FCC                          l4738 0FA9                          l4754 0FA4  
+                        l4748 0FDB                          l4764 0FD6                          l4756 0FAE  
+                        l3892 06BB                          l4766 0FE0                          l4758 0FB8  
+                        l3886 06B0                          STR_1 07B6                          STR_2 072E  
                         STR_3 076A                          STR_4 0790                          STR_5 0784  
                         STR_6 074F                          STR_7 079B                          STR_8 07AF  
                         STR_9 075D                          u1015 0BDA                          u1115 0ABF  

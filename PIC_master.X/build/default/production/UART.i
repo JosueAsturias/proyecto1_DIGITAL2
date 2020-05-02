@@ -2667,9 +2667,8 @@ char uartRC_Read(){
 }
 
 void uartTX_Write(char dato){
-    while(!TRMT);
     TXREG = dato;
-
+    while(!TRMT);
 }
 
 void uartTX_Write_Str(char * string){

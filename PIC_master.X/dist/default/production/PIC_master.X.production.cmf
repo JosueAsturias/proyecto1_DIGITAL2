@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
+$C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -115,27 +115,27 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC_master.X.production.o
-F cinit CODE >1842:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-F cinit CODE >1845:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-F cinit CODE >1988:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-10 cinit CODE >1989:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-11 cinit CODE >1990:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-12 cinit CODE >1991:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-13 cinit CODE >1992:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-14 cinit CODE >1993:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-15 cinit CODE >1994:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-16 cinit CODE >1995:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-17 cinit CODE >1996:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-18 cinit CODE >1997:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-1D cinit CODE >2016:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-1E cinit CODE >2017:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-1F cinit CODE >2018:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-20 cinit CODE >2019:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-23 cinit CODE >2022:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-24 cinit CODE >2023:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-25 cinit CODE >2029:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-25 cinit CODE >2031:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-26 cinit CODE >2032:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
+F cinit CODE >1842:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+F cinit CODE >1845:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+F cinit CODE >1988:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+10 cinit CODE >1989:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+11 cinit CODE >1990:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+12 cinit CODE >1991:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+13 cinit CODE >1992:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+14 cinit CODE >1993:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+15 cinit CODE >1994:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+16 cinit CODE >1995:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+17 cinit CODE >1996:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+18 cinit CODE >1997:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+1D cinit CODE >2016:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+1E cinit CODE >2017:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+1F cinit CODE >2018:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+20 cinit CODE >2019:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+23 cinit CODE >2022:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+24 cinit CODE >2023:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+25 cinit CODE >2029:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+25 cinit CODE >2031:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+26 cinit CODE >2032:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
 4 intentry CODE >130:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 A56 text31 CODE >130:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 A56 text31 CODE >131:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
@@ -645,7 +645,6 @@ F53 text2 CODE >537:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\pro
 A3D text1 CODE >33:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\UART.c
 A3E text1 CODE >34:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\UART.c
 A42 text1 CODE >35:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\UART.c
-A46 text1 CODE >37:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\UART.c
 C0B maintext CODE >140:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 C0B maintext CODE >141:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 C10 maintext CODE >144:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
@@ -662,33 +661,33 @@ C51 maintext CODE >160:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\
 C57 maintext CODE >161:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 C5D maintext CODE >162:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 C63 maintext CODE >163:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
-A2C clrtext CODE >2003:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A2C clrtext CODE >2004:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A2D clrtext CODE >2005:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A2D clrtext CODE >2006:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A2E clrtext CODE >2007:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A2F clrtext CODE >2008:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A30 clrtext CODE >2009:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A31 clrtext CODE >2010:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A32 clrtext CODE >2011:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A33 clrtext CODE >2012:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A78 inittext CODE >1962:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A78 inittext CODE >1963:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A79 inittext CODE >1964:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A7A inittext CODE >1965:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A7B inittext CODE >1966:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A7C inittext CODE >1973:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A7C inittext CODE >1974:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A7F inittext CODE >1975:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A80 inittext CODE >1976:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A81 inittext CODE >1977:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A82 inittext CODE >1978:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A83 inittext CODE >1979:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A84 inittext CODE >1980:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A85 inittext CODE >1981:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A86 inittext CODE >1982:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A87 inittext CODE >1983:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
-A88 inittext CODE >1984:C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
+A2C clrtext CODE >2003:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A2C clrtext CODE >2004:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A2D clrtext CODE >2005:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A2D clrtext CODE >2006:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A2E clrtext CODE >2007:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A2F clrtext CODE >2008:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A30 clrtext CODE >2009:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A31 clrtext CODE >2010:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A32 clrtext CODE >2011:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A33 clrtext CODE >2012:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A78 inittext CODE >1962:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A78 inittext CODE >1963:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A79 inittext CODE >1964:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A7A inittext CODE >1965:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A7B inittext CODE >1966:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A7C inittext CODE >1973:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A7C inittext CODE >1974:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A7F inittext CODE >1975:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A80 inittext CODE >1976:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A81 inittext CODE >1977:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A82 inittext CODE >1978:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A83 inittext CODE >1979:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A84 inittext CODE >1980:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A85 inittext CODE >1981:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A86 inittext CODE >1982:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A87 inittext CODE >1983:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
+A88 inittext CODE >1984:C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -726,13 +725,13 @@ _IOCB 96 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 _TRMT 4C1 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 _WPUB 95 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
+___sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
 _gota E0C 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
 _hora 55 0 BANK0 1 dataBANK0 dist/default/production\PIC_master.X.production.o
 _jahr 51 0 BANK0 1 dataBANK0 dist/default/production\PIC_master.X.production.o
 _main 1816 0 CODE 0 maintext dist/default/production\PIC_master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-start 18 0 CODE 0 init C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
+start 18 0 CODE 0 init C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
@@ -754,12 +753,12 @@ I2C_Master_Read@a 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.
 _arrowr_vacio E3C 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
 _velocidad 4A 0 BANK0 1 bssBANK0 dist/default/production\PIC_master.X.production.o
 __size_of_LCD_Set_Cursor 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
 __end_of_LCD_init 1A62 0 CODE 0 text24 dist/default/production\PIC_master.X.production.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 ___bmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.X.production.o
@@ -791,8 +790,8 @@ __end_of___awdiv DFE 0 CODE 0 text10 dist/default/production\PIC_master.X.produc
 __end_of___awmod 1816 0 CODE 0 text9 dist/default/production\PIC_master.X.production.o
 __end_of___lldiv 1994 0 CODE 0 text30 dist/default/production\PIC_master.X.production.o
 __size_of_uint_to_array 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
-___stacklo 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
+___stackhi 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
+___stacklo 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
 __end_of_LCD_Cmd 1780 0 CODE 0 text28 dist/default/production\PIC_master.X.production.o
 __end_of_arrowr_vacio E4C 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\PIC_master.X.production.o
@@ -828,7 +827,7 @@ __end_of_LCD_Write_Character 14AC 0 CODE 0 text27 dist/default/production\PIC_ma
 LCD_Set_Cursor@corrimiento 79 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.X.production.o
 __end_of_LCD_Create_Char 1672 0 CODE 0 text26 dist/default/production\PIC_master.X.production.o
 __end_of_uartTX_Write 148E 0 CODE 0 text1 dist/default/production\PIC_master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
+___int_sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -906,7 +905,7 @@ __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_master.X.production.o
 __stringtab E00 0 STRING 0 strings dist/default/production\PIC_master.X.production.o
 __size_of_get_Time 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ICHELECE\AppData\Local\Temp\s6c8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ICHELECE\AppData\Local\Temp\s4nk.o
 __pdataBANK0 4D 0 BANK0 1 dataBANK0 dist/default/production\PIC_master.X.production.o
 _LCD_Set_Cursor 16CA 0 CODE 0 text12 dist/default/production\PIC_master.X.production.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\PIC_master.X.production.o

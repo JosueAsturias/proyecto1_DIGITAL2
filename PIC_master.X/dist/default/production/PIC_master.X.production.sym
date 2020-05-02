@@ -415,7 +415,7 @@ text15 143A 1447 CODE 143A 0
 text16 142C 1439 CODE 142C 0
 %locals
 dist/default/production\PIC_master.X.production.o
-C:\Users\ICHELECE\AppData\Local\Temp\s6c8.
+C:\Users\ICHELECE\AppData\Local\Temp\s4nk.
 1842 F 0 CODE 0
 1845 F 0 CODE 0
 1988 F 0 CODE 0
@@ -485,7 +485,6 @@ UART.c
 33 A3D 0 CODE 0
 34 A3E 0 CODE 0
 35 A42 0 CODE 0
-37 A46 0 CODE 0
 main_Master.c
 492 EAB 0 CODE 0
 493 EAB 0 CODE 0

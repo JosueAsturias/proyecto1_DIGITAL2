@@ -58,8 +58,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39
 [; ;./serial.h: 39: void init_serial(void);
 [v _init_serial `(v ~T0 @X0 0 ef ]
-"53 comunicacion_main.c
-[; ;comunicacion_main.c: 53:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_HIGH, SPI_ACTIVE_2_IDLE);
+"55 comunicacion_main.c
+[; ;comunicacion_main.c: 55:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1295 32 33 34 35 36 37 .. ]
 [n E1295 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1303 0 128 .. ]
@@ -78,14 +78,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"48 ./SPI.h
-[; ;./SPI.h: 48: char spiRead();
-[v _spiRead `(uc ~T0 @X0 0 e? ]
-"46
+"46 ./SPI.h
 [; ;./SPI.h: 46: void spiWrite(char);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
+"48
+[; ;./SPI.h: 48: char spiRead();
+[v _spiRead `(uc ~T0 @X0 0 e? ]
 "6 comunicacion_main.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "7
@@ -393,274 +391,303 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 60 `i `uc
 ]
 "37
-[; ;comunicacion_main.c: 37: uint8_t tiempo = 70;
-[v _tiempo `uc ~T0 @X0 1 e ]
-[i _tiempo
--> -> 70 `i `uc
+[; ;comunicacion_main.c: 37: uint8_t hora = 10;
+[v _hora `uc ~T0 @X0 1 e ]
+[i _hora
+-> -> 10 `i `uc
+]
+"38
+[; ;comunicacion_main.c: 38: uint8_t minutos = 80;
+[v _minutos `uc ~T0 @X0 1 e ]
+[i _minutos
+-> -> 80 `i `uc
+]
+"39
+[; ;comunicacion_main.c: 39: uint8_t segundos = 90;
+[v _segundos `uc ~T0 @X0 1 e ]
+[i _segundos
+-> -> 90 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"41
-[; ;comunicacion_main.c: 41: void main(void) {
+"43
+[; ;comunicacion_main.c: 43: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"42
-[; ;comunicacion_main.c: 42:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
-"43
-[; ;comunicacion_main.c: 43:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
 "44
-[; ;comunicacion_main.c: 44:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;comunicacion_main.c: 44:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
 "45
-[; ;comunicacion_main.c: 45:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;comunicacion_main.c: 45:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
 "46
-[; ;comunicacion_main.c: 46:     ANSELH = 0x00;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;comunicacion_main.c: 46:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
 "47
-[; ;comunicacion_main.c: 47:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;comunicacion_main.c: 47:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
 "48
-[; ;comunicacion_main.c: 48:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;comunicacion_main.c: 48:     ANSELH = 0x00;
+[e = _ANSELH -> -> 0 `i `uc ]
 "49
-[; ;comunicacion_main.c: 49:     PIE1bits.SSPIE = 1;
-[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
+[; ;comunicacion_main.c: 49:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "50
-[; ;comunicacion_main.c: 50:     PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;comunicacion_main.c: 50:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "51
-[; ;comunicacion_main.c: 51:     oscillator(6);
-[e ( _oscillator (1 -> -> 6 `i `uc ]
+[; ;comunicacion_main.c: 51:     PIE1bits.SSPIE = 1;
+[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
 "52
-[; ;comunicacion_main.c: 52:     init_serial();
-[e ( _init_serial ..  ]
+[; ;comunicacion_main.c: 52:     PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "53
-[; ;comunicacion_main.c: 53:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_HIGH, SPI_ACTIVE_2_IDLE);
-[e ( _spiInit (4 , , , . `E1295 5 . `E1303 0 . `E1307 0 . `E1311 1 ]
+[; ;comunicacion_main.c: 53:     oscillator(6);
+[e ( _oscillator (1 -> -> 6 `i `uc ]
 "54
-[; ;comunicacion_main.c: 54:     PORTB = 0xFF;
-[e = _PORTB -> -> 255 `i `uc ]
+[; ;comunicacion_main.c: 54:     init_serial();
+[e ( _init_serial ..  ]
+"55
+[; ;comunicacion_main.c: 55:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1295 0 . `E1303 0 . `E1307 1 . `E1311 0 ]
 "56
-[; ;comunicacion_main.c: 56:     while(1){
+[; ;comunicacion_main.c: 56:     PORTB = 0xFF;
+[e = _PORTB -> -> 255 `i `uc ]
+"58
+[; ;comunicacion_main.c: 58:     while(1){
 [e :U 140 ]
 {
-"59
-[; ;comunicacion_main.c: 59:         if (PIR1bits.RCIF == 1){
+"61
+[; ;comunicacion_main.c: 61:         if (PIR1bits.RCIF == 1){
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 142  ]
 {
-"60
-[; ;comunicacion_main.c: 60:             bandera_1 = RCREG;
-[e = _bandera_1 _RCREG ]
 "62
-[; ;comunicacion_main.c: 62:         }
+[; ;comunicacion_main.c: 62:             bandera_1 = RCREG;
+[e = _bandera_1 _RCREG ]
+"64
+[; ;comunicacion_main.c: 64:         }
 }
 [e :U 142 ]
-"63
-[; ;comunicacion_main.c: 63:         if (bandera_1 == 110){
-[e $ ! == -> _bandera_1 `i -> 110 `i 143  ]
+"65
+[; ;comunicacion_main.c: 65:         if (bandera_1 == 125){
+[e $ ! == -> _bandera_1 `i -> 125 `i 143  ]
 {
-"64
-[; ;comunicacion_main.c: 64:             while (PIR1bits.RCIF == 0);
+"66
+[; ;comunicacion_main.c: 66:             while (PIR1bits.RCIF == 0);
 [e $U 144  ]
 [e :U 145 ]
 [e :U 144 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 145  ]
 [e :U 146 ]
-"65
-[; ;comunicacion_main.c: 65:             distancia_atr = RCREG;
-[e = _distancia_atr _RCREG ]
-"66
-[; ;comunicacion_main.c: 66:             while (PIR1bits.RCIF == 0);
+"67
+[; ;comunicacion_main.c: 67:             hora = RCREG;
+[e = _hora _RCREG ]
+"68
+[; ;comunicacion_main.c: 68:             while (PIR1bits.RCIF == 0);
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 148  ]
 [e :U 149 ]
-"67
-[; ;comunicacion_main.c: 67:             distancia_ade = RCREG;
-[e = _distancia_ade _RCREG ]
-"68
-[; ;comunicacion_main.c: 68:             while (PIR1bits.RCIF == 0);
+"69
+[; ;comunicacion_main.c: 69:             minutos = RCREG;
+[e = _minutos _RCREG ]
+"70
+[; ;comunicacion_main.c: 70:             while (PIR1bits.RCIF == 0);
 [e $U 150  ]
 [e :U 151 ]
 [e :U 150 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 151  ]
 [e :U 152 ]
-"69
-[; ;comunicacion_main.c: 69:             temp_amb = RCREG;
-[e = _temp_amb _RCREG ]
-"70
-[; ;comunicacion_main.c: 70:             while (PIR1bits.RCIF == 0);
+"71
+[; ;comunicacion_main.c: 71:             segundos = RCREG;
+[e = _segundos _RCREG ]
+"72
+[; ;comunicacion_main.c: 72:             while (PIR1bits.RCIF == 0);
 [e $U 153  ]
 [e :U 154 ]
 [e :U 153 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 154  ]
 [e :U 155 ]
-"71
-[; ;comunicacion_main.c: 71:             temp_obj = RCREG;
-[e = _temp_obj _RCREG ]
-"72
-[; ;comunicacion_main.c: 72:             while (PIR1bits.RCIF == 0);
+"73
+[; ;comunicacion_main.c: 73:             temp_amb = RCREG;
+[e = _temp_amb _RCREG ]
+"74
+[; ;comunicacion_main.c: 74:             while (PIR1bits.RCIF == 0);
 [e $U 156  ]
 [e :U 157 ]
 [e :U 156 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 157  ]
 [e :U 158 ]
-"73
-[; ;comunicacion_main.c: 73:             posicion = RCREG;
-[e = _posicion _RCREG ]
-"74
-[; ;comunicacion_main.c: 74:             while (PIR1bits.RCIF == 0);
+"75
+[; ;comunicacion_main.c: 75:             temp_obj = RCREG;
+[e = _temp_obj _RCREG ]
+"76
+[; ;comunicacion_main.c: 76:             while (PIR1bits.RCIF == 0);
 [e $U 159  ]
 [e :U 160 ]
 [e :U 159 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 160  ]
 [e :U 161 ]
-"75
-[; ;comunicacion_main.c: 75:             tiempo = RCREG;
-[e = _tiempo _RCREG ]
-"76
-[; ;comunicacion_main.c: 76:             while (PIR1bits.RCIF == 0);
+"77
+[; ;comunicacion_main.c: 77:             posicion = RCREG;
+[e = _posicion _RCREG ]
+"78
+[; ;comunicacion_main.c: 78:             while (PIR1bits.RCIF == 0);
 [e $U 162  ]
 [e :U 163 ]
 [e :U 162 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 163  ]
 [e :U 164 ]
-"77
-[; ;comunicacion_main.c: 77:             humedad = RCREG;
-[e = _humedad _RCREG ]
-"78
-[; ;comunicacion_main.c: 78:             bandera_1 = 0;
-[e = _bandera_1 -> -> 0 `i `uc ]
 "79
-[; ;comunicacion_main.c: 79:         }
+[; ;comunicacion_main.c: 79:             humedad = RCREG;
+[e = _humedad _RCREG ]
+"80
+[; ;comunicacion_main.c: 80:             while (PIR1bits.RCIF == 0);
+[e $U 165  ]
+[e :U 166 ]
+[e :U 165 ]
+[e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 166  ]
+[e :U 167 ]
+"81
+[; ;comunicacion_main.c: 81:             distancia_ade = RCREG;
+[e = _distancia_ade _RCREG ]
+"82
+[; ;comunicacion_main.c: 82:             while (PIR1bits.RCIF == 0);
+[e $U 168  ]
+[e :U 169 ]
+[e :U 168 ]
+[e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 169  ]
+[e :U 170 ]
+"83
+[; ;comunicacion_main.c: 83:             distancia_atr = RCREG;
+[e = _distancia_atr _RCREG ]
+"84
+[; ;comunicacion_main.c: 84:             bandera_1 = 0;
+[e = _bandera_1 -> -> 0 `i `uc ]
+"86
+[; ;comunicacion_main.c: 86:             PORTB = humedad;
+[e = _PORTB _humedad ]
+"87
+[; ;comunicacion_main.c: 87:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"88
+[; ;comunicacion_main.c: 88:             spiWrite(125);
+[e ( _spiWrite (1 -> -> 125 `i `uc ]
+"89
+[; ;comunicacion_main.c: 89:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"90
+[; ;comunicacion_main.c: 90:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"92
+[; ;comunicacion_main.c: 92:             spiWrite(hora);
+[e ( _spiWrite (1 -> _hora `uc ]
+"93
+[; ;comunicacion_main.c: 93:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"94
+[; ;comunicacion_main.c: 94:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"96
+[; ;comunicacion_main.c: 96:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"97
+[; ;comunicacion_main.c: 97:             spiWrite(minutos);
+[e ( _spiWrite (1 -> _minutos `uc ]
+"98
+[; ;comunicacion_main.c: 98:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"99
+[; ;comunicacion_main.c: 99:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"101
+[; ;comunicacion_main.c: 101:             spiWrite(segundos);
+[e ( _spiWrite (1 -> _segundos `uc ]
+"102
+[; ;comunicacion_main.c: 102:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"103
+[; ;comunicacion_main.c: 103:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"105
+[; ;comunicacion_main.c: 105:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"106
+[; ;comunicacion_main.c: 106:             spiWrite(temp_amb);
+[e ( _spiWrite (1 -> _temp_amb `uc ]
+"107
+[; ;comunicacion_main.c: 107:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"108
+[; ;comunicacion_main.c: 108:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"110
+[; ;comunicacion_main.c: 110:             spiWrite(temp_obj);
+[e ( _spiWrite (1 -> _temp_obj `uc ]
+"111
+[; ;comunicacion_main.c: 111:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"112
+[; ;comunicacion_main.c: 112:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"114
+[; ;comunicacion_main.c: 114:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"115
+[; ;comunicacion_main.c: 115:             spiWrite(posicion);
+[e ( _spiWrite (1 -> _posicion `uc ]
+"116
+[; ;comunicacion_main.c: 116:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"117
+[; ;comunicacion_main.c: 117:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"119
+[; ;comunicacion_main.c: 119:             spiWrite(humedad);
+[e ( _spiWrite (1 -> _humedad `uc ]
+"120
+[; ;comunicacion_main.c: 120:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"121
+[; ;comunicacion_main.c: 121:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"123
+[; ;comunicacion_main.c: 123:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"124
+[; ;comunicacion_main.c: 124:             spiWrite(distancia_ade);
+[e ( _spiWrite (1 -> _distancia_ade `uc ]
+"125
+[; ;comunicacion_main.c: 125:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"126
+[; ;comunicacion_main.c: 126:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"128
+[; ;comunicacion_main.c: 128:             spiWrite(distancia_atr);
+[e ( _spiWrite (1 -> _distancia_atr `uc ]
+"129
+[; ;comunicacion_main.c: 129:             recibir_rasp = spiRead();
+[e = _recibir_rasp -> ( _spiRead ..  `uc ]
+"130
+[; ;comunicacion_main.c: 130:             _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"131
+[; ;comunicacion_main.c: 131:         }
 }
 [e :U 143 ]
-"81
-[; ;comunicacion_main.c: 81:         _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"83
-[; ;comunicacion_main.c: 83:     }
+"134
+[; ;comunicacion_main.c: 134:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"84
-[; ;comunicacion_main.c: 84:     return;
+"135
+[; ;comunicacion_main.c: 135:     return;
 [e $UE 138  ]
-"85
-[; ;comunicacion_main.c: 85: }
+"136
+[; ;comunicacion_main.c: 136: }
 [e :UE 138 ]
-}
-[v $root$_isr `(v ~T0 @X0 0 e ]
-"88
-[; ;comunicacion_main.c: 88: void __attribute__((picinterrupt(("")))) isr(void){
-[v _isr `(v ~T1 @X0 1 ef ]
-{
-[e :U _isr ]
-[f ]
-"89
-[; ;comunicacion_main.c: 89:     if (PIR1bits.SSPIF == 1){
-[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 166  ]
-{
-"90
-[; ;comunicacion_main.c: 90:         PORTB = spiRead();
-[e = _PORTB -> ( _spiRead ..  `uc ]
-"91
-[; ;comunicacion_main.c: 91:         spiWrite(distancia_ade);
-[e ( _spiWrite (1 -> _distancia_ade `uc ]
-"94
-[; ;comunicacion_main.c: 94:         if (recibir_rasp == 11){
-[e $ ! == -> _recibir_rasp `i -> 11 `i 167  ]
-{
-"95
-[; ;comunicacion_main.c: 95:             spiWrite(distancia_ade);
-[e ( _spiWrite (1 -> _distancia_ade `uc ]
-"96
-[; ;comunicacion_main.c: 96:         }
-}
-[e :U 167 ]
-"98
-[; ;comunicacion_main.c: 98:         if (recibir_rasp == 22){
-[e $ ! == -> _recibir_rasp `i -> 22 `i 168  ]
-{
-"99
-[; ;comunicacion_main.c: 99:             spiWrite(distancia_atr);
-[e ( _spiWrite (1 -> _distancia_atr `uc ]
-"100
-[; ;comunicacion_main.c: 100:         }
-}
-[e :U 168 ]
-"102
-[; ;comunicacion_main.c: 102:         if (recibir_rasp == 33){
-[e $ ! == -> _recibir_rasp `i -> 33 `i 169  ]
-{
-"103
-[; ;comunicacion_main.c: 103:             spiWrite(humedad);
-[e ( _spiWrite (1 -> _humedad `uc ]
-"104
-[; ;comunicacion_main.c: 104:         }
-}
-[e :U 169 ]
-"106
-[; ;comunicacion_main.c: 106:         if (recibir_rasp == 44){
-[e $ ! == -> _recibir_rasp `i -> 44 `i 170  ]
-{
-"107
-[; ;comunicacion_main.c: 107:             spiWrite(posicion);
-[e ( _spiWrite (1 -> _posicion `uc ]
-"108
-[; ;comunicacion_main.c: 108:         }
-}
-[e :U 170 ]
-"110
-[; ;comunicacion_main.c: 110:         if (recibir_rasp == 55){
-[e $ ! == -> _recibir_rasp `i -> 55 `i 171  ]
-{
-"111
-[; ;comunicacion_main.c: 111:             spiWrite(temp_amb);
-[e ( _spiWrite (1 -> _temp_amb `uc ]
-"112
-[; ;comunicacion_main.c: 112:         }
-}
-[e :U 171 ]
-"114
-[; ;comunicacion_main.c: 114:         if (recibir_rasp == 66){
-[e $ ! == -> _recibir_rasp `i -> 66 `i 172  ]
-{
-"115
-[; ;comunicacion_main.c: 115:             spiWrite(temp_obj);
-[e ( _spiWrite (1 -> _temp_obj `uc ]
-"116
-[; ;comunicacion_main.c: 116:         }
-}
-[e :U 172 ]
-"118
-[; ;comunicacion_main.c: 118:         if (recibir_rasp == 77){
-[e $ ! == -> _recibir_rasp `i -> 77 `i 173  ]
-{
-"119
-[; ;comunicacion_main.c: 119:             spiWrite(tiempo);
-[e ( _spiWrite (1 -> _tiempo `uc ]
-"120
-[; ;comunicacion_main.c: 120:         }
-}
-[e :U 173 ]
-"123
-[; ;comunicacion_main.c: 123:         PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"124
-[; ;comunicacion_main.c: 124:         }
-}
-[e :U 166 ]
-"125
-[; ;comunicacion_main.c: 125:     return;
-[e $UE 165  ]
-"126
-[; ;comunicacion_main.c: 126: }
-[e :UE 165 ]
 }

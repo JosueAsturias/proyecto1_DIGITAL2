@@ -34,7 +34,9 @@ uint8_t humedad = 30;
 uint8_t posicion = 40;
 uint8_t temp_amb = 50;
 uint8_t temp_obj = 60;
-uint8_t tiempo = 70;
+uint8_t hora = 10;
+uint8_t minutos = 80;
+uint8_t segundos = 90;
 
 
 
@@ -50,7 +52,7 @@ void main(void) {
     PIR1bits.SSPIF = 0;
     oscillator(6);
     init_serial();
-    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_HIGH, SPI_ACTIVE_2_IDLE);  
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);  
     PORTB = 0xFF;
     
     while(1){
@@ -60,67 +62,76 @@ void main(void) {
             bandera_1 = RCREG;
             
         }  
-        if (bandera_1 == 110){
+        if (bandera_1 == 125){
             while (PIR1bits.RCIF == 0);
-            distancia_atr = RCREG;
+            hora = RCREG;
             while (PIR1bits.RCIF == 0);
-            distancia_ade = RCREG;             
+            minutos = RCREG;             
             while (PIR1bits.RCIF == 0);
-            temp_amb = RCREG;
+            segundos = RCREG;
             while (PIR1bits.RCIF == 0);
-            temp_obj = RCREG;             
+            temp_amb = RCREG;             
             while (PIR1bits.RCIF == 0);
-            posicion = RCREG;
+            temp_obj = RCREG;
             while (PIR1bits.RCIF == 0);
-            tiempo = RCREG;             
+            posicion = RCREG;             
             while (PIR1bits.RCIF == 0);
             humedad = RCREG;
+            while (PIR1bits.RCIF == 0);
+            distancia_ade = RCREG;
+            while (PIR1bits.RCIF == 0);
+            distancia_atr = RCREG;
             bandera_1 = 0;
-        }
+            
+            PORTB = humedad;
+            __delay_ms(10);
+            spiWrite(125);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
 
-        __delay_ms(10);
+            spiWrite(hora);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            __delay_ms(10);
+            spiWrite(minutos);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            spiWrite(segundos);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            __delay_ms(10);
+            spiWrite(temp_amb);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            spiWrite(temp_obj);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            __delay_ms(10);
+            spiWrite(posicion);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            spiWrite(humedad);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            __delay_ms(10);
+            spiWrite(distancia_ade);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+
+            spiWrite(distancia_atr);
+            recibir_rasp = spiRead();
+            __delay_ms(10);
+        }
+        
         
     }
     return;
 }
 
-
-void __interrupt() isr(void){
-    if (PIR1bits.SSPIF == 1){ 
-        PORTB = spiRead();
-        spiWrite(distancia_ade);
-        //PORTB = recibir_rasp;
-        
-        if (recibir_rasp == 11){
-            spiWrite(distancia_ade);
-        }
-        
-        if (recibir_rasp == 22){
-            spiWrite(distancia_atr);
-        }
-        
-        if (recibir_rasp == 33){
-            spiWrite(humedad);
-        }
-        
-        if (recibir_rasp == 44){
-            spiWrite(posicion);
-        }
-        
-        if (recibir_rasp == 55){
-            spiWrite(temp_amb);
-        }
-        
-        if (recibir_rasp == 66){
-            spiWrite(temp_obj);
-        }
-        
-        if (recibir_rasp == 77){
-            spiWrite(tiempo);
-        }
-        
-        
-        PIR1bits.SSPIF = 0;
-        }
-    return;
-}

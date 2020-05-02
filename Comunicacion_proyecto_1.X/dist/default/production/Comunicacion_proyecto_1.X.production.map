@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Comunicacion_proyecto_1.X.production.sym \
   --cmf=dist/default/production\Comunicacion_proyecto_1.X.production.cmf -z \
-  -Q16F887 -oC:\Users\ICHELECE\AppData\Local\Temp\sclo.2 \
+  -Q16F887 -oC:\Users\ICHELECE\AppData\Local\Temp\sdi4.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Comunicacion_proyecto_1.X.production.map -E1 \
   -ver=XC8 --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\ICHELECE\AppData\Local\Temp\sclo.o \
+  -DENTRY=2 -k C:\Users\ICHELECE\AppData\Local\Temp\sdi4.o \
   dist/default/production\Comunicacion_proyecto_1.X.production.o 
 
 Object code version is 3.11
@@ -29,26 +29,26 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ICHELECE\AppData\Local\Temp\sclo.o
+C:\Users\ICHELECE\AppData\Local\Temp\sdi4.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\Comunicacion_proyecto_1.X.production.o
                 cinit                               7C4      7C4       3C      F88       0
-                text6                               58D      58D       15      B1A       0
-                text5                               5B8      5B8       53      B70       0
-                text4                               5A2      5A2       16      B44       0
-                text3                               563      563        7      AC6       0
-                text2                               571      571        9      AE2       0
-                text1                               55D      55D        6      ABA       0
-                maintext                            60B      60B      1B9      C16       0
+                text6                               58B      58B       15      B16       0
+                text5                               5B6      5B6       53      B6C       0
+                text4                               5A0      5A0       16      B40       0
+                text3                               561      561        7      AC2       0
+                text2                               56F      56F        9      ADE       0
+                text1                               55B      55B        6      AB6       0
+                maintext                            609      609      1BB      C12       0
                 cstackCOMMON                         77       77        6       70       1
-                inittext                            57A      57A       13      AF4       0
+                inittext                            578      578       13      AF0       0
                 dataBANK0                            20       20        2       20       1
                 bssBANK0                             22       22        1       20       1
                 dataCOMMON                           70       70        7       70       1
                 bssCOMMON                            7D       7D        1       70       1
-                idataBANK0                          55B      55B        2      AB6       0
-                idataCOMMON                         56A      56A        7      AD4       0
+                idataBANK0                          559      559        2      AB2       0
+                idataCOMMON                         568      568        7      AD0       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -56,16 +56,16 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        3         0
                 cinit                               7C4      7C4       3C         0
-                text6                               58D      58D       15         0
-                text5                               5B8      5B8       53         0
-                text4                               5A2      5A2       16         0
-                text3                               563      563        7         0
-                text2                               571      571        9         0
-                text1                               55D      55D        6         0
-                maintext                            60B      60B      1B9         0
-                inittext                            57A      57A       13         0
-                idataBANK0                          55B      55B        2         0
-                idataCOMMON                         56A      56A        7         0
+                text6                               58B      58B       15         0
+                text5                               5B6      5B6       53         0
+                text4                               5A0      5A0       16         0
+                text3                               561      561        7         0
+                text2                               56F      56F        9         0
+                text1                               55B      55B        6         0
+                maintext                            609      609      1BB         0
+                inittext                            578      578       13         0
+                idataBANK0                          559      559        2         0
+                idataCOMMON                         568      568        7         0
 
         CLASS   STRCODE        
 
@@ -117,16 +117,16 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 dataBANK0                      000020  000003  000023        20       1  BANK0       1
                 dataCOMMON                     000070  00000E  00007E        70       1  COMMON      1
-                idataBANK0                     00055B  000002  00055D       AB6       0  CODE        2
-                text1                          00055D  000006  000563       ABA       0  CODE        2
-                text3                          000563  000007  00056A       AC6       0  CODE        2
-                idataCOMMON                    00056A  000007  000571       AD4       0  CODE        2
-                text2                          000571  000009  00057A       AE2       0  CODE        2
-                inittext                       00057A  000013  00058D       AF4       0  CODE        2
-                text6                          00058D  000015  0005A2       B1A       0  CODE        2
-                text4                          0005A2  000016  0005B8       B44       0  CODE        2
-                text5                          0005B8  000053  00060B       B70       0  CODE        2
-                maintext                       00060B  0001B9  0007C4       C16       0  CODE        2
+                idataBANK0                     000559  000002  00055B       AB2       0  CODE        2
+                text1                          00055B  000006  000561       AB6       0  CODE        2
+                text3                          000561  000007  000568       AC2       0  CODE        2
+                idataCOMMON                    000568  000007  00056F       AD0       0  CODE        2
+                text2                          00056F  000009  000578       ADE       0  CODE        2
+                inittext                       000578  000013  00058B       AF0       0  CODE        2
+                text6                          00058B  000015  0005A0       B16       0  CODE        2
+                text4                          0005A0  000016  0005B6       B40       0  CODE        2
+                text5                          0005B6  000053  000609       B6C       0  CODE        2
+                maintext                       000609  0001BB  0007C4       C12       0  CODE        2
                 cinit                          0007C4  00003C  000800       F88       0  CODE        2
                 config                         002007  000002  002009      400E       0  CONFIG      2
 
@@ -138,12 +138,12 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-055A            558           2
+        CODE             0003-0558            556           2
                          0800-1FFF            800
-        CONST            0003-055A            100           2
+        CONST            0003-0558            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-055A            100           2
+        ENTRY            0003-0558            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0023-006F             4D           1
@@ -155,9 +155,9 @@ UNUSED ADDRESS RANGES
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0003-055A            558           2
+        STRCODE          0003-0558            556           2
                          0800-1FFF           1800
-        STRING           0003-055A            100           2
+        STRING           0003-0558            100           2
                          0800-1FFF            100
 
                                   Symbol Table
@@ -283,28 +283,28 @@ ___sp                     stack        0000
 ___stackhi                (abs)        0000
 ___stacklo                (abs)        0000
 __end_of__initialization  cinit        07FC
-__end_of_init_serial      text6        05A2
+__end_of_init_serial      text6        05A0
 __end_of_main             maintext     07C4
-__end_of_oscillator       text5        060B
-__end_of_spiInit          text4        05B8
-__end_of_spiRead          text2        057A
-__end_of_spiReceiveWait   text3        056A
-__end_of_spiWrite         text1        0563
+__end_of_oscillator       text5        0609
+__end_of_spiInit          text4        05B6
+__end_of_spiRead          text2        0578
+__end_of_spiReceiveWait   text3        0568
+__end_of_spiWrite         text1        0561
 __initialization          cinit        07C4
 __pbssBANK0               bssBANK0     0022
 __pbssCOMMON              bssCOMMON    007D
 __pcstackCOMMON           cstackCOMMON 0077
 __pdataBANK0              dataBANK0    0020
 __pdataCOMMON             dataCOMMON   0070
-__pidataBANK0             idataBANK0   055B
-__pidataCOMMON            idataCOMMON  056A
-__pmaintext               maintext     060B
-__ptext1                  text1        055D
-__ptext2                  text2        0571
-__ptext3                  text3        0563
-__ptext4                  text4        05A2
-__ptext5                  text5        05B8
-__ptext6                  text6        058D
+__pidataBANK0             idataBANK0   0559
+__pidataCOMMON            idataCOMMON  0568
+__pmaintext               maintext     0609
+__ptext1                  text1        055B
+__ptext2                  text2        056F
+__ptext3                  text3        0561
+__ptext4                  text4        05A0
+__ptext5                  text5        05B6
+__ptext6                  text6        058B
 __size_of_init_serial     (abs)        0000
 __size_of_main            (abs)        0000
 __size_of_oscillator      (abs)        0000
@@ -317,23 +317,23 @@ _distancia_ade            dataCOMMON   0076
 _distancia_atr            dataCOMMON   0075
 _hora                     dataCOMMON   0070
 _humedad                  dataCOMMON   0074
-_init_serial              text6        058D
-_main                     maintext     060B
+_init_serial              text6        058B
+_main                     maintext     0609
 _minutos                  dataBANK0    0021
-_oscillator               text5        05B8
+_oscillator               text5        05B6
 _posicion                 dataCOMMON   0073
 _recibir_rasp             bssBANK0     0022
 _segundos                 dataBANK0    0020
-_spiInit                  text4        05A2
-_spiRead                  text2        0571
-_spiReceiveWait           text3        0563
-_spiWrite                 text1        055D
+_spiInit                  text4        05A0
+_spiRead                  text2        056F
+_spiReceiveWait           text3        0561
+_spiWrite                 text1        055B
 _temp_amb                 dataCOMMON   0072
 _temp_obj                 dataCOMMON   0071
 btemp                     (abs)        007E
 end_of_initialization     cinit        07FC
-init_fetch0               inittext     057A
-init_ram0                 inittext     057E
+init_fetch0               inittext     0578
+init_ram0                 inittext     057C
 intlevel0                 functab      0000
 intlevel1                 functab      0000
 intlevel2                 functab      0000
@@ -570,8 +570,8 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 serial.c
-		_init_serial   		CODE           	058D	0000	22
-		_oscillator    		CODE           	05B8	0000	84
+		_init_serial   		CODE           	058B	0000	22
+		_oscillator    		CODE           	05B6	0000	84
 
 serial.c estimated size: 106
 
@@ -581,15 +581,15 @@ shared
 shared estimated size: 57
 
 comunicacion_main.c
-		_main          		CODE           	060B	0000	442
+		_main          		CODE           	0609	0000	444
 
-comunicacion_main.c estimated size: 442
+comunicacion_main.c estimated size: 444
 
 SPI.c
-		_spiWrite      		CODE           	055D	0000	7
-		_spiInit       		CODE           	05A2	0000	23
-		_spiReceiveWait		CODE           	0563	0000	8
-		_spiRead       		CODE           	0571	0000	10
+		_spiWrite      		CODE           	055B	0000	7
+		_spiInit       		CODE           	05A0	0000	23
+		_spiReceiveWait		CODE           	0561	0000	8
+		_spiRead       		CODE           	056F	0000	10
 
 SPI.c estimated size: 48
 

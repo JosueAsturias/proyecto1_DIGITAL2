@@ -267,7 +267,7 @@ SPI_ACTIVE_2_IDLE 64
 "43
 [v _main main `(v  1 e 1 0 ]
 {
-"136
+"146
 } 0
 "36 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Comunicacion_proyecto_1.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

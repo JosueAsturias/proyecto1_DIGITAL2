@@ -2740,30 +2740,40 @@ void main(void) {
 
         if (PIR1bits.RCIF == 1){
             bandera_1 = RCREG;
-
+            PORTB = bandera_1;
         }
         if (bandera_1 == 125){
-            while (PIR1bits.RCIF == 0);
-            hora = RCREG;
-            while (PIR1bits.RCIF == 0);
-            minutos = RCREG;
-            while (PIR1bits.RCIF == 0);
-            segundos = RCREG;
-            while (PIR1bits.RCIF == 0);
-            temp_amb = RCREG;
-            while (PIR1bits.RCIF == 0);
-            temp_obj = RCREG;
-            while (PIR1bits.RCIF == 0);
-            posicion = RCREG;
-            while (PIR1bits.RCIF == 0);
-            humedad = RCREG;
-            while (PIR1bits.RCIF == 0);
-            distancia_ade = RCREG;
-            while (PIR1bits.RCIF == 0);
-            distancia_atr = RCREG;
+            if (PIR1bits.RCIF == 1){
+                hora = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                minutos = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                segundos = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                temp_amb = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                temp_obj = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                posicion = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                humedad = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                distancia_ade = RCREG;
+            }
+            if (PIR1bits.RCIF == 1){
+                distancia_atr = RCREG;
+            }
             bandera_1 = 0;
 
             PORTB = humedad;
+
             _delay((unsigned long)((10)*(4000000/4000.0)));
             spiWrite(125);
             recibir_rasp = spiRead();

@@ -142,10 +142,10 @@ void main(void) {
     while(1){
         /*Obtener valores de sensores -------------------*/
         get_Time();
-        temperatura = temp_ambiente();
-        temperatura_obj = temp_objeto();
-        accZ = Acc_Z();
-        inclinacion = ver_inclinacion(accZ);
+        //temperatura = temp_ambiente();
+        //temperatura_obj = temp_objeto();
+        //accZ = Acc_Z();
+        //inclinacion = ver_inclinacion(accZ);
         /*-----------------------------------------------*/
         mostrarLCD(estado);
         pressBoton1();
@@ -189,7 +189,7 @@ void SetUp(void){
     LCD_clear();
     uart_init(9600);
     I2C_Master_Init(100000);
-    IMU_init();
+    //IMU_init();
     
     //Zeit_Datum_Set();
 }

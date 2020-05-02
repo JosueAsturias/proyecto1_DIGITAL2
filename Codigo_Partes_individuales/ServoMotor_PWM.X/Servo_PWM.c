@@ -145,7 +145,8 @@ void main(void) {
 void config_PORTS(void){ 
     OSC_config(_XTAL_FREQ);
     ANSEL = 0; //SIN APAGAR ANSEL = 0 ; NO SIRVEN PWM's
-    //ANSELH = 0;    
+    //ANSELH = 0;  
+    TRISC = 0XFF;
     TRISE = 0b11111111;
     
     PORTA = 0x00;          //Inicialización de Puertos

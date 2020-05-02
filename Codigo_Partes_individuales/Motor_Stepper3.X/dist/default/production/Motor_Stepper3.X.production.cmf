@@ -23,7 +23,7 @@ inittext CODE 0 1EE 1EE 13 2
 idataBANK0 CODE 0 1DE 1DE 10 2
 dataBANK0 BANK0 1 20 20 10 1
 bssCOMMON COMMON 1 70 70 7 1
-$C:\Users\Josue\AppData\Local\Temp\sh6k.o
+$C:\Users\Josue\AppData\Local\Temp\shj0.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
@@ -71,28 +71,28 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Motor_Stepper3.X.production.o
-7E7 cinit CODE >652:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7E7 cinit CODE >655:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7E7 cinit CODE >723:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7E8 cinit CODE >724:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7E9 cinit CODE >725:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7EA cinit CODE >726:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7EB cinit CODE >727:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7EC cinit CODE >728:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7ED cinit CODE >729:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7EE cinit CODE >730:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7EF cinit CODE >731:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7F0 cinit CODE >732:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7F5 cinit CODE >736:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7F6 cinit CODE >737:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7F7 cinit CODE >738:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7F8 cinit CODE >739:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7F9 cinit CODE >740:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7FA cinit CODE >741:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7FB cinit CODE >742:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7FC cinit CODE >748:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7FC cinit CODE >750:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-7FD cinit CODE >751:C:\Users\Josue\AppData\Local\Temp\sh6k.s
+7E7 cinit CODE >652:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7E7 cinit CODE >655:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7E7 cinit CODE >723:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7E8 cinit CODE >724:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7E9 cinit CODE >725:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7EA cinit CODE >726:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7EB cinit CODE >727:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7EC cinit CODE >728:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7ED cinit CODE >729:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7EE cinit CODE >730:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7EF cinit CODE >731:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7F0 cinit CODE >732:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7F5 cinit CODE >736:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7F6 cinit CODE >737:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7F7 cinit CODE >738:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7F8 cinit CODE >739:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7F9 cinit CODE >740:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7FA cinit CODE >741:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7FB cinit CODE >742:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7FC cinit CODE >748:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7FC cinit CODE >750:C:\Users\Josue\AppData\Local\Temp\shj0.s
+7FD cinit CODE >751:C:\Users\Josue\AppData\Local\Temp\shj0.s
 429 text4 CODE >102:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Proyecto1_Lou_Actuadores_Humedad\proyecto1_DIGITAL2\Codigo_Partes_individuales\Motor_Stepper3.X\STEPPER_MITSUMI.c
 429 text4 CODE >103:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Proyecto1_Lou_Actuadores_Humedad\proyecto1_DIGITAL2\Codigo_Partes_individuales\Motor_Stepper3.X\STEPPER_MITSUMI.c
 42A text4 CODE >105:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Proyecto1_Lou_Actuadores_Humedad\proyecto1_DIGITAL2\Codigo_Partes_individuales\Motor_Stepper3.X\STEPPER_MITSUMI.c
@@ -298,23 +298,23 @@ $dist/default/production\Motor_Stepper3.X.production.o
 40E maintext CODE >129:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Proyecto1_Lou_Actuadores_Humedad\proyecto1_DIGITAL2\Codigo_Partes_individuales\Motor_Stepper3.X\Stepper3.c
 417 maintext CODE >130:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Proyecto1_Lou_Actuadores_Humedad\proyecto1_DIGITAL2\Codigo_Partes_individuales\Motor_Stepper3.X\Stepper3.c
 424 maintext CODE >133:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Proyecto1_Lou_Actuadores_Humedad\proyecto1_DIGITAL2\Codigo_Partes_individuales\Motor_Stepper3.X\Stepper3.c
-1EE inittext CODE >697:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1EE inittext CODE >698:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1EF inittext CODE >699:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1F0 inittext CODE >700:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1F1 inittext CODE >701:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1F2 inittext CODE >708:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1F2 inittext CODE >709:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1F7 inittext CODE >710:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1F8 inittext CODE >711:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1F9 inittext CODE >712:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1FA inittext CODE >713:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1FB inittext CODE >714:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1FC inittext CODE >715:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1FD inittext CODE >716:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1FE inittext CODE >717:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-1FF inittext CODE >718:C:\Users\Josue\AppData\Local\Temp\sh6k.s
-200 inittext CODE >719:C:\Users\Josue\AppData\Local\Temp\sh6k.s
+1EE inittext CODE >697:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1EE inittext CODE >698:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1EF inittext CODE >699:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1F0 inittext CODE >700:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1F1 inittext CODE >701:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1F2 inittext CODE >708:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1F2 inittext CODE >709:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1F7 inittext CODE >710:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1F8 inittext CODE >711:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1F9 inittext CODE >712:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1FA inittext CODE >713:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1FB inittext CODE >714:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1FC inittext CODE >715:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1FD inittext CODE >716:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1FE inittext CODE >717:C:\Users\Josue\AppData\Local\Temp\shj0.s
+1FF inittext CODE >718:C:\Users\Josue\AppData\Local\Temp\shj0.s
+200 inittext CODE >719:C:\Users\Josue\AppData\Local\Temp\shj0.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -339,21 +339,21 @@ __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\Motor_Stepper3.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\sh6k.o
+___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\shj0.o
 _main 596 0 CODE 0 maintext dist/default/production\Motor_Stepper3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Motor_Stepper3.X.production.o
-start 0 0 CODE 0 init C:\Users\Josue\AppData\Local\Temp\sh6k.o
+start 0 0 CODE 0 init C:\Users\Josue\AppData\Local\Temp\shj0.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Motor_Stepper3.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Motor_Stepper3.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sh6k.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sh6k.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sh6k.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sh6k.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sh6k.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sh6k.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\shj0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\shj0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\shj0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\shj0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\shj0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\shj0.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _Paso2BLE_CW 28 0 BANK0 1 dataBANK0 dist/default/production\Motor_Stepper3.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Motor_Stepper3.X.production.o
@@ -367,11 +367,11 @@ OSC_config@frecuencia 77 0 COMMON 1 cstackCOMMON dist/default/production\Motor_S
 _ESTADO 74 0 COMMON 1 bssCOMMON dist/default/production\Motor_Stepper3.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_FOSC$INTRC_CLKOUT 0 0 ABS 0 - dist/default/production\Motor_Stepper3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\sh6k.o
-___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\sh6k.o
+___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\shj0.o
+___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\shj0.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Motor_Stepper3.X.production.o
 start_initialization FCE 0 CODE 0 cinit dist/default/production\Motor_Stepper3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\sh6k.o
+___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\shj0.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -418,7 +418,7 @@ Stepper_CW@Step_grados_cw 77 0 COMMON 1 cstackCOMMON dist/default/production\Mot
 _Stepper_CCW 852 0 CODE 0 text4 dist/default/production\Motor_Stepper3.X.production.o
 _config_PORTS 402 0 CODE 0 text1 dist/default/production\Motor_Stepper3.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\sh6k.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\shj0.o
 __end_of_Stepper_CW FCE 0 CODE 0 text3 dist/default/production\Motor_Stepper3.X.production.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\Motor_Stepper3.X.production.o
 __pmaintext 596 0 CODE 0 maintext dist/default/production\Motor_Stepper3.X.production.o

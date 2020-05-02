@@ -36,6 +36,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3387 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"1540
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "1664
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
 [v _TRISE `Vuc ~T0 @X0 0 e@137 ]
@@ -639,260 +642,263 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Servo_PWM.c: 147:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
 "149
-[; ;Servo_PWM.c: 149:     TRISE = 0b11111111;
+[; ;Servo_PWM.c: 149:     TRISC = 0XFF;
+[e = _TRISC -> -> 255 `i `uc ]
+"150
+[; ;Servo_PWM.c: 150:     TRISE = 0b11111111;
 [e = _TRISE -> -> 255 `i `uc ]
-"151
-[; ;Servo_PWM.c: 151:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
 "152
-[; ;Servo_PWM.c: 152:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;Servo_PWM.c: 152:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
 "153
-[; ;Servo_PWM.c: 153:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;Servo_PWM.c: 153:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
 "154
-[; ;Servo_PWM.c: 154:     PORTD = 0x00;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;Servo_PWM.c: 154:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
 "155
-[; ;Servo_PWM.c: 155:     PORTE = 0x00;
+[; ;Servo_PWM.c: 155:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"156
+[; ;Servo_PWM.c: 156:     PORTE = 0x00;
 [e = _PORTE -> -> 0 `i `uc ]
-"158
-[; ;Servo_PWM.c: 158:    }
+"159
+[; ;Servo_PWM.c: 159:    }
 [e :UE 149 ]
 }
-"160
-[; ;Servo_PWM.c: 160: void init_PWM_1(void){
+"161
+[; ;Servo_PWM.c: 161: void init_PWM_1(void){
 [v _init_PWM_1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_PWM_1 ]
 [f ]
-"161
-[; ;Servo_PWM.c: 161:     TRISCbits.TRISC1 = 1;
+"162
+[; ;Servo_PWM.c: 162:     TRISCbits.TRISC1 = 1;
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
-"164
-[; ;Servo_PWM.c: 164:     PR2 = 200;
+"165
+[; ;Servo_PWM.c: 165:     PR2 = 200;
 [e = _PR2 -> -> 200 `i `uc ]
-"166
-[; ;Servo_PWM.c: 166:     CCP2CONbits.CCP2M3 = 1;
-[e = . . _CCP2CONbits 1 3 -> -> 1 `i `uc ]
 "167
-[; ;Servo_PWM.c: 167:     CCP2CONbits.CCP2M2 = 1;
-[e = . . _CCP2CONbits 1 2 -> -> 1 `i `uc ]
+[; ;Servo_PWM.c: 167:     CCP2CONbits.CCP2M3 = 1;
+[e = . . _CCP2CONbits 1 3 -> -> 1 `i `uc ]
 "168
-[; ;Servo_PWM.c: 168:     CCP2CONbits.CCP2M1 = 1;
-[e = . . _CCP2CONbits 1 1 -> -> 1 `i `uc ]
+[; ;Servo_PWM.c: 168:     CCP2CONbits.CCP2M2 = 1;
+[e = . . _CCP2CONbits 1 2 -> -> 1 `i `uc ]
 "169
-[; ;Servo_PWM.c: 169:     CCP2CONbits.CCP2M0 = 1;
+[; ;Servo_PWM.c: 169:     CCP2CONbits.CCP2M1 = 1;
+[e = . . _CCP2CONbits 1 1 -> -> 1 `i `uc ]
+"170
+[; ;Servo_PWM.c: 170:     CCP2CONbits.CCP2M0 = 1;
 [e = . . _CCP2CONbits 1 0 -> -> 1 `i `uc ]
-"172
-[; ;Servo_PWM.c: 172:     CCPR2L = 0b00011011;
-[e = _CCPR2L -> -> 27 `i `uc ]
 "173
-[; ;Servo_PWM.c: 173:     CCP2CONbits.DC2B0 = 1;
-[e = . . _CCP2CONbits 0 1 -> -> 1 `i `uc ]
+[; ;Servo_PWM.c: 173:     CCPR2L = 0b00011011;
+[e = _CCPR2L -> -> 27 `i `uc ]
 "174
-[; ;Servo_PWM.c: 174:     CCP2CONbits.DC2B1 = 1;
+[; ;Servo_PWM.c: 174:     CCP2CONbits.DC2B0 = 1;
+[e = . . _CCP2CONbits 0 1 -> -> 1 `i `uc ]
+"175
+[; ;Servo_PWM.c: 175:     CCP2CONbits.DC2B1 = 1;
 [e = . . _CCP2CONbits 0 2 -> -> 1 `i `uc ]
-"176
-[; ;Servo_PWM.c: 176:     PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "177
-[; ;Servo_PWM.c: 177:     T2CONbits.T2CKPS1 = 1;
-[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+[; ;Servo_PWM.c: 177:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "178
-[; ;Servo_PWM.c: 178:     T2CONbits.T2CKPS0 = 1;
+[; ;Servo_PWM.c: 178:     T2CONbits.T2CKPS1 = 1;
+[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+"179
+[; ;Servo_PWM.c: 179:     T2CONbits.T2CKPS0 = 1;
 [e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
-"180
-[; ;Servo_PWM.c: 180:     T2CONbits.TMR2ON = 1;
+"181
+[; ;Servo_PWM.c: 181:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"182
-[; ;Servo_PWM.c: 182:     while(PIR1bits.TMR2IF == 1){
+"183
+[; ;Servo_PWM.c: 183:     while(PIR1bits.TMR2IF == 1){
 [e $U 151  ]
 [e :U 152 ]
 {
-"183
-[; ;Servo_PWM.c: 183:         PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "184
-[; ;Servo_PWM.c: 184:     }
+[; ;Servo_PWM.c: 184:         PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"185
+[; ;Servo_PWM.c: 185:     }
 }
 [e :U 151 ]
-"182
-[; ;Servo_PWM.c: 182:     while(PIR1bits.TMR2IF == 1){
+"183
+[; ;Servo_PWM.c: 183:     while(PIR1bits.TMR2IF == 1){
 [e $ == -> . . _PIR1bits 0 1 `i -> 1 `i 152  ]
 [e :U 153 ]
-"186
-[; ;Servo_PWM.c: 186:     TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
 "187
-[; ;Servo_PWM.c: 187: }
+[; ;Servo_PWM.c: 187:     TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+"188
+[; ;Servo_PWM.c: 188: }
 [e :UE 150 ]
 }
-"189
-[; ;Servo_PWM.c: 189: void init_PWM_2(void){
+"190
+[; ;Servo_PWM.c: 190: void init_PWM_2(void){
 [v _init_PWM_2 `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_PWM_2 ]
 [f ]
-"190
-[; ;Servo_PWM.c: 190:     TRISCbits.TRISC2 = 1;
+"191
+[; ;Servo_PWM.c: 191:     TRISCbits.TRISC2 = 1;
 [e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
-"193
-[; ;Servo_PWM.c: 193:     PR2 = 200;
+"194
+[; ;Servo_PWM.c: 194:     PR2 = 200;
 [e = _PR2 -> -> 200 `i `uc ]
-"195
-[; ;Servo_PWM.c: 195:     CCP1CONbits.CCP1M3 = 1;
-[e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
 "196
-[; ;Servo_PWM.c: 196:     CCP1CONbits.CCP1M2 = 1;
-[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
+[; ;Servo_PWM.c: 196:     CCP1CONbits.CCP1M3 = 1;
+[e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
 "197
-[; ;Servo_PWM.c: 197:     CCP1CONbits.CCP1M1 = 0;
-[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
+[; ;Servo_PWM.c: 197:     CCP1CONbits.CCP1M2 = 1;
+[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
 "198
-[; ;Servo_PWM.c: 198:     CCP1CONbits.CCP1M0 = 0;
+[; ;Servo_PWM.c: 198:     CCP1CONbits.CCP1M1 = 0;
+[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
+"199
+[; ;Servo_PWM.c: 199:     CCP1CONbits.CCP1M0 = 0;
 [e = . . _CCP1CONbits 1 0 -> -> 0 `i `uc ]
-"200
-[; ;Servo_PWM.c: 200:     CCP1CONbits.P1M1 = 0;
-[e = . . _CCP1CONbits 1 7 -> -> 0 `i `uc ]
 "201
-[; ;Servo_PWM.c: 201:     CCP1CONbits.P1M0 = 0;
+[; ;Servo_PWM.c: 201:     CCP1CONbits.P1M1 = 0;
+[e = . . _CCP1CONbits 1 7 -> -> 0 `i `uc ]
+"202
+[; ;Servo_PWM.c: 202:     CCP1CONbits.P1M0 = 0;
 [e = . . _CCP1CONbits 1 6 -> -> 0 `i `uc ]
-"204
-[; ;Servo_PWM.c: 204:     CCPR2L = 0b00011011;
-[e = _CCPR2L -> -> 27 `i `uc ]
 "205
-[; ;Servo_PWM.c: 205:     CCP1CONbits.DC1B0 = 1;
-[e = . . _CCP1CONbits 1 4 -> -> 1 `i `uc ]
+[; ;Servo_PWM.c: 205:     CCPR2L = 0b00011011;
+[e = _CCPR2L -> -> 27 `i `uc ]
 "206
-[; ;Servo_PWM.c: 206:     CCP1CONbits.DC1B1 = 1;
+[; ;Servo_PWM.c: 206:     CCP1CONbits.DC1B0 = 1;
+[e = . . _CCP1CONbits 1 4 -> -> 1 `i `uc ]
+"207
+[; ;Servo_PWM.c: 207:     CCP1CONbits.DC1B1 = 1;
 [e = . . _CCP1CONbits 1 5 -> -> 1 `i `uc ]
-"208
-[; ;Servo_PWM.c: 208:     PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "209
-[; ;Servo_PWM.c: 209:     T2CONbits.T2CKPS1 = 1;
-[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+[; ;Servo_PWM.c: 209:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "210
-[; ;Servo_PWM.c: 210:     T2CONbits.T2CKPS0 = 1;
+[; ;Servo_PWM.c: 210:     T2CONbits.T2CKPS1 = 1;
+[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+"211
+[; ;Servo_PWM.c: 211:     T2CONbits.T2CKPS0 = 1;
 [e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
-"212
-[; ;Servo_PWM.c: 212:     T2CONbits.TMR2ON = 1;
+"213
+[; ;Servo_PWM.c: 213:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"214
-[; ;Servo_PWM.c: 214:     while(PIR1bits.TMR2IF == 1){
+"215
+[; ;Servo_PWM.c: 215:     while(PIR1bits.TMR2IF == 1){
 [e $U 155  ]
 [e :U 156 ]
 {
-"215
-[; ;Servo_PWM.c: 215:         PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "216
-[; ;Servo_PWM.c: 216:     }
+[; ;Servo_PWM.c: 216:         PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"217
+[; ;Servo_PWM.c: 217:     }
 }
 [e :U 155 ]
-"214
-[; ;Servo_PWM.c: 214:     while(PIR1bits.TMR2IF == 1){
+"215
+[; ;Servo_PWM.c: 215:     while(PIR1bits.TMR2IF == 1){
 [e $ == -> . . _PIR1bits 0 1 `i -> 1 `i 156  ]
 [e :U 157 ]
-"218
-[; ;Servo_PWM.c: 218:     TRISCbits.TRISC2 = 0;
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
 "219
-[; ;Servo_PWM.c: 219: }
+[; ;Servo_PWM.c: 219:     TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"220
+[; ;Servo_PWM.c: 220: }
 [e :UE 154 ]
 }
-"222
-[; ;Servo_PWM.c: 222: void OSC_config(uint32_t frecuencia){
+"223
+[; ;Servo_PWM.c: 223: void OSC_config(uint32_t frecuencia){
 [v _OSC_config `(v ~T0 @X0 1 ef1`ul ]
 {
 [e :U _OSC_config ]
 [v _frecuencia `ul ~T0 @X0 1 r1 ]
 [f ]
-"223
-[; ;Servo_PWM.c: 223:     switch(frecuencia){
+"224
+[; ;Servo_PWM.c: 224:     switch(frecuencia){
 [e $U 160  ]
 {
-"224
-[; ;Servo_PWM.c: 224:         case 8000000:
-[e :U 161 ]
 "225
-[; ;Servo_PWM.c: 225:             OSCCONbits.IRCF = 0b111;
-[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
+[; ;Servo_PWM.c: 225:         case 8000000:
+[e :U 161 ]
 "226
-[; ;Servo_PWM.c: 226:             break;
-[e $U 159  ]
+[; ;Servo_PWM.c: 226:             OSCCONbits.IRCF = 0b111;
+[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
 "227
-[; ;Servo_PWM.c: 227:         case 4000000:
-[e :U 162 ]
+[; ;Servo_PWM.c: 227:             break;
+[e $U 159  ]
 "228
-[; ;Servo_PWM.c: 228:             OSCCONbits.IRCF = 0b110;
-[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+[; ;Servo_PWM.c: 228:         case 4000000:
+[e :U 162 ]
 "229
-[; ;Servo_PWM.c: 229:             break;
-[e $U 159  ]
-"230
-[; ;Servo_PWM.c: 230:         case 2000000:
-[e :U 163 ]
-"231
-[; ;Servo_PWM.c: 231:             OSCCONbits.IRCF = 0b101;
-[e = . . _OSCCONbits 0 4 -> -> 5 `i `uc ]
-"232
-[; ;Servo_PWM.c: 232:             break;
-[e $U 159  ]
-"233
-[; ;Servo_PWM.c: 233:         case 1000000:
-[e :U 164 ]
-"234
-[; ;Servo_PWM.c: 234:             OSCCONbits.IRCF = 0b100;
-[e = . . _OSCCONbits 0 4 -> -> 4 `i `uc ]
-"235
-[; ;Servo_PWM.c: 235:             break;
-[e $U 159  ]
-"236
-[; ;Servo_PWM.c: 236:         case 500000:
-[e :U 165 ]
-"237
-[; ;Servo_PWM.c: 237:             OSCCONbits.IRCF = 0b011;
-[e = . . _OSCCONbits 0 4 -> -> 3 `i `uc ]
-"238
-[; ;Servo_PWM.c: 238:             break;
-[e $U 159  ]
-"239
-[; ;Servo_PWM.c: 239:         case 250000:
-[e :U 166 ]
-"240
-[; ;Servo_PWM.c: 240:             OSCCONbits.IRCF = 0b010;
-[e = . . _OSCCONbits 0 4 -> -> 2 `i `uc ]
-"241
-[; ;Servo_PWM.c: 241:             break;
-[e $U 159  ]
-"242
-[; ;Servo_PWM.c: 242:         case 125000:
-[e :U 167 ]
-"243
-[; ;Servo_PWM.c: 243:             OSCCONbits.IRCF = 0b001;
-[e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
-"244
-[; ;Servo_PWM.c: 244:             break;
-[e $U 159  ]
-"245
-[; ;Servo_PWM.c: 245:         case 32000:
-[e :U 168 ]
-"246
-[; ;Servo_PWM.c: 246:             OSCCONbits.IRCF = 0b000;
-[e = . . _OSCCONbits 0 4 -> -> 0 `i `uc ]
-"247
-[; ;Servo_PWM.c: 247:             break;
-[e $U 159  ]
-"248
-[; ;Servo_PWM.c: 248:         default:
-[e :U 169 ]
-"249
-[; ;Servo_PWM.c: 249:             OSCCONbits.IRCF = 0b110;
+[; ;Servo_PWM.c: 229:             OSCCONbits.IRCF = 0b110;
 [e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+"230
+[; ;Servo_PWM.c: 230:             break;
+[e $U 159  ]
+"231
+[; ;Servo_PWM.c: 231:         case 2000000:
+[e :U 163 ]
+"232
+[; ;Servo_PWM.c: 232:             OSCCONbits.IRCF = 0b101;
+[e = . . _OSCCONbits 0 4 -> -> 5 `i `uc ]
+"233
+[; ;Servo_PWM.c: 233:             break;
+[e $U 159  ]
+"234
+[; ;Servo_PWM.c: 234:         case 1000000:
+[e :U 164 ]
+"235
+[; ;Servo_PWM.c: 235:             OSCCONbits.IRCF = 0b100;
+[e = . . _OSCCONbits 0 4 -> -> 4 `i `uc ]
+"236
+[; ;Servo_PWM.c: 236:             break;
+[e $U 159  ]
+"237
+[; ;Servo_PWM.c: 237:         case 500000:
+[e :U 165 ]
+"238
+[; ;Servo_PWM.c: 238:             OSCCONbits.IRCF = 0b011;
+[e = . . _OSCCONbits 0 4 -> -> 3 `i `uc ]
+"239
+[; ;Servo_PWM.c: 239:             break;
+[e $U 159  ]
+"240
+[; ;Servo_PWM.c: 240:         case 250000:
+[e :U 166 ]
+"241
+[; ;Servo_PWM.c: 241:             OSCCONbits.IRCF = 0b010;
+[e = . . _OSCCONbits 0 4 -> -> 2 `i `uc ]
+"242
+[; ;Servo_PWM.c: 242:             break;
+[e $U 159  ]
+"243
+[; ;Servo_PWM.c: 243:         case 125000:
+[e :U 167 ]
+"244
+[; ;Servo_PWM.c: 244:             OSCCONbits.IRCF = 0b001;
+[e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
+"245
+[; ;Servo_PWM.c: 245:             break;
+[e $U 159  ]
+"246
+[; ;Servo_PWM.c: 246:         case 32000:
+[e :U 168 ]
+"247
+[; ;Servo_PWM.c: 247:             OSCCONbits.IRCF = 0b000;
+[e = . . _OSCCONbits 0 4 -> -> 0 `i `uc ]
+"248
+[; ;Servo_PWM.c: 248:             break;
+[e $U 159  ]
+"249
+[; ;Servo_PWM.c: 249:         default:
+[e :U 169 ]
 "250
-[; ;Servo_PWM.c: 250:     }
+[; ;Servo_PWM.c: 250:             OSCCONbits.IRCF = 0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+"251
+[; ;Servo_PWM.c: 251:     }
 }
 [e $U 159  ]
 [e :U 160 ]
@@ -906,149 +912,149 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> -> 32000 `i `l `ul 168
  169 ]
 [e :U 159 ]
-"251
-[; ;Servo_PWM.c: 251: }
+"252
+[; ;Servo_PWM.c: 252: }
 [e :UE 158 ]
 }
-"253
-[; ;Servo_PWM.c: 253: void Servo_0(void){
+"254
+[; ;Servo_PWM.c: 254: void Servo_0(void){
 [v _Servo_0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _Servo_0 ]
 [f ]
-"254
-[; ;Servo_PWM.c: 254:     CCPR2L = 10;
-[e = _CCPR2L -> -> 10 `i `uc ]
 "255
-[; ;Servo_PWM.c: 255: }
+[; ;Servo_PWM.c: 255:     CCPR2L = 10;
+[e = _CCPR2L -> -> 10 `i `uc ]
+"256
+[; ;Servo_PWM.c: 256: }
 [e :UE 170 ]
 }
-"257
-[; ;Servo_PWM.c: 257: void Servo_90(void){
+"258
+[; ;Servo_PWM.c: 258: void Servo_90(void){
 [v _Servo_90 `(v ~T0 @X0 1 ef ]
 {
 [e :U _Servo_90 ]
 [f ]
-"258
-[; ;Servo_PWM.c: 258:     CCPR2L = 25;
-[e = _CCPR2L -> -> 25 `i `uc ]
 "259
-[; ;Servo_PWM.c: 259: }
+[; ;Servo_PWM.c: 259:     CCPR2L = 25;
+[e = _CCPR2L -> -> 25 `i `uc ]
+"260
+[; ;Servo_PWM.c: 260: }
 [e :UE 171 ]
 }
-"261
-[; ;Servo_PWM.c: 261: void Servo_180(void){
+"262
+[; ;Servo_PWM.c: 262: void Servo_180(void){
 [v _Servo_180 `(v ~T0 @X0 1 ef ]
 {
 [e :U _Servo_180 ]
 [f ]
-"262
-[; ;Servo_PWM.c: 262:      CCPR2L = 40;
-[e = _CCPR2L -> -> 40 `i `uc ]
 "263
-[; ;Servo_PWM.c: 263: }
+[; ;Servo_PWM.c: 263:      CCPR2L = 40;
+[e = _CCPR2L -> -> 40 `i `uc ]
+"264
+[; ;Servo_PWM.c: 264: }
 [e :UE 172 ]
 }
-"265
-[; ;Servo_PWM.c: 265: void Servo1_grados(uint8_t Servo1_grados){
+"266
+[; ;Servo_PWM.c: 266: void Servo1_grados(uint8_t Servo1_grados){
 [v _Servo1_grados `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Servo1_grados ]
 [v _Servo1_grados `uc ~T0 @X0 1 r1 ]
 [f ]
-"266
-[; ;Servo_PWM.c: 266:     switch(Servo1_grados){
+"267
+[; ;Servo_PWM.c: 267:     switch(Servo1_grados){
 [e $U 175  ]
 {
-"267
-[; ;Servo_PWM.c: 267:         case 0:
-[e :U 176 ]
 "268
-[; ;Servo_PWM.c: 268:             CCPR2L = 10;
-[e = _CCPR2L -> -> 10 `i `uc ]
+[; ;Servo_PWM.c: 268:         case 0:
+[e :U 176 ]
 "269
-[; ;Servo_PWM.c: 269:             break;
-[e $U 174  ]
-"271
-[; ;Servo_PWM.c: 271:         case 10:
-[e :U 177 ]
-"272
-[; ;Servo_PWM.c: 272:             CCPR2L = 12;
-[e = _CCPR2L -> -> 12 `i `uc ]
-"273
-[; ;Servo_PWM.c: 273:             break;
-[e $U 174  ]
-"275
-[; ;Servo_PWM.c: 275:         case 30:
-[e :U 178 ]
-"276
-[; ;Servo_PWM.c: 276:             CCPR2L = 14;
-[e = _CCPR2L -> -> 14 `i `uc ]
-"277
-[; ;Servo_PWM.c: 277:             break;
-[e $U 174  ]
-"279
-[; ;Servo_PWM.c: 279:         case 45:
-[e :U 179 ]
-"280
-[; ;Servo_PWM.c: 280:             CCPR2L = 18;
-[e = _CCPR2L -> -> 18 `i `uc ]
-"281
-[; ;Servo_PWM.c: 281:             break;
-[e $U 174  ]
-"283
-[; ;Servo_PWM.c: 283:         case 90:
-[e :U 180 ]
-"284
-[; ;Servo_PWM.c: 284:             CCPR2L = 25;
-[e = _CCPR2L -> -> 25 `i `uc ]
-"285
-[; ;Servo_PWM.c: 285:             break;
-[e $U 174  ]
-"287
-[; ;Servo_PWM.c: 287:         case 120:
-[e :U 181 ]
-"288
-[; ;Servo_PWM.c: 288:             CCPR2L = 30;
-[e = _CCPR2L -> -> 30 `i `uc ]
-"289
-[; ;Servo_PWM.c: 289:             break;
-[e $U 174  ]
-"291
-[; ;Servo_PWM.c: 291:         case 135:
-[e :U 182 ]
-"292
-[; ;Servo_PWM.c: 292:             CCPR2L = 33;
-[e = _CCPR2L -> -> 33 `i `uc ]
-"293
-[; ;Servo_PWM.c: 293:             break;
-[e $U 174  ]
-"295
-[; ;Servo_PWM.c: 295:         case 150:
-[e :U 183 ]
-"296
-[; ;Servo_PWM.c: 296:             CCPR2L = 37;
-[e = _CCPR2L -> -> 37 `i `uc ]
-"297
-[; ;Servo_PWM.c: 297:             break;
-[e $U 174  ]
-"299
-[; ;Servo_PWM.c: 299:         case 180:
-[e :U 184 ]
-"300
-[; ;Servo_PWM.c: 300:             CCPR2L = 40;
-[e = _CCPR2L -> -> 40 `i `uc ]
-"301
-[; ;Servo_PWM.c: 301:             break;
-[e $U 174  ]
-"303
-[; ;Servo_PWM.c: 303:         default:
-[e :U 185 ]
-"304
-[; ;Servo_PWM.c: 304:             CCPR2L = 10;
+[; ;Servo_PWM.c: 269:             CCPR2L = 10;
 [e = _CCPR2L -> -> 10 `i `uc ]
-"306
-[; ;Servo_PWM.c: 306:     }
+"270
+[; ;Servo_PWM.c: 270:             break;
+[e $U 174  ]
+"272
+[; ;Servo_PWM.c: 272:         case 10:
+[e :U 177 ]
+"273
+[; ;Servo_PWM.c: 273:             CCPR2L = 12;
+[e = _CCPR2L -> -> 12 `i `uc ]
+"274
+[; ;Servo_PWM.c: 274:             break;
+[e $U 174  ]
+"276
+[; ;Servo_PWM.c: 276:         case 30:
+[e :U 178 ]
+"277
+[; ;Servo_PWM.c: 277:             CCPR2L = 14;
+[e = _CCPR2L -> -> 14 `i `uc ]
+"278
+[; ;Servo_PWM.c: 278:             break;
+[e $U 174  ]
+"280
+[; ;Servo_PWM.c: 280:         case 45:
+[e :U 179 ]
+"281
+[; ;Servo_PWM.c: 281:             CCPR2L = 18;
+[e = _CCPR2L -> -> 18 `i `uc ]
+"282
+[; ;Servo_PWM.c: 282:             break;
+[e $U 174  ]
+"284
+[; ;Servo_PWM.c: 284:         case 90:
+[e :U 180 ]
+"285
+[; ;Servo_PWM.c: 285:             CCPR2L = 25;
+[e = _CCPR2L -> -> 25 `i `uc ]
+"286
+[; ;Servo_PWM.c: 286:             break;
+[e $U 174  ]
+"288
+[; ;Servo_PWM.c: 288:         case 120:
+[e :U 181 ]
+"289
+[; ;Servo_PWM.c: 289:             CCPR2L = 30;
+[e = _CCPR2L -> -> 30 `i `uc ]
+"290
+[; ;Servo_PWM.c: 290:             break;
+[e $U 174  ]
+"292
+[; ;Servo_PWM.c: 292:         case 135:
+[e :U 182 ]
+"293
+[; ;Servo_PWM.c: 293:             CCPR2L = 33;
+[e = _CCPR2L -> -> 33 `i `uc ]
+"294
+[; ;Servo_PWM.c: 294:             break;
+[e $U 174  ]
+"296
+[; ;Servo_PWM.c: 296:         case 150:
+[e :U 183 ]
+"297
+[; ;Servo_PWM.c: 297:             CCPR2L = 37;
+[e = _CCPR2L -> -> 37 `i `uc ]
+"298
+[; ;Servo_PWM.c: 298:             break;
+[e $U 174  ]
+"300
+[; ;Servo_PWM.c: 300:         case 180:
+[e :U 184 ]
+"301
+[; ;Servo_PWM.c: 301:             CCPR2L = 40;
+[e = _CCPR2L -> -> 40 `i `uc ]
+"302
+[; ;Servo_PWM.c: 302:             break;
+[e $U 174  ]
+"304
+[; ;Servo_PWM.c: 304:         default:
+[e :U 185 ]
+"305
+[; ;Servo_PWM.c: 305:             CCPR2L = 10;
+[e = _CCPR2L -> -> 10 `i `uc ]
+"307
+[; ;Servo_PWM.c: 307:     }
 }
 [e $U 174  ]
 [e :U 175 ]
@@ -1063,110 +1069,110 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 180 `i 184
  185 ]
 [e :U 174 ]
-"307
-[; ;Servo_PWM.c: 307: }
+"308
+[; ;Servo_PWM.c: 308: }
 [e :UE 173 ]
 }
-"309
-[; ;Servo_PWM.c: 309: void Servo2_grados(uint8_t Servo2_grados){
+"310
+[; ;Servo_PWM.c: 310: void Servo2_grados(uint8_t Servo2_grados){
 [v _Servo2_grados `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Servo2_grados ]
 [v _Servo2_grados `uc ~T0 @X0 1 r1 ]
 [f ]
-"310
-[; ;Servo_PWM.c: 310:     switch(Servo2_grados){
+"311
+[; ;Servo_PWM.c: 311:     switch(Servo2_grados){
 [e $U 188  ]
 {
-"311
-[; ;Servo_PWM.c: 311:         case 0:
-[e :U 189 ]
 "312
-[; ;Servo_PWM.c: 312:             CCPR1L = 10;
-[e = _CCPR1L -> -> 10 `i `uc ]
+[; ;Servo_PWM.c: 312:         case 0:
+[e :U 189 ]
 "313
-[; ;Servo_PWM.c: 313:             break;
-[e $U 187  ]
-"315
-[; ;Servo_PWM.c: 315:         case 10:
-[e :U 190 ]
-"316
-[; ;Servo_PWM.c: 316:             CCPR1L = 12;
-[e = _CCPR1L -> -> 12 `i `uc ]
-"317
-[; ;Servo_PWM.c: 317:             break;
-[e $U 187  ]
-"319
-[; ;Servo_PWM.c: 319:         case 30:
-[e :U 191 ]
-"320
-[; ;Servo_PWM.c: 320:             CCPR1L = 14;
-[e = _CCPR1L -> -> 14 `i `uc ]
-"321
-[; ;Servo_PWM.c: 321:             break;
-[e $U 187  ]
-"323
-[; ;Servo_PWM.c: 323:         case 45:
-[e :U 192 ]
-"324
-[; ;Servo_PWM.c: 324:             CCPR1L = 18;
-[e = _CCPR1L -> -> 18 `i `uc ]
-"325
-[; ;Servo_PWM.c: 325:             break;
-[e $U 187  ]
-"327
-[; ;Servo_PWM.c: 327:         case 90:
-[e :U 193 ]
-"328
-[; ;Servo_PWM.c: 328:             CCPR1L = 25;
-[e = _CCPR1L -> -> 25 `i `uc ]
-"329
-[; ;Servo_PWM.c: 329:             break;
-[e $U 187  ]
-"331
-[; ;Servo_PWM.c: 331:         case 120:
-[e :U 194 ]
-"332
-[; ;Servo_PWM.c: 332:             CCPR1L = 30;
-[e = _CCPR1L -> -> 30 `i `uc ]
-"333
-[; ;Servo_PWM.c: 333:             break;
-[e $U 187  ]
-"335
-[; ;Servo_PWM.c: 335:         case 135:
-[e :U 195 ]
-"336
-[; ;Servo_PWM.c: 336:             CCPR1L = 33;
-[e = _CCPR1L -> -> 33 `i `uc ]
-"337
-[; ;Servo_PWM.c: 337:             break;
-[e $U 187  ]
-"339
-[; ;Servo_PWM.c: 339:         case 150:
-[e :U 196 ]
-"340
-[; ;Servo_PWM.c: 340:             CCPR1L = 37;
-[e = _CCPR1L -> -> 37 `i `uc ]
-"341
-[; ;Servo_PWM.c: 341:             break;
-[e $U 187  ]
-"343
-[; ;Servo_PWM.c: 343:         case 180:
-[e :U 197 ]
-"344
-[; ;Servo_PWM.c: 344:             CCPR1L = 40;
-[e = _CCPR1L -> -> 40 `i `uc ]
-"345
-[; ;Servo_PWM.c: 345:             break;
-[e $U 187  ]
-"347
-[; ;Servo_PWM.c: 347:         default:
-[e :U 198 ]
-"348
-[; ;Servo_PWM.c: 348:             CCPR1L = 10;
+[; ;Servo_PWM.c: 313:             CCPR1L = 10;
 [e = _CCPR1L -> -> 10 `i `uc ]
-"350
-[; ;Servo_PWM.c: 350:     }
+"314
+[; ;Servo_PWM.c: 314:             break;
+[e $U 187  ]
+"316
+[; ;Servo_PWM.c: 316:         case 10:
+[e :U 190 ]
+"317
+[; ;Servo_PWM.c: 317:             CCPR1L = 12;
+[e = _CCPR1L -> -> 12 `i `uc ]
+"318
+[; ;Servo_PWM.c: 318:             break;
+[e $U 187  ]
+"320
+[; ;Servo_PWM.c: 320:         case 30:
+[e :U 191 ]
+"321
+[; ;Servo_PWM.c: 321:             CCPR1L = 14;
+[e = _CCPR1L -> -> 14 `i `uc ]
+"322
+[; ;Servo_PWM.c: 322:             break;
+[e $U 187  ]
+"324
+[; ;Servo_PWM.c: 324:         case 45:
+[e :U 192 ]
+"325
+[; ;Servo_PWM.c: 325:             CCPR1L = 18;
+[e = _CCPR1L -> -> 18 `i `uc ]
+"326
+[; ;Servo_PWM.c: 326:             break;
+[e $U 187  ]
+"328
+[; ;Servo_PWM.c: 328:         case 90:
+[e :U 193 ]
+"329
+[; ;Servo_PWM.c: 329:             CCPR1L = 25;
+[e = _CCPR1L -> -> 25 `i `uc ]
+"330
+[; ;Servo_PWM.c: 330:             break;
+[e $U 187  ]
+"332
+[; ;Servo_PWM.c: 332:         case 120:
+[e :U 194 ]
+"333
+[; ;Servo_PWM.c: 333:             CCPR1L = 30;
+[e = _CCPR1L -> -> 30 `i `uc ]
+"334
+[; ;Servo_PWM.c: 334:             break;
+[e $U 187  ]
+"336
+[; ;Servo_PWM.c: 336:         case 135:
+[e :U 195 ]
+"337
+[; ;Servo_PWM.c: 337:             CCPR1L = 33;
+[e = _CCPR1L -> -> 33 `i `uc ]
+"338
+[; ;Servo_PWM.c: 338:             break;
+[e $U 187  ]
+"340
+[; ;Servo_PWM.c: 340:         case 150:
+[e :U 196 ]
+"341
+[; ;Servo_PWM.c: 341:             CCPR1L = 37;
+[e = _CCPR1L -> -> 37 `i `uc ]
+"342
+[; ;Servo_PWM.c: 342:             break;
+[e $U 187  ]
+"344
+[; ;Servo_PWM.c: 344:         case 180:
+[e :U 197 ]
+"345
+[; ;Servo_PWM.c: 345:             CCPR1L = 40;
+[e = _CCPR1L -> -> 40 `i `uc ]
+"346
+[; ;Servo_PWM.c: 346:             break;
+[e $U 187  ]
+"348
+[; ;Servo_PWM.c: 348:         default:
+[e :U 198 ]
+"349
+[; ;Servo_PWM.c: 349:             CCPR1L = 10;
+[e = _CCPR1L -> -> 10 `i `uc ]
+"351
+[; ;Servo_PWM.c: 351:     }
 }
 [e $U 187  ]
 [e :U 188 ]
@@ -1181,7 +1187,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 180 `i 197
  198 ]
 [e :U 187 ]
-"351
-[; ;Servo_PWM.c: 351: }
+"352
+[; ;Servo_PWM.c: 352: }
 [e :UE 186 ]
 }

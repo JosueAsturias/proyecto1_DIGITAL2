@@ -2873,6 +2873,7 @@ void config_PORTS(void){
     OSC_config(1000000);
     ANSEL = 0;
 
+    TRISC = 0XFF;
     TRISE = 0b11111111;
 
     PORTA = 0x00;

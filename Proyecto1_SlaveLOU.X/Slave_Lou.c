@@ -3,7 +3,7 @@
  * Author: Josué Castillo Lou
  * Este PIC Esclavo es para el proyecto #1 del curso digital 2
  * Funciones Slave_lou: Mover 2 Servomotores, mover 1 motor Stepper e implementar un sensor de humedad YL-69 
- * Created on 15 de marzo de 2020, 07:15 PM
+ * Created on 15 de marzo de 2020, 07:15 PM ...
  */
 
 //-------- Configuracion Inicial ---------------// 

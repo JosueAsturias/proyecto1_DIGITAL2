@@ -8,6 +8,7 @@
 
 #include <xc.h>
 #include "UART.h"
+#include <stdint.h>
 #define _XTAL_FREQ 4000000
 
 void uart_init(){
@@ -26,13 +27,13 @@ void uart_init(){
 
 
 
-char uartRC_Read(){
+uint8_t uartRC_Read(){
     return RCREG;
 }
 
-void uartTX_Write(char dato){
+void uartTX_Write(uint8_t dato){
     TXREG = dato;
-    while(!TRMT);
+    while(PIR1bits.TXIF == 0);
 }
 
 void uartTX_Write_Str(char * string){

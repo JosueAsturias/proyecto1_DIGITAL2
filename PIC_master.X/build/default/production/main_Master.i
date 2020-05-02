@@ -2825,8 +2825,8 @@ void get_Time(void);
 # 14 "./UART.h" 2
 
 void uart_init();
-char uartRC_Read();
-void uartTX_Write(char dato);
+uint8_t uartRC_Read();
+void uartTX_Write(uint8_t dato);
 void uartTX_Write_Str(char * string);
 # 29 "main_Master.c" 2
 
@@ -2989,14 +2989,23 @@ void main(void) {
         pressBoton2();
 
         uartTX_Write(125);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(hora);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(min);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(seg);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(temperatura);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(temperatura_obj);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(inclinacion);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(humedad);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(d_frente);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
         uartTX_Write(d_atras);
     }
     return;
@@ -3028,7 +3037,7 @@ void SetUp(void){
     I2C_Master_Init(100000);
 
 
-
+    Zeit_Datum_Set();
 }
 
 void OSC_config(uint32_t frecuencia){

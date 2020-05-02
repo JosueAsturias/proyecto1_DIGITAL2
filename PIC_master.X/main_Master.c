@@ -152,14 +152,23 @@ void main(void) {
         pressBoton2();
         
         uartTX_Write(125);
+        __delay_ms(10);
         uartTX_Write(hora);
+        __delay_ms(10);
         uartTX_Write(min);
+        __delay_ms(10);
         uartTX_Write(seg);
+        __delay_ms(10);
         uartTX_Write(temperatura);
+        __delay_ms(10);
         uartTX_Write(temperatura_obj);  //signed int **
+        __delay_ms(10);
         uartTX_Write(inclinacion);
+        __delay_ms(10);
         uartTX_Write(humedad);
+        __delay_ms(10);
         uartTX_Write(d_frente);
+        __delay_ms(10);
         uartTX_Write(d_atras);
     }
     return;
@@ -191,7 +200,7 @@ void SetUp(void){
     I2C_Master_Init(100000);
     //IMU_init();
     
-    //Zeit_Datum_Set();
+    Zeit_Datum_Set();
 }
 
 void OSC_config(uint32_t frecuencia){

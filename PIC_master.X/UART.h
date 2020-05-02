@@ -13,8 +13,8 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
 void uart_init();
-char uartRC_Read();
-void uartTX_Write(char dato);
+uint8_t uartRC_Read();
+void uartTX_Write(uint8_t dato);
 void uartTX_Write_Str(char * string);
 
 #endif	/* XC_HEADER_TEMPLATE_H */

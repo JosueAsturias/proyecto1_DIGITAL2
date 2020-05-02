@@ -2639,10 +2639,13 @@ typedef uint16_t uintptr_t;
 # 14 "./UART.h" 2
 
 void uart_init();
-char uartRC_Read();
-void uartTX_Write(char dato);
+uint8_t uartRC_Read();
+void uartTX_Write(uint8_t dato);
 void uartTX_Write_Str(char * string);
 # 10 "UART.c" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c90\\stdint.h" 1 3
+# 11 "UART.c" 2
 
 
 
@@ -2662,13 +2665,13 @@ void uart_init(){
 
 
 
-char uartRC_Read(){
+uint8_t uartRC_Read(){
     return RCREG;
 }
 
-void uartTX_Write(char dato){
+void uartTX_Write(uint8_t dato){
     TXREG = dato;
-    while(!TRMT);
+    while(PIR1bits.TXIF == 0);
 }
 
 void uartTX_Write_Str(char * string){

@@ -1,4 +1,4 @@
-# 1 "comunicacion_main.c"
+# 1 "RASP.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "comunicacion_main.c" 2
+# 1 "RASP.c" 2
+
+
+
 
 
 
@@ -2512,10 +2515,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 21 "comunicacion_main.c" 2
+# 24 "RASP.c" 2
 
-# 1 "./serial.h" 1
-# 35 "./serial.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2649,14 +2650,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 35 "./serial.h" 2
-
-
-
-
-void init_serial(void);
-void oscillator(uint8_t a);
-# 22 "comunicacion_main.c" 2
+# 25 "RASP.c" 2
 
 # 1 "./SPI.h" 1
 # 14 "./SPI.h"
@@ -2697,87 +2691,353 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 23 "comunicacion_main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 24 "comunicacion_main.c" 2
+# 26 "RASP.c" 2
 
 
 
-uint8_t recibir_rasp = 0;
-uint8_t bandera_1 = 0;
 
 
-uint8_t distancia_ade = 10;
-uint8_t distancia_atr = 20;
-uint8_t humedad = 30;
-uint8_t posicion = 40;
-int8_t temp_amb = 50;
-int8_t temp_obj = 60;
-uint8_t hora = 10;
-uint8_t minutos = 80;
-uint8_t segundos = 90;
 
 
+
+uint8_t distancia_ade = 0;
+uint8_t distancia_atr = 0;
+uint8_t humedad = 0;
+uint8_t posicion = 0;
+int8_t temp_amb = 0;
+int8_t temp_obj = 0;
+uint8_t hora = 0;
+uint8_t minutos = 0;
+uint8_t segundos = 0;
+
+uint8_t contador = 0;
+uint8_t contador1 = 0;
+uint8_t recibir1 = 0;
+uint16_t *obj_array;
+
+void config(void);
+void oscillator(uint8_t a);
+void Lcd_Init(void);
+void Lcd_Cmd(uint8_t a);
+void Lcd_Clear(void);
+void Lcd_Set_Cursor(uint8_t a, uint8_t b);
+void Lcd_Write_String(char *a);
+void Lcd_Write_Char(char a);
+uint16_t * uint_to_array(uint8_t numero);
+
+void __attribute__((picinterrupt(("")))) isr(void){
+
+    if (INTCONbits.RBIF == 1){
+        if (PORTBbits.RB0==0){
+            contador1++;
+            if(contador1 == 4){
+                contador1 = 0;
+            }
+        }
+
+        INTCONbits.RBIF = 0;
+    }
+
+    if (PIR1bits.SSPIF == 1){
+        recibir1 = spiRead();
+
+        if(recibir1 == 125){
+            contador = 0;
+        }
+
+        if (contador == 1){
+            spiWrite(0);
+            hora = recibir1;
+        }
+        if (contador == 2){
+            spiWrite(0);
+            minutos = recibir1;
+        }
+        if (contador == 3){
+            spiWrite(0);
+            segundos = recibir1;
+        }
+        if (contador == 4){
+            spiWrite(0);
+            temp_amb = recibir1;
+        }
+        if (contador == 5){
+            spiWrite(0);
+            temp_obj = recibir1;
+        }
+        if (contador == 6){
+            spiWrite(0);
+            posicion = recibir1;
+        }
+        if (contador == 7){
+            spiWrite(0);
+            humedad = recibir1;
+        }
+        if (contador == 8){
+            spiWrite(0);
+            distancia_ade = recibir1;
+        }
+        if (contador == 9){
+            spiWrite(0);
+            distancia_atr = recibir1;
+        }
+        PIR1bits.SSPIF = 0;
+        contador ++;
+        }
+    return;
+}
 
 void main(void) {
-    PORTB = 0x00;
-    TRISB = 0x00;
-    ANSELH = 0x00;
-    oscillator(6);
-    init_serial();
-    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-    PORTB = 0x0F;
-
+    config();
     while(1){
-# 99 "comunicacion_main.c"
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(125);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
 
-            spiWrite(hora);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+            char seg_u = segundos%10;
+            char seg_d = segundos/10;
+            char min_u = minutos%10;
+            char min_d = minutos/10;
+            char Uhr_u = hora%10;
+            char Uhr_d = hora/10;
 
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(minutos);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+            Lcd_Set_Cursor(1,4);
+            Lcd_Write_Char(Uhr_d + '0');
+            Lcd_Write_Char(Uhr_u + '0');
+            Lcd_Write_Char(':');
+            Lcd_Write_Char(min_d + '0');
+            Lcd_Write_Char(min_u + '0');
+            Lcd_Write_Char(':');
+            Lcd_Write_Char(seg_d + '0');
+            Lcd_Write_Char(seg_u + '0');
 
-            spiWrite(segundos);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+            char hume_u = humedad%10;
+            char hume_d = humedad/10;
+            Lcd_Set_Cursor(2,4);
+            Lcd_Write_String("Humedad: ");
+            Lcd_Write_Char(hume_d + '0');
+            Lcd_Write_Char(hume_u + '0');
 
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(temp_amb);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+        _delay((unsigned long)((2000)*(4000000/4000.0)));
+        Lcd_Clear();
 
-            spiWrite(temp_obj);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("Ambiente: Suelo:");
+            Lcd_Set_Cursor(2,2);
+            Lcd_Write_Char(2);
+            obj_array = uint_to_array(temp_amb);
+            if (obj_array[0] == 0){
+                Lcd_Write_Char(' ');
+            }
+            else {
+                Lcd_Write_Char('0' + obj_array[0]);
+            }
+            Lcd_Write_Char('0' + obj_array[1]);
+            Lcd_Write_Char('0' + obj_array[2]);
+            Lcd_Write_Char(223);
+            Lcd_Write_Char('C');
 
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(posicion);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+            Lcd_Set_Cursor(2,10);
+            Lcd_Write_Char(2);
+            obj_array = uint_to_array(temp_obj);
+            if (obj_array[0] == 0){
+                Lcd_Write_Char(' ');
+            }
+            else {
+                Lcd_Write_Char('0' + obj_array[0]);
+            }
+            Lcd_Write_Char('0' + obj_array[1]);
+            Lcd_Write_Char('0' + obj_array[2]);
+            Lcd_Write_Char(223);
+            Lcd_Write_Char('C');
 
-            spiWrite(humedad);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
 
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(distancia_ade);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+        _delay((unsigned long)((2000)*(4000000/4000.0)));
+        Lcd_Clear();
 
-            spiWrite(distancia_atr);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
+            char ade_u = distancia_ade%10;
+            char ade_d = distancia_ade/10;
 
-            hora++;
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("Adelante: ");
+            Lcd_Write_Char(ade_d + '0');
+            Lcd_Write_Char(ade_u + '0');
+            Lcd_Write_String(" cm");
 
+            char atr_u = distancia_atr%10;
+            char atr_d = distancia_atr/10;
+
+            Lcd_Set_Cursor(2,1);
+            Lcd_Write_String("Atras: ");
+            Lcd_Write_Char(atr_d + '0');
+            Lcd_Write_Char(atr_u + '0');
+            Lcd_Write_String(" cm");
+
+        _delay((unsigned long)((2000)*(4000000/4000.0)));
+        Lcd_Clear();
+
+            char pos_u = posicion%10;
+            char pos_d = posicion/10;
+            char pos_c = posicion/100;
+
+
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("Inclinacion: ");
+            Lcd_Set_Cursor(2,6);
+            if(posicion >100){
+                Lcd_Write_Char(pos_c + '0');
+            }
+            Lcd_Write_Char(pos_d + '0');
+            Lcd_Write_Char(pos_u + '0');
+            Lcd_Write_Char(223);
+
+        _delay((unsigned long)((2000)*(4000000/4000.0)));
+        Lcd_Clear();
     }
     return;
+}
+
+
+void config(void){
+    oscillator(6);
+    PORTD = 0;
+    TRISD = 0;
+    PORTA = 0;
+    TRISA = 0;
+    ANSEL = 0;
+    PORTB = 0x00;
+    TRISB = 0b11111111;
+    ANSELH = 0x00;
+    WPUB = 0b11111111;
+    OPTION_REGbits.nRBPU = 0;
+    IOCB = 0x03;
+    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.SSPIE = 1;
+    PIR1bits.SSPIF = 0;
+    Lcd_Init();
+    Lcd_Clear();
+
+}
+
+void oscillator(uint8_t a){
+    switch(a){
+        case 0:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 0;
+        case 1:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 1;
+        case 2:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+        case 3:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 1;
+        case 4:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 0;
+        case 5:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 1;
+        case 6:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+        case 7:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 1;
+        default:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+    }
+}
+
+void Lcd_Init(void) {
+    _delay((unsigned long)((20)*(4000000/4000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((5)*(4000000/4000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((100)*(4000000/4000000.0)));
+    Lcd_Cmd(0x30);
+    _delay((unsigned long)((100)*(4000000/4000000.0)));
+    Lcd_Cmd(0x38);
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
+    Lcd_Cmd(0x08);
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
+    Lcd_Cmd(0x01);
+    _delay((unsigned long)((3)*(4000000/4000.0)));
+    Lcd_Cmd(0x06);
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
+    Lcd_Cmd(0x0C);
+    _delay((unsigned long)((53)*(4000000/4000000.0)));
+}
+
+
+void Lcd_Cmd(uint8_t a) {
+ PORTAbits.RA0 = 0;
+    _delay((unsigned long)((5)*(4000000/4000.0)));
+    PORTAbits.RA1 = 1;
+    _delay((unsigned long)((5)*(4000000/4000.0)));
+ PORTD = a;
+    _delay((unsigned long)((5)*(4000000/4000.0)));
+    PORTAbits.RA1 = 0;
+    _delay((unsigned long)((5)*(4000000/4000.0)));
+}
+
+void Lcd_Clear(void)
+{
+    Lcd_Cmd(0x00);
+    Lcd_Cmd(0x01);
+    _delay((unsigned long)((4)*(4000000/4000.0)));
+}
+
+void Lcd_Set_Cursor(uint8_t a, uint8_t b)
+{
+ uint8_t d;
+ if(a == 1)
+ {
+        d = 0x80 + b - 1;
+  Lcd_Cmd(d);
+ }
+ else if(a == 2)
+ {
+  d = 0xC0 + b - 1;
+  Lcd_Cmd(d);
+ }
+}
+
+
+void Lcd_Write_Char(char a)
+{
+    PORTAbits.RA0 = 1;
+
+    PORTD = a;
+    PORTAbits.RA1 = 1;
+    _delay((unsigned long)((40)*(4000000/4000000.0)));
+    PORTAbits.RA1 = 0;
+}
+
+void Lcd_Write_String(char *a)
+{
+    uint8_t n;
+    for(n = 0; a[n] != '\0'; n++){
+        Lcd_Write_Char(a[n]);
+    }
+}
+
+uint16_t * uint_to_array(uint8_t numero){
+    uint16_t resultado[3] = {0,0,0};
+    resultado[0] = numero/100;
+    uint8_t centenas = resultado[0];
+    resultado[1] = (numero - (centenas *100))/10;
+    uint8_t decenas = resultado[1];
+    resultado[2] = numero -(centenas*100+decenas*10);
+    return(resultado);
 }

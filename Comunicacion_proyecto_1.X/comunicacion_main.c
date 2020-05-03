@@ -32,8 +32,8 @@ uint8_t distancia_ade = 10;
 uint8_t distancia_atr = 20;
 uint8_t humedad = 30;
 uint8_t posicion = 40;
-uint8_t temp_amb = 50;
-uint8_t temp_obj = 60;
+int8_t temp_amb = 50;
+int8_t temp_obj = 60;
 uint8_t hora = 10;
 uint8_t minutos = 80;
 uint8_t segundos = 90;
@@ -41,58 +41,60 @@ uint8_t segundos = 90;
 
 
 void main(void) {
-    PORTC = 0x00;
-    TRISC = 0x00;
     PORTB = 0x00;
     TRISB = 0x00;
     ANSELH = 0x00;
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    PIE1bits.SSPIE = 1;
-    PIR1bits.SSPIF = 0;
     oscillator(6);
     init_serial();
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);  
-    PORTB = 0xFF;
+    PORTB = 0x0F;
     
     while(1){
       
         
-        if (PIR1bits.RCIF == 1){
-            bandera_1 = RCREG;
-            PORTB = bandera_1;
-        }  
-        if (bandera_1 == 125){
-            if (PIR1bits.RCIF == 1){
-                hora = RCREG;
-            }
-            if (PIR1bits.RCIF == 1){
-                minutos = RCREG;        
-            }
-            if (PIR1bits.RCIF == 1){
-                segundos = RCREG;
-            }
-            if (PIR1bits.RCIF == 1){
-                temp_amb = RCREG;             
-            }
-            if (PIR1bits.RCIF == 1){
-                temp_obj = RCREG;
-            }
-            if (PIR1bits.RCIF == 1){
-                posicion = RCREG;            
-            }
-            if (PIR1bits.RCIF == 1){
-                humedad = RCREG;
-            }
-            if (PIR1bits.RCIF == 1){
-                distancia_ade = RCREG;
-            }
-            if (PIR1bits.RCIF == 1){
-                distancia_atr = RCREG;
-            }
-            bandera_1 = 0;
-            
-            PORTB = humedad;
+//        if (PIR1bits.RCIF == 1){
+//            bandera_1 = RCREG;
+//            PORTB = 0xF0;
+//        }  
+//        if (bandera_1 == 125){
+//            if (PIR1bits.RCIF == 1){
+//                hora = RCREG;
+//            __delay_ms(10);    
+//            }
+//            if (PIR1bits.RCIF == 1){
+//                minutos = RCREG;        
+//            }
+//            __delay_ms(10);
+//            if (PIR1bits.RCIF == 1){
+//                segundos = RCREG;
+//            }
+//            __delay_ms(10);
+//            if (PIR1bits.RCIF == 1){
+//                temp_amb = RCREG;             
+//            }
+//            __delay_ms(10);
+//            if (PIR1bits.RCIF == 1){
+//                temp_obj = RCREG;
+//            }
+//            __delay_ms(10);
+//            if (PIR1bits.RCIF == 1){
+//                posicion = RCREG;            
+//            }
+//            __delay_ms(10);
+//            if (PIR1bits.RCIF == 1){
+//                humedad = RCREG;
+//            }
+//            __delay_ms(10);
+//            if (PIR1bits.RCIF == 1){
+//                distancia_ade = RCREG;
+//            }
+//            __delay_ms(10);
+//            if (PIR1bits.RCIF == 1){
+//                distancia_atr = RCREG;
+//            }
+//            bandera_1 = 0;
+//            
+//            PORTB = humedad;
             
             __delay_ms(10);
             spiWrite(125);
@@ -138,8 +140,8 @@ void main(void) {
             spiWrite(distancia_atr);
             recibir_rasp = spiRead();
             __delay_ms(10);
-        }
-        
+            
+            hora++;
         
     }
     return;

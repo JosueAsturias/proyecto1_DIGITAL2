@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sat May 02 01:47:56 2020
+                                                                                               Sat May 02 23:14:34 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -12,1808 +12,1567 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
      6                           	psect	cinit,global,class=CODE,merge=1,delta=2
      7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
      8                           	psect	dataCOMMON,global,class=COMMON,space=1,delta=1
-     9                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
-    10                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
-    11                           	psect	inittext,global,class=CODE,delta=2
-    12                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
-    13                           	psect	maintext,global,class=CODE,split=1,delta=2
-    14                           	psect	text1,local,class=CODE,merge=1,delta=2
-    15                           	psect	text2,local,class=CODE,merge=1,delta=2
-    16                           	psect	text3,local,class=CODE,merge=1,delta=2
-    17                           	psect	text4,local,class=CODE,merge=1,delta=2
-    18                           	psect	text5,local,class=CODE,merge=1,delta=2
-    19                           	psect	text6,local,class=CODE,merge=1,delta=2
-    20                           	dabs	1,0x7E,2
-    21  0000                     
-    22                           ; Version 2.10
-    23                           ; Generated 31/07/2019 GMT
-    24                           ; 
-    25                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    26                           ; All rights reserved.
-    27                           ; 
-    28                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	inittext,global,class=CODE,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    12                           	psect	maintext,global,class=CODE,split=1,delta=2
+    13                           	psect	text1,local,class=CODE,merge=1,delta=2
+    14                           	psect	text2,local,class=CODE,merge=1,delta=2
+    15                           	psect	text3,local,class=CODE,merge=1,delta=2
+    16                           	psect	text4,local,class=CODE,merge=1,delta=2
+    17                           	psect	text5,local,class=CODE,merge=1,delta=2
+    18                           	psect	text6,local,class=CODE,merge=1,delta=2
+    19                           	dabs	1,0x7E,2
+    20  0000                     
+    21                           ; Version 2.10
+    22                           ; Generated 31/07/2019 GMT
+    23                           ; 
+    24                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    25                           ; All rights reserved.
+    26                           ; 
+    27                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    29                           ; 
-    30                           ; Redistribution and use in source and binary forms, with or without modification, are
-    31                           ; permitted provided that the following conditions are met:
-    32                           ; 
-    33                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    28                           ; 
+    29                           ; Redistribution and use in source and binary forms, with or without modification, are
+    30                           ; permitted provided that the following conditions are met:
+    31                           ; 
+    32                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    34                           ;        conditions and the following disclaimer.
-    35                           ; 
-    36                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+    33                           ;        conditions and the following disclaimer.
+    34                           ; 
+    35                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
       +                          list
-    37                           ;        of conditions and the following disclaimer in the documentation and/or other
-    38                           ;        materials provided with the distribution.
-    39                           ; 
-    40                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    36                           ;        of conditions and the following disclaimer in the documentation and/or other
+    37                           ;        materials provided with the distribution.
+    38                           ; 
+    39                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    41                           ;        software without specific prior written permission.
-    42                           ; 
-    43                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    44                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    40                           ;        software without specific prior written permission.
+    41                           ; 
+    42                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    43                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    45                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    44                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    46                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    47                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    48                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    45                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    46                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    47                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    49                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    48                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    50                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    50                           ; 
     51                           ; 
-    52                           ; 
-    53                           ; Code-generator required, PIC16F887 Definitions
-    54                           ; 
-    55                           ; SFR Addresses
-    56  0000                     	;# 
-    57  0001                     	;# 
-    58  0002                     	;# 
-    59  0003                     	;# 
-    60  0004                     	;# 
-    61  0005                     	;# 
-    62  0006                     	;# 
-    63  0007                     	;# 
-    64  0008                     	;# 
-    65  0009                     	;# 
-    66  000A                     	;# 
-    67  000B                     	;# 
-    68  000C                     	;# 
-    69  000D                     	;# 
+    52                           ; Code-generator required, PIC16F887 Definitions
+    53                           ; 
+    54                           ; SFR Addresses
+    55  0000                     	;# 
+    56  0001                     	;# 
+    57  0002                     	;# 
+    58  0003                     	;# 
+    59  0004                     	;# 
+    60  0005                     	;# 
+    61  0006                     	;# 
+    62  0007                     	;# 
+    63  0008                     	;# 
+    64  0009                     	;# 
+    65  000A                     	;# 
+    66  000B                     	;# 
+    67  000C                     	;# 
+    68  000D                     	;# 
+    69  000E                     	;# 
     70  000E                     	;# 
-    71  000E                     	;# 
-    72  000F                     	;# 
-    73  0010                     	;# 
-    74  0011                     	;# 
-    75  0012                     	;# 
-    76  0013                     	;# 
-    77  0014                     	;# 
+    71  000F                     	;# 
+    72  0010                     	;# 
+    73  0011                     	;# 
+    74  0012                     	;# 
+    75  0013                     	;# 
+    76  0014                     	;# 
+    77  0015                     	;# 
     78  0015                     	;# 
-    79  0015                     	;# 
-    80  0016                     	;# 
-    81  0017                     	;# 
-    82  0018                     	;# 
-    83  0019                     	;# 
-    84  001A                     	;# 
+    79  0016                     	;# 
+    80  0017                     	;# 
+    81  0018                     	;# 
+    82  0019                     	;# 
+    83  001A                     	;# 
+    84  001B                     	;# 
     85  001B                     	;# 
-    86  001B                     	;# 
-    87  001C                     	;# 
-    88  001D                     	;# 
-    89  001E                     	;# 
-    90  001F                     	;# 
-    91  0081                     	;# 
-    92  0085                     	;# 
-    93  0086                     	;# 
-    94  0087                     	;# 
-    95  0088                     	;# 
-    96  0089                     	;# 
-    97  008C                     	;# 
-    98  008D                     	;# 
-    99  008E                     	;# 
-   100  008F                     	;# 
-   101  0090                     	;# 
-   102  0091                     	;# 
-   103  0092                     	;# 
+    86  001C                     	;# 
+    87  001D                     	;# 
+    88  001E                     	;# 
+    89  001F                     	;# 
+    90  0081                     	;# 
+    91  0085                     	;# 
+    92  0086                     	;# 
+    93  0087                     	;# 
+    94  0088                     	;# 
+    95  0089                     	;# 
+    96  008C                     	;# 
+    97  008D                     	;# 
+    98  008E                     	;# 
+    99  008F                     	;# 
+   100  0090                     	;# 
+   101  0091                     	;# 
+   102  0092                     	;# 
+   103  0093                     	;# 
    104  0093                     	;# 
    105  0093                     	;# 
-   106  0093                     	;# 
-   107  0094                     	;# 
-   108  0095                     	;# 
-   109  0096                     	;# 
-   110  0097                     	;# 
-   111  0098                     	;# 
-   112  0099                     	;# 
-   113  009A                     	;# 
-   114  009B                     	;# 
-   115  009C                     	;# 
-   116  009D                     	;# 
-   117  009E                     	;# 
-   118  009F                     	;# 
-   119  0105                     	;# 
-   120  0107                     	;# 
-   121  0108                     	;# 
-   122  0109                     	;# 
+   106  0094                     	;# 
+   107  0095                     	;# 
+   108  0096                     	;# 
+   109  0097                     	;# 
+   110  0098                     	;# 
+   111  0099                     	;# 
+   112  009A                     	;# 
+   113  009B                     	;# 
+   114  009C                     	;# 
+   115  009D                     	;# 
+   116  009E                     	;# 
+   117  009F                     	;# 
+   118  0105                     	;# 
+   119  0107                     	;# 
+   120  0108                     	;# 
+   121  0109                     	;# 
+   122  010C                     	;# 
    123  010C                     	;# 
-   124  010C                     	;# 
-   125  010D                     	;# 
-   126  010E                     	;# 
-   127  010F                     	;# 
-   128  0185                     	;# 
-   129  0187                     	;# 
-   130  0188                     	;# 
-   131  0189                     	;# 
-   132  018C                     	;# 
-   133  018D                     	;# 
-   134  0000                     	;# 
-   135  0001                     	;# 
-   136  0002                     	;# 
-   137  0003                     	;# 
-   138  0004                     	;# 
-   139  0005                     	;# 
-   140  0006                     	;# 
-   141  0007                     	;# 
-   142  0008                     	;# 
-   143  0009                     	;# 
-   144  000A                     	;# 
-   145  000B                     	;# 
-   146  000C                     	;# 
-   147  000D                     	;# 
+   124  010D                     	;# 
+   125  010E                     	;# 
+   126  010F                     	;# 
+   127  0185                     	;# 
+   128  0187                     	;# 
+   129  0188                     	;# 
+   130  0189                     	;# 
+   131  018C                     	;# 
+   132  018D                     	;# 
+   133  0000                     	;# 
+   134  0001                     	;# 
+   135  0002                     	;# 
+   136  0003                     	;# 
+   137  0004                     	;# 
+   138  0005                     	;# 
+   139  0006                     	;# 
+   140  0007                     	;# 
+   141  0008                     	;# 
+   142  0009                     	;# 
+   143  000A                     	;# 
+   144  000B                     	;# 
+   145  000C                     	;# 
+   146  000D                     	;# 
+   147  000E                     	;# 
    148  000E                     	;# 
-   149  000E                     	;# 
-   150  000F                     	;# 
-   151  0010                     	;# 
-   152  0011                     	;# 
-   153  0012                     	;# 
-   154  0013                     	;# 
-   155  0014                     	;# 
+   149  000F                     	;# 
+   150  0010                     	;# 
+   151  0011                     	;# 
+   152  0012                     	;# 
+   153  0013                     	;# 
+   154  0014                     	;# 
+   155  0015                     	;# 
    156  0015                     	;# 
-   157  0015                     	;# 
-   158  0016                     	;# 
-   159  0017                     	;# 
-   160  0018                     	;# 
-   161  0019                     	;# 
-   162  001A                     	;# 
+   157  0016                     	;# 
+   158  0017                     	;# 
+   159  0018                     	;# 
+   160  0019                     	;# 
+   161  001A                     	;# 
+   162  001B                     	;# 
    163  001B                     	;# 
-   164  001B                     	;# 
-   165  001C                     	;# 
-   166  001D                     	;# 
-   167  001E                     	;# 
-   168  001F                     	;# 
-   169  0081                     	;# 
-   170  0085                     	;# 
-   171  0086                     	;# 
-   172  0087                     	;# 
-   173  0088                     	;# 
-   174  0089                     	;# 
-   175  008C                     	;# 
-   176  008D                     	;# 
-   177  008E                     	;# 
-   178  008F                     	;# 
-   179  0090                     	;# 
-   180  0091                     	;# 
-   181  0092                     	;# 
+   164  001C                     	;# 
+   165  001D                     	;# 
+   166  001E                     	;# 
+   167  001F                     	;# 
+   168  0081                     	;# 
+   169  0085                     	;# 
+   170  0086                     	;# 
+   171  0087                     	;# 
+   172  0088                     	;# 
+   173  0089                     	;# 
+   174  008C                     	;# 
+   175  008D                     	;# 
+   176  008E                     	;# 
+   177  008F                     	;# 
+   178  0090                     	;# 
+   179  0091                     	;# 
+   180  0092                     	;# 
+   181  0093                     	;# 
    182  0093                     	;# 
    183  0093                     	;# 
-   184  0093                     	;# 
-   185  0094                     	;# 
-   186  0095                     	;# 
-   187  0096                     	;# 
-   188  0097                     	;# 
-   189  0098                     	;# 
-   190  0099                     	;# 
-   191  009A                     	;# 
-   192  009B                     	;# 
-   193  009C                     	;# 
-   194  009D                     	;# 
-   195  009E                     	;# 
-   196  009F                     	;# 
-   197  0105                     	;# 
-   198  0107                     	;# 
-   199  0108                     	;# 
-   200  0109                     	;# 
+   184  0094                     	;# 
+   185  0095                     	;# 
+   186  0096                     	;# 
+   187  0097                     	;# 
+   188  0098                     	;# 
+   189  0099                     	;# 
+   190  009A                     	;# 
+   191  009B                     	;# 
+   192  009C                     	;# 
+   193  009D                     	;# 
+   194  009E                     	;# 
+   195  009F                     	;# 
+   196  0105                     	;# 
+   197  0107                     	;# 
+   198  0108                     	;# 
+   199  0109                     	;# 
+   200  010C                     	;# 
    201  010C                     	;# 
-   202  010C                     	;# 
-   203  010D                     	;# 
-   204  010E                     	;# 
-   205  010F                     	;# 
-   206  0185                     	;# 
-   207  0187                     	;# 
-   208  0188                     	;# 
-   209  0189                     	;# 
-   210  018C                     	;# 
-   211  018D                     	;# 
-   212  0000                     	;# 
-   213  0001                     	;# 
-   214  0002                     	;# 
-   215  0003                     	;# 
-   216  0004                     	;# 
-   217  0005                     	;# 
-   218  0006                     	;# 
-   219  0007                     	;# 
-   220  0008                     	;# 
-   221  0009                     	;# 
-   222  000A                     	;# 
-   223  000B                     	;# 
-   224  000C                     	;# 
-   225  000D                     	;# 
+   202  010D                     	;# 
+   203  010E                     	;# 
+   204  010F                     	;# 
+   205  0185                     	;# 
+   206  0187                     	;# 
+   207  0188                     	;# 
+   208  0189                     	;# 
+   209  018C                     	;# 
+   210  018D                     	;# 
+   211  0000                     	;# 
+   212  0001                     	;# 
+   213  0002                     	;# 
+   214  0003                     	;# 
+   215  0004                     	;# 
+   216  0005                     	;# 
+   217  0006                     	;# 
+   218  0007                     	;# 
+   219  0008                     	;# 
+   220  0009                     	;# 
+   221  000A                     	;# 
+   222  000B                     	;# 
+   223  000C                     	;# 
+   224  000D                     	;# 
+   225  000E                     	;# 
    226  000E                     	;# 
-   227  000E                     	;# 
-   228  000F                     	;# 
-   229  0010                     	;# 
-   230  0011                     	;# 
-   231  0012                     	;# 
-   232  0013                     	;# 
-   233  0014                     	;# 
+   227  000F                     	;# 
+   228  0010                     	;# 
+   229  0011                     	;# 
+   230  0012                     	;# 
+   231  0013                     	;# 
+   232  0014                     	;# 
+   233  0015                     	;# 
    234  0015                     	;# 
-   235  0015                     	;# 
-   236  0016                     	;# 
-   237  0017                     	;# 
-   238  0018                     	;# 
-   239  0019                     	;# 
-   240  001A                     	;# 
+   235  0016                     	;# 
+   236  0017                     	;# 
+   237  0018                     	;# 
+   238  0019                     	;# 
+   239  001A                     	;# 
+   240  001B                     	;# 
    241  001B                     	;# 
-   242  001B                     	;# 
-   243  001C                     	;# 
-   244  001D                     	;# 
-   245  001E                     	;# 
-   246  001F                     	;# 
-   247  0081                     	;# 
-   248  0085                     	;# 
-   249  0086                     	;# 
-   250  0087                     	;# 
-   251  0088                     	;# 
-   252  0089                     	;# 
-   253  008C                     	;# 
-   254  008D                     	;# 
-   255  008E                     	;# 
-   256  008F                     	;# 
-   257  0090                     	;# 
-   258  0091                     	;# 
-   259  0092                     	;# 
+   242  001C                     	;# 
+   243  001D                     	;# 
+   244  001E                     	;# 
+   245  001F                     	;# 
+   246  0081                     	;# 
+   247  0085                     	;# 
+   248  0086                     	;# 
+   249  0087                     	;# 
+   250  0088                     	;# 
+   251  0089                     	;# 
+   252  008C                     	;# 
+   253  008D                     	;# 
+   254  008E                     	;# 
+   255  008F                     	;# 
+   256  0090                     	;# 
+   257  0091                     	;# 
+   258  0092                     	;# 
+   259  0093                     	;# 
    260  0093                     	;# 
    261  0093                     	;# 
-   262  0093                     	;# 
-   263  0094                     	;# 
-   264  0095                     	;# 
-   265  0096                     	;# 
-   266  0097                     	;# 
-   267  0098                     	;# 
-   268  0099                     	;# 
-   269  009A                     	;# 
-   270  009B                     	;# 
-   271  009C                     	;# 
-   272  009D                     	;# 
-   273  009E                     	;# 
-   274  009F                     	;# 
-   275  0105                     	;# 
-   276  0107                     	;# 
-   277  0108                     	;# 
-   278  0109                     	;# 
+   262  0094                     	;# 
+   263  0095                     	;# 
+   264  0096                     	;# 
+   265  0097                     	;# 
+   266  0098                     	;# 
+   267  0099                     	;# 
+   268  009A                     	;# 
+   269  009B                     	;# 
+   270  009C                     	;# 
+   271  009D                     	;# 
+   272  009E                     	;# 
+   273  009F                     	;# 
+   274  0105                     	;# 
+   275  0107                     	;# 
+   276  0108                     	;# 
+   277  0109                     	;# 
+   278  010C                     	;# 
    279  010C                     	;# 
-   280  010C                     	;# 
-   281  010D                     	;# 
-   282  010E                     	;# 
-   283  010F                     	;# 
-   284  0185                     	;# 
-   285  0187                     	;# 
-   286  0188                     	;# 
-   287  0189                     	;# 
-   288  018C                     	;# 
-   289  018D                     	;# 
-   290  0000                     	;# 
-   291  0001                     	;# 
-   292  0002                     	;# 
-   293  0003                     	;# 
-   294  0004                     	;# 
-   295  0005                     	;# 
-   296  0006                     	;# 
-   297  0007                     	;# 
-   298  0008                     	;# 
-   299  0009                     	;# 
-   300  000A                     	;# 
-   301  000B                     	;# 
-   302  000C                     	;# 
-   303  000D                     	;# 
+   280  010D                     	;# 
+   281  010E                     	;# 
+   282  010F                     	;# 
+   283  0185                     	;# 
+   284  0187                     	;# 
+   285  0188                     	;# 
+   286  0189                     	;# 
+   287  018C                     	;# 
+   288  018D                     	;# 
+   289  0000                     	;# 
+   290  0001                     	;# 
+   291  0002                     	;# 
+   292  0003                     	;# 
+   293  0004                     	;# 
+   294  0005                     	;# 
+   295  0006                     	;# 
+   296  0007                     	;# 
+   297  0008                     	;# 
+   298  0009                     	;# 
+   299  000A                     	;# 
+   300  000B                     	;# 
+   301  000C                     	;# 
+   302  000D                     	;# 
+   303  000E                     	;# 
    304  000E                     	;# 
-   305  000E                     	;# 
-   306  000F                     	;# 
-   307  0010                     	;# 
-   308  0011                     	;# 
-   309  0012                     	;# 
-   310  0013                     	;# 
-   311  0014                     	;# 
+   305  000F                     	;# 
+   306  0010                     	;# 
+   307  0011                     	;# 
+   308  0012                     	;# 
+   309  0013                     	;# 
+   310  0014                     	;# 
+   311  0015                     	;# 
    312  0015                     	;# 
-   313  0015                     	;# 
-   314  0016                     	;# 
-   315  0017                     	;# 
-   316  0018                     	;# 
-   317  0019                     	;# 
-   318  001A                     	;# 
+   313  0016                     	;# 
+   314  0017                     	;# 
+   315  0018                     	;# 
+   316  0019                     	;# 
+   317  001A                     	;# 
+   318  001B                     	;# 
    319  001B                     	;# 
-   320  001B                     	;# 
-   321  001C                     	;# 
-   322  001D                     	;# 
-   323  001E                     	;# 
-   324  001F                     	;# 
-   325  0081                     	;# 
-   326  0085                     	;# 
-   327  0086                     	;# 
-   328  0087                     	;# 
-   329  0088                     	;# 
-   330  0089                     	;# 
-   331  008C                     	;# 
-   332  008D                     	;# 
-   333  008E                     	;# 
-   334  008F                     	;# 
-   335  0090                     	;# 
-   336  0091                     	;# 
-   337  0092                     	;# 
+   320  001C                     	;# 
+   321  001D                     	;# 
+   322  001E                     	;# 
+   323  001F                     	;# 
+   324  0081                     	;# 
+   325  0085                     	;# 
+   326  0086                     	;# 
+   327  0087                     	;# 
+   328  0088                     	;# 
+   329  0089                     	;# 
+   330  008C                     	;# 
+   331  008D                     	;# 
+   332  008E                     	;# 
+   333  008F                     	;# 
+   334  0090                     	;# 
+   335  0091                     	;# 
+   336  0092                     	;# 
+   337  0093                     	;# 
    338  0093                     	;# 
    339  0093                     	;# 
-   340  0093                     	;# 
-   341  0094                     	;# 
-   342  0095                     	;# 
-   343  0096                     	;# 
-   344  0097                     	;# 
-   345  0098                     	;# 
-   346  0099                     	;# 
-   347  009A                     	;# 
-   348  009B                     	;# 
-   349  009C                     	;# 
-   350  009D                     	;# 
-   351  009E                     	;# 
-   352  009F                     	;# 
-   353  0105                     	;# 
-   354  0107                     	;# 
-   355  0108                     	;# 
-   356  0109                     	;# 
+   340  0094                     	;# 
+   341  0095                     	;# 
+   342  0096                     	;# 
+   343  0097                     	;# 
+   344  0098                     	;# 
+   345  0099                     	;# 
+   346  009A                     	;# 
+   347  009B                     	;# 
+   348  009C                     	;# 
+   349  009D                     	;# 
+   350  009E                     	;# 
+   351  009F                     	;# 
+   352  0105                     	;# 
+   353  0107                     	;# 
+   354  0108                     	;# 
+   355  0109                     	;# 
+   356  010C                     	;# 
    357  010C                     	;# 
-   358  010C                     	;# 
-   359  010D                     	;# 
-   360  010E                     	;# 
-   361  010F                     	;# 
-   362  0185                     	;# 
-   363  0187                     	;# 
-   364  0188                     	;# 
-   365  0189                     	;# 
-   366  018C                     	;# 
-   367  018D                     	;# 
-   368                           
-   369                           	psect	idataCOMMON
-   370  0568                     __pidataCOMMON:	
-   371                           
-   372                           ;initializer for _hora
-   373  0568  340A               	retlw	10
-   374                           
-   375                           ;initializer for _temp_obj
-   376  0569  343C               	retlw	60
-   377                           
-   378                           ;initializer for _temp_amb
-   379  056A  3432               	retlw	50
-   380                           
-   381                           ;initializer for _posicion
-   382  056B  3428               	retlw	40
-   383                           
-   384                           ;initializer for _humedad
-   385  056C  341E               	retlw	30
-   386                           
-   387                           ;initializer for _distancia_atr
-   388  056D  3414               	retlw	20
-   389                           
-   390                           ;initializer for _distancia_ade
-   391  056E  340A               	retlw	10
-   392                           
-   393                           	psect	idataBANK0
-   394  0559                     __pidataBANK0:	
-   395                           
-   396                           ;initializer for _segundos
-   397  0559  345A               	retlw	90
-   398                           
-   399                           ;initializer for _minutos
-   400  055A  3450               	retlw	80
-   401  0013                     _SSPBUF	set	19
-   402  0014                     _SSPCON	set	20
-   403  0018                     _RCSTAbits	set	24
-   404  001A                     _RCREG	set	26
-   405  000C                     _PIR1bits	set	12
-   406  000B                     _INTCONbits	set	11
-   407  0006                     _PORTB	set	6
-   408  0007                     _PORTC	set	7
-   409  0094                     _SSPSTATbits	set	148
-   410  0094                     _SSPSTAT	set	148
-   411  008F                     _OSCCONbits	set	143
-   412  009A                     _SPBRGH	set	154
-   413  0099                     _SPBRG	set	153
-   414  0098                     _TXSTAbits	set	152
-   415  008C                     _PIE1bits	set	140
-   416  0086                     _TRISB	set	134
-   417  0087                     _TRISC	set	135
-   418  043B                     _TRISC3	set	1083
-   419  043D                     _TRISC5	set	1085
-   420  0187                     _BAUDCTLbits	set	391
-   421  0189                     _ANSELH	set	393
-   422                           
-   423                           ; #config settings
-   424  0000                     
-   425                           	psect	cinit
-   426  07C4                     start_initialization:	
-   427  07C4                     __initialization:	
-   428                           
-   429                           ; Initialize objects allocated to BANK0
-   430  07C4  120A  118A  2559  120A  118A  	fcall	__pidataBANK0	;fetch initializer
-   431  07C9  00A0               	movwf	__pdataBANK0& (0+127)
-   432  07CA  120A  118A  255A  120A  118A  	fcall	__pidataBANK0+1	;fetch initializer
-   433  07CF  00A1               	movwf	(__pdataBANK0+1)& (0+127)
-   434                           
-   435                           ; Initialize objects allocated to COMMON
-   436  07D0  120A  118A  2568  120A  118A  	fcall	__pidataCOMMON	;fetch initializer
-   437  07D5  00F0               	movwf	__pdataCOMMON& (0+127)
-   438  07D6  120A  118A  2569  120A  118A  	fcall	__pidataCOMMON+1	;fetch initializer
-   439  07DB  00F1               	movwf	(__pdataCOMMON+1)& (0+127)
-   440  07DC  120A  118A  256A  120A  118A  	fcall	__pidataCOMMON+2	;fetch initializer
-   441  07E1  00F2               	movwf	(__pdataCOMMON+2)& (0+127)
-   442  07E2  120A  118A  256B  120A  118A  	fcall	__pidataCOMMON+3	;fetch initializer
-   443  07E7  00F3               	movwf	(__pdataCOMMON+3)& (0+127)
-   444  07E8  120A  118A  256C  120A  118A  	fcall	__pidataCOMMON+4	;fetch initializer
-   445  07ED  00F4               	movwf	(__pdataCOMMON+4)& (0+127)
-   446  07EE  120A  118A  256D  120A  118A  	fcall	__pidataCOMMON+5	;fetch initializer
-   447  07F3  00F5               	movwf	(__pdataCOMMON+5)& (0+127)
-   448  07F4  120A  118A  256E  120A  118A  	fcall	__pidataCOMMON+6	;fetch initializer
-   449  07F9  00F6               	movwf	(__pdataCOMMON+6)& (0+127)
-   450                           
-   451                           ; Clear objects allocated to BANK0
-   452  07FA  01A2               	clrf	__pbssBANK0& (0+127)
+   358  010D                     	;# 
+   359  010E                     	;# 
+   360  010F                     	;# 
+   361  0185                     	;# 
+   362  0187                     	;# 
+   363  0188                     	;# 
+   364  0189                     	;# 
+   365  018C                     	;# 
+   366  018D                     	;# 
+   367                           
+   368                           	psect	idataCOMMON
+   369  05E5                     __pidataCOMMON:	
+   370                           
+   371                           ;initializer for _hora
+   372  05E5  340A               	retlw	10
+   373                           
+   374                           ;initializer for _temp_amb
+   375  05E6  3432               	retlw	50
+   376                           
+   377                           ;initializer for _posicion
+   378  05E7  3428               	retlw	40
+   379                           
+   380                           ;initializer for _humedad
+   381  05E8  341E               	retlw	30
+   382                           
+   383                           ;initializer for _distancia_atr
+   384  05E9  3414               	retlw	20
+   385                           
+   386                           ;initializer for _distancia_ade
+   387  05EA  340A               	retlw	10
+   388                           
+   389                           	psect	idataBANK0
+   390  05DC                     __pidataBANK0:	
+   391                           
+   392                           ;initializer for _segundos
+   393  05DC  345A               	retlw	90
+   394                           
+   395                           ;initializer for _minutos
+   396  05DD  3450               	retlw	80
+   397                           
+   398                           ;initializer for _temp_obj
+   399  05DE  343C               	retlw	60
+   400  0013                     _SSPBUF	set	19
+   401  0014                     _SSPCON	set	20
+   402  0018                     _RCSTAbits	set	24
+   403  0006                     _PORTB	set	6
+   404  0094                     _SSPSTATbits	set	148
+   405  0094                     _SSPSTAT	set	148
+   406  008F                     _OSCCONbits	set	143
+   407  009A                     _SPBRGH	set	154
+   408  0099                     _SPBRG	set	153
+   409  0098                     _TXSTAbits	set	152
+   410  0086                     _TRISB	set	134
+   411  043B                     _TRISC3	set	1083
+   412  043D                     _TRISC5	set	1085
+   413  0187                     _BAUDCTLbits	set	391
+   414  0189                     _ANSELH	set	393
+   415                           
+   416                           ; #config settings
+   417  0000                     
+   418                           	psect	cinit
+   419  07C8                     start_initialization:	
+   420  07C8                     __initialization:	
+   421                           
+   422                           ; Initialize objects allocated to BANK0
+   423  07C8  1383               	bcf	3,7	;select IRP bank0
+   424  07C9  3023               	movlw	low (__pdataBANK0+3)
+   425  07CA  00FD               	movwf	btemp+-1
+   426  07CB  3005               	movlw	high __pidataBANK0
+   427  07CC  00FE               	movwf	btemp
+   428  07CD  30DC               	movlw	low __pidataBANK0
+   429  07CE  00FF               	movwf	btemp+1
+   430  07CF  3020               	movlw	low __pdataBANK0
+   431  07D0  0084               	movwf	4
+   432  07D1  120A  118A  25FF  120A  118A  	fcall	init_ram0
+   433                           
+   434                           ; Initialize objects allocated to COMMON
+   435  07D6  120A  118A  25E5  120A  118A  	fcall	__pidataCOMMON	;fetch initializer
+   436  07DB  00F0               	movwf	__pdataCOMMON& (0+127)
+   437  07DC  120A  118A  25E6  120A  118A  	fcall	__pidataCOMMON+1	;fetch initializer
+   438  07E1  00F1               	movwf	(__pdataCOMMON+1)& (0+127)
+   439  07E2  120A  118A  25E7  120A  118A  	fcall	__pidataCOMMON+2	;fetch initializer
+   440  07E7  00F2               	movwf	(__pdataCOMMON+2)& (0+127)
+   441  07E8  120A  118A  25E8  120A  118A  	fcall	__pidataCOMMON+3	;fetch initializer
+   442  07ED  00F3               	movwf	(__pdataCOMMON+3)& (0+127)
+   443  07EE  120A  118A  25E9  120A  118A  	fcall	__pidataCOMMON+4	;fetch initializer
+   444  07F3  00F4               	movwf	(__pdataCOMMON+4)& (0+127)
+   445  07F4  120A  118A  25EA  120A  118A  	fcall	__pidataCOMMON+5	;fetch initializer
+   446  07F9  00F5               	movwf	(__pdataCOMMON+5)& (0+127)
+   447                           
+   448                           ; Clear objects allocated to COMMON
+   449  07FA  01FC               	clrf	__pbssCOMMON& (0+127)
+   450  07FB  01FD               	clrf	(__pbssCOMMON+1)& (0+127)
+   451  07FC                     end_of_initialization:	
+   452                           ;End of C runtime variable initialization code
    453                           
-   454                           ; Clear objects allocated to COMMON
-   455  07FB  01FD               	clrf	__pbssCOMMON& (0+127)
-   456  07FC                     end_of_initialization:	
-   457                           ;End of C runtime variable initialization code
-   458                           
-   459  07FC                     __end_of__initialization:	
-   460  07FC  0183               	clrf	3
-   461  07FD  120A  118A  2E09   	ljmp	_main	;jump to C main() function
-   462                           
-   463                           	psect	bssCOMMON
-   464  007D                     __pbssCOMMON:	
-   465  007D                     _bandera_1:	
-   466  007D                     	ds	1
-   467                           
-   468                           	psect	dataCOMMON
-   469  0070                     __pdataCOMMON:	
-   470  0070                     _hora:	
-   471  0070                     	ds	1
-   472  0071                     _temp_obj:	
-   473  0071                     	ds	1
-   474  0072                     _temp_amb:	
-   475  0072                     	ds	1
-   476  0073                     _posicion:	
-   477  0073                     	ds	1
-   478  0074                     _humedad:	
-   479  0074                     	ds	1
-   480  0075                     _distancia_atr:	
-   481  0075                     	ds	1
-   482  0076                     _distancia_ade:	
-   483  0076                     	ds	1
-   484                           
-   485                           	psect	bssBANK0
-   486  0022                     __pbssBANK0:	
-   487  0022                     _recibir_rasp:	
-   488  0022                     	ds	1
-   489                           
-   490                           	psect	dataBANK0
-   491  0020                     __pdataBANK0:	
-   492  0020                     _segundos:	
-   493  0020                     	ds	1
-   494  0021                     _minutos:	
-   495  0021                     	ds	1
-   496                           
-   497                           	psect	inittext
-   498  0578                     init_fetch0:	
-   499                           ;	Called with low address in FSR and high address in W
-   500                           
-   501  0578  087E               	movf	btemp,w
-   502  0579  008A               	movwf	10
-   503  057A  087F               	movf	btemp+1,w
-   504  057B  0082               	movwf	2
-   505  057C                     init_ram0:	
-   506                           ;Called with:
-   507                           ;	high address of idata address in btemp 
-   508                           ;	low address of idata address in btemp+1 
-   509                           ;	low address of data in FSR
-   510                           ;	high address + 1 of data in btemp-1
-   511                           
-   512  057C  120A  118A  2578  120A  118A  	fcall	init_fetch0
-   513  0581  0080               	movwf	0
-   514  0582  0A84               	incf	4,f
-   515  0583  0804               	movf	4,w
-   516  0584  067D               	xorwf	btemp+-1,w
-   517  0585  1903               	btfsc	3,2
-   518  0586  3400               	retlw	0
-   519  0587  0AFF               	incf	btemp+1,f
-   520  0588  1903               	btfsc	3,2
-   521  0589  0AFE               	incf	btemp,f
-   522  058A  2D7C               	goto	init_ram0
-   523                           
-   524                           	psect	cstackCOMMON
-   525  0077                     __pcstackCOMMON:	
-   526  0077                     ?_oscillator:	
-   527  0077                     ??_oscillator:	
-   528                           ; 1 bytes @ 0x0
-   529                           
-   530  0077                     ?_init_serial:	
-   531                           ; 1 bytes @ 0x0
-   532                           
-   533  0077                     ??_init_serial:	
-   534                           ; 1 bytes @ 0x0
-   535                           
-   536  0077                     ?_spiInit:	
-   537                           ; 1 bytes @ 0x0
-   538                           
-   539  0077                     ?_spiWrite:	
-   540                           ; 1 bytes @ 0x0
-   541                           
-   542  0077                     ??_spiWrite:	
-   543                           ; 1 bytes @ 0x0
-   544                           
-   545  0077                     ?_spiRead:	
-   546                           ; 1 bytes @ 0x0
-   547                           
-   548  0077                     ??_spiRead:	
-   549                           ; 1 bytes @ 0x0
-   550                           
-   551  0077                     ?_main:	
-   552                           ; 1 bytes @ 0x0
-   553                           
-   554  0077                     ?_spiReceiveWait:	
-   555                           ; 1 bytes @ 0x0
-   556                           
-   557  0077                     ??_spiReceiveWait:	
-   558                           ; 1 bytes @ 0x0
-   559                           
-   560  0077                     spiInit@sDataSample:	
-   561                           ; 1 bytes @ 0x0
+   454  07FC                     __end_of__initialization:	
+   455  07FC  0183               	clrf	3
+   456  07FD  120A  118A  2E8C   	ljmp	_main	;jump to C main() function
+   457                           
+   458                           	psect	bssCOMMON
+   459  007C                     __pbssCOMMON:	
+   460  007C                     _bandera_1:	
+   461  007C                     	ds	1
+   462  007D                     _recibir_rasp:	
+   463  007D                     	ds	1
+   464                           
+   465                           	psect	dataCOMMON
+   466  0070                     __pdataCOMMON:	
+   467  0070                     _hora:	
+   468  0070                     	ds	1
+   469  0071                     _temp_amb:	
+   470  0071                     	ds	1
+   471  0072                     _posicion:	
+   472  0072                     	ds	1
+   473  0073                     _humedad:	
+   474  0073                     	ds	1
+   475  0074                     _distancia_atr:	
+   476  0074                     	ds	1
+   477  0075                     _distancia_ade:	
+   478  0075                     	ds	1
+   479                           
+   480                           	psect	dataBANK0
+   481  0020                     __pdataBANK0:	
+   482  0020                     _segundos:	
+   483  0020                     	ds	1
+   484  0021                     _minutos:	
+   485  0021                     	ds	1
+   486  0022                     _temp_obj:	
+   487  0022                     	ds	1
+   488                           
+   489                           	psect	inittext
+   490  05FB                     init_fetch0:	
+   491                           ;	Called with low address in FSR and high address in W
+   492                           
+   493  05FB  087E               	movf	btemp,w
+   494  05FC  008A               	movwf	10
+   495  05FD  087F               	movf	btemp+1,w
+   496  05FE  0082               	movwf	2
+   497  05FF                     init_ram0:	
+   498                           ;Called with:
+   499                           ;	high address of idata address in btemp 
+   500                           ;	low address of idata address in btemp+1 
+   501                           ;	low address of data in FSR
+   502                           ;	high address + 1 of data in btemp-1
+   503                           
+   504  05FF  120A  118A  25FB  120A  118A  	fcall	init_fetch0
+   505  0604  0080               	movwf	0
+   506  0605  0A84               	incf	4,f
+   507  0606  0804               	movf	4,w
+   508  0607  067D               	xorwf	btemp+-1,w
+   509  0608  1903               	btfsc	3,2
+   510  0609  3400               	retlw	0
+   511  060A  0AFF               	incf	btemp+1,f
+   512  060B  1903               	btfsc	3,2
+   513  060C  0AFE               	incf	btemp,f
+   514  060D  2DFF               	goto	init_ram0
+   515                           
+   516                           	psect	cstackCOMMON
+   517  0076                     __pcstackCOMMON:	
+   518  0076                     ?_oscillator:	
+   519  0076                     ??_oscillator:	
+   520                           ; 1 bytes @ 0x0
+   521                           
+   522  0076                     ?_init_serial:	
+   523                           ; 1 bytes @ 0x0
+   524                           
+   525  0076                     ??_init_serial:	
+   526                           ; 1 bytes @ 0x0
+   527                           
+   528  0076                     ?_spiInit:	
+   529                           ; 1 bytes @ 0x0
+   530                           
+   531  0076                     ?_spiWrite:	
+   532                           ; 1 bytes @ 0x0
+   533                           
+   534  0076                     ??_spiWrite:	
+   535                           ; 1 bytes @ 0x0
+   536                           
+   537  0076                     ?_spiRead:	
+   538                           ; 1 bytes @ 0x0
+   539                           
+   540  0076                     ??_spiRead:	
+   541                           ; 1 bytes @ 0x0
+   542                           
+   543  0076                     ?_main:	
+   544                           ; 1 bytes @ 0x0
+   545                           
+   546  0076                     ?_spiReceiveWait:	
+   547                           ; 1 bytes @ 0x0
+   548                           
+   549  0076                     ??_spiReceiveWait:	
+   550                           ; 1 bytes @ 0x0
+   551                           
+   552  0076                     spiInit@sDataSample:	
+   553                           ; 1 bytes @ 0x0
+   554                           
+   555  0076                     spiWrite@dat:	
+   556                           ; 1 bytes @ 0x0
+   557                           
+   558                           
+   559                           ; 1 bytes @ 0x0
+   560  0076                     	ds	1
+   561  0077                     spiInit@sClockIdle:	
    562                           
-   563  0077                     spiWrite@dat:	
-   564                           ; 1 bytes @ 0x0
-   565                           
-   566                           
-   567                           ; 1 bytes @ 0x0
-   568  0077                     	ds	1
-   569  0078                     spiInit@sClockIdle:	
-   570                           
-   571                           ; 1 bytes @ 0x1
-   572  0078                     	ds	1
-   573  0079                     oscillator@a:	
-   574  0079                     spiInit@sTransmitEdge:	
-   575                           ; 1 bytes @ 0x2
+   563                           ; 1 bytes @ 0x1
+   564  0077                     	ds	1
+   565  0078                     oscillator@a:	
+   566  0078                     spiInit@sTransmitEdge:	
+   567                           ; 1 bytes @ 0x2
+   568                           
+   569                           
+   570                           ; 1 bytes @ 0x2
+   571  0078                     	ds	1
+   572  0079                     ??_spiInit:	
+   573  0079                     spiInit@sType:	
+   574                           ; 1 bytes @ 0x3
+   575                           
    576                           
-   577                           
-   578                           ; 1 bytes @ 0x2
-   579  0079                     	ds	1
-   580  007A                     ??_spiInit:	
-   581  007A                     spiInit@sType:	
-   582                           ; 1 bytes @ 0x3
+   577                           ; 1 bytes @ 0x3
+   578  0079                     	ds	1
+   579  007A                     ??_main:	
+   580                           
+   581                           ; 1 bytes @ 0x4
+   582  007A                     	ds	2
    583                           
-   584                           
-   585                           ; 1 bytes @ 0x3
-   586  007A                     	ds	1
-   587  007B                     ??_main:	
-   588                           
-   589                           ; 1 bytes @ 0x4
-   590  007B                     	ds	2
-   591                           
-   592                           	psect	maintext
-   593  0609                     __pmaintext:	
-   594 ;;
-   595 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
-   596 ;;
-   597 ;; *************** function _main *****************
-   598 ;; Defined at:
-   599 ;;		line 43 in file "comunicacion_main.c"
-   600 ;; Parameters:    Size  Location     Type
-   601 ;;		None
-   602 ;; Auto vars:     Size  Location     Type
-   603 ;;		None
-   604 ;; Return value:  Size  Location     Type
-   605 ;;                  1    wreg      void 
-   606 ;; Registers used:
-   607 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   608 ;; Tracked objects:
-   609 ;;		On entry : B00/0
-   610 ;;		On exit  : 0/0
-   611 ;;		Unchanged: 0/0
-   612 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   613 ;;      Params:         0       0       0       0       0
-   614 ;;      Locals:         0       0       0       0       0
-   615 ;;      Temps:          2       0       0       0       0
-   616 ;;      Totals:         2       0       0       0       0
-   617 ;;Total ram usage:        2 bytes
-   618 ;; Hardware stack levels required when called:    2
-   619 ;; This function calls:
-   620 ;;		_init_serial
-   621 ;;		_oscillator
-   622 ;;		_spiInit
-   623 ;;		_spiRead
-   624 ;;		_spiWrite
-   625 ;; This function is called by:
-   626 ;;		Startup code after reset
-   627 ;; This function uses a non-reentrant model
-   628 ;;
+   584                           	psect	maintext
+   585  068C                     __pmaintext:	
+   586 ;;
+   587 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   588 ;;
+   589 ;; *************** function _main *****************
+   590 ;; Defined at:
+   591 ;;		line 43 in file "comunicacion_main.c"
+   592 ;; Parameters:    Size  Location     Type
+   593 ;;		None
+   594 ;; Auto vars:     Size  Location     Type
+   595 ;;		None
+   596 ;; Return value:  Size  Location     Type
+   597 ;;                  1    wreg      void 
+   598 ;; Registers used:
+   599 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   600 ;; Tracked objects:
+   601 ;;		On entry : B00/0
+   602 ;;		On exit  : 0/0
+   603 ;;		Unchanged: 0/0
+   604 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   605 ;;      Params:         0       0       0       0       0
+   606 ;;      Locals:         0       0       0       0       0
+   607 ;;      Temps:          2       0       0       0       0
+   608 ;;      Totals:         2       0       0       0       0
+   609 ;;Total ram usage:        2 bytes
+   610 ;; Hardware stack levels required when called:    2
+   611 ;; This function calls:
+   612 ;;		_init_serial
+   613 ;;		_oscillator
+   614 ;;		_spiInit
+   615 ;;		_spiRead
+   616 ;;		_spiWrite
+   617 ;; This function is called by:
+   618 ;;		Startup code after reset
+   619 ;; This function uses a non-reentrant model
+   620 ;;
+   621                           
+   622                           
+   623                           ;psect for function _main
+   624  068C                     _main:	
+   625  068C                     l895:	
+   626                           ;incstack = 0
+   627                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   628                           
    629                           
-   630                           
-   631                           ;psect for function _main
-   632  0609                     _main:	
-   633  0609                     l970:	
-   634                           ;incstack = 0
-   635                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   636                           
-   637                           
-   638                           ;comunicacion_main.c: 44:     PORTC = 0x00;
-   639  0609  1283               	bcf	3,5	;RP0=0, select bank0
-   640  060A  1303               	bcf	3,6	;RP1=0, select bank0
-   641  060B  0187               	clrf	7	;volatile
-   642                           
-   643                           ;comunicacion_main.c: 45:     TRISC = 0x00;
-   644  060C  1683               	bsf	3,5	;RP0=1, select bank1
-   645  060D  1303               	bcf	3,6	;RP1=0, select bank1
-   646  060E  0187               	clrf	7	;volatile
-   647                           
-   648                           ;comunicacion_main.c: 46:     PORTB = 0x00;
-   649  060F  1283               	bcf	3,5	;RP0=0, select bank0
-   650  0610  1303               	bcf	3,6	;RP1=0, select bank0
-   651  0611  0186               	clrf	6	;volatile
-   652                           
-   653                           ;comunicacion_main.c: 47:     TRISB = 0x00;
-   654  0612  1683               	bsf	3,5	;RP0=1, select bank1
-   655  0613  1303               	bcf	3,6	;RP1=0, select bank1
-   656  0614  0186               	clrf	6	;volatile
-   657                           
-   658                           ;comunicacion_main.c: 48:     ANSELH = 0x00;
-   659  0615  1683               	bsf	3,5	;RP0=1, select bank3
-   660  0616  1703               	bsf	3,6	;RP1=1, select bank3
-   661  0617  0189               	clrf	9	;volatile
-   662  0618                     l972:	
-   663                           
-   664                           ;comunicacion_main.c: 49:     INTCONbits.GIE = 1;
-   665  0618  178B               	bsf	11,7	;volatile
-   666  0619                     l974:	
-   667                           
-   668                           ;comunicacion_main.c: 50:     INTCONbits.PEIE = 1;
-   669  0619  170B               	bsf	11,6	;volatile
-   670  061A                     l976:	
-   671                           
-   672                           ;comunicacion_main.c: 51:     PIE1bits.SSPIE = 1;
-   673  061A  1683               	bsf	3,5	;RP0=1, select bank1
-   674  061B  1303               	bcf	3,6	;RP1=0, select bank1
-   675  061C  158C               	bsf	12,3	;volatile
-   676  061D                     l978:	
-   677                           
-   678                           ;comunicacion_main.c: 52:     PIR1bits.SSPIF = 0;
-   679  061D  1283               	bcf	3,5	;RP0=0, select bank0
-   680  061E  1303               	bcf	3,6	;RP1=0, select bank0
-   681  061F  118C               	bcf	12,3	;volatile
-   682  0620                     l980:	
-   683                           
-   684                           ;comunicacion_main.c: 53:     oscillator(6);
-   685  0620  3006               	movlw	6
-   686  0621  120A  118A  25B6  120A  118A  	fcall	_oscillator
-   687  0626                     l982:	
-   688                           
-   689                           ;comunicacion_main.c: 54:     init_serial();
-   690  0626  120A  118A  258B  120A  118A  	fcall	_init_serial
-   691  062B                     l984:	
-   692                           
-   693                           ;comunicacion_main.c: 55:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_C
+   630                           ;comunicacion_main.c: 44:     PORTB = 0x00;
+   631  068C  1283               	bcf	3,5	;RP0=0, select bank0
+   632  068D  1303               	bcf	3,6	;RP1=0, select bank0
+   633  068E  0186               	clrf	6	;volatile
+   634                           
+   635                           ;comunicacion_main.c: 45:     TRISB = 0x00;
+   636  068F  1683               	bsf	3,5	;RP0=1, select bank1
+   637  0690  1303               	bcf	3,6	;RP1=0, select bank1
+   638  0691  0186               	clrf	6	;volatile
+   639                           
+   640                           ;comunicacion_main.c: 46:     ANSELH = 0x00;
+   641  0692  1683               	bsf	3,5	;RP0=1, select bank3
+   642  0693  1703               	bsf	3,6	;RP1=1, select bank3
+   643  0694  0189               	clrf	9	;volatile
+   644  0695                     l897:	
+   645                           
+   646                           ;comunicacion_main.c: 47:     oscillator(6);
+   647  0695  3006               	movlw	6
+   648  0696  120A  118A  2639  120A  118A  	fcall	_oscillator
+   649  069B                     l899:	
+   650                           
+   651                           ;comunicacion_main.c: 48:     init_serial();
+   652  069B  120A  118A  260E  120A  118A  	fcall	_init_serial
+   653  06A0                     l901:	
+   654                           
+   655                           ;comunicacion_main.c: 49:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_C
       +                          LOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-   694  062B  01F7               	clrf	spiInit@sDataSample
-   695  062C  01F8               	clrf	spiInit@sClockIdle
-   696  062D  01F9               	clrf	spiInit@sTransmitEdge
-   697  062E  3020               	movlw	32
-   698  062F  120A  118A  25A0  120A  118A  	fcall	_spiInit
-   699  0634                     l986:	
-   700                           
-   701                           ;comunicacion_main.c: 56:     PORTB = 0xFF;
-   702  0634  30FF               	movlw	255
-   703  0635  1283               	bcf	3,5	;RP0=0, select bank0
-   704  0636  1303               	bcf	3,6	;RP1=0, select bank0
-   705  0637  0086               	movwf	6	;volatile
-   706  0638                     l988:	
+   656  06A0  01F6               	clrf	spiInit@sDataSample
+   657  06A1  01F7               	clrf	spiInit@sClockIdle
+   658  06A2  01F8               	clrf	spiInit@sTransmitEdge
+   659  06A3  3020               	movlw	32
+   660  06A4  120A  118A  2623  120A  118A  	fcall	_spiInit
+   661  06A9                     l903:	
+   662                           
+   663                           ;comunicacion_main.c: 50:     PORTB = 0x0F;
+   664  06A9  300F               	movlw	15
+   665  06AA  1283               	bcf	3,5	;RP0=0, select bank0
+   666  06AB  1303               	bcf	3,6	;RP1=0, select bank0
+   667  06AC  0086               	movwf	6	;volatile
+   668  06AD                     l905:	
+   669                           
+   670                           ;comunicacion_main.c: 99:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   671  06AD  300D               	movlw	13
+   672  06AE  00FB               	movwf	??_main+1
+   673  06AF  30FB               	movlw	251
+   674  06B0  00FA               	movwf	??_main
+   675  06B1                     u57:	
+   676  06B1  0BFA               	decfsz	??_main,f
+   677  06B2  2EB1               	goto	u57
+   678  06B3  0BFB               	decfsz	??_main+1,f
+   679  06B4  2EB1               	goto	u57
+   680  06B5  2EB6               	nop2
+   681  06B6                     l907:	
+   682                           
+   683                           ;comunicacion_main.c: 100:             spiWrite(125);
+   684  06B6  307D               	movlw	125
+   685  06B7  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   686  06BC                     l909:	
+   687                           
+   688                           ;comunicacion_main.c: 101:             recibir_rasp = spiRead();
+   689  06BC  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   690  06C1  00FA               	movwf	??_main
+   691  06C2  087A               	movf	??_main,w
+   692  06C3  00FD               	movwf	_recibir_rasp
+   693  06C4                     l911:	
+   694                           
+   695                           ;comunicacion_main.c: 102:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   696  06C4  300D               	movlw	13
+   697  06C5  00FB               	movwf	??_main+1
+   698  06C6  30FB               	movlw	251
+   699  06C7  00FA               	movwf	??_main
+   700  06C8                     u67:	
+   701  06C8  0BFA               	decfsz	??_main,f
+   702  06C9  2EC8               	goto	u67
+   703  06CA  0BFB               	decfsz	??_main+1,f
+   704  06CB  2EC8               	goto	u67
+   705  06CC  2ECD               	nop2
+   706  06CD                     l913:	
    707                           
-   708                           ;comunicacion_main.c: 61:         if (PIR1bits.RCIF == 1){
-   709  0638  1283               	bcf	3,5	;RP0=0, select bank0
-   710  0639  1303               	bcf	3,6	;RP1=0, select bank0
-   711  063A  1E8C               	btfss	12,5	;volatile
-   712  063B  2E3D               	goto	u161
-   713  063C  2E3E               	goto	u160
-   714  063D                     u161:	
-   715  063D  2E44               	goto	l992
-   716  063E                     u160:	
-   717  063E                     l990:	
-   718                           
-   719                           ;comunicacion_main.c: 62:             bandera_1 = RCREG;
-   720  063E  081A               	movf	26,w	;volatile
-   721  063F  00FB               	movwf	??_main
-   722  0640  087B               	movf	??_main,w
-   723  0641  00FD               	movwf	_bandera_1
-   724                           
-   725                           ;comunicacion_main.c: 63:             PORTB = bandera_1;
-   726  0642  087D               	movf	_bandera_1,w
-   727  0643  0086               	movwf	6	;volatile
-   728  0644                     l992:	
-   729                           
-   730                           ;comunicacion_main.c: 65:         if (bandera_1 == 125){
-   731  0644  307D               	movlw	125
-   732  0645  067D               	xorwf	_bandera_1,w
-   733  0646  1D03               	btfss	3,2
-   734  0647  2E49               	goto	u171
-   735  0648  2E4A               	goto	u170
-   736  0649                     u171:	
-   737  0649  2E38               	goto	l988
-   738  064A                     u170:	
-   739  064A                     l994:	
-   740                           
-   741                           ;comunicacion_main.c: 66:             if (PIR1bits.RCIF == 1){
-   742  064A  1E8C               	btfss	12,5	;volatile
-   743  064B  2E4D               	goto	u181
-   744  064C  2E4E               	goto	u180
-   745  064D                     u181:	
-   746  064D  2E52               	goto	l998
-   747  064E                     u180:	
-   748  064E                     l996:	
-   749                           
-   750                           ;comunicacion_main.c: 67:                 hora = RCREG;
-   751  064E  081A               	movf	26,w	;volatile
-   752  064F  00FB               	movwf	??_main
-   753  0650  087B               	movf	??_main,w
-   754  0651  00F0               	movwf	_hora
-   755  0652                     l998:	
-   756                           
-   757                           ;comunicacion_main.c: 69:             if (PIR1bits.RCIF == 1){
-   758  0652  1E8C               	btfss	12,5	;volatile
-   759  0653  2E55               	goto	u191
-   760  0654  2E56               	goto	u190
-   761  0655                     u191:	
-   762  0655  2E5A               	goto	l1002
-   763  0656                     u190:	
-   764  0656                     l1000:	
-   765                           
-   766                           ;comunicacion_main.c: 70:                 minutos = RCREG;
-   767  0656  081A               	movf	26,w	;volatile
-   768  0657  00FB               	movwf	??_main
-   769  0658  087B               	movf	??_main,w
-   770  0659  00A1               	movwf	_minutos
-   771  065A                     l1002:	
-   772                           
-   773                           ;comunicacion_main.c: 72:             if (PIR1bits.RCIF == 1){
-   774  065A  1E8C               	btfss	12,5	;volatile
-   775  065B  2E5D               	goto	u201
-   776  065C  2E5E               	goto	u200
-   777  065D                     u201:	
-   778  065D  2E62               	goto	l1006
-   779  065E                     u200:	
-   780  065E                     l1004:	
-   781                           
-   782                           ;comunicacion_main.c: 73:                 segundos = RCREG;
-   783  065E  081A               	movf	26,w	;volatile
-   784  065F  00FB               	movwf	??_main
-   785  0660  087B               	movf	??_main,w
-   786  0661  00A0               	movwf	_segundos
-   787  0662                     l1006:	
-   788                           
-   789                           ;comunicacion_main.c: 75:             if (PIR1bits.RCIF == 1){
-   790  0662  1E8C               	btfss	12,5	;volatile
-   791  0663  2E65               	goto	u211
-   792  0664  2E66               	goto	u210
-   793  0665                     u211:	
-   794  0665  2E6A               	goto	l1010
-   795  0666                     u210:	
-   796  0666                     l1008:	
-   797                           
-   798                           ;comunicacion_main.c: 76:                 temp_amb = RCREG;
-   799  0666  081A               	movf	26,w	;volatile
-   800  0667  00FB               	movwf	??_main
-   801  0668  087B               	movf	??_main,w
-   802  0669  00F2               	movwf	_temp_amb
-   803  066A                     l1010:	
-   804                           
-   805                           ;comunicacion_main.c: 78:             if (PIR1bits.RCIF == 1){
-   806  066A  1E8C               	btfss	12,5	;volatile
-   807  066B  2E6D               	goto	u221
-   808  066C  2E6E               	goto	u220
-   809  066D                     u221:	
-   810  066D  2E72               	goto	l1014
-   811  066E                     u220:	
-   812  066E                     l1012:	
+   708                           ;comunicacion_main.c: 104:             spiWrite(hora);
+   709  06CD  0870               	movf	_hora,w
+   710  06CE  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   711  06D3                     l915:	
+   712                           
+   713                           ;comunicacion_main.c: 105:             recibir_rasp = spiRead();
+   714  06D3  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   715  06D8  00FA               	movwf	??_main
+   716  06D9  087A               	movf	??_main,w
+   717  06DA  00FD               	movwf	_recibir_rasp
+   718  06DB                     l917:	
+   719                           
+   720                           ;comunicacion_main.c: 106:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   721  06DB  300D               	movlw	13
+   722  06DC  00FB               	movwf	??_main+1
+   723  06DD  30FB               	movlw	251
+   724  06DE  00FA               	movwf	??_main
+   725  06DF                     u77:	
+   726  06DF  0BFA               	decfsz	??_main,f
+   727  06E0  2EDF               	goto	u77
+   728  06E1  0BFB               	decfsz	??_main+1,f
+   729  06E2  2EDF               	goto	u77
+   730  06E3  2EE4               	nop2
+   731  06E4                     l919:	
+   732                           
+   733                           ;comunicacion_main.c: 108:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   734  06E4  300D               	movlw	13
+   735  06E5  00FB               	movwf	??_main+1
+   736  06E6  30FB               	movlw	251
+   737  06E7  00FA               	movwf	??_main
+   738  06E8                     u87:	
+   739  06E8  0BFA               	decfsz	??_main,f
+   740  06E9  2EE8               	goto	u87
+   741  06EA  0BFB               	decfsz	??_main+1,f
+   742  06EB  2EE8               	goto	u87
+   743  06EC  2EED               	nop2
+   744  06ED                     l921:	
+   745                           
+   746                           ;comunicacion_main.c: 109:             spiWrite(minutos);
+   747  06ED  3050               	movlw	80
+   748  06EE  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   749  06F3                     l923:	
+   750                           
+   751                           ;comunicacion_main.c: 110:             recibir_rasp = spiRead();
+   752  06F3  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   753  06F8  00FA               	movwf	??_main
+   754  06F9  087A               	movf	??_main,w
+   755  06FA  00FD               	movwf	_recibir_rasp
+   756  06FB                     l925:	
+   757                           
+   758                           ;comunicacion_main.c: 111:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   759  06FB  300D               	movlw	13
+   760  06FC  00FB               	movwf	??_main+1
+   761  06FD  30FB               	movlw	251
+   762  06FE  00FA               	movwf	??_main
+   763  06FF                     u97:	
+   764  06FF  0BFA               	decfsz	??_main,f
+   765  0700  2EFF               	goto	u97
+   766  0701  0BFB               	decfsz	??_main+1,f
+   767  0702  2EFF               	goto	u97
+   768  0703  2F04               	nop2
+   769  0704                     l927:	
+   770                           
+   771                           ;comunicacion_main.c: 113:             spiWrite(segundos);
+   772  0704  305A               	movlw	90
+   773  0705  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   774  070A                     l929:	
+   775                           
+   776                           ;comunicacion_main.c: 114:             recibir_rasp = spiRead();
+   777  070A  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   778  070F  00FA               	movwf	??_main
+   779  0710  087A               	movf	??_main,w
+   780  0711  00FD               	movwf	_recibir_rasp
+   781  0712                     l931:	
+   782                           
+   783                           ;comunicacion_main.c: 115:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   784  0712  300D               	movlw	13
+   785  0713  00FB               	movwf	??_main+1
+   786  0714  30FB               	movlw	251
+   787  0715  00FA               	movwf	??_main
+   788  0716                     u107:	
+   789  0716  0BFA               	decfsz	??_main,f
+   790  0717  2F16               	goto	u107
+   791  0718  0BFB               	decfsz	??_main+1,f
+   792  0719  2F16               	goto	u107
+   793  071A  2F1B               	nop2
+   794  071B                     l933:	
+   795                           
+   796                           ;comunicacion_main.c: 117:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   797  071B  300D               	movlw	13
+   798  071C  00FB               	movwf	??_main+1
+   799  071D  30FB               	movlw	251
+   800  071E  00FA               	movwf	??_main
+   801  071F                     u117:	
+   802  071F  0BFA               	decfsz	??_main,f
+   803  0720  2F1F               	goto	u117
+   804  0721  0BFB               	decfsz	??_main+1,f
+   805  0722  2F1F               	goto	u117
+   806  0723  2F24               	nop2
+   807  0724                     l935:	
+   808                           
+   809                           ;comunicacion_main.c: 118:             spiWrite(temp_amb);
+   810  0724  3032               	movlw	50
+   811  0725  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   812  072A                     l937:	
    813                           
-   814                           ;comunicacion_main.c: 79:                 temp_obj = RCREG;
-   815  066E  081A               	movf	26,w	;volatile
-   816  066F  00FB               	movwf	??_main
-   817  0670  087B               	movf	??_main,w
-   818  0671  00F1               	movwf	_temp_obj
-   819  0672                     l1014:	
+   814                           ;comunicacion_main.c: 119:             recibir_rasp = spiRead();
+   815  072A  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   816  072F  00FA               	movwf	??_main
+   817  0730  087A               	movf	??_main,w
+   818  0731  00FD               	movwf	_recibir_rasp
+   819  0732                     l939:	
    820                           
-   821                           ;comunicacion_main.c: 81:             if (PIR1bits.RCIF == 1){
-   822  0672  1E8C               	btfss	12,5	;volatile
-   823  0673  2E75               	goto	u231
-   824  0674  2E76               	goto	u230
-   825  0675                     u231:	
-   826  0675  2E7A               	goto	l1018
-   827  0676                     u230:	
-   828  0676                     l1016:	
-   829                           
-   830                           ;comunicacion_main.c: 82:                 posicion = RCREG;
-   831  0676  081A               	movf	26,w	;volatile
-   832  0677  00FB               	movwf	??_main
-   833  0678  087B               	movf	??_main,w
-   834  0679  00F3               	movwf	_posicion
-   835  067A                     l1018:	
-   836                           
-   837                           ;comunicacion_main.c: 84:             if (PIR1bits.RCIF == 1){
-   838  067A  1E8C               	btfss	12,5	;volatile
-   839  067B  2E7D               	goto	u241
-   840  067C  2E7E               	goto	u240
-   841  067D                     u241:	
-   842  067D  2E82               	goto	l1022
-   843  067E                     u240:	
-   844  067E                     l1020:	
+   821                           ;comunicacion_main.c: 120:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   822  0732  300D               	movlw	13
+   823  0733  00FB               	movwf	??_main+1
+   824  0734  30FB               	movlw	251
+   825  0735  00FA               	movwf	??_main
+   826  0736                     u127:	
+   827  0736  0BFA               	decfsz	??_main,f
+   828  0737  2F36               	goto	u127
+   829  0738  0BFB               	decfsz	??_main+1,f
+   830  0739  2F36               	goto	u127
+   831  073A  2F3B               	nop2
+   832  073B                     l941:	
+   833                           
+   834                           ;comunicacion_main.c: 122:             spiWrite(temp_obj);
+   835  073B  303C               	movlw	60
+   836  073C  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   837  0741                     l943:	
+   838                           
+   839                           ;comunicacion_main.c: 123:             recibir_rasp = spiRead();
+   840  0741  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   841  0746  00FA               	movwf	??_main
+   842  0747  087A               	movf	??_main,w
+   843  0748  00FD               	movwf	_recibir_rasp
+   844  0749                     l945:	
    845                           
-   846                           ;comunicacion_main.c: 85:                 humedad = RCREG;
-   847  067E  081A               	movf	26,w	;volatile
-   848  067F  00FB               	movwf	??_main
-   849  0680  087B               	movf	??_main,w
-   850  0681  00F4               	movwf	_humedad
-   851  0682                     l1022:	
-   852                           
-   853                           ;comunicacion_main.c: 87:             if (PIR1bits.RCIF == 1){
-   854  0682  1E8C               	btfss	12,5	;volatile
-   855  0683  2E85               	goto	u251
-   856  0684  2E86               	goto	u250
-   857  0685                     u251:	
-   858  0685  2E8A               	goto	l1026
-   859  0686                     u250:	
-   860  0686                     l1024:	
-   861                           
-   862                           ;comunicacion_main.c: 88:                 distancia_ade = RCREG;
-   863  0686  081A               	movf	26,w	;volatile
-   864  0687  00FB               	movwf	??_main
-   865  0688  087B               	movf	??_main,w
-   866  0689  00F6               	movwf	_distancia_ade
-   867  068A                     l1026:	
-   868                           
-   869                           ;comunicacion_main.c: 90:             if (PIR1bits.RCIF == 1){
-   870  068A  1E8C               	btfss	12,5	;volatile
-   871  068B  2E8D               	goto	u261
-   872  068C  2E8E               	goto	u260
-   873  068D                     u261:	
-   874  068D  2E92               	goto	l1030
-   875  068E                     u260:	
-   876  068E                     l1028:	
-   877                           
-   878                           ;comunicacion_main.c: 91:                 distancia_atr = RCREG;
-   879  068E  081A               	movf	26,w	;volatile
-   880  068F  00FB               	movwf	??_main
-   881  0690  087B               	movf	??_main,w
-   882  0691  00F5               	movwf	_distancia_atr
-   883  0692                     l1030:	
-   884                           
-   885                           ;comunicacion_main.c: 93:             bandera_1 = 0;
-   886  0692  01FD               	clrf	_bandera_1
-   887  0693                     l1032:	
-   888                           
-   889                           ;comunicacion_main.c: 95:             PORTB = humedad;
-   890  0693  0874               	movf	_humedad,w
-   891  0694  0086               	movwf	6	;volatile
-   892  0695                     l1034:	
-   893                           
-   894                           ;comunicacion_main.c: 97:             _delay((unsigned long)((10)*(4000000/4000.0)));
-   895  0695  300D               	movlw	13
-   896  0696  00FC               	movwf	??_main+1
-   897  0697  30FB               	movlw	251
-   898  0698  00FB               	movwf	??_main
-   899  0699                     u277:	
-   900  0699  0BFB               	decfsz	??_main,f
-   901  069A  2E99               	goto	u277
-   902  069B  0BFC               	decfsz	??_main+1,f
-   903  069C  2E99               	goto	u277
-   904  069D  2E9E               	nop2
-   905  069E                     l1036:	
-   906                           
-   907                           ;comunicacion_main.c: 98:             spiWrite(125);
-   908  069E  307D               	movlw	125
-   909  069F  120A  118A  255B  120A  118A  	fcall	_spiWrite
-   910  06A4                     l1038:	
-   911                           
-   912                           ;comunicacion_main.c: 99:             recibir_rasp = spiRead();
-   913  06A4  120A  118A  256F  120A  118A  	fcall	_spiRead
-   914  06A9  00FB               	movwf	??_main
-   915  06AA  087B               	movf	??_main,w
-   916  06AB  1283               	bcf	3,5	;RP0=0, select bank0
-   917  06AC  1303               	bcf	3,6	;RP1=0, select bank0
-   918  06AD  00A2               	movwf	_recibir_rasp
-   919  06AE                     l1040:	
-   920                           
-   921                           ;comunicacion_main.c: 100:             _delay((unsigned long)((10)*(4000000/4000.0)));
-   922  06AE  300D               	movlw	13
-   923  06AF  00FC               	movwf	??_main+1
-   924  06B0  30FB               	movlw	251
-   925  06B1  00FB               	movwf	??_main
-   926  06B2                     u287:	
-   927  06B2  0BFB               	decfsz	??_main,f
-   928  06B3  2EB2               	goto	u287
-   929  06B4  0BFC               	decfsz	??_main+1,f
-   930  06B5  2EB2               	goto	u287
-   931  06B6  2EB7               	nop2
-   932  06B7                     l1042:	
-   933                           
-   934                           ;comunicacion_main.c: 102:             spiWrite(hora);
-   935  06B7  0870               	movf	_hora,w
-   936  06B8  120A  118A  255B  120A  118A  	fcall	_spiWrite
-   937  06BD                     l1044:	
-   938                           
-   939                           ;comunicacion_main.c: 103:             recibir_rasp = spiRead();
-   940  06BD  120A  118A  256F  120A  118A  	fcall	_spiRead
-   941  06C2  00FB               	movwf	??_main
-   942  06C3  087B               	movf	??_main,w
-   943  06C4  1283               	bcf	3,5	;RP0=0, select bank0
-   944  06C5  1303               	bcf	3,6	;RP1=0, select bank0
-   945  06C6  00A2               	movwf	_recibir_rasp
-   946  06C7                     l1046:	
-   947                           
-   948                           ;comunicacion_main.c: 104:             _delay((unsigned long)((10)*(4000000/4000.0)));
-   949  06C7  300D               	movlw	13
-   950  06C8  00FC               	movwf	??_main+1
-   951  06C9  30FB               	movlw	251
-   952  06CA  00FB               	movwf	??_main
-   953  06CB                     u297:	
-   954  06CB  0BFB               	decfsz	??_main,f
-   955  06CC  2ECB               	goto	u297
-   956  06CD  0BFC               	decfsz	??_main+1,f
-   957  06CE  2ECB               	goto	u297
-   958  06CF  2ED0               	nop2
-   959  06D0                     l1048:	
-   960                           
-   961                           ;comunicacion_main.c: 106:             _delay((unsigned long)((10)*(4000000/4000.0)));
-   962  06D0  300D               	movlw	13
-   963  06D1  00FC               	movwf	??_main+1
-   964  06D2  30FB               	movlw	251
-   965  06D3  00FB               	movwf	??_main
-   966  06D4                     u307:	
-   967  06D4  0BFB               	decfsz	??_main,f
-   968  06D5  2ED4               	goto	u307
-   969  06D6  0BFC               	decfsz	??_main+1,f
-   970  06D7  2ED4               	goto	u307
-   971  06D8  2ED9               	nop2
-   972  06D9                     l1050:	
-   973                           
-   974                           ;comunicacion_main.c: 107:             spiWrite(minutos);
-   975  06D9  1283               	bcf	3,5	;RP0=0, select bank0
-   976  06DA  1303               	bcf	3,6	;RP1=0, select bank0
-   977  06DB  0821               	movf	_minutos,w
-   978  06DC  120A  118A  255B  120A  118A  	fcall	_spiWrite
-   979  06E1                     l1052:	
-   980                           
-   981                           ;comunicacion_main.c: 108:             recibir_rasp = spiRead();
-   982  06E1  120A  118A  256F  120A  118A  	fcall	_spiRead
-   983  06E6  00FB               	movwf	??_main
-   984  06E7  087B               	movf	??_main,w
-   985  06E8  1283               	bcf	3,5	;RP0=0, select bank0
-   986  06E9  1303               	bcf	3,6	;RP1=0, select bank0
-   987  06EA  00A2               	movwf	_recibir_rasp
-   988  06EB                     l1054:	
-   989                           
-   990                           ;comunicacion_main.c: 109:             _delay((unsigned long)((10)*(4000000/4000.0)));
-   991  06EB  300D               	movlw	13
-   992  06EC  00FC               	movwf	??_main+1
-   993  06ED  30FB               	movlw	251
-   994  06EE  00FB               	movwf	??_main
-   995  06EF                     u317:	
-   996  06EF  0BFB               	decfsz	??_main,f
-   997  06F0  2EEF               	goto	u317
-   998  06F1  0BFC               	decfsz	??_main+1,f
-   999  06F2  2EEF               	goto	u317
-  1000  06F3  2EF4               	nop2
-  1001  06F4                     l1056:	
-  1002                           
-  1003                           ;comunicacion_main.c: 111:             spiWrite(segundos);
-  1004  06F4  1283               	bcf	3,5	;RP0=0, select bank0
-  1005  06F5  1303               	bcf	3,6	;RP1=0, select bank0
-  1006  06F6  0820               	movf	_segundos,w
-  1007  06F7  120A  118A  255B  120A  118A  	fcall	_spiWrite
-  1008  06FC                     l1058:	
-  1009                           
-  1010                           ;comunicacion_main.c: 112:             recibir_rasp = spiRead();
-  1011  06FC  120A  118A  256F  120A  118A  	fcall	_spiRead
-  1012  0701  00FB               	movwf	??_main
-  1013  0702  087B               	movf	??_main,w
-  1014  0703  1283               	bcf	3,5	;RP0=0, select bank0
-  1015  0704  1303               	bcf	3,6	;RP1=0, select bank0
-  1016  0705  00A2               	movwf	_recibir_rasp
-  1017  0706                     l1060:	
-  1018                           
-  1019                           ;comunicacion_main.c: 113:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1020  0706  300D               	movlw	13
-  1021  0707  00FC               	movwf	??_main+1
-  1022  0708  30FB               	movlw	251
-  1023  0709  00FB               	movwf	??_main
-  1024  070A                     u327:	
-  1025  070A  0BFB               	decfsz	??_main,f
-  1026  070B  2F0A               	goto	u327
-  1027  070C  0BFC               	decfsz	??_main+1,f
-  1028  070D  2F0A               	goto	u327
-  1029  070E  2F0F               	nop2
-  1030  070F                     l1062:	
-  1031                           
-  1032                           ;comunicacion_main.c: 115:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1033  070F  300D               	movlw	13
-  1034  0710  00FC               	movwf	??_main+1
-  1035  0711  30FB               	movlw	251
-  1036  0712  00FB               	movwf	??_main
-  1037  0713                     u337:	
-  1038  0713  0BFB               	decfsz	??_main,f
-  1039  0714  2F13               	goto	u337
-  1040  0715  0BFC               	decfsz	??_main+1,f
-  1041  0716  2F13               	goto	u337
-  1042  0717  2F18               	nop2
-  1043  0718                     l1064:	
-  1044                           
-  1045                           ;comunicacion_main.c: 116:             spiWrite(temp_amb);
-  1046  0718  0872               	movf	_temp_amb,w
-  1047  0719  120A  118A  255B  120A  118A  	fcall	_spiWrite
-  1048  071E                     l1066:	
-  1049                           
-  1050                           ;comunicacion_main.c: 117:             recibir_rasp = spiRead();
-  1051  071E  120A  118A  256F  120A  118A  	fcall	_spiRead
-  1052  0723  00FB               	movwf	??_main
-  1053  0724  087B               	movf	??_main,w
-  1054  0725  1283               	bcf	3,5	;RP0=0, select bank0
-  1055  0726  1303               	bcf	3,6	;RP1=0, select bank0
-  1056  0727  00A2               	movwf	_recibir_rasp
-  1057  0728                     l1068:	
-  1058                           
-  1059                           ;comunicacion_main.c: 118:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1060  0728  300D               	movlw	13
-  1061  0729  00FC               	movwf	??_main+1
-  1062  072A  30FB               	movlw	251
-  1063  072B  00FB               	movwf	??_main
-  1064  072C                     u347:	
-  1065  072C  0BFB               	decfsz	??_main,f
-  1066  072D  2F2C               	goto	u347
-  1067  072E  0BFC               	decfsz	??_main+1,f
-  1068  072F  2F2C               	goto	u347
-  1069  0730  2F31               	nop2
-  1070  0731                     l1070:	
-  1071                           
-  1072                           ;comunicacion_main.c: 120:             spiWrite(temp_obj);
-  1073  0731  0871               	movf	_temp_obj,w
-  1074  0732  120A  118A  255B  120A  118A  	fcall	_spiWrite
-  1075  0737                     l1072:	
+   846                           ;comunicacion_main.c: 124:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   847  0749  300D               	movlw	13
+   848  074A  00FB               	movwf	??_main+1
+   849  074B  30FB               	movlw	251
+   850  074C  00FA               	movwf	??_main
+   851  074D                     u137:	
+   852  074D  0BFA               	decfsz	??_main,f
+   853  074E  2F4D               	goto	u137
+   854  074F  0BFB               	decfsz	??_main+1,f
+   855  0750  2F4D               	goto	u137
+   856  0751  2F52               	nop2
+   857  0752                     l947:	
+   858                           
+   859                           ;comunicacion_main.c: 126:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   860  0752  300D               	movlw	13
+   861  0753  00FB               	movwf	??_main+1
+   862  0754  30FB               	movlw	251
+   863  0755  00FA               	movwf	??_main
+   864  0756                     u147:	
+   865  0756  0BFA               	decfsz	??_main,f
+   866  0757  2F56               	goto	u147
+   867  0758  0BFB               	decfsz	??_main+1,f
+   868  0759  2F56               	goto	u147
+   869  075A  2F5B               	nop2
+   870  075B                     l949:	
+   871                           
+   872                           ;comunicacion_main.c: 127:             spiWrite(posicion);
+   873  075B  3028               	movlw	40
+   874  075C  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   875  0761                     l951:	
+   876                           
+   877                           ;comunicacion_main.c: 128:             recibir_rasp = spiRead();
+   878  0761  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   879  0766  00FA               	movwf	??_main
+   880  0767  087A               	movf	??_main,w
+   881  0768  00FD               	movwf	_recibir_rasp
+   882  0769                     l953:	
+   883                           
+   884                           ;comunicacion_main.c: 129:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   885  0769  300D               	movlw	13
+   886  076A  00FB               	movwf	??_main+1
+   887  076B  30FB               	movlw	251
+   888  076C  00FA               	movwf	??_main
+   889  076D                     u157:	
+   890  076D  0BFA               	decfsz	??_main,f
+   891  076E  2F6D               	goto	u157
+   892  076F  0BFB               	decfsz	??_main+1,f
+   893  0770  2F6D               	goto	u157
+   894  0771  2F72               	nop2
+   895  0772                     l955:	
+   896                           
+   897                           ;comunicacion_main.c: 131:             spiWrite(humedad);
+   898  0772  301E               	movlw	30
+   899  0773  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   900  0778                     l957:	
+   901                           
+   902                           ;comunicacion_main.c: 132:             recibir_rasp = spiRead();
+   903  0778  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   904  077D  00FA               	movwf	??_main
+   905  077E  087A               	movf	??_main,w
+   906  077F  00FD               	movwf	_recibir_rasp
+   907  0780                     l959:	
+   908                           
+   909                           ;comunicacion_main.c: 133:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   910  0780  300D               	movlw	13
+   911  0781  00FB               	movwf	??_main+1
+   912  0782  30FB               	movlw	251
+   913  0783  00FA               	movwf	??_main
+   914  0784                     u167:	
+   915  0784  0BFA               	decfsz	??_main,f
+   916  0785  2F84               	goto	u167
+   917  0786  0BFB               	decfsz	??_main+1,f
+   918  0787  2F84               	goto	u167
+   919  0788  2F89               	nop2
+   920  0789                     l961:	
+   921                           
+   922                           ;comunicacion_main.c: 135:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   923  0789  300D               	movlw	13
+   924  078A  00FB               	movwf	??_main+1
+   925  078B  30FB               	movlw	251
+   926  078C  00FA               	movwf	??_main
+   927  078D                     u177:	
+   928  078D  0BFA               	decfsz	??_main,f
+   929  078E  2F8D               	goto	u177
+   930  078F  0BFB               	decfsz	??_main+1,f
+   931  0790  2F8D               	goto	u177
+   932  0791  2F92               	nop2
+   933  0792                     l963:	
+   934                           
+   935                           ;comunicacion_main.c: 136:             spiWrite(distancia_ade);
+   936  0792  300A               	movlw	10
+   937  0793  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   938  0798                     l965:	
+   939                           
+   940                           ;comunicacion_main.c: 137:             recibir_rasp = spiRead();
+   941  0798  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   942  079D  00FA               	movwf	??_main
+   943  079E  087A               	movf	??_main,w
+   944  079F  00FD               	movwf	_recibir_rasp
+   945  07A0                     l967:	
+   946                           
+   947                           ;comunicacion_main.c: 138:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   948  07A0  300D               	movlw	13
+   949  07A1  00FB               	movwf	??_main+1
+   950  07A2  30FB               	movlw	251
+   951  07A3  00FA               	movwf	??_main
+   952  07A4                     u187:	
+   953  07A4  0BFA               	decfsz	??_main,f
+   954  07A5  2FA4               	goto	u187
+   955  07A6  0BFB               	decfsz	??_main+1,f
+   956  07A7  2FA4               	goto	u187
+   957  07A8  2FA9               	nop2
+   958  07A9                     l969:	
+   959                           
+   960                           ;comunicacion_main.c: 140:             spiWrite(distancia_atr);
+   961  07A9  3014               	movlw	20
+   962  07AA  120A  118A  25DF  120A  118A  	fcall	_spiWrite
+   963  07AF                     l971:	
+   964                           
+   965                           ;comunicacion_main.c: 141:             recibir_rasp = spiRead();
+   966  07AF  120A  118A  25F2  120A  118A  	fcall	_spiRead
+   967  07B4  00FA               	movwf	??_main
+   968  07B5  087A               	movf	??_main,w
+   969  07B6  00FD               	movwf	_recibir_rasp
+   970  07B7                     l973:	
+   971                           
+   972                           ;comunicacion_main.c: 142:             _delay((unsigned long)((10)*(4000000/4000.0)));
+   973  07B7  300D               	movlw	13
+   974  07B8  00FB               	movwf	??_main+1
+   975  07B9  30FB               	movlw	251
+   976  07BA  00FA               	movwf	??_main
+   977  07BB                     u197:	
+   978  07BB  0BFA               	decfsz	??_main,f
+   979  07BC  2FBB               	goto	u197
+   980  07BD  0BFB               	decfsz	??_main+1,f
+   981  07BE  2FBB               	goto	u197
+   982  07BF  2FC0               	nop2
+   983  07C0                     l975:	
+   984                           
+   985                           ;comunicacion_main.c: 144:             hora++;
+   986  07C0  3001               	movlw	1
+   987  07C1  00FA               	movwf	??_main
+   988  07C2  087A               	movf	??_main,w
+   989  07C3  07F0               	addwf	_hora,f
+   990  07C4  2EAD               	goto	l905
+   991  07C5  120A  118A  2800   	ljmp	start
+   992  07C8                     __end_of_main:	
+   993                           
+   994                           	psect	text1
+   995  05DF                     __ptext1:	
+   996 ;; *************** function _spiWrite *****************
+   997 ;; Defined at:
+   998 ;;		line 36 in file "SPI.c"
+   999 ;; Parameters:    Size  Location     Type
+  1000 ;;  dat             1    wreg     unsigned char 
+  1001 ;; Auto vars:     Size  Location     Type
+  1002 ;;  dat             1    0[COMMON] unsigned char 
+  1003 ;; Return value:  Size  Location     Type
+  1004 ;;                  1    wreg      void 
+  1005 ;; Registers used:
+  1006 ;;		wreg
+  1007 ;; Tracked objects:
+  1008 ;;		On entry : 0/0
+  1009 ;;		On exit  : 0/0
+  1010 ;;		Unchanged: 0/0
+  1011 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1012 ;;      Params:         0       0       0       0       0
+  1013 ;;      Locals:         1       0       0       0       0
+  1014 ;;      Temps:          0       0       0       0       0
+  1015 ;;      Totals:         1       0       0       0       0
+  1016 ;;Total ram usage:        1 bytes
+  1017 ;; Hardware stack levels used:    1
+  1018 ;; This function calls:
+  1019 ;;		Nothing
+  1020 ;; This function is called by:
+  1021 ;;		_main
+  1022 ;; This function uses a non-reentrant model
+  1023 ;;
+  1024                           
+  1025                           
+  1026                           ;psect for function _spiWrite
+  1027  05DF                     _spiWrite:	
+  1028                           
+  1029                           ;incstack = 0
+  1030                           ; Regs used in _spiWrite: [wreg]
+  1031                           ;spiWrite@dat stored from wreg
+  1032  05DF  00F6               	movwf	spiWrite@dat
+  1033  05E0                     l887:	
+  1034                           
+  1035                           ;SPI.c: 36: void spiWrite(char dat);SPI.c: 37: {;SPI.c: 38:     SSPBUF = dat;
+  1036  05E0  0876               	movf	spiWrite@dat,w
+  1037  05E1  1283               	bcf	3,5	;RP0=0, select bank0
+  1038  05E2  1303               	bcf	3,6	;RP1=0, select bank0
+  1039  05E3  0093               	movwf	19	;volatile
+  1040  05E4                     l103:	
+  1041  05E4  0008               	return
+  1042  05E5                     __end_of_spiWrite:	
+  1043                           
+  1044                           	psect	text2
+  1045  05F2                     __ptext2:	
+  1046 ;; *************** function _spiRead *****************
+  1047 ;; Defined at:
+  1048 ;;		line 49 in file "SPI.c"
+  1049 ;; Parameters:    Size  Location     Type
+  1050 ;;		None
+  1051 ;; Auto vars:     Size  Location     Type
+  1052 ;;		None
+  1053 ;; Return value:  Size  Location     Type
+  1054 ;;                  1    wreg      unsigned char 
+  1055 ;; Registers used:
+  1056 ;;		wreg, status,2, status,0, pclath, cstack
+  1057 ;; Tracked objects:
+  1058 ;;		On entry : 0/0
+  1059 ;;		On exit  : 0/0
+  1060 ;;		Unchanged: 0/0
+  1061 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1062 ;;      Params:         0       0       0       0       0
+  1063 ;;      Locals:         0       0       0       0       0
+  1064 ;;      Temps:          0       0       0       0       0
+  1065 ;;      Totals:         0       0       0       0       0
+  1066 ;;Total ram usage:        0 bytes
+  1067 ;; Hardware stack levels used:    1
+  1068 ;; Hardware stack levels required when called:    1
+  1069 ;; This function calls:
+  1070 ;;		_spiReceiveWait
+  1071 ;; This function is called by:
+  1072 ;;		_main
+  1073 ;; This function uses a non-reentrant model
+  1074 ;;
+  1075                           
   1076                           
-  1077                           ;comunicacion_main.c: 121:             recibir_rasp = spiRead();
-  1078  0737  120A  118A  256F  120A  118A  	fcall	_spiRead
-  1079  073C  00FB               	movwf	??_main
-  1080  073D  087B               	movf	??_main,w
-  1081  073E  1283               	bcf	3,5	;RP0=0, select bank0
-  1082  073F  1303               	bcf	3,6	;RP1=0, select bank0
-  1083  0740  00A2               	movwf	_recibir_rasp
-  1084  0741                     l1074:	
-  1085                           
-  1086                           ;comunicacion_main.c: 122:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1087  0741  300D               	movlw	13
-  1088  0742  00FC               	movwf	??_main+1
-  1089  0743  30FB               	movlw	251
-  1090  0744  00FB               	movwf	??_main
-  1091  0745                     u357:	
-  1092  0745  0BFB               	decfsz	??_main,f
-  1093  0746  2F45               	goto	u357
-  1094  0747  0BFC               	decfsz	??_main+1,f
-  1095  0748  2F45               	goto	u357
-  1096  0749  2F4A               	nop2
-  1097  074A                     l1076:	
-  1098                           
-  1099                           ;comunicacion_main.c: 124:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1100  074A  300D               	movlw	13
-  1101  074B  00FC               	movwf	??_main+1
-  1102  074C  30FB               	movlw	251
-  1103  074D  00FB               	movwf	??_main
-  1104  074E                     u367:	
-  1105  074E  0BFB               	decfsz	??_main,f
-  1106  074F  2F4E               	goto	u367
-  1107  0750  0BFC               	decfsz	??_main+1,f
-  1108  0751  2F4E               	goto	u367
-  1109  0752  2F53               	nop2
-  1110  0753                     l1078:	
-  1111                           
-  1112                           ;comunicacion_main.c: 125:             spiWrite(posicion);
-  1113  0753  0873               	movf	_posicion,w
-  1114  0754  120A  118A  255B  120A  118A  	fcall	_spiWrite
-  1115  0759                     l1080:	
-  1116                           
-  1117                           ;comunicacion_main.c: 126:             recibir_rasp = spiRead();
-  1118  0759  120A  118A  256F  120A  118A  	fcall	_spiRead
-  1119  075E  00FB               	movwf	??_main
-  1120  075F  087B               	movf	??_main,w
-  1121  0760  1283               	bcf	3,5	;RP0=0, select bank0
-  1122  0761  1303               	bcf	3,6	;RP1=0, select bank0
-  1123  0762  00A2               	movwf	_recibir_rasp
-  1124  0763                     l1082:	
-  1125                           
-  1126                           ;comunicacion_main.c: 127:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1127  0763  300D               	movlw	13
-  1128  0764  00FC               	movwf	??_main+1
-  1129  0765  30FB               	movlw	251
-  1130  0766  00FB               	movwf	??_main
-  1131  0767                     u377:	
-  1132  0767  0BFB               	decfsz	??_main,f
-  1133  0768  2F67               	goto	u377
-  1134  0769  0BFC               	decfsz	??_main+1,f
-  1135  076A  2F67               	goto	u377
-  1136  076B  2F6C               	nop2
-  1137  076C                     l1084:	
-  1138                           
-  1139                           ;comunicacion_main.c: 129:             spiWrite(humedad);
-  1140  076C  0874               	movf	_humedad,w
-  1141  076D  120A  118A  255B  120A  118A  	fcall	_spiWrite
-  1142  0772                     l1086:	
-  1143                           
-  1144                           ;comunicacion_main.c: 130:             recibir_rasp = spiRead();
-  1145  0772  120A  118A  256F  120A  118A  	fcall	_spiRead
-  1146  0777  00FB               	movwf	??_main
-  1147  0778  087B               	movf	??_main,w
-  1148  0779  1283               	bcf	3,5	;RP0=0, select bank0
-  1149  077A  1303               	bcf	3,6	;RP1=0, select bank0
-  1150  077B  00A2               	movwf	_recibir_rasp
-  1151  077C                     l1088:	
-  1152                           
-  1153                           ;comunicacion_main.c: 131:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1154  077C  300D               	movlw	13
-  1155  077D  00FC               	movwf	??_main+1
-  1156  077E  30FB               	movlw	251
-  1157  077F  00FB               	movwf	??_main
-  1158  0780                     u387:	
-  1159  0780  0BFB               	decfsz	??_main,f
-  1160  0781  2F80               	goto	u387
-  1161  0782  0BFC               	decfsz	??_main+1,f
-  1162  0783  2F80               	goto	u387
-  1163  0784  2F85               	nop2
-  1164  0785                     l1090:	
-  1165                           
-  1166                           ;comunicacion_main.c: 133:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1167  0785  300D               	movlw	13
-  1168  0786  00FC               	movwf	??_main+1
-  1169  0787  30FB               	movlw	251
-  1170  0788  00FB               	movwf	??_main
-  1171  0789                     u397:	
-  1172  0789  0BFB               	decfsz	??_main,f
-  1173  078A  2F89               	goto	u397
-  1174  078B  0BFC               	decfsz	??_main+1,f
-  1175  078C  2F89               	goto	u397
-  1176  078D  2F8E               	nop2
-  1177  078E                     l1092:	
-  1178                           
-  1179                           ;comunicacion_main.c: 134:             spiWrite(distancia_ade);
-  1180  078E  0876               	movf	_distancia_ade,w
-  1181  078F  120A  118A  255B  120A  118A  	fcall	_spiWrite
-  1182  0794                     l1094:	
+  1077                           ;psect for function _spiRead
+  1078  05F2                     _spiRead:	
+  1079  05F2                     l889:	
+  1080                           ;incstack = 0
+  1081                           ; Regs used in _spiRead: [wreg+status,2+status,0+pclath+cstack]
+  1082                           
+  1083                           
+  1084                           ;SPI.c: 51:     spiReceiveWait();
+  1085  05F2  120A  118A  25EB  120A  118A  	fcall	_spiReceiveWait
+  1086  05F7                     l891:	
+  1087                           
+  1088                           ;SPI.c: 52:     return(SSPBUF);
+  1089  05F7  1283               	bcf	3,5	;RP0=0, select bank0
+  1090  05F8  1303               	bcf	3,6	;RP1=0, select bank0
+  1091  05F9  0813               	movf	19,w	;volatile
+  1092  05FA                     l111:	
+  1093  05FA  0008               	return
+  1094  05FB                     __end_of_spiRead:	
+  1095                           
+  1096                           	psect	text3
+  1097  05EB                     __ptext3:	
+  1098 ;; *************** function _spiReceiveWait *****************
+  1099 ;; Defined at:
+  1100 ;;		line 31 in file "SPI.c"
+  1101 ;; Parameters:    Size  Location     Type
+  1102 ;;		None
+  1103 ;; Auto vars:     Size  Location     Type
+  1104 ;;		None
+  1105 ;; Return value:  Size  Location     Type
+  1106 ;;                  1    wreg      void 
+  1107 ;; Registers used:
+  1108 ;;		None
+  1109 ;; Tracked objects:
+  1110 ;;		On entry : 0/0
+  1111 ;;		On exit  : 0/0
+  1112 ;;		Unchanged: 0/0
+  1113 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1114 ;;      Params:         0       0       0       0       0
+  1115 ;;      Locals:         0       0       0       0       0
+  1116 ;;      Temps:          0       0       0       0       0
+  1117 ;;      Totals:         0       0       0       0       0
+  1118 ;;Total ram usage:        0 bytes
+  1119 ;; Hardware stack levels used:    1
+  1120 ;; This function calls:
+  1121 ;;		Nothing
+  1122 ;; This function is called by:
+  1123 ;;		_spiRead
+  1124 ;; This function uses a non-reentrant model
+  1125 ;;
+  1126                           
+  1127                           
+  1128                           ;psect for function _spiReceiveWait
+  1129  05EB                     _spiReceiveWait:	
+  1130  05EB                     l853:	
+  1131                           ;incstack = 0
+  1132                           ; Regs used in _spiReceiveWait: []
+  1133                           
+  1134  05EB                     l97:	
+  1135                           ;SPI.c: 33:     while ( !SSPSTATbits.BF );
+  1136                           
+  1137  05EB  1683               	bsf	3,5	;RP0=1, select bank1
+  1138  05EC  1303               	bcf	3,6	;RP1=0, select bank1
+  1139  05ED  1C14               	btfss	20,0	;volatile
+  1140  05EE  2DF0               	goto	u31
+  1141  05EF  2DF1               	goto	u30
+  1142  05F0                     u31:	
+  1143  05F0  2DEB               	goto	l97
+  1144  05F1                     u30:	
+  1145  05F1                     l100:	
+  1146  05F1  0008               	return
+  1147  05F2                     __end_of_spiReceiveWait:	
+  1148                           
+  1149                           	psect	text4
+  1150  0623                     __ptext4:	
+  1151 ;; *************** function _spiInit *****************
+  1152 ;; Defined at:
+  1153 ;;		line 14 in file "SPI.c"
+  1154 ;; Parameters:    Size  Location     Type
+  1155 ;;  sType           1    wreg     enum E1292
+  1156 ;;  sDataSample     1    0[COMMON] enum E1300
+  1157 ;;  sClockIdle      1    1[COMMON] enum E1304
+  1158 ;;  sTransmitEdg    1    2[COMMON] enum E1308
+  1159 ;; Auto vars:     Size  Location     Type
+  1160 ;;  sType           1    3[COMMON] enum E1292
+  1161 ;; Return value:  Size  Location     Type
+  1162 ;;                  1    wreg      void 
+  1163 ;; Registers used:
+  1164 ;;		wreg, status,2, status,0
+  1165 ;; Tracked objects:
+  1166 ;;		On entry : 0/0
+  1167 ;;		On exit  : 0/0
+  1168 ;;		Unchanged: 0/0
+  1169 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1170 ;;      Params:         3       0       0       0       0
+  1171 ;;      Locals:         1       0       0       0       0
+  1172 ;;      Temps:          0       0       0       0       0
+  1173 ;;      Totals:         4       0       0       0       0
+  1174 ;;Total ram usage:        4 bytes
+  1175 ;; Hardware stack levels used:    1
+  1176 ;; This function calls:
+  1177 ;;		Nothing
+  1178 ;; This function is called by:
+  1179 ;;		_main
+  1180 ;; This function uses a non-reentrant model
+  1181 ;;
+  1182                           
   1183                           
-  1184                           ;comunicacion_main.c: 135:             recibir_rasp = spiRead();
-  1185  0794  120A  118A  256F  120A  118A  	fcall	_spiRead
-  1186  0799  00FB               	movwf	??_main
-  1187  079A  087B               	movf	??_main,w
-  1188  079B  1283               	bcf	3,5	;RP0=0, select bank0
-  1189  079C  1303               	bcf	3,6	;RP1=0, select bank0
-  1190  079D  00A2               	movwf	_recibir_rasp
-  1191  079E                     l1096:	
+  1184                           ;psect for function _spiInit
+  1185  0623                     _spiInit:	
+  1186                           
+  1187                           ;incstack = 0
+  1188                           ; Regs used in _spiInit: [wreg+status,2+status,0]
+  1189                           ;spiInit@sType stored from wreg
+  1190  0623  00F9               	movwf	spiInit@sType
+  1191  0624                     l877:	
   1192                           
-  1193                           ;comunicacion_main.c: 136:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1194  079E  300D               	movlw	13
-  1195  079F  00FC               	movwf	??_main+1
-  1196  07A0  30FB               	movlw	251
-  1197  07A1  00FB               	movwf	??_main
-  1198  07A2                     u407:	
-  1199  07A2  0BFB               	decfsz	??_main,f
-  1200  07A3  2FA2               	goto	u407
-  1201  07A4  0BFC               	decfsz	??_main+1,f
-  1202  07A5  2FA2               	goto	u407
-  1203  07A6  2FA7               	nop2
-  1204  07A7                     l1098:	
-  1205                           
-  1206                           ;comunicacion_main.c: 138:             spiWrite(distancia_atr);
-  1207  07A7  0875               	movf	_distancia_atr,w
-  1208  07A8  120A  118A  255B  120A  118A  	fcall	_spiWrite
-  1209  07AD                     l1100:	
-  1210                           
-  1211                           ;comunicacion_main.c: 139:             recibir_rasp = spiRead();
-  1212  07AD  120A  118A  256F  120A  118A  	fcall	_spiRead
-  1213  07B2  00FB               	movwf	??_main
-  1214  07B3  087B               	movf	??_main,w
-  1215  07B4  1283               	bcf	3,5	;RP0=0, select bank0
-  1216  07B5  1303               	bcf	3,6	;RP1=0, select bank0
-  1217  07B6  00A2               	movwf	_recibir_rasp
-  1218  07B7                     l1102:	
-  1219                           
-  1220                           ;comunicacion_main.c: 140:             _delay((unsigned long)((10)*(4000000/4000.0)));
-  1221  07B7  300D               	movlw	13
-  1222  07B8  00FC               	movwf	??_main+1
-  1223  07B9  30FB               	movlw	251
-  1224  07BA  00FB               	movwf	??_main
-  1225  07BB                     u417:	
-  1226  07BB  0BFB               	decfsz	??_main,f
-  1227  07BC  2FBB               	goto	u417
-  1228  07BD  0BFC               	decfsz	??_main+1,f
-  1229  07BE  2FBB               	goto	u417
-  1230  07BF  2FC0               	nop2
-  1231  07C0  2E38               	goto	l988
-  1232  07C1  120A  118A  2800   	ljmp	start
-  1233  07C4                     __end_of_main:	
-  1234                           
-  1235                           	psect	text1
-  1236  055B                     __ptext1:	
-  1237 ;; *************** function _spiWrite *****************
-  1238 ;; Defined at:
-  1239 ;;		line 36 in file "SPI.c"
-  1240 ;; Parameters:    Size  Location     Type
-  1241 ;;  dat             1    wreg     unsigned char 
-  1242 ;; Auto vars:     Size  Location     Type
-  1243 ;;  dat             1    0[COMMON] unsigned char 
-  1244 ;; Return value:  Size  Location     Type
-  1245 ;;                  1    wreg      void 
-  1246 ;; Registers used:
-  1247 ;;		wreg
-  1248 ;; Tracked objects:
-  1249 ;;		On entry : 0/0
-  1250 ;;		On exit  : 0/0
-  1251 ;;		Unchanged: 0/0
-  1252 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1253 ;;      Params:         0       0       0       0       0
-  1254 ;;      Locals:         1       0       0       0       0
-  1255 ;;      Temps:          0       0       0       0       0
-  1256 ;;      Totals:         1       0       0       0       0
-  1257 ;;Total ram usage:        1 bytes
-  1258 ;; Hardware stack levels used:    1
-  1259 ;; This function calls:
-  1260 ;;		Nothing
-  1261 ;; This function is called by:
-  1262 ;;		_main
-  1263 ;; This function uses a non-reentrant model
-  1264 ;;
-  1265                           
-  1266                           
-  1267                           ;psect for function _spiWrite
-  1268  055B                     _spiWrite:	
-  1269                           
-  1270                           ;incstack = 0
-  1271                           ; Regs used in _spiWrite: [wreg]
-  1272                           ;spiWrite@dat stored from wreg
-  1273  055B  00F7               	movwf	spiWrite@dat
-  1274  055C                     l962:	
-  1275                           
-  1276                           ;SPI.c: 36: void spiWrite(char dat);SPI.c: 37: {;SPI.c: 38:     SSPBUF = dat;
-  1277  055C  0877               	movf	spiWrite@dat,w
-  1278  055D  1283               	bcf	3,5	;RP0=0, select bank0
-  1279  055E  1303               	bcf	3,6	;RP1=0, select bank0
-  1280  055F  0093               	movwf	19	;volatile
-  1281  0560                     l126:	
-  1282  0560  0008               	return
-  1283  0561                     __end_of_spiWrite:	
-  1284                           
-  1285                           	psect	text2
-  1286  056F                     __ptext2:	
-  1287 ;; *************** function _spiRead *****************
-  1288 ;; Defined at:
-  1289 ;;		line 49 in file "SPI.c"
-  1290 ;; Parameters:    Size  Location     Type
-  1291 ;;		None
-  1292 ;; Auto vars:     Size  Location     Type
-  1293 ;;		None
-  1294 ;; Return value:  Size  Location     Type
-  1295 ;;                  1    wreg      unsigned char 
-  1296 ;; Registers used:
-  1297 ;;		wreg, status,2, status,0, pclath, cstack
-  1298 ;; Tracked objects:
-  1299 ;;		On entry : 0/0
-  1300 ;;		On exit  : 0/0
-  1301 ;;		Unchanged: 0/0
-  1302 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1303 ;;      Params:         0       0       0       0       0
-  1304 ;;      Locals:         0       0       0       0       0
-  1305 ;;      Temps:          0       0       0       0       0
-  1306 ;;      Totals:         0       0       0       0       0
-  1307 ;;Total ram usage:        0 bytes
-  1308 ;; Hardware stack levels used:    1
-  1309 ;; Hardware stack levels required when called:    1
-  1310 ;; This function calls:
-  1311 ;;		_spiReceiveWait
-  1312 ;; This function is called by:
-  1313 ;;		_main
-  1314 ;; This function uses a non-reentrant model
-  1315 ;;
-  1316                           
-  1317                           
-  1318                           ;psect for function _spiRead
-  1319  056F                     _spiRead:	
-  1320  056F                     l964:	
-  1321                           ;incstack = 0
-  1322                           ; Regs used in _spiRead: [wreg+status,2+status,0+pclath+cstack]
-  1323                           
-  1324                           
-  1325                           ;SPI.c: 51:     spiReceiveWait();
-  1326  056F  120A  118A  2561  120A  118A  	fcall	_spiReceiveWait
-  1327  0574                     l966:	
-  1328                           
-  1329                           ;SPI.c: 52:     return(SSPBUF);
-  1330  0574  1283               	bcf	3,5	;RP0=0, select bank0
-  1331  0575  1303               	bcf	3,6	;RP1=0, select bank0
-  1332  0576  0813               	movf	19,w	;volatile
-  1333  0577                     l134:	
-  1334  0577  0008               	return
-  1335  0578                     __end_of_spiRead:	
-  1336                           
-  1337                           	psect	text3
-  1338  0561                     __ptext3:	
-  1339 ;; *************** function _spiReceiveWait *****************
-  1340 ;; Defined at:
-  1341 ;;		line 31 in file "SPI.c"
-  1342 ;; Parameters:    Size  Location     Type
-  1343 ;;		None
-  1344 ;; Auto vars:     Size  Location     Type
-  1345 ;;		None
-  1346 ;; Return value:  Size  Location     Type
-  1347 ;;                  1    wreg      void 
-  1348 ;; Registers used:
-  1349 ;;		None
-  1350 ;; Tracked objects:
-  1351 ;;		On entry : 0/0
-  1352 ;;		On exit  : 0/0
-  1353 ;;		Unchanged: 0/0
-  1354 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1355 ;;      Params:         0       0       0       0       0
-  1356 ;;      Locals:         0       0       0       0       0
-  1357 ;;      Temps:          0       0       0       0       0
-  1358 ;;      Totals:         0       0       0       0       0
-  1359 ;;Total ram usage:        0 bytes
-  1360 ;; Hardware stack levels used:    1
-  1361 ;; This function calls:
-  1362 ;;		Nothing
-  1363 ;; This function is called by:
-  1364 ;;		_spiRead
-  1365 ;; This function uses a non-reentrant model
-  1366 ;;
-  1367                           
-  1368                           
-  1369                           ;psect for function _spiReceiveWait
-  1370  0561                     _spiReceiveWait:	
-  1371  0561                     l928:	
-  1372                           ;incstack = 0
-  1373                           ; Regs used in _spiReceiveWait: []
-  1374                           
-  1375  0561                     l120:	
-  1376                           ;SPI.c: 33:     while ( !SSPSTATbits.BF );
-  1377                           
-  1378  0561  1683               	bsf	3,5	;RP0=1, select bank1
-  1379  0562  1303               	bcf	3,6	;RP1=0, select bank1
-  1380  0563  1C14               	btfss	20,0	;volatile
-  1381  0564  2D66               	goto	u141
-  1382  0565  2D67               	goto	u140
-  1383  0566                     u141:	
-  1384  0566  2D61               	goto	l120
-  1385  0567                     u140:	
-  1386  0567                     l123:	
-  1387  0567  0008               	return
-  1388  0568                     __end_of_spiReceiveWait:	
-  1389                           
-  1390                           	psect	text4
-  1391  05A0                     __ptext4:	
-  1392 ;; *************** function _spiInit *****************
-  1393 ;; Defined at:
-  1394 ;;		line 14 in file "SPI.c"
-  1395 ;; Parameters:    Size  Location     Type
-  1396 ;;  sType           1    wreg     enum E1292
-  1397 ;;  sDataSample     1    0[COMMON] enum E1300
-  1398 ;;  sClockIdle      1    1[COMMON] enum E1304
-  1399 ;;  sTransmitEdg    1    2[COMMON] enum E1308
-  1400 ;; Auto vars:     Size  Location     Type
-  1401 ;;  sType           1    3[COMMON] enum E1292
-  1402 ;; Return value:  Size  Location     Type
-  1403 ;;                  1    wreg      void 
-  1404 ;; Registers used:
-  1405 ;;		wreg, status,2, status,0
-  1406 ;; Tracked objects:
-  1407 ;;		On entry : 0/0
-  1408 ;;		On exit  : 0/0
-  1409 ;;		Unchanged: 0/0
-  1410 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1411 ;;      Params:         3       0       0       0       0
-  1412 ;;      Locals:         1       0       0       0       0
-  1413 ;;      Temps:          0       0       0       0       0
-  1414 ;;      Totals:         4       0       0       0       0
-  1415 ;;Total ram usage:        4 bytes
-  1416 ;; Hardware stack levels used:    1
-  1417 ;; This function calls:
-  1418 ;;		Nothing
-  1419 ;; This function is called by:
-  1420 ;;		_main
-  1421 ;; This function uses a non-reentrant model
-  1422 ;;
-  1423                           
-  1424                           
-  1425                           ;psect for function _spiInit
-  1426  05A0                     _spiInit:	
-  1427                           
-  1428                           ;incstack = 0
-  1429                           ; Regs used in _spiInit: [wreg+status,2+status,0]
-  1430                           ;spiInit@sType stored from wreg
-  1431  05A0  00FA               	movwf	spiInit@sType
-  1432  05A1                     l952:	
-  1433                           
-  1434                           ;SPI.c: 14: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sCl
+  1193                           ;SPI.c: 14: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sCl
       +                          ockIdle, Spi_Transmit_Edge sTransmitEdge);SPI.c: 15: {;SPI.c: 16:     TRISC5 = 0;
-  1435  05A1  1683               	bsf	3,5	;RP0=1, select bank1
-  1436  05A2  1303               	bcf	3,6	;RP1=0, select bank1
-  1437  05A3  1287               	bcf	7,5	;volatile
-  1438                           
-  1439                           ;SPI.c: 17:     if(sType & 0b00000100)
-  1440  05A4  1D7A               	btfss	spiInit@sType,2
-  1441  05A5  2DA7               	goto	u151
-  1442  05A6  2DA8               	goto	u150
-  1443  05A7                     u151:	
-  1444  05A7  2DAC               	goto	l958
-  1445  05A8                     u150:	
-  1446  05A8                     l954:	
-  1447                           
-  1448                           ;SPI.c: 18:     {;SPI.c: 19:         SSPSTAT = sTransmitEdge;
-  1449  05A8  0879               	movf	spiInit@sTransmitEdge,w
-  1450  05A9  0094               	movwf	20	;volatile
-  1451  05AA                     l956:	
-  1452                           
-  1453                           ;SPI.c: 20:         TRISC3 = 1;
-  1454  05AA  1587               	bsf	7,3	;volatile
-  1455                           
-  1456                           ;SPI.c: 21:     }
-  1457  05AB  2DB0               	goto	l116
-  1458  05AC                     l958:	
-  1459                           
-  1460                           ;SPI.c: 23:     {;SPI.c: 24:         SSPSTAT = sDataSample | sTransmitEdge;
-  1461  05AC  0877               	movf	spiInit@sDataSample,w
-  1462  05AD  0479               	iorwf	spiInit@sTransmitEdge,w
-  1463  05AE  0094               	movwf	20	;volatile
-  1464  05AF                     l960:	
-  1465                           
-  1466                           ;SPI.c: 25:         TRISC3 = 0;
-  1467  05AF  1187               	bcf	7,3	;volatile
-  1468  05B0                     l116:	
-  1469                           ;SPI.c: 26:     }
-  1470                           
-  1471                           
-  1472                           ;SPI.c: 28:     SSPCON = sType | sClockIdle;
-  1473  05B0  087A               	movf	spiInit@sType,w
-  1474  05B1  0478               	iorwf	spiInit@sClockIdle,w
-  1475  05B2  1283               	bcf	3,5	;RP0=0, select bank0
-  1476  05B3  1303               	bcf	3,6	;RP1=0, select bank0
-  1477  05B4  0094               	movwf	20	;volatile
-  1478  05B5                     l117:	
-  1479  05B5  0008               	return
-  1480  05B6                     __end_of_spiInit:	
-  1481                           
-  1482                           	psect	text5
-  1483  05B6                     __ptext5:	
-  1484 ;; *************** function _oscillator *****************
-  1485 ;; Defined at:
-  1486 ;;		line 21 in file "serial.c"
-  1487 ;; Parameters:    Size  Location     Type
-  1488 ;;  a               1    wreg     unsigned char 
-  1489 ;; Auto vars:     Size  Location     Type
-  1490 ;;  a               1    2[COMMON] unsigned char 
-  1491 ;; Return value:  Size  Location     Type
-  1492 ;;                  1    wreg      void 
-  1493 ;; Registers used:
-  1494 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-  1495 ;; Tracked objects:
-  1496 ;;		On entry : 0/0
-  1497 ;;		On exit  : 0/0
-  1498 ;;		Unchanged: 0/0
-  1499 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1500 ;;      Params:         0       0       0       0       0
-  1501 ;;      Locals:         1       0       0       0       0
-  1502 ;;      Temps:          2       0       0       0       0
-  1503 ;;      Totals:         3       0       0       0       0
-  1504 ;;Total ram usage:        3 bytes
-  1505 ;; Hardware stack levels used:    1
-  1506 ;; This function calls:
-  1507 ;;		Nothing
-  1508 ;; This function is called by:
-  1509 ;;		_main
-  1510 ;; This function uses a non-reentrant model
-  1511 ;;
-  1512                           
-  1513                           
-  1514                           ;psect for function _oscillator
-  1515  05B6                     _oscillator:	
-  1516                           
-  1517                           ;incstack = 0
-  1518                           ; Regs used in _oscillator: [wreg-fsr0h+status,2+status,0]
-  1519                           ;oscillator@a stored from wreg
-  1520  05B6  00F9               	movwf	oscillator@a
-  1521  05B7                     l930:	
-  1522                           
-  1523                           ;serial.c: 22:     switch(a){
-  1524  05B7  2DE6               	goto	l932
-  1525  05B8                     l90:	
-  1526                           ;serial.c: 23:         case 0:
-  1527                           
-  1528                           
-  1529                           ;serial.c: 24:             OSCCONbits.IRCF2 = 0;
-  1530  05B8  1683               	bsf	3,5	;RP0=1, select bank1
-  1531  05B9  1303               	bcf	3,6	;RP1=0, select bank1
-  1532  05BA  130F               	bcf	15,6	;volatile
-  1533                           
-  1534                           ;serial.c: 25:             OSCCONbits.IRCF1 = 0;
-  1535  05BB  128F               	bcf	15,5	;volatile
-  1536                           
-  1537                           ;serial.c: 26:             OSCCONbits.IRCF0 = 0;
-  1538  05BC  120F               	bcf	15,4	;volatile
-  1539  05BD                     l91:	
-  1540                           ;serial.c: 27:         case 1:
-  1541                           
-  1542                           
-  1543                           ;serial.c: 28:             OSCCONbits.IRCF2 = 0;
-  1544  05BD  1683               	bsf	3,5	;RP0=1, select bank1
-  1545  05BE  1303               	bcf	3,6	;RP1=0, select bank1
-  1546  05BF  130F               	bcf	15,6	;volatile
-  1547                           
-  1548                           ;serial.c: 29:             OSCCONbits.IRCF1 = 0;
-  1549  05C0  128F               	bcf	15,5	;volatile
-  1550                           
-  1551                           ;serial.c: 30:             OSCCONbits.IRCF0 = 1;
-  1552  05C1  160F               	bsf	15,4	;volatile
-  1553  05C2                     l92:	
-  1554                           ;serial.c: 31:         case 2:
-  1555                           
-  1556                           
-  1557                           ;serial.c: 32:             OSCCONbits.IRCF2 = 0;
-  1558  05C2  1683               	bsf	3,5	;RP0=1, select bank1
-  1559  05C3  1303               	bcf	3,6	;RP1=0, select bank1
-  1560  05C4  130F               	bcf	15,6	;volatile
-  1561                           
-  1562                           ;serial.c: 33:             OSCCONbits.IRCF1 = 1;
-  1563  05C5  168F               	bsf	15,5	;volatile
-  1564                           
-  1565                           ;serial.c: 34:             OSCCONbits.IRCF0 = 0;
-  1566  05C6  120F               	bcf	15,4	;volatile
-  1567  05C7                     l93:	
-  1568                           ;serial.c: 35:         case 3:
-  1569                           
-  1570                           
-  1571                           ;serial.c: 36:             OSCCONbits.IRCF2 = 0;
-  1572  05C7  1683               	bsf	3,5	;RP0=1, select bank1
-  1573  05C8  1303               	bcf	3,6	;RP1=0, select bank1
-  1574  05C9  130F               	bcf	15,6	;volatile
-  1575                           
-  1576                           ;serial.c: 37:             OSCCONbits.IRCF1 = 1;
-  1577  05CA  168F               	bsf	15,5	;volatile
-  1578                           
-  1579                           ;serial.c: 38:             OSCCONbits.IRCF0 = 1;
-  1580  05CB  160F               	bsf	15,4	;volatile
-  1581  05CC                     l94:	
-  1582                           ;serial.c: 39:         case 4:
-  1583                           
-  1584                           
-  1585                           ;serial.c: 40:             OSCCONbits.IRCF2 = 1;
-  1586  05CC  1683               	bsf	3,5	;RP0=1, select bank1
-  1587  05CD  1303               	bcf	3,6	;RP1=0, select bank1
-  1588  05CE  170F               	bsf	15,6	;volatile
-  1589                           
-  1590                           ;serial.c: 41:             OSCCONbits.IRCF1 = 0;
-  1591  05CF  128F               	bcf	15,5	;volatile
-  1592                           
-  1593                           ;serial.c: 42:             OSCCONbits.IRCF0 = 0;
-  1594  05D0  120F               	bcf	15,4	;volatile
-  1595  05D1                     l95:	
-  1596                           ;serial.c: 43:         case 5:
-  1597                           
-  1598                           
-  1599                           ;serial.c: 44:             OSCCONbits.IRCF2 = 1;
-  1600  05D1  1683               	bsf	3,5	;RP0=1, select bank1
-  1601  05D2  1303               	bcf	3,6	;RP1=0, select bank1
-  1602  05D3  170F               	bsf	15,6	;volatile
-  1603                           
-  1604                           ;serial.c: 45:             OSCCONbits.IRCF1 = 0;
-  1605  05D4  128F               	bcf	15,5	;volatile
-  1606                           
-  1607                           ;serial.c: 46:             OSCCONbits.IRCF0 = 1;
-  1608  05D5  160F               	bsf	15,4	;volatile
-  1609  05D6                     l96:	
-  1610                           ;serial.c: 47:         case 6:
-  1611                           
-  1612                           
-  1613                           ;serial.c: 48:             OSCCONbits.IRCF2 = 1;
-  1614  05D6  1683               	bsf	3,5	;RP0=1, select bank1
-  1615  05D7  1303               	bcf	3,6	;RP1=0, select bank1
-  1616  05D8  170F               	bsf	15,6	;volatile
-  1617                           
-  1618                           ;serial.c: 49:             OSCCONbits.IRCF1 = 1;
-  1619  05D9  168F               	bsf	15,5	;volatile
-  1620                           
-  1621                           ;serial.c: 50:             OSCCONbits.IRCF0 = 0;
-  1622  05DA  120F               	bcf	15,4	;volatile
-  1623  05DB                     l97:	
-  1624                           ;serial.c: 51:         case 7:
-  1625                           
-  1626                           
-  1627                           ;serial.c: 52:             OSCCONbits.IRCF2 = 1;
-  1628  05DB  1683               	bsf	3,5	;RP0=1, select bank1
-  1629  05DC  1303               	bcf	3,6	;RP1=0, select bank1
-  1630  05DD  170F               	bsf	15,6	;volatile
-  1631                           
-  1632                           ;serial.c: 53:             OSCCONbits.IRCF1 = 1;
-  1633  05DE  168F               	bsf	15,5	;volatile
-  1634                           
-  1635                           ;serial.c: 54:             OSCCONbits.IRCF0 = 1;
-  1636  05DF  160F               	bsf	15,4	;volatile
-  1637  05E0                     l98:	
-  1638                           ;serial.c: 55:         default:
-  1639                           
-  1640                           
-  1641                           ;serial.c: 56:             OSCCONbits.IRCF2 = 1;
-  1642  05E0  1683               	bsf	3,5	;RP0=1, select bank1
-  1643  05E1  1303               	bcf	3,6	;RP1=0, select bank1
-  1644  05E2  170F               	bsf	15,6	;volatile
-  1645                           
-  1646                           ;serial.c: 57:             OSCCONbits.IRCF1 = 1;
-  1647  05E3  168F               	bsf	15,5	;volatile
-  1648                           
-  1649                           ;serial.c: 58:             OSCCONbits.IRCF0 = 0;
-  1650  05E4  120F               	bcf	15,4	;volatile
-  1651                           
-  1652                           ;serial.c: 59:     }
-  1653  05E5  2E08               	goto	l100
-  1654  05E6                     l932:	
-  1655  05E6  0879               	movf	oscillator@a,w
-  1656  05E7  00F7               	movwf	??_oscillator
-  1657  05E8  01F8               	clrf	??_oscillator+1
-  1658                           
-  1659                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1194  0624  1683               	bsf	3,5	;RP0=1, select bank1
+  1195  0625  1303               	bcf	3,6	;RP1=0, select bank1
+  1196  0626  1287               	bcf	7,5	;volatile
+  1197                           
+  1198                           ;SPI.c: 17:     if(sType & 0b00000100)
+  1199  0627  1D79               	btfss	spiInit@sType,2
+  1200  0628  2E2A               	goto	u41
+  1201  0629  2E2B               	goto	u40
+  1202  062A                     u41:	
+  1203  062A  2E2F               	goto	l883
+  1204  062B                     u40:	
+  1205  062B                     l879:	
+  1206                           
+  1207                           ;SPI.c: 18:     {;SPI.c: 19:         SSPSTAT = sTransmitEdge;
+  1208  062B  0878               	movf	spiInit@sTransmitEdge,w
+  1209  062C  0094               	movwf	20	;volatile
+  1210  062D                     l881:	
+  1211                           
+  1212                           ;SPI.c: 20:         TRISC3 = 1;
+  1213  062D  1587               	bsf	7,3	;volatile
+  1214                           
+  1215                           ;SPI.c: 21:     }
+  1216  062E  2E33               	goto	l93
+  1217  062F                     l883:	
+  1218                           
+  1219                           ;SPI.c: 23:     {;SPI.c: 24:         SSPSTAT = sDataSample | sTransmitEdge;
+  1220  062F  0876               	movf	spiInit@sDataSample,w
+  1221  0630  0478               	iorwf	spiInit@sTransmitEdge,w
+  1222  0631  0094               	movwf	20	;volatile
+  1223  0632                     l885:	
+  1224                           
+  1225                           ;SPI.c: 25:         TRISC3 = 0;
+  1226  0632  1187               	bcf	7,3	;volatile
+  1227  0633                     l93:	
+  1228                           ;SPI.c: 26:     }
+  1229                           
+  1230                           
+  1231                           ;SPI.c: 28:     SSPCON = sType | sClockIdle;
+  1232  0633  0879               	movf	spiInit@sType,w
+  1233  0634  0477               	iorwf	spiInit@sClockIdle,w
+  1234  0635  1283               	bcf	3,5	;RP0=0, select bank0
+  1235  0636  1303               	bcf	3,6	;RP1=0, select bank0
+  1236  0637  0094               	movwf	20	;volatile
+  1237  0638                     l94:	
+  1238  0638  0008               	return
+  1239  0639                     __end_of_spiInit:	
+  1240                           
+  1241                           	psect	text5
+  1242  0639                     __ptext5:	
+  1243 ;; *************** function _oscillator *****************
+  1244 ;; Defined at:
+  1245 ;;		line 21 in file "serial.c"
+  1246 ;; Parameters:    Size  Location     Type
+  1247 ;;  a               1    wreg     unsigned char 
+  1248 ;; Auto vars:     Size  Location     Type
+  1249 ;;  a               1    2[COMMON] unsigned char 
+  1250 ;; Return value:  Size  Location     Type
+  1251 ;;                  1    wreg      void 
+  1252 ;; Registers used:
+  1253 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1254 ;; Tracked objects:
+  1255 ;;		On entry : 0/0
+  1256 ;;		On exit  : 0/0
+  1257 ;;		Unchanged: 0/0
+  1258 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1259 ;;      Params:         0       0       0       0       0
+  1260 ;;      Locals:         1       0       0       0       0
+  1261 ;;      Temps:          2       0       0       0       0
+  1262 ;;      Totals:         3       0       0       0       0
+  1263 ;;Total ram usage:        3 bytes
+  1264 ;; Hardware stack levels used:    1
+  1265 ;; This function calls:
+  1266 ;;		Nothing
+  1267 ;; This function is called by:
+  1268 ;;		_main
+  1269 ;; This function uses a non-reentrant model
+  1270 ;;
+  1271                           
+  1272                           
+  1273                           ;psect for function _oscillator
+  1274  0639                     _oscillator:	
+  1275                           
+  1276                           ;incstack = 0
+  1277                           ; Regs used in _oscillator: [wreg-fsr0h+status,2+status,0]
+  1278                           ;oscillator@a stored from wreg
+  1279  0639  00F8               	movwf	oscillator@a
+  1280  063A                     l855:	
+  1281                           
+  1282                           ;serial.c: 22:     switch(a){
+  1283  063A  2E69               	goto	l857
+  1284  063B                     l67:	
+  1285                           ;serial.c: 23:         case 0:
+  1286                           
+  1287                           
+  1288                           ;serial.c: 24:             OSCCONbits.IRCF2 = 0;
+  1289  063B  1683               	bsf	3,5	;RP0=1, select bank1
+  1290  063C  1303               	bcf	3,6	;RP1=0, select bank1
+  1291  063D  130F               	bcf	15,6	;volatile
+  1292                           
+  1293                           ;serial.c: 25:             OSCCONbits.IRCF1 = 0;
+  1294  063E  128F               	bcf	15,5	;volatile
+  1295                           
+  1296                           ;serial.c: 26:             OSCCONbits.IRCF0 = 0;
+  1297  063F  120F               	bcf	15,4	;volatile
+  1298  0640                     l68:	
+  1299                           ;serial.c: 27:         case 1:
+  1300                           
+  1301                           
+  1302                           ;serial.c: 28:             OSCCONbits.IRCF2 = 0;
+  1303  0640  1683               	bsf	3,5	;RP0=1, select bank1
+  1304  0641  1303               	bcf	3,6	;RP1=0, select bank1
+  1305  0642  130F               	bcf	15,6	;volatile
+  1306                           
+  1307                           ;serial.c: 29:             OSCCONbits.IRCF1 = 0;
+  1308  0643  128F               	bcf	15,5	;volatile
+  1309                           
+  1310                           ;serial.c: 30:             OSCCONbits.IRCF0 = 1;
+  1311  0644  160F               	bsf	15,4	;volatile
+  1312  0645                     l69:	
+  1313                           ;serial.c: 31:         case 2:
+  1314                           
+  1315                           
+  1316                           ;serial.c: 32:             OSCCONbits.IRCF2 = 0;
+  1317  0645  1683               	bsf	3,5	;RP0=1, select bank1
+  1318  0646  1303               	bcf	3,6	;RP1=0, select bank1
+  1319  0647  130F               	bcf	15,6	;volatile
+  1320                           
+  1321                           ;serial.c: 33:             OSCCONbits.IRCF1 = 1;
+  1322  0648  168F               	bsf	15,5	;volatile
+  1323                           
+  1324                           ;serial.c: 34:             OSCCONbits.IRCF0 = 0;
+  1325  0649  120F               	bcf	15,4	;volatile
+  1326  064A                     l70:	
+  1327                           ;serial.c: 35:         case 3:
+  1328                           
+  1329                           
+  1330                           ;serial.c: 36:             OSCCONbits.IRCF2 = 0;
+  1331  064A  1683               	bsf	3,5	;RP0=1, select bank1
+  1332  064B  1303               	bcf	3,6	;RP1=0, select bank1
+  1333  064C  130F               	bcf	15,6	;volatile
+  1334                           
+  1335                           ;serial.c: 37:             OSCCONbits.IRCF1 = 1;
+  1336  064D  168F               	bsf	15,5	;volatile
+  1337                           
+  1338                           ;serial.c: 38:             OSCCONbits.IRCF0 = 1;
+  1339  064E  160F               	bsf	15,4	;volatile
+  1340  064F                     l71:	
+  1341                           ;serial.c: 39:         case 4:
+  1342                           
+  1343                           
+  1344                           ;serial.c: 40:             OSCCONbits.IRCF2 = 1;
+  1345  064F  1683               	bsf	3,5	;RP0=1, select bank1
+  1346  0650  1303               	bcf	3,6	;RP1=0, select bank1
+  1347  0651  170F               	bsf	15,6	;volatile
+  1348                           
+  1349                           ;serial.c: 41:             OSCCONbits.IRCF1 = 0;
+  1350  0652  128F               	bcf	15,5	;volatile
+  1351                           
+  1352                           ;serial.c: 42:             OSCCONbits.IRCF0 = 0;
+  1353  0653  120F               	bcf	15,4	;volatile
+  1354  0654                     l72:	
+  1355                           ;serial.c: 43:         case 5:
+  1356                           
+  1357                           
+  1358                           ;serial.c: 44:             OSCCONbits.IRCF2 = 1;
+  1359  0654  1683               	bsf	3,5	;RP0=1, select bank1
+  1360  0655  1303               	bcf	3,6	;RP1=0, select bank1
+  1361  0656  170F               	bsf	15,6	;volatile
+  1362                           
+  1363                           ;serial.c: 45:             OSCCONbits.IRCF1 = 0;
+  1364  0657  128F               	bcf	15,5	;volatile
+  1365                           
+  1366                           ;serial.c: 46:             OSCCONbits.IRCF0 = 1;
+  1367  0658  160F               	bsf	15,4	;volatile
+  1368  0659                     l73:	
+  1369                           ;serial.c: 47:         case 6:
+  1370                           
+  1371                           
+  1372                           ;serial.c: 48:             OSCCONbits.IRCF2 = 1;
+  1373  0659  1683               	bsf	3,5	;RP0=1, select bank1
+  1374  065A  1303               	bcf	3,6	;RP1=0, select bank1
+  1375  065B  170F               	bsf	15,6	;volatile
+  1376                           
+  1377                           ;serial.c: 49:             OSCCONbits.IRCF1 = 1;
+  1378  065C  168F               	bsf	15,5	;volatile
+  1379                           
+  1380                           ;serial.c: 50:             OSCCONbits.IRCF0 = 0;
+  1381  065D  120F               	bcf	15,4	;volatile
+  1382  065E                     l74:	
+  1383                           ;serial.c: 51:         case 7:
+  1384                           
+  1385                           
+  1386                           ;serial.c: 52:             OSCCONbits.IRCF2 = 1;
+  1387  065E  1683               	bsf	3,5	;RP0=1, select bank1
+  1388  065F  1303               	bcf	3,6	;RP1=0, select bank1
+  1389  0660  170F               	bsf	15,6	;volatile
+  1390                           
+  1391                           ;serial.c: 53:             OSCCONbits.IRCF1 = 1;
+  1392  0661  168F               	bsf	15,5	;volatile
+  1393                           
+  1394                           ;serial.c: 54:             OSCCONbits.IRCF0 = 1;
+  1395  0662  160F               	bsf	15,4	;volatile
+  1396  0663                     l75:	
+  1397                           ;serial.c: 55:         default:
+  1398                           
+  1399                           
+  1400                           ;serial.c: 56:             OSCCONbits.IRCF2 = 1;
+  1401  0663  1683               	bsf	3,5	;RP0=1, select bank1
+  1402  0664  1303               	bcf	3,6	;RP1=0, select bank1
+  1403  0665  170F               	bsf	15,6	;volatile
+  1404                           
+  1405                           ;serial.c: 57:             OSCCONbits.IRCF1 = 1;
+  1406  0666  168F               	bsf	15,5	;volatile
+  1407                           
+  1408                           ;serial.c: 58:             OSCCONbits.IRCF0 = 0;
+  1409  0667  120F               	bcf	15,4	;volatile
+  1410                           
+  1411                           ;serial.c: 59:     }
+  1412  0668  2E8B               	goto	l77
+  1413  0669                     l857:	
+  1414  0669  0878               	movf	oscillator@a,w
+  1415  066A  00F6               	movwf	??_oscillator
+  1416  066B  01F7               	clrf	??_oscillator+1
+  1417                           
+  1418                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1660                           ; Switch size 1, requested type "simple"
-  1661                           ; Number of cases is 1, Range of values is 0 to 0
-  1662                           ; switch strategies available:
-  1663                           ; Name         Instructions Cycles
-  1664                           ; simple_byte            4     3 (average)
-  1665                           ; direct_byte           11     8 (fixed)
-  1666                           ; jumptable            260     6 (fixed)
-  1667                           ;	Chosen strategy is simple_byte
-  1668  05E9  0878               	movf	??_oscillator+1,w
-  1669  05EA  3A00               	xorlw	0	; case 0
-  1670  05EB  1903               	skipnz
-  1671  05EC  2DEE               	goto	l1124
-  1672  05ED  2DE0               	goto	l98
-  1673  05EE                     l1124:	
-  1674                           
-  1675                           ; Switch size 1, requested type "simple"
-  1676                           ; Number of cases is 8, Range of values is 0 to 7
-  1677                           ; switch strategies available:
-  1678                           ; Name         Instructions Cycles
-  1679                           ; simple_byte           25    13 (average)
-  1680                           ; direct_byte           32     8 (fixed)
-  1681                           ; jumptable            260     6 (fixed)
-  1682                           ;	Chosen strategy is simple_byte
-  1683  05EE  0877               	movf	??_oscillator,w
-  1684  05EF  3A00               	xorlw	0	; case 0
-  1685  05F0  1903               	skipnz
-  1686  05F1  2DB8               	goto	l90
-  1687  05F2  3A01               	xorlw	1	; case 1
-  1688  05F3  1903               	skipnz
-  1689  05F4  2DBD               	goto	l91
-  1690  05F5  3A03               	xorlw	3	; case 2
-  1691  05F6  1903               	skipnz
-  1692  05F7  2DC2               	goto	l92
-  1693  05F8  3A01               	xorlw	1	; case 3
-  1694  05F9  1903               	skipnz
-  1695  05FA  2DC7               	goto	l93
-  1696  05FB  3A07               	xorlw	7	; case 4
-  1697  05FC  1903               	skipnz
-  1698  05FD  2DCC               	goto	l94
-  1699  05FE  3A01               	xorlw	1	; case 5
-  1700  05FF  1903               	skipnz
-  1701  0600  2DD1               	goto	l95
-  1702  0601  3A03               	xorlw	3	; case 6
-  1703  0602  1903               	skipnz
-  1704  0603  2DD6               	goto	l96
-  1705  0604  3A01               	xorlw	1	; case 7
-  1706  0605  1903               	skipnz
-  1707  0606  2DDB               	goto	l97
-  1708  0607  2DE0               	goto	l98
-  1709  0608                     l100:	
-  1710  0608  0008               	return
-  1711  0609                     __end_of_oscillator:	
-  1712                           
-  1713                           	psect	text6
-  1714  058B                     __ptext6:	
-  1715 ;; *************** function _init_serial *****************
-  1716 ;; Defined at:
-  1717 ;;		line 5 in file "serial.c"
-  1718 ;; Parameters:    Size  Location     Type
-  1719 ;;		None
-  1720 ;; Auto vars:     Size  Location     Type
-  1721 ;;		None
-  1722 ;; Return value:  Size  Location     Type
-  1723 ;;                  1    wreg      void 
-  1724 ;; Registers used:
-  1725 ;;		wreg, status,2
-  1726 ;; Tracked objects:
-  1727 ;;		On entry : 0/0
-  1728 ;;		On exit  : 0/0
-  1729 ;;		Unchanged: 0/0
-  1730 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1731 ;;      Params:         0       0       0       0       0
-  1732 ;;      Locals:         0       0       0       0       0
-  1733 ;;      Temps:          0       0       0       0       0
-  1734 ;;      Totals:         0       0       0       0       0
-  1735 ;;Total ram usage:        0 bytes
-  1736 ;; Hardware stack levels used:    1
-  1737 ;; This function calls:
-  1738 ;;		Nothing
-  1739 ;; This function is called by:
-  1740 ;;		_main
-  1741 ;; This function uses a non-reentrant model
-  1742 ;;
-  1743                           
-  1744                           
-  1745                           ;psect for function _init_serial
-  1746  058B                     _init_serial:	
-  1747  058B                     l938:	
-  1748                           ;incstack = 0
-  1749                           ; Regs used in _init_serial: [wreg+status,2]
-  1750                           
-  1751                           
-  1752                           ;serial.c: 8:     TXSTAbits.SYNC = 0;
-  1753  058B  1683               	bsf	3,5	;RP0=1, select bank1
-  1754  058C  1303               	bcf	3,6	;RP1=0, select bank1
-  1755  058D  1218               	bcf	24,4	;volatile
-  1756                           
-  1757                           ;serial.c: 9:     TXSTAbits.BRGH = 1;
-  1758  058E  1518               	bsf	24,2	;volatile
-  1759                           
-  1760                           ;serial.c: 10:     BAUDCTLbits.BRG16 = 1;
-  1761  058F  1683               	bsf	3,5	;RP0=1, select bank3
-  1762  0590  1703               	bsf	3,6	;RP1=1, select bank3
-  1763  0591  1587               	bsf	7,3	;volatile
-  1764  0592                     l940:	
-  1765                           
-  1766                           ;serial.c: 11:     SPBRG = 103;
-  1767  0592  3067               	movlw	103
-  1768  0593  1683               	bsf	3,5	;RP0=1, select bank1
-  1769  0594  1303               	bcf	3,6	;RP1=0, select bank1
-  1770  0595  0099               	movwf	25	;volatile
-  1771  0596                     l942:	
-  1772                           
-  1773                           ;serial.c: 12:     SPBRGH = 0;
-  1774  0596  019A               	clrf	26	;volatile
-  1775  0597                     l944:	
-  1776                           
-  1777                           ;serial.c: 14:     RCSTAbits.SPEN = 1;
-  1778  0597  1283               	bcf	3,5	;RP0=0, select bank0
-  1779  0598  1303               	bcf	3,6	;RP1=0, select bank0
-  1780  0599  1798               	bsf	24,7	;volatile
-  1781  059A                     l946:	
-  1782                           
-  1783                           ;serial.c: 15:     RCSTAbits.RX9 = 0;
-  1784  059A  1318               	bcf	24,6	;volatile
-  1785  059B                     l948:	
-  1786                           
-  1787                           ;serial.c: 16:     RCSTAbits.CREN = 1;
-  1788  059B  1618               	bsf	24,4	;volatile
-  1789  059C                     l950:	
-  1790                           
-  1791                           ;serial.c: 18:     TXSTAbits.TXEN = 1;
-  1792  059C  1683               	bsf	3,5	;RP0=1, select bank1
-  1793  059D  1303               	bcf	3,6	;RP1=0, select bank1
-  1794  059E  1698               	bsf	24,5	;volatile
-  1795  059F                     l86:	
-  1796  059F  0008               	return
-  1797  05A0                     __end_of_init_serial:	
-  1798  007E                     btemp	set	126	;btemp
-  1799  007E                     wtemp0	set	126
+  1419                           ; Switch size 1, requested type "simple"
+  1420                           ; Number of cases is 1, Range of values is 0 to 0
+  1421                           ; switch strategies available:
+  1422                           ; Name         Instructions Cycles
+  1423                           ; simple_byte            4     3 (average)
+  1424                           ; direct_byte           11     8 (fixed)
+  1425                           ; jumptable            260     6 (fixed)
+  1426                           ;	Chosen strategy is simple_byte
+  1427  066C  0877               	movf	??_oscillator+1,w
+  1428  066D  3A00               	xorlw	0	; case 0
+  1429  066E  1903               	skipnz
+  1430  066F  2E71               	goto	l997
+  1431  0670  2E63               	goto	l75
+  1432  0671                     l997:	
+  1433                           
+  1434                           ; Switch size 1, requested type "simple"
+  1435                           ; Number of cases is 8, Range of values is 0 to 7
+  1436                           ; switch strategies available:
+  1437                           ; Name         Instructions Cycles
+  1438                           ; simple_byte           25    13 (average)
+  1439                           ; direct_byte           32     8 (fixed)
+  1440                           ; jumptable            260     6 (fixed)
+  1441                           ;	Chosen strategy is simple_byte
+  1442  0671  0876               	movf	??_oscillator,w
+  1443  0672  3A00               	xorlw	0	; case 0
+  1444  0673  1903               	skipnz
+  1445  0674  2E3B               	goto	l67
+  1446  0675  3A01               	xorlw	1	; case 1
+  1447  0676  1903               	skipnz
+  1448  0677  2E40               	goto	l68
+  1449  0678  3A03               	xorlw	3	; case 2
+  1450  0679  1903               	skipnz
+  1451  067A  2E45               	goto	l69
+  1452  067B  3A01               	xorlw	1	; case 3
+  1453  067C  1903               	skipnz
+  1454  067D  2E4A               	goto	l70
+  1455  067E  3A07               	xorlw	7	; case 4
+  1456  067F  1903               	skipnz
+  1457  0680  2E4F               	goto	l71
+  1458  0681  3A01               	xorlw	1	; case 5
+  1459  0682  1903               	skipnz
+  1460  0683  2E54               	goto	l72
+  1461  0684  3A03               	xorlw	3	; case 6
+  1462  0685  1903               	skipnz
+  1463  0686  2E59               	goto	l73
+  1464  0687  3A01               	xorlw	1	; case 7
+  1465  0688  1903               	skipnz
+  1466  0689  2E5E               	goto	l74
+  1467  068A  2E63               	goto	l75
+  1468  068B                     l77:	
+  1469  068B  0008               	return
+  1470  068C                     __end_of_oscillator:	
+  1471                           
+  1472                           	psect	text6
+  1473  060E                     __ptext6:	
+  1474 ;; *************** function _init_serial *****************
+  1475 ;; Defined at:
+  1476 ;;		line 5 in file "serial.c"
+  1477 ;; Parameters:    Size  Location     Type
+  1478 ;;		None
+  1479 ;; Auto vars:     Size  Location     Type
+  1480 ;;		None
+  1481 ;; Return value:  Size  Location     Type
+  1482 ;;                  1    wreg      void 
+  1483 ;; Registers used:
+  1484 ;;		wreg, status,2
+  1485 ;; Tracked objects:
+  1486 ;;		On entry : 0/0
+  1487 ;;		On exit  : 0/0
+  1488 ;;		Unchanged: 0/0
+  1489 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1490 ;;      Params:         0       0       0       0       0
+  1491 ;;      Locals:         0       0       0       0       0
+  1492 ;;      Temps:          0       0       0       0       0
+  1493 ;;      Totals:         0       0       0       0       0
+  1494 ;;Total ram usage:        0 bytes
+  1495 ;; Hardware stack levels used:    1
+  1496 ;; This function calls:
+  1497 ;;		Nothing
+  1498 ;; This function is called by:
+  1499 ;;		_main
+  1500 ;; This function uses a non-reentrant model
+  1501 ;;
+  1502                           
+  1503                           
+  1504                           ;psect for function _init_serial
+  1505  060E                     _init_serial:	
+  1506  060E                     l863:	
+  1507                           ;incstack = 0
+  1508                           ; Regs used in _init_serial: [wreg+status,2]
+  1509                           
+  1510                           
+  1511                           ;serial.c: 8:     TXSTAbits.SYNC = 0;
+  1512  060E  1683               	bsf	3,5	;RP0=1, select bank1
+  1513  060F  1303               	bcf	3,6	;RP1=0, select bank1
+  1514  0610  1218               	bcf	24,4	;volatile
+  1515                           
+  1516                           ;serial.c: 9:     TXSTAbits.BRGH = 1;
+  1517  0611  1518               	bsf	24,2	;volatile
+  1518                           
+  1519                           ;serial.c: 10:     BAUDCTLbits.BRG16 = 1;
+  1520  0612  1683               	bsf	3,5	;RP0=1, select bank3
+  1521  0613  1703               	bsf	3,6	;RP1=1, select bank3
+  1522  0614  1587               	bsf	7,3	;volatile
+  1523  0615                     l865:	
+  1524                           
+  1525                           ;serial.c: 11:     SPBRG = 103;
+  1526  0615  3067               	movlw	103
+  1527  0616  1683               	bsf	3,5	;RP0=1, select bank1
+  1528  0617  1303               	bcf	3,6	;RP1=0, select bank1
+  1529  0618  0099               	movwf	25	;volatile
+  1530  0619                     l867:	
+  1531                           
+  1532                           ;serial.c: 12:     SPBRGH = 0;
+  1533  0619  019A               	clrf	26	;volatile
+  1534  061A                     l869:	
+  1535                           
+  1536                           ;serial.c: 14:     RCSTAbits.SPEN = 1;
+  1537  061A  1283               	bcf	3,5	;RP0=0, select bank0
+  1538  061B  1303               	bcf	3,6	;RP1=0, select bank0
+  1539  061C  1798               	bsf	24,7	;volatile
+  1540  061D                     l871:	
+  1541                           
+  1542                           ;serial.c: 15:     RCSTAbits.RX9 = 0;
+  1543  061D  1318               	bcf	24,6	;volatile
+  1544  061E                     l873:	
+  1545                           
+  1546                           ;serial.c: 16:     RCSTAbits.CREN = 1;
+  1547  061E  1618               	bsf	24,4	;volatile
+  1548  061F                     l875:	
+  1549                           
+  1550                           ;serial.c: 18:     TXSTAbits.TXEN = 1;
+  1551  061F  1683               	bsf	3,5	;RP0=1, select bank1
+  1552  0620  1303               	bcf	3,6	;RP1=0, select bank1
+  1553  0621  1698               	bsf	24,5	;volatile
+  1554  0622                     l63:	
+  1555  0622  0008               	return
+  1556  0623                     __end_of_init_serial:	
+  1557  007E                     btemp	set	126	;btemp
+  1558  007E                     wtemp0	set	126
 
 
 Data Sizes:
@@ -1927,91 +1686,73 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sat May 02 01:47:56 2020
+Symbol Table                                                                                   Sat May 02 23:14:34 2020
 
                        pc 0002               __CFG_CP$OFF 0000               _SSPSTATbits 0094  
-                      l90 05B8                        l91 05BD                        l92 05C2  
-                      l93 05C7                        l86 059F                        l94 05CC  
-                      l95 05D1                        l96 05D6                        l97 05DB  
-                      l98 05E0                        fsr 0004                       l100 0608  
-                     l120 0561                       l123 0567                       l116 05B0  
-                     l117 05B5                       l134 0577                       l126 0560  
-                     l930 05B7                       l940 0592                       l932 05E6  
-                     l950 059C                       l942 0596                       l944 0597  
-                     l960 05AF                       l952 05A1                       l928 0561  
-                     l946 059A                       l938 058B                       l954 05A8  
-                     l962 055C                       l970 0609                       l948 059B  
-                     l956 05AA                       l964 056F                       l980 0620  
-                     l972 0618                       l958 05AC                       l966 0574  
-                     l990 063E                       l982 0626                       l974 0619  
-                     l992 0644                       l984 062B                       l976 061A  
-                     l994 064A                       l986 0634                       l978 061D  
-                     l996 064E                       l988 0638                       l998 0652  
-                     u200 065E                       u201 065D                       u210 0666  
-                     u211 0665                       u140 0567                       u220 066E  
-                     u141 0566                       u221 066D                       u150 05A8  
-                     u230 0676                       u151 05A7                       u231 0675  
-                     u240 067E                       u160 063E                       u241 067D  
-                     u161 063D                       u250 0686                       u170 064A  
-                     u307 06D4                       u251 0685                       u171 0649  
-                     u260 068E                       u180 064E                       u317 06EF  
-                     u261 068D                       u181 064D                       u190 0656  
-                     u407 07A2                       u327 070A                       u191 0655  
-                     u417 07BB                       u337 0713              __CFG_CPD$OFF 0000  
-                     u347 072C                       u357 0745                       u277 0699  
-                     u367 074E                       u287 06B2                       u377 0767  
-                     u297 06CB                       u387 0780                       u397 0789  
-                     indf 0000              __CFG_LVP$OFF 0000                      l1000 0656  
-                    l1010 066A                      l1002 065A                      l1100 07AD  
-                    l1020 067E                      l1012 066E                      l1004 065E  
-                    l1102 07B7                      l1030 0692                      l1022 0682  
-                    l1014 0672                      l1006 0662                      l1040 06AE  
-                    l1032 0693                      l1024 0686                      l1016 0676  
-                    l1008 0666                      l1050 06D9                      l1042 06B7  
-                    l1034 0695                      l1026 068A                      l1018 067A  
-                    l1124 05EE                      l1060 0706                      l1052 06E1  
-                    l1044 06BD                      l1036 069E                      l1028 068E  
-                    l1070 0731                      l1062 070F                      l1054 06EB  
-                    l1046 06C7                      l1038 06A4                      l1080 0759  
-                    l1072 0737                      l1064 0718                      l1056 06F4  
-                    l1048 06D0                      l1090 0785                      l1082 0763  
-                    l1074 0741                      l1066 071E                      l1058 06FC  
-                    l1092 078E                      l1084 076C                      l1076 074A  
-                    l1068 0728                      l1094 0794                      l1086 0772  
-                    l1078 0753                      l1096 079E                      l1088 077C  
-                    l1098 07A7              __CFG_WRT$OFF 0000                      _main 0609  
+                      l70 064A                        l63 0622                        l71 064F  
+                      l72 0654                        l73 0659                        l74 065E  
+                      l75 0663                        l67 063B                        l68 0640  
+                      l77 068B                        l69 0645                        l93 0633  
+                      l94 0638                        l97 05EB                        u30 05F1  
+                      u31 05F0                        u40 062B                        u41 062A  
+                      u57 06B1                        u67 06C8                        u77 06DF  
+                      u87 06E8                        u97 06FF                        fsr 0004  
+                     l100 05F1                       l111 05FA                       l103 05E4  
+                     l901 06A0                       l911 06C4                       l903 06A9  
+                     l921 06ED                       l913 06CD                       l905 06AD  
+                     l931 0712                       l923 06F3                       l915 06D3  
+                     l907 06B6                       l853 05EB                       l941 073B  
+                     l933 071B                       l925 06FB                       l917 06DB  
+                     l909 06BC                       l871 061D                       l863 060E  
+                     l855 063A                       l951 0761                       l943 0741  
+                     l935 0724                       l927 0704                       l919 06E4  
+                     l873 061E                       l865 0615                       l857 0669  
+                     l881 062D                       l961 0789                       l953 0769  
+                     l945 0749                       l937 072A                       l929 070A  
+                     l875 061F                       l867 0619                       l883 062F  
+                     l891 05F7                       l971 07AF                       l963 0792  
+                     l955 0772                       l947 0752                       l939 0732  
+                     l869 061A                       l885 0632                       l877 0624  
+                     l973 07B7                       l965 0798                       l957 0778  
+                     l949 075B                       l879 062B                       l887 05E0  
+                     l975 07C0                       l967 07A0                       l959 0780  
+                     l895 068C                       l889 05F2                       l969 07A9  
+                     l897 0695                       l899 069B                       l997 0671  
+                     u107 0716                       u117 071F                       u127 0736  
+                     u137 074D                       u147 0756                       u157 076D  
+                     u167 0784                       u177 078D              __CFG_CPD$OFF 0000  
+                     u187 07A4                       u197 07BB                       indf 0000  
+            __CFG_LVP$OFF 0000              __CFG_WRT$OFF 0000                      _main 068C  
                     _hora 0070                      btemp 007E                      start 0000  
-           __CFG_IESO$OFF 0000                     ?_main 0077             __CFG_WDTE$OFF 0000  
-                   _RCREG 001A                     _SPBRG 0099                     _PORTB 0006  
-                   _PORTC 0007                     _TRISB 0086                     _TRISC 0087  
-            ?_init_serial 0077            __CFG_FCMEN$OFF 0000            __CFG_BOREN$OFF 0000  
-                   pclath 000A           __end_of_spiInit 05B6           __end_of_spiRead 0578  
+           __CFG_IESO$OFF 0000                     ?_main 0076             __CFG_WDTE$OFF 0000  
+                   _SPBRG 0099                     _PORTB 0006                     _TRISB 0086  
+            ?_init_serial 0076            __CFG_FCMEN$OFF 0000            __CFG_BOREN$OFF 0000  
+                   pclath 000A           __end_of_spiInit 0639           __end_of_spiRead 05FB  
                    status 0003                     wtemp0 007E            __CFG_MCLRE$OFF 0000  
-         __initialization 07C4              __end_of_main 07C4                    ??_main 007B  
+         __initialization 07C8              __end_of_main 07C8                    ??_main 007A  
                   _ANSELH 0189                    _SPBRGH 009A                    _TRISC3 043B  
                   _TRISC5 043D                    _SSPCON 0014                    _SSPBUF 0013  
-          __CFG_PWRTE$OFF 0000              __pdataCOMMON 0070          __end_of_spiWrite 0561  
-               ??_spiInit 007A                 ??_spiRead 0077   __end_of__initialization 07FC  
-          __pcstackCOMMON 0077              __pidataBANK0 0559      __size_of_init_serial 0015  
-              __pbssBANK0 0022                __pmaintext 0609   __size_of_spiReceiveWait 0007  
-                 _SSPSTAT 0094                 ?_spiWrite 0077                   __ptext1 055B  
-                 __ptext2 056F                   __ptext3 0561                   __ptext4 05A0  
-                 __ptext5 05B6                   __ptext6 058B                   _humedad 0074  
-                 _minutos 0021                   _spiInit 05A0                   _spiRead 056F  
-             oscillator@a 0079      end_of_initialization 07FC                _oscillator 05B6  
-               _RCSTAbits 0018                ??_spiWrite 0077               spiWrite@dat 0077  
-               _TXSTAbits 0098            _spiReceiveWait 0561             __pidataCOMMON 0568  
-             _BAUDCTLbits 0187       start_initialization 07C4  __CFG_FOSC$INTRC_NOCLKOUT 0000  
-  __end_of_spiReceiveWait 0568               ?_oscillator 0077                init_fetch0 0578  
-             __pdataBANK0 0020             ??_init_serial 0077               __pbssCOMMON 007D  
-               ___latbits 0002                 _bandera_1 007D           ?_spiReceiveWait 0077  
-       __size_of_spiWrite 0006                  ?_spiInit 0077                  ?_spiRead 0077  
-     __size_of_oscillator 0053       __end_of_init_serial 05A0              _recibir_rasp 0022  
-    spiInit@sTransmitEdge 0079                  _PIE1bits 008C        spiInit@sDataSample 0077  
-                _PIR1bits 000C               _init_serial 058B          __size_of_spiInit 0016  
-        __size_of_spiRead 0009         __CFG_BOR4V$BOR40V 0000             __size_of_main 01BB  
-                _segundos 0020              ??_oscillator 0077                  _temp_amb 0072  
-                _temp_obj 0071                  _spiWrite 055B                  _posicion 0073  
-            spiInit@sType 007A         spiInit@sClockIdle 0078                _INTCONbits 000B  
-                init_ram0 057C        __end_of_oscillator 0609          ??_spiReceiveWait 0077  
-              _OSCCONbits 008F             _distancia_ade 0076             _distancia_atr 0075  
+          __CFG_PWRTE$OFF 0000              __pdataCOMMON 0070          __end_of_spiWrite 05E5  
+               ??_spiInit 0079                 ??_spiRead 0076   __end_of__initialization 07FC  
+          __pcstackCOMMON 0076              __pidataBANK0 05DC      __size_of_init_serial 0015  
+              __pmaintext 068C   __size_of_spiReceiveWait 0007                   _SSPSTAT 0094  
+               ?_spiWrite 0076                   __ptext1 05DF                   __ptext2 05F2  
+                 __ptext3 05EB                   __ptext4 0623                   __ptext5 0639  
+                 __ptext6 060E                   _humedad 0073                   _minutos 0021  
+                 _spiInit 0623                   _spiRead 05F2               oscillator@a 0078  
+    end_of_initialization 07FC                _oscillator 0639                 _RCSTAbits 0018  
+              ??_spiWrite 0076               spiWrite@dat 0076                 _TXSTAbits 0098  
+          _spiReceiveWait 05EB             __pidataCOMMON 05E5               _BAUDCTLbits 0187  
+     start_initialization 07C8  __CFG_FOSC$INTRC_NOCLKOUT 0000    __end_of_spiReceiveWait 05F2  
+             ?_oscillator 0076                init_fetch0 05FB               __pdataBANK0 0020  
+           ??_init_serial 0076               __pbssCOMMON 007C                 ___latbits 0002  
+               _bandera_1 007C           ?_spiReceiveWait 0076         __size_of_spiWrite 0006  
+                ?_spiInit 0076                  ?_spiRead 0076       __size_of_oscillator 0053  
+     __end_of_init_serial 0623              _recibir_rasp 007D      spiInit@sTransmitEdge 0078  
+      spiInit@sDataSample 0076               _init_serial 060E          __size_of_spiInit 0016  
+        __size_of_spiRead 0009         __CFG_BOR4V$BOR40V 0000             __size_of_main 013C  
+                _segundos 0020              ??_oscillator 0076                  _temp_amb 0071  
+                _temp_obj 0022                  _spiWrite 05DF                  _posicion 0072  
+            spiInit@sType 0079         spiInit@sClockIdle 0077                  init_ram0 05FF  
+      __end_of_oscillator 068C          ??_spiReceiveWait 0076                _OSCCONbits 008F  
+           _distancia_ade 0075             _distancia_atr 0074  

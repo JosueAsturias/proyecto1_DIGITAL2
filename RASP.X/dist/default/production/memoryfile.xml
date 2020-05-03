@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\Comunicacion_proyecto_1.X.production.hex">
+  <executable name="dist/default/production\RASP.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>551</used>
-      <free>7641</free>
+      <used>2073</used>
+      <free>6119</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>368</length>
-      <used>19</used>
-      <free>349</free>
+      <used>73</used>
+      <free>295</free>
     </memory>
   </executable>
 </project>

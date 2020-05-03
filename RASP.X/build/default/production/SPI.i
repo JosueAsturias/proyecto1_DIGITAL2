@@ -1,4 +1,4 @@
-# 1 "comunicacion_main.c"
+# 1 "SPI.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,26 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "comunicacion_main.c" 2
+# 1 "SPI.c" 2
 
 
 
 
 
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
 
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -2512,10 +2499,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 21 "comunicacion_main.c" 2
+# 9 "SPI.c" 2
 
-# 1 "./serial.h" 1
-# 35 "./serial.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2649,14 +2634,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 35 "./serial.h" 2
-
-
-
-
-void init_serial(void);
-void oscillator(uint8_t a);
-# 22 "comunicacion_main.c" 2
+# 10 "SPI.c" 2
 
 # 1 "./SPI.h" 1
 # 14 "./SPI.h"
@@ -2697,87 +2675,47 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 23 "comunicacion_main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 24 "comunicacion_main.c" 2
+# 11 "SPI.c" 2
 
 
 
-uint8_t recibir_rasp = 0;
-uint8_t bandera_1 = 0;
-
-
-uint8_t distancia_ade = 10;
-uint8_t distancia_atr = 20;
-uint8_t humedad = 30;
-uint8_t posicion = 40;
-int8_t temp_amb = 50;
-int8_t temp_obj = 60;
-uint8_t hora = 10;
-uint8_t minutos = 80;
-uint8_t segundos = 90;
-
-
-
-void main(void) {
-    PORTB = 0x00;
-    TRISB = 0x00;
-    ANSELH = 0x00;
-    oscillator(6);
-    init_serial();
-    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-    PORTB = 0x0F;
-
-    while(1){
-# 99 "comunicacion_main.c"
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(125);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            spiWrite(hora);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(minutos);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            spiWrite(segundos);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(temp_amb);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            spiWrite(temp_obj);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(posicion);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            spiWrite(humedad);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-            spiWrite(distancia_ade);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            spiWrite(distancia_atr);
-            recibir_rasp = spiRead();
-            _delay((unsigned long)((10)*(4000000/4000.0)));
-
-            hora++;
-
+void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+{
+    TRISC5 = 0;
+    if(sType & 0b00000100)
+    {
+        SSPSTAT = sTransmitEdge;
+        TRISC3 = 1;
     }
-    return;
+    else
+    {
+        SSPSTAT = sDataSample | sTransmitEdge;
+        TRISC3 = 0;
+    }
+
+    SSPCON = sType | sClockIdle;
+}
+
+static void spiReceiveWait()
+{
+    while ( !SSPSTATbits.BF );
+}
+
+void spiWrite(char dat)
+{
+    SSPBUF = dat;
+}
+
+unsigned spiDataReady()
+{
+    if(SSPSTATbits.BF)
+        return 1;
+    else
+        return 0;
+}
+
+char spiRead()
+{
+    spiReceiveWait();
+    return(SSPBUF);
 }

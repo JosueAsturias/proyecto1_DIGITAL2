@@ -1,67 +1,64 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"228 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"1478
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"3449
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"40 ./serial.h
-[; ;./serial.h: 40: void oscillator(uint8_t a);
-[v _oscillator `(v ~T0 @X0 0 ef1`uc ]
-"39
-[; ;./serial.h: 39: void init_serial(void);
-[v _init_serial `(v ~T0 @X0 0 ef ]
-"49 comunicacion_main.c
-[; ;comunicacion_main.c: 49:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[c E1295 32 33 34 35 36 37 .. ]
-[n E1295 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
-[c E1303 0 128 .. ]
-[n E1303 . SPI_DATA_SAMPLE_MIDDLE SPI_DATA_SAMPLE_END  ]
-[c E1307 16 0 .. ]
-[n E1307 . SPI_CLOCK_IDLE_HIGH SPI_CLOCK_IDLE_LOW  ]
-[c E1311 0 64 .. ]
-[n E1311 . SPI_IDLE_2_ACTIVE SPI_ACTIVE_2_IDLE  ]
-"45 ./SPI.h
-[; ;./SPI.h: 45: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
-[v _spiInit `(v ~T0 @X0 0 ef4`E1295`E1303`E1307`E1311 ]
-[v F1256 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF1256 ~T0 @X0 0 e ]
-[p i __delay ]
-"46 ./SPI.h
-[; ;./SPI.h: 46: void spiWrite(char);
-[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"48
-[; ;./SPI.h: 48: char spiRead();
-[v _spiRead `(uc ~T0 @X0 0 e? ]
-"6 comunicacion_main.c
-[p x FOSC = INTRC_NOCLKOUT ]
-"7
-[p x WDTE = OFF ]
-"8
-[p x PWRTE = OFF ]
-"9
-[p x MCLRE = OFF ]
-"10
-[p x CP = OFF ]
-"11
-[p x CPD = OFF ]
-"12
-[p x BOREN = OFF ]
-"13
-[p x IESO = OFF ]
-"14
-[p x FCMEN = OFF ]
-"15
-[p x LVP = OFF ]
-"18
-[p x BOR4V = BOR40V ]
-"19
-[p x WRT = OFF ]
+"14 SPI.c
+[; ;SPI.c: 14: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+[c E1292 32 33 34 35 36 37 .. ]
+[n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
+[c E1300 0 128 .. ]
+[n E1300 . SPI_DATA_SAMPLE_MIDDLE SPI_DATA_SAMPLE_END  ]
+[c E1304 16 0 .. ]
+[n E1304 . SPI_CLOCK_IDLE_HIGH SPI_CLOCK_IDLE_LOW  ]
+[c E1308 0 64 .. ]
+[n E1308 . SPI_IDLE_2_ACTIVE SPI_ACTIVE_2_IDLE  ]
+"4463 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4463: extern volatile __bit TRISC5 __attribute__((address(0x43D)));
+[v _TRISC5 `Vb ~T0 @X0 0 e@1085 ]
+"2177
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2177: extern volatile unsigned char SSPSTAT __attribute__((address(0x094)));
+[v _SSPSTAT `Vuc ~T0 @X0 0 e@148 ]
+"4457
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4457: extern volatile __bit TRISC3 __attribute__((address(0x43B)));
+[v _TRISC3 `Vb ~T0 @X0 0 e@1083 ]
+"850
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 850: extern volatile unsigned char SSPCON __attribute__((address(0x014)));
+[v _SSPCON `Vuc ~T0 @X0 0 e@20 ]
+"2183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2183:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . BF UA R_nW S P D_nA CKE SMP ]
+"2193
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2193:     struct {
+[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S83 . . R . D ]
+"2199
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2199:     struct {
+[s S84 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S84 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+"2206
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2206:     struct {
+[s S85 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S85 . . nW . nA ]
+"2212
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2212:     struct {
+[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S86 . . nWRITE . nADDRESS ]
+"2218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2218:     struct {
+[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S87 . . R_W . D_A ]
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2224:     struct {
+[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S88 . . READ_WRITE . DATA_ADDRESS ]
+"2182
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2182: typedef union {
+[u S81 `S82 1 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 ]
+[n S81 . . . . . . . . ]
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2231: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
+[v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
+"843
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -296,222 +293,147 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"27 comunicacion_main.c
-[; ;comunicacion_main.c: 27: uint8_t recibir_rasp = 0;
-[v _recibir_rasp `uc ~T0 @X0 1 e ]
-[i _recibir_rasp
--> -> 0 `i `uc
-]
-"28
-[; ;comunicacion_main.c: 28: uint8_t bandera_1 = 0;
-[v _bandera_1 `uc ~T0 @X0 1 e ]
-[i _bandera_1
--> -> 0 `i `uc
-]
-"31
-[; ;comunicacion_main.c: 31: uint8_t distancia_ade = 10;
-[v _distancia_ade `uc ~T0 @X0 1 e ]
-[i _distancia_ade
--> -> 10 `i `uc
-]
-"32
-[; ;comunicacion_main.c: 32: uint8_t distancia_atr = 20;
-[v _distancia_atr `uc ~T0 @X0 1 e ]
-[i _distancia_atr
--> -> 20 `i `uc
-]
-"33
-[; ;comunicacion_main.c: 33: uint8_t humedad = 30;
-[v _humedad `uc ~T0 @X0 1 e ]
-[i _humedad
--> -> 30 `i `uc
-]
-"34
-[; ;comunicacion_main.c: 34: uint8_t posicion = 40;
-[v _posicion `uc ~T0 @X0 1 e ]
-[i _posicion
--> -> 40 `i `uc
-]
-"35
-[; ;comunicacion_main.c: 35: int8_t temp_amb = 50;
-[v _temp_amb `c ~T0 @X0 1 e ]
-[i _temp_amb
--> -> 50 `i `c
-]
-"36
-[; ;comunicacion_main.c: 36: int8_t temp_obj = 60;
-[v _temp_obj `c ~T0 @X0 1 e ]
-[i _temp_obj
--> -> 60 `i `c
-]
-"37
-[; ;comunicacion_main.c: 37: uint8_t hora = 10;
-[v _hora `uc ~T0 @X0 1 e ]
-[i _hora
--> -> 10 `i `uc
-]
-"38
-[; ;comunicacion_main.c: 38: uint8_t minutos = 80;
-[v _minutos `uc ~T0 @X0 1 e ]
-[i _minutos
--> -> 80 `i `uc
-]
-"39
-[; ;comunicacion_main.c: 39: uint8_t segundos = 90;
-[v _segundos `uc ~T0 @X0 1 e ]
-[i _segundos
--> -> 90 `i `uc
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"43
-[; ;comunicacion_main.c: 43: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"14 SPI.c
+[; ;SPI.c: 14: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+[v _spiInit `(v ~T0 @X0 1 ef4`E1292`E1300`E1304`E1308 ]
+"15
+[; ;SPI.c: 15: {
 {
-[e :U _main ]
+[e :U _spiInit ]
+"14
+[; ;SPI.c: 14: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+[v _sType `E1292 ~T0 @X0 1 r1 ]
+[v _sDataSample `E1300 ~T0 @X0 1 r2 ]
+[v _sClockIdle `E1304 ~T0 @X0 1 r3 ]
+[v _sTransmitEdge `E1308 ~T0 @X0 1 r4 ]
+"15
+[; ;SPI.c: 15: {
 [f ]
-"44
-[; ;comunicacion_main.c: 44:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"45
-[; ;comunicacion_main.c: 45:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
-"46
-[; ;comunicacion_main.c: 46:     ANSELH = 0x00;
-[e = _ANSELH -> -> 0 `i `uc ]
-"47
-[; ;comunicacion_main.c: 47:     oscillator(6);
-[e ( _oscillator (1 -> -> 6 `i `uc ]
-"48
-[; ;comunicacion_main.c: 48:     init_serial();
-[e ( _init_serial ..  ]
-"49
-[; ;comunicacion_main.c: 49:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1295 0 . `E1303 0 . `E1307 1 . `E1311 0 ]
-"50
-[; ;comunicacion_main.c: 50:     PORTB = 0x0F;
-[e = _PORTB -> -> 15 `i `uc ]
-"52
-[; ;comunicacion_main.c: 52:     while(1){
-[e :U 140 ]
+"16
+[; ;SPI.c: 16:     TRISC5 = 0;
+[e = _TRISC5 -> -> 0 `i `b ]
+"17
+[; ;SPI.c: 17:     if(sType & 0b00000100)
+[e $ ! != & -> _sType `ui -> -> 4 `i `ui -> -> 0 `i `ui 139  ]
+"18
+[; ;SPI.c: 18:     {
 {
-"99
-[; ;comunicacion_main.c: 99:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"100
-[; ;comunicacion_main.c: 100:             spiWrite(125);
-[e ( _spiWrite (1 -> -> 125 `i `uc ]
-"101
-[; ;comunicacion_main.c: 101:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"102
-[; ;comunicacion_main.c: 102:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"104
-[; ;comunicacion_main.c: 104:             spiWrite(hora);
-[e ( _spiWrite (1 -> _hora `uc ]
-"105
-[; ;comunicacion_main.c: 105:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"106
-[; ;comunicacion_main.c: 106:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"108
-[; ;comunicacion_main.c: 108:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"109
-[; ;comunicacion_main.c: 109:             spiWrite(minutos);
-[e ( _spiWrite (1 -> _minutos `uc ]
-"110
-[; ;comunicacion_main.c: 110:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"111
-[; ;comunicacion_main.c: 111:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"113
-[; ;comunicacion_main.c: 113:             spiWrite(segundos);
-[e ( _spiWrite (1 -> _segundos `uc ]
-"114
-[; ;comunicacion_main.c: 114:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"115
-[; ;comunicacion_main.c: 115:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"117
-[; ;comunicacion_main.c: 117:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"118
-[; ;comunicacion_main.c: 118:             spiWrite(temp_amb);
-[e ( _spiWrite (1 -> _temp_amb `uc ]
-"119
-[; ;comunicacion_main.c: 119:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"120
-[; ;comunicacion_main.c: 120:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"122
-[; ;comunicacion_main.c: 122:             spiWrite(temp_obj);
-[e ( _spiWrite (1 -> _temp_obj `uc ]
-"123
-[; ;comunicacion_main.c: 123:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"124
-[; ;comunicacion_main.c: 124:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"126
-[; ;comunicacion_main.c: 126:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"127
-[; ;comunicacion_main.c: 127:             spiWrite(posicion);
-[e ( _spiWrite (1 -> _posicion `uc ]
-"128
-[; ;comunicacion_main.c: 128:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"129
-[; ;comunicacion_main.c: 129:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"131
-[; ;comunicacion_main.c: 131:             spiWrite(humedad);
-[e ( _spiWrite (1 -> _humedad `uc ]
-"132
-[; ;comunicacion_main.c: 132:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"133
-[; ;comunicacion_main.c: 133:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"135
-[; ;comunicacion_main.c: 135:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"136
-[; ;comunicacion_main.c: 136:             spiWrite(distancia_ade);
-[e ( _spiWrite (1 -> _distancia_ade `uc ]
-"137
-[; ;comunicacion_main.c: 137:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"138
-[; ;comunicacion_main.c: 138:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"140
-[; ;comunicacion_main.c: 140:             spiWrite(distancia_atr);
-[e ( _spiWrite (1 -> _distancia_atr `uc ]
-"141
-[; ;comunicacion_main.c: 141:             recibir_rasp = spiRead();
-[e = _recibir_rasp -> ( _spiRead ..  `uc ]
-"142
-[; ;comunicacion_main.c: 142:             _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"144
-[; ;comunicacion_main.c: 144:             hora++;
-[e ++ _hora -> -> 1 `i `uc ]
-"146
-[; ;comunicacion_main.c: 146:     }
+"19
+[; ;SPI.c: 19:         SSPSTAT = sTransmitEdge;
+[e = _SSPSTAT -> _sTransmitEdge `uc ]
+"20
+[; ;SPI.c: 20:         TRISC3 = 1;
+[e = _TRISC3 -> -> 1 `i `b ]
+"21
+[; ;SPI.c: 21:     }
 }
-[e :U 139 ]
 [e $U 140  ]
-[e :U 141 ]
-"147
-[; ;comunicacion_main.c: 147:     return;
-[e $UE 138  ]
-"148
-[; ;comunicacion_main.c: 148: }
+"22
+[; ;SPI.c: 22:     else
+[e :U 139 ]
+"23
+[; ;SPI.c: 23:     {
+{
+"24
+[; ;SPI.c: 24:         SSPSTAT = sDataSample | sTransmitEdge;
+[e = _SSPSTAT -> | -> _sDataSample `ui -> _sTransmitEdge `ui `uc ]
+"25
+[; ;SPI.c: 25:         TRISC3 = 0;
+[e = _TRISC3 -> -> 0 `i `b ]
+"26
+[; ;SPI.c: 26:     }
+}
+[e :U 140 ]
+"28
+[; ;SPI.c: 28:     SSPCON = sType | sClockIdle;
+[e = _SSPCON -> | -> _sType `ui -> _sClockIdle `ui `uc ]
+"29
+[; ;SPI.c: 29: }
 [e :UE 138 ]
+}
+"31
+[; ;SPI.c: 31: static void spiReceiveWait()
+[v _spiReceiveWait `(v ~T0 @X0 1 sf ]
+"32
+[; ;SPI.c: 32: {
+{
+[e :U _spiReceiveWait ]
+[f ]
+"33
+[; ;SPI.c: 33:     while ( !SSPSTATbits.BF );
+[e $U 142  ]
+[e :U 143 ]
+[e :U 142 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 143  ]
+[e :U 144 ]
+"34
+[; ;SPI.c: 34: }
+[e :UE 141 ]
+}
+"36
+[; ;SPI.c: 36: void spiWrite(char dat)
+[v _spiWrite `(v ~T0 @X0 1 ef1`uc ]
+"37
+[; ;SPI.c: 37: {
+{
+[e :U _spiWrite ]
+"36
+[; ;SPI.c: 36: void spiWrite(char dat)
+[v _dat `uc ~T0 @X0 1 r1 ]
+"37
+[; ;SPI.c: 37: {
+[f ]
+"38
+[; ;SPI.c: 38:     SSPBUF = dat;
+[e = _SSPBUF -> _dat `uc ]
+"39
+[; ;SPI.c: 39: }
+[e :UE 145 ]
+}
+"41
+[; ;SPI.c: 41: unsigned spiDataReady()
+[v _spiDataReady `(ui ~T0 @X0 1 ef ]
+"42
+[; ;SPI.c: 42: {
+{
+[e :U _spiDataReady ]
+[f ]
+"43
+[; ;SPI.c: 43:     if(SSPSTATbits.BF)
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 147  ]
+"44
+[; ;SPI.c: 44:         return 1;
+[e ) -> -> 1 `i `ui ]
+[e $UE 146  ]
+[e $U 148  ]
+"45
+[; ;SPI.c: 45:     else
+[e :U 147 ]
+"46
+[; ;SPI.c: 46:         return 0;
+[e ) -> -> 0 `i `ui ]
+[e $UE 146  ]
+[e :U 148 ]
+"47
+[; ;SPI.c: 47: }
+[e :UE 146 ]
+}
+"49
+[; ;SPI.c: 49: char spiRead()
+[v _spiRead `(uc ~T0 @X0 1 ef ]
+"50
+[; ;SPI.c: 50: {
+{
+[e :U _spiRead ]
+[f ]
+"51
+[; ;SPI.c: 51:     spiReceiveWait();
+[e ( _spiReceiveWait ..  ]
+"52
+[; ;SPI.c: 52:     return(SSPBUF);
+[e ) -> _SSPBUF `uc ]
+[e $UE 149  ]
+"53
+[; ;SPI.c: 53: }
+[e :UE 149 ]
 }

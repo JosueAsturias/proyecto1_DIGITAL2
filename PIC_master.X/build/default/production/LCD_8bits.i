@@ -2655,13 +2655,13 @@ uint16_t * uint_to_array(uint8_t numero);
 # 11 "LCD_8bits.c" 2
 # 21 "LCD_8bits.c"
 void LCD_Cmd(uint8_t comando){
-    PORTCbits.RC0 = 0;
+    PORTAbits.RA0 = 0;
     _delay((unsigned long)((5)*(4000000/4000.0)));
-    PORTCbits.RC1 = 1;
+    PORTAbits.RA1 = 1;
     _delay((unsigned long)((5)*(4000000/4000.0)));
     PORTD = comando;
     _delay((unsigned long)((5)*(4000000/4000.0)));
-    PORTCbits.RC1 = 0;
+    PORTAbits.RA1 = 0;
     _delay((unsigned long)((5)*(4000000/4000.0)));
 }
 
@@ -2698,12 +2698,12 @@ void LCD_init(void){
 }
 
 void LCD_Write_Character(char caracter){
-    PORTCbits.RC0 = 1;
+    PORTAbits.RA0 = 1;
 
     PORTD = caracter;
-    PORTCbits.RC1 = 1;
+    PORTAbits.RA1 = 1;
     _delay((unsigned long)((40)*(4000000/4000000.0)));
-    PORTCbits.RC1 = 0;
+    PORTAbits.RA1 = 0;
 }
 
 void LCD_Write_String(char *a){

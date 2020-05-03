@@ -126,6 +126,10 @@ void pressBoton2(void);
 void SetUp(void);
 void OSC_config(uint32_t frecuencia);
 uint8_t ver_inclinacion(int16_t valor);
+void get_temperatura(void);
+void get_temperatura_obj(void);
+void init_ADC(uint8_t channel);
+void inclinacion_(void);
 
 void __interrupt() ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){   //atencion IOCB
@@ -141,7 +145,21 @@ void main(void) {
     SetUp();
     while(1){
         /*Obtener valores de sensores -------------------*/
+        uartTX_Write(125);
+        __delay_ms(10);
         get_Time();
+        uartTX_Write(hora);
+        __delay_ms(50);
+        uartTX_Write(min);
+        __delay_ms(50);
+        uartTX_Write(seg);        
+        get_temperatura();
+        uartTX_Write(temperatura);
+        get_temperatura_obj();
+        uartTX_Write(temperatura_obj);  //signed int **
+        inclinacion_();
+        uartTX_Write(inclinacion);
+        
         //temperatura = temp_ambiente();
         //temperatura_obj = temp_objeto();
         //accZ = Acc_Z();
@@ -150,33 +168,16 @@ void main(void) {
         mostrarLCD(estado);
         pressBoton1();
         pressBoton2();
+                
         
-        uartTX_Write(125);
-        __delay_ms(10);
-        uartTX_Write(hora);
-        __delay_ms(10);
-        uartTX_Write(min);
-        __delay_ms(10);
-        uartTX_Write(seg);
-        __delay_ms(10);
-        uartTX_Write(temperatura);
-        __delay_ms(10);
-        uartTX_Write(temperatura_obj);  //signed int **
-        __delay_ms(10);
-        uartTX_Write(inclinacion);
-        __delay_ms(10);
         uartTX_Write(humedad);
-        __delay_ms(10);
         uartTX_Write(d_frente);
-        __delay_ms(10);
         uartTX_Write(d_atras);
     }
     return;
 }
 
 void SetUp(void){
-    TRISC = 0;
-    PORTC = 0;
     TRISB = 0;
     OSC_config(_XTAL_FREQ);
     TRISB = 0b00000110;
@@ -187,8 +188,10 @@ void SetUp(void){
     INTCONbits.RBIE = 1;
     INTCONbits.GIE = 1;
     TRISD = 0;
-    TRISC0 = 0;
-    TRISC1 = 0;
+    PORTA = 0;
+    TRISA = 0;
+    TRISE = 0b0111;
+    ANSEL = 0b01110000;
     LCD_init();
     LCD_Create_Char(0, atilde);
     LCD_Create_Char(1, arrowr);
@@ -201,6 +204,150 @@ void SetUp(void){
     //IMU_init();
     
     Zeit_Datum_Set();
+}
+
+void get_temperatura(void){
+    init_ADC(0x05);
+    PIR1bits.ADIF = 0;
+    temperatura = ADRESH;
+    __delay_ms(10);
+}
+
+void get_temperatura_obj(void){
+    init_ADC(0x06);
+    PIR1bits.ADIF = 0;
+    temperatura_obj = ADRESH;
+    __delay_ms(10);
+}
+
+void inclinacion_(void){
+    init_ADC(0x07);
+    PIR1bits.ADIF = 0;
+    inclinacion = ADRESH;
+    __delay_ms(10);
+}
+
+void init_ADC(uint8_t channel){
+    ADCON0bits.ADCS1 = 0; 
+    ADCON0bits.ADCS0 = 1;           //    FOSC/8
+    
+    
+    switch(channel){
+        case 0:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;    ///AN0
+            break;
+        case 1:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;    ///AN1
+            break;
+        case 2:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 0;    ///AN2
+            break;
+        case 3:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 1;    ///AN3
+            break;
+        case 4:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;    ///AN4
+            break;
+        case 5:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;    ///AN5
+            break;
+        case 6:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 0;    ///AN6
+            break;
+        case 7:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 1;    ///AN7
+            break;        
+        case 8:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;    ///AN8
+            break;
+        case 9:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;    ///AN9
+            break;
+        case 10:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 0;    ///AN10
+            break;
+        case 11:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 1;    ///AN11
+            break;            
+        case 12:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;    ///AN12
+            break;
+        case 13:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;    ///AN13
+            break;
+        case 14:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 0;    ///CVREF
+            break;
+        case 15:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 1;    ///FIXED REF
+            break;    
+        default:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;    ///AN0
+            break;
+    }
+
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON0bits.ADON = 1;
+//    PIE1bits.ADIE = 1;
+    PIR1bits.ADIF = 0;
+    //INTCONbits.GIE = 0;
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO == 1){        
+    }   
+    //INTCONbits.GIE = 1;
 }
 
 void OSC_config(uint32_t frecuencia){
@@ -327,13 +474,13 @@ void mostrarLCD(uint8_t pantalla){
 //            LCD_Write_String(sprintbuffer);
             
             LCD_Set_Cursor(2, 5);
-            if(inclinacion == 0){
+            if(inclinacion < 40){
                 LCD_Write_String("Estable   ");
             }
-            else if (inclinacion == 90){
+            else if (inclinacion>90 && inclinacion<150){
                 LCD_Write_String("Peligro!   ");
             }
-            else if (inclinacion == 180){
+            else if (inclinacion > 180){
                 LCD_Write_String("EMERGENCIA!  ");
             }
             

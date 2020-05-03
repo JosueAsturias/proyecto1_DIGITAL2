@@ -361,7 +361,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 139 ]
 }
 "34
-[; ;UART.c: 34: void uartTX_Write(uint8_t dato){
+[; ;UART.c: 34: void uartTX_Write(char dato){
 [v _uartTX_Write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _uartTX_Write ]
@@ -369,7 +369,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "35
 [; ;UART.c: 35:     TXREG = dato;
-[e = _TXREG _dato ]
+[e = _TXREG -> _dato `uc ]
 "36
 [; ;UART.c: 36:     while(PIR1bits.TXIF == 0);
 [e $U 141  ]
@@ -400,7 +400,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "42
 [; ;UART.c: 42:         uartTX_Write(string[n]);
-[e ( _uartTX_Write (1 -> *U + _string * -> _n `x -> -> # *U _string `i `x `uc ]
+[e ( _uartTX_Write (1 *U + _string * -> _n `x -> -> # *U _string `i `x ]
 "43
 [; ;UART.c: 43:     }
 }

@@ -2640,7 +2640,7 @@ typedef uint16_t uintptr_t;
 
 void uart_init();
 uint8_t uartRC_Read();
-void uartTX_Write(uint8_t dato);
+void uartTX_Write(char dato);
 void uartTX_Write_Str(char * string);
 # 10 "UART.c" 2
 
@@ -2669,7 +2669,7 @@ uint8_t uartRC_Read(){
     return RCREG;
 }
 
-void uartTX_Write(uint8_t dato){
+void uartTX_Write(char dato){
     TXREG = dato;
     while(PIR1bits.TXIF == 0);
 }

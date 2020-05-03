@@ -14,7 +14,7 @@
 #include <stdint.h>
 void uart_init();
 uint8_t uartRC_Read();
-void uartTX_Write(uint8_t dato);
+void uartTX_Write(char dato);
 void uartTX_Write_Str(char * string);
 
 #endif	/* XC_HEADER_TEMPLATE_H */

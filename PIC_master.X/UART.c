@@ -31,7 +31,7 @@ uint8_t uartRC_Read(){
     return RCREG;
 }
 
-void uartTX_Write(uint8_t dato){
+void uartTX_Write(char dato){
     TXREG = dato;
     while(PIR1bits.TXIF == 0);
 }

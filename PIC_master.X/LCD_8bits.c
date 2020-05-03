@@ -12,8 +12,8 @@
 
 #define _XTAL_FREQ 4000000   // cambiar de acuerdo a la configuracion del OSC
 
-#define RS PORTCbits.RC0
-#define EN PORTCbits.RC1
+#define RS PORTAbits.RA0
+#define EN PORTAbits.RA1
 
 #define DATA_PORT PORTD 
 

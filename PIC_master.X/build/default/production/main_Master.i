@@ -2898,6 +2898,7 @@ uint16_t * obj_array;
 uint8_t banderaBoton = 0;
 uint8_t banderaPUSH1 = 0;
 uint8_t banderaPUSH2 = 0;
+uint8_t bajar = 0;
 
 uint8_t largo = 0;
 uint8_t ancho = 0;
@@ -2967,6 +2968,7 @@ void get_temperatura(void);
 void get_temperatura_obj(void);
 void init_ADC(uint8_t channel);
 void inclinacion_(void);
+void get_dis(void);
 
 void __attribute__((picinterrupt(("")))) ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){
@@ -2982,20 +2984,17 @@ void main(void) {
     SetUp();
     while(1){
 
-        uartTX_Write(125);
-        _delay((unsigned long)((10)*(4000000/4000.0)));
+
+        _delay((unsigned long)((10)*(1000000/4000.0)));
         get_Time();
-        uartTX_Write(hora);
-        _delay((unsigned long)((50)*(4000000/4000.0)));
-        uartTX_Write(min);
-        _delay((unsigned long)((50)*(4000000/4000.0)));
-        uartTX_Write(seg);
+        _delay((unsigned long)((50)*(1000000/4000.0)));
         get_temperatura();
-        uartTX_Write(temperatura);
+        _delay((unsigned long)((50)*(1000000/4000.0)));
         get_temperatura_obj();
-        uartTX_Write(temperatura_obj);
+        _delay((unsigned long)((50)*(1000000/4000.0)));
         inclinacion_();
-        uartTX_Write(inclinacion);
+        _delay((unsigned long)((50)*(1000000/4000.0)));
+        get_dis();
 
 
 
@@ -3006,7 +3005,13 @@ void main(void) {
         pressBoton1();
         pressBoton2();
 
-
+        uartTX_Write(125);
+        uartTX_Write(hora);
+        uartTX_Write(min);
+        uartTX_Write(seg);
+        uartTX_Write(temperatura);
+        uartTX_Write(temperatura_obj);
+        uartTX_Write(inclinacion);
         uartTX_Write(humedad);
         uartTX_Write(d_frente);
         uartTX_Write(d_atras);
@@ -3016,7 +3021,7 @@ void main(void) {
 
 void SetUp(void){
     TRISB = 0;
-    OSC_config(4000000);
+    OSC_config(1000000);
     TRISB = 0b00000110;
     ANSELH = 0;
     WPUB = 0b00000110;
@@ -3041,36 +3046,51 @@ void SetUp(void){
 
 
     Zeit_Datum_Set();
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    _delay((unsigned long)((100)*(1000000/4000.0)));
+}
+
+void get_dis(void){
     I2C_Master_Start();
-    I2C_Master_Write(0x30);
-    I2C_Master_Write(2);
-    I2C_Master_Write(3);
-    I2C_Master_Write(8);
+    I2C_Master_Write(0x31);
+    d_frente = I2C_Master_Read(0);
     I2C_Master_Stop();
-    _delay((unsigned long)((10)*(4000000/4000.0)));
+
+    _delay((unsigned long)((100)*(1000000/4000.0)));
+
+    I2C_Master_Start();
+    I2C_Master_Write(0x31);
+    d_atras = I2C_Master_Read(0);
+    I2C_Master_Stop();
+
+    _delay((unsigned long)((100)*(1000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0x31);
+    bajar = I2C_Master_Read(0);
+    I2C_Master_Stop();
+
 
 }
+
 
 void get_temperatura(void){
     init_ADC(0x05);
     PIR1bits.ADIF = 0;
     temperatura = ADRESH;
-    _delay((unsigned long)((10)*(4000000/4000.0)));
+    _delay((unsigned long)((10)*(1000000/4000.0)));
 }
 
 void get_temperatura_obj(void){
     init_ADC(0x06);
     PIR1bits.ADIF = 0;
     temperatura_obj = ADRESH;
-    _delay((unsigned long)((10)*(4000000/4000.0)));
+    _delay((unsigned long)((10)*(1000000/4000.0)));
 }
 
 void inclinacion_(void){
     init_ADC(0x07);
     PIR1bits.ADIF = 0;
     inclinacion = ADRESH;
-    _delay((unsigned long)((10)*(4000000/4000.0)));
+    _delay((unsigned long)((10)*(1000000/4000.0)));
 }
 
 void init_ADC(uint8_t channel){
@@ -3431,11 +3451,18 @@ void mostrarLCD(uint8_t pantalla){
             I2C_Master_Start();
             I2C_Master_Write(0x30);
             I2C_Master_Write(velocidad);
+            I2C_Master_Stop();
+            _delay((unsigned long)((100)*(1000000/4000.0)));
+            I2C_Master_Start();
+            I2C_Master_Write(0x30);
             I2C_Master_Write(largo);
+            I2C_Master_Stop();
+            _delay((unsigned long)((100)*(1000000/4000.0)));
+            I2C_Master_Start();
+            I2C_Master_Write(0x30);
             I2C_Master_Write(ancho);
             I2C_Master_Stop();
-
-            _delay((unsigned long)((500)*(4000000/4000.0)));
+            _delay((unsigned long)((500)*(1000000/4000.0)));
             LCD_clear();
             estado = 0;
             break;
@@ -3470,7 +3497,7 @@ void pressBoton1(){
                         break;
                     default:
                         LCD_clear();
-                    _delay((unsigned long)((10)*(4000000/4000.0)));
+                    _delay((unsigned long)((10)*(1000000/4000.0)));
                     estado ++;
                     if (estado > 5){
                         estado = 0;
@@ -3484,7 +3511,7 @@ void pressBoton1(){
     }
     if (banderaPUSH1 == 1){
         if (PORTBbits.RB1 == 1){
-        _delay((unsigned long)((10)*(4000000/4000.0)));
+        _delay((unsigned long)((10)*(1000000/4000.0)));
         banderaPUSH1 = 0;
         }
     }
@@ -3501,19 +3528,19 @@ void pressBoton2(void){
                     case 6:
                         LCD_Set_Cursor(2,0);
                         LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(4000000/4000.0)));
+                        _delay((unsigned long)((100)*(1000000/4000.0)));
                         estado = 7;
                         break;
                     case 7:
                         LCD_Set_Cursor(2,7);
                         LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(4000000/4000.0)));
+                        _delay((unsigned long)((100)*(1000000/4000.0)));
                         estado = 8;
                         break;
                     case 8:
                         LCD_Set_Cursor(2,10);
                         LCD_Write_Character(1);
-                        _delay((unsigned long)((100)*(4000000/4000.0)));
+                        _delay((unsigned long)((100)*(1000000/4000.0)));
                         estado = 9;
                         break;
                     case 9:
@@ -3521,7 +3548,7 @@ void pressBoton2(void){
                         estado = 10;
                         break;
                     default:
-                        _delay((unsigned long)((10)*(4000000/4000.0)));
+                        _delay((unsigned long)((10)*(1000000/4000.0)));
                 }
             }
                 banderaBoton = 0;
@@ -3531,7 +3558,7 @@ void pressBoton2(void){
         }
     if (banderaPUSH2 == 1){
         if (PORTBbits.RB2 == 1){
-        _delay((unsigned long)((10)*(4000000/4000.0)));
+        _delay((unsigned long)((10)*(1000000/4000.0)));
         banderaPUSH2 = 0;
         }
     }

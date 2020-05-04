@@ -31,7 +31,7 @@
 #include "Temperatura_I2C.h"
 #include "IMU.h"
 
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 1000000
 // variables 
 
 #define _ADDRESS_SLAVE_1_W 0x20
@@ -61,6 +61,7 @@ uint16_t * obj_array;
 uint8_t banderaBoton = 0;
 uint8_t banderaPUSH1 = 0;
 uint8_t banderaPUSH2 = 0;
+uint8_t bajar = 0;
 
 uint8_t largo = 0;
 uint8_t ancho = 0;
@@ -130,6 +131,7 @@ void get_temperatura(void);
 void get_temperatura_obj(void);
 void init_ADC(uint8_t channel);
 void inclinacion_(void);
+void get_dis(void);
 
 void __interrupt() ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){   //atencion IOCB
@@ -145,20 +147,17 @@ void main(void) {
     SetUp();
     while(1){
         /*Obtener valores de sensores -------------------*/
-        uartTX_Write(125);
+        
         __delay_ms(10);
         get_Time();
-        uartTX_Write(hora);
         __delay_ms(50);
-        uartTX_Write(min);
-        __delay_ms(50);
-        uartTX_Write(seg);        
         get_temperatura();
-        uartTX_Write(temperatura);
+        __delay_ms(50);
         get_temperatura_obj();
-        uartTX_Write(temperatura_obj);  //signed int **
+        __delay_ms(50);
         inclinacion_();
-        uartTX_Write(inclinacion);
+        __delay_ms(50);
+        get_dis();
         
         //temperatura = temp_ambiente();
         //temperatura_obj = temp_objeto();
@@ -168,8 +167,14 @@ void main(void) {
         mostrarLCD(estado);
         pressBoton1();
         pressBoton2();
-                
         
+        uartTX_Write(125);
+        uartTX_Write(hora);
+        uartTX_Write(min);
+        uartTX_Write(seg);
+        uartTX_Write(temperatura);
+        uartTX_Write(temperatura_obj);  //signed int **
+        uartTX_Write(inclinacion);
         uartTX_Write(humedad);
         uartTX_Write(d_frente);
         uartTX_Write(d_atras);
@@ -204,16 +209,31 @@ void SetUp(void){
     //IMU_init();
     
     Zeit_Datum_Set();
-    __delay_ms(1000);
-    I2C_Master_Start();
-    I2C_Master_Write(_ADDRESS_SLAVE_2_W);
-    I2C_Master_Write(2);
-    I2C_Master_Write(3);
-    I2C_Master_Write(8);
-    I2C_Master_Stop();
-    __delay_ms(10);
-
+    __delay_ms(100);
 }
+
+void get_dis(void){
+    I2C_Master_Start();
+    I2C_Master_Write(_ADDRESS_SLAVE_2_R);
+    d_frente = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    
+    __delay_ms(100);
+    
+    I2C_Master_Start();
+    I2C_Master_Write(_ADDRESS_SLAVE_2_R);
+    d_atras = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    
+    __delay_ms(100);
+    I2C_Master_Start();
+    I2C_Master_Write(_ADDRESS_SLAVE_2_R);
+    bajar = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    
+    
+}
+
 
 void get_temperatura(void){
     init_ADC(0x05);
@@ -594,10 +614,17 @@ void mostrarLCD(uint8_t pantalla){
             I2C_Master_Start();
             I2C_Master_Write(_ADDRESS_SLAVE_2_W);
             I2C_Master_Write(velocidad);
+            I2C_Master_Stop();
+            __delay_ms(100);
+            I2C_Master_Start();
+            I2C_Master_Write(_ADDRESS_SLAVE_2_W);
             I2C_Master_Write(largo);
+            I2C_Master_Stop();
+            __delay_ms(100);
+            I2C_Master_Start();
+            I2C_Master_Write(_ADDRESS_SLAVE_2_W);
             I2C_Master_Write(ancho);
             I2C_Master_Stop();
-            
             __delay_ms(500);
             LCD_clear();
             estado = 0;

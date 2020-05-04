@@ -204,6 +204,15 @@ void SetUp(void){
     //IMU_init();
     
     Zeit_Datum_Set();
+    __delay_ms(1000);
+    I2C_Master_Start();
+    I2C_Master_Write(_ADDRESS_SLAVE_2_W);
+    I2C_Master_Write(2);
+    I2C_Master_Write(3);
+    I2C_Master_Write(8);
+    I2C_Master_Stop();
+    __delay_ms(10);
+
 }
 
 void get_temperatura(void){
@@ -580,14 +589,13 @@ void mostrarLCD(uint8_t pantalla){
             break;
         case 10:
             LCD_Set_Cursor(1,0);
-            LCD_Write_String("Vamonos Perros!");
+            LCD_Write_String("INICIANDO...");
             //mandar instruccion a slave de movimiento
             I2C_Master_Start();
             I2C_Master_Write(_ADDRESS_SLAVE_2_W);
-            I2C_Master_Write(EMPEZAR_S2);	
+            I2C_Master_Write(velocidad);
             I2C_Master_Write(largo);
             I2C_Master_Write(ancho);
-            I2C_Master_Write(velocidad);
             I2C_Master_Stop();
             
             __delay_ms(500);

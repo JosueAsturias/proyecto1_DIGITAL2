@@ -3041,6 +3041,15 @@ void SetUp(void){
 
 
     Zeit_Datum_Set();
+    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0x30);
+    I2C_Master_Write(2);
+    I2C_Master_Write(3);
+    I2C_Master_Write(8);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(4000000/4000.0)));
+
 }
 
 void get_temperatura(void){
@@ -3417,14 +3426,13 @@ void mostrarLCD(uint8_t pantalla){
             break;
         case 10:
             LCD_Set_Cursor(1,0);
-            LCD_Write_String("Vamonos Perros!");
+            LCD_Write_String("INICIANDO...");
 
             I2C_Master_Start();
             I2C_Master_Write(0x30);
-            I2C_Master_Write(0x69);
+            I2C_Master_Write(velocidad);
             I2C_Master_Write(largo);
             I2C_Master_Write(ancho);
-            I2C_Master_Write(velocidad);
             I2C_Master_Stop();
 
             _delay((unsigned long)((500)*(4000000/4000.0)));

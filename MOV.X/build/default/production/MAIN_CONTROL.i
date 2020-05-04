@@ -2758,10 +2758,10 @@ void main(void) {
     I2C_Slave_Init(0x30);
     select_velocidad(2);
     while(1){
-        PORTB = 0xFF;
+        PORTB = 0b00000001;;
         dis_ade();
         _delay((unsigned long)((300)*(1000000/4000.0)));
-        PORTB = 0x00;
+        PORTB = 0b00000000;
         dis_atr();
         _delay((unsigned long)((300)*(1000000/4000.0)));
 
@@ -2770,8 +2770,10 @@ void main(void) {
             muestras = largo*ancho;
             while(muestras > 1){
                 PORTD = 0;
+                PORTBbits.RB7 = 1;
                 motor = 0xF0;
-                _delay((unsigned long)((5000)*(1000000/4000.0)));
+                _delay((unsigned long)((6000)*(1000000/4000.0)));
+                PORTBbits.RB7 = 0;
                 PORTD = 0b10101010;
                 motor = 0x00;
                 if (muestras > 1){

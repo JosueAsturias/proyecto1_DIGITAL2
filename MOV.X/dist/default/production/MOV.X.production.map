@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\MOV.X.production.sym \
   --cmf=dist/default/production\MOV.X.production.cmf -z -Q16F887 \
-  -oC:\Users\ICHELECE\AppData\Local\Temp\sfv8.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ICHELECE\AppData\Local\Temp\s88.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/MOV.X.production.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\ICHELECE\AppData\Local\Temp\sfv8.o \
+  -DENTRY=2 -k C:\Users\ICHELECE\AppData\Local\Temp\s88.o \
   dist/default/production\MOV.X.production.o 
 
 Object code version is 3.11
@@ -28,36 +28,36 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ICHELECE\AppData\Local\Temp\sfv8.o
+C:\Users\ICHELECE\AppData\Local\Temp\s88.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\MOV.X.production.o
                 cinit                                 F        F       1C        8       0
                 intentry                              4        4        8        8       0
-                text16                              279      279       9E        8       0
-                text15                              617      617       19        8       0
-                text14                              660      660       13        8       0
-                text13                              39C      39C       7F        8       0
-                text12                              41B      41B       7E        8       0
-                text11                              123      123       AE        8       0
-                text10                              499      499       7C        8       0
-                text9                               5FA      5FA       1D        8       0
-                text8                               599      599       3A        8       0
-                text7                               317      317       85        8       0
-                text6                               648      648       18        8       0
-                text5                               630      630       18        8       0
-                text4                               55A      55A       3F        8       0
-                text3                               1D1      1D1       A8        8       0
-                text2                               515      515       45        8       0
-                text1                               5D3      5D3       27        8       0
-                maintext                             2B       2B       F8        8       0
+                text16                              27B      27B       9E        8       0
+                text15                              619      619       19        8       0
+                text14                              662      662       13        8       0
+                text13                              39E      39E       7F        8       0
+                text12                              41D      41D       7E        8       0
+                text11                              125      125       AE        8       0
+                text10                              49B      49B       7C        8       0
+                text9                               5FC      5FC       1D        8       0
+                text8                               59B      59B       3A        8       0
+                text7                               319      319       85        8       0
+                text6                               64A      64A       18        8       0
+                text5                               632      632       18        8       0
+                text4                               55C      55C       3F        8       0
+                text3                               1D3      1D3       A8        8       0
+                text2                               517      517       45        8       0
+                text1                               5D5      5D5       27        8       0
+                maintext                             2B       2B       FA        8       0
                 cstackBANK0                          20       20        D       20       1
                 cstackCOMMON                         70       70        6       70       1
                 dataBANK0                            37       37        2       20       1
                 bssBANK0                             2D       2D        A       20       1
                 bssCOMMON                            76       76        4       70       1
-                idataBANK0                          673      673        2        8       0
+                idataBANK0                          675      675        2        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -67,24 +67,24 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                 F        F       1C         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text16                              279      279       9E         0
-                text15                              617      617       19         0
-                text14                              660      660       13         0
-                text13                              39C      39C       7F         0
-                text12                              41B      41B       7E         0
-                text11                              123      123       AE         0
-                text10                              499      499       7C         0
-                text9                               5FA      5FA       1D         0
-                text8                               599      599       3A         0
-                text7                               317      317       85         0
-                text6                               648      648       18         0
-                text5                               630      630       18         0
-                text4                               55A      55A       3F         0
-                text3                               1D1      1D1       A8         0
-                text2                               515      515       45         0
-                text1                               5D3      5D3       27         0
-                maintext                             2B       2B       F8         0
-                idataBANK0                          673      673        2         0
+                text16                              27B      27B       9E         0
+                text15                              619      619       19         0
+                text14                              662      662       13         0
+                text13                              39E      39E       7F         0
+                text12                              41D      41D       7E         0
+                text11                              125      125       AE         0
+                text10                              49B      49B       7C         0
+                text9                               5FC      5FC       1D         0
+                text8                               59B      59B       3A         0
+                text7                               319      319       85         0
+                text6                               64A      64A       18         0
+                text5                               632      632       18         0
+                text4                               55C      55C       3F         0
+                text3                               1D3      1D3       A8         0
+                text2                               517      517       45         0
+                text1                               5D5      5D5       27         0
+                maintext                             2B       2B       FA         0
+                idataBANK0                          675      675        2         0
 
         CLASS   STRCODE        
 
@@ -134,7 +134,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  000671  000675         8       0  CODE        2
+                intentry                       000004  000673  000677         8       0  CODE        2
                 cstackBANK0                    000020  000019  000039        20       1  BANK0       1
                 cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
                 config                         002007  000002  002009      400E       0  CONFIG      2
@@ -148,13 +148,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         0675-1FFF            800
+                         0677-1FFF            800
         COMMON           007A-007D              4           1
         CONST            0003-0003              1           2
-                         0675-1FFF            100
+                         0677-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0675-1FFF            100
+                         0677-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0039-006F             37           1
                          00A0-00EF             50
@@ -166,9 +166,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0675-1FFF           198B
+                         0677-1FFF           1989
         STRING           0003-0003              1           2
-                         0675-1FFF            100
+                         0677-1FFF            100
 
                                   Symbol Table
 
@@ -185,14 +185,15 @@ _CCP1CONbits                     (abs)        0017
 _CCPR1L                          (abs)        0015
 _CCPR2L                          (abs)        001B
 _GIE                             (abs)        005F
-_I2C_Slave_Init                  text15       0617
-_ISR                             text16       0279
+_I2C_Slave_Init                  text15       0619
+_ISR                             text16       027B
 _OSCCONbits                      (abs)        008F
-_OSC_config                      text11       0123
+_OSC_config                      text11       0125
 _PEIE                            (abs)        005E
 _PIR1bits                        (abs)        000C
 _PORTA                           (abs)        0005
 _PORTB                           (abs)        0006
+_PORTBbits                       (abs)        0006
 _PORTD                           (abs)        0008
 _PORTE                           (abs)        0009
 _PR2                             (abs)        0092
@@ -205,7 +206,7 @@ _SSPIE                           (abs)        0463
 _SSPIF                           (abs)        0063
 _SSPSTAT                         (abs)        0094
 _SSPSTATbits                     (abs)        0094
-_Servo2_grados                   text2        0515
+_Servo2_grados                   text2        0517
 _T2CONbits                       (abs)        0012
 _TRISA                           (abs)        0085
 _TRISB                           (abs)        0086
@@ -304,7 +305,7 @@ __S0                             (abs)        2009
 __S1                             (abs)        007A
 __S2                             (abs)        0000
 __S3                             (abs)        0000
-___bmul                          text14       0660
+___bmul                          text14       0662
 ___bmul@multiplicand             cstackCOMMON 0074
 ___bmul@multiplier               cstackBANK0  0021
 ___bmul@product                  cstackBANK0  0020
@@ -313,49 +314,49 @@ ___latbits                       (abs)        0002
 ___sp                            stack        0000
 ___stackhi                       (abs)        0000
 ___stacklo                       (abs)        0000
-__end_of_I2C_Slave_Init          text15       0630
-__end_of_ISR                     text16       0317
-__end_of_OSC_config              text11       01D1
-__end_of_Servo2_grados           text2        055A
-__end_of___bmul                  text14       0673
+__end_of_I2C_Slave_Init          text15       0632
+__end_of_ISR                     text16       0319
+__end_of_OSC_config              text11       01D3
+__end_of_Servo2_grados           text2        055C
+__end_of___bmul                  text14       0675
 __end_of__initialization         cinit        0027
-__end_of_cambiar_fila_derecha    text13       041B
-__end_of_cambiar_fila_izquierda  text12       0499
-__end_of_config                  text8        05D3
-__end_of_dis_ade                 text6        0660
-__end_of_dis_atr                 text5        0648
-__end_of_esperar                 text4        0599
-__end_of_init_ADC                text10       0515
-__end_of_init_PWM_2              text9        0617
-__end_of_main                    maintext     0123
-__end_of_obstaculo               text7        039C
-__end_of_regresar                text3        0279
-__end_of_select_velocidad        text1        05FA
+__end_of_cambiar_fila_derecha    text13       041D
+__end_of_cambiar_fila_izquierda  text12       049B
+__end_of_config                  text8        05D5
+__end_of_dis_ade                 text6        0662
+__end_of_dis_atr                 text5        064A
+__end_of_esperar                 text4        059B
+__end_of_init_ADC                text10       0517
+__end_of_init_PWM_2              text9        0619
+__end_of_main                    maintext     0125
+__end_of_obstaculo               text7        039E
+__end_of_regresar                text3        027B
+__end_of_select_velocidad        text1        05FC
 __initialization                 cinit        000F
 __pbssBANK0                      bssBANK0     002D
 __pbssCOMMON                     bssCOMMON    0076
 __pcstackBANK0                   cstackBANK0  0020
 __pcstackCOMMON                  cstackCOMMON 0070
 __pdataBANK0                     dataBANK0    0037
-__pidataBANK0                    idataBANK0   0673
+__pidataBANK0                    idataBANK0   0675
 __pintentry                      intentry     0004
 __pmaintext                      maintext     002B
-__ptext1                         text1        05D3
-__ptext10                        text10       0499
-__ptext11                        text11       0123
-__ptext12                        text12       041B
-__ptext13                        text13       039C
-__ptext14                        text14       0660
-__ptext15                        text15       0617
-__ptext16                        text16       0279
-__ptext2                         text2        0515
-__ptext3                         text3        01D1
-__ptext4                         text4        055A
-__ptext5                         text5        0630
-__ptext6                         text6        0648
-__ptext7                         text7        0317
-__ptext8                         text8        0599
-__ptext9                         text9        05FA
+__ptext1                         text1        05D5
+__ptext10                        text10       049B
+__ptext11                        text11       0125
+__ptext12                        text12       041D
+__ptext13                        text13       039E
+__ptext14                        text14       0662
+__ptext15                        text15       0619
+__ptext16                        text16       027B
+__ptext2                         text2        0517
+__ptext3                         text3        01D3
+__ptext4                         text4        055C
+__ptext5                         text5        0632
+__ptext6                         text6        064A
+__ptext7                         text7        0319
+__ptext8                         text8        059B
+__ptext9                         text9        05FC
 __size_of_I2C_Slave_Init         (abs)        0000
 __size_of_ISR                    (abs)        0000
 __size_of_OSC_config             (abs)        0000
@@ -376,28 +377,28 @@ __size_of_select_velocidad       (abs)        0000
 _adelante                        bssBANK0     0030
 _ancho                           bssBANK0     0034
 _atras                           bssCOMMON    0076
-_cambiar_fila_derecha            text13       039C
-_cambiar_fila_izquierda          text12       041B
-_config                          text8        0599
+_cambiar_fila_derecha            text13       039E
+_cambiar_fila_izquierda          text12       041D
+_config                          text8        059B
 _cont_obs                        bssBANK0     0032
 _contador                        bssCOMMON    0077
 _contador_m                      dataBANK0    0037
-_dis_ade                         text6        0648
-_dis_atr                         text5        0630
-_esperar                         text4        055A
+_dis_ade                         text6        064A
+_dis_atr                         text5        0632
+_esperar                         text4        055C
 _indicador                       bssBANK0     0033
 _indicador_mov                   dataBANK0    0038
-_init_ADC                        text10       0499
-_init_PWM_2                      text9        05FA
+_init_ADC                        text10       049B
+_init_PWM_2                      text9        05FC
 _largo                           bssBANK0     0035
 _main                            maintext     002B
 _motor                           bssBANK0     002F
 _muestras                        bssBANK0     0031
-_obstaculo                       text7        0317
+_obstaculo                       text7        0319
 _recibir                         bssCOMMON    0079
 _recibir_ind                     bssCOMMON    0078
-_regresar                        text3        01D1
-_select_velocidad                text1        05D3
+_regresar                        text3        01D3
+_select_velocidad                text1        05D5
 _velocidad                       bssBANK0     0036
 _z                               bssBANK0     002D
 btemp                            (abs)        007E
@@ -464,7 +465,7 @@ Total ram usage:        5 bytes
 
  *************** function _select_velocidad *****************
  Defined at:
-		line 445 in file "MAIN_CONTROL.c"
+		line 447 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
   vel             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -494,7 +495,7 @@ Total ram usage:        3 bytes
 
  *************** function _Servo2_grados *****************
  Defined at:
-		line 540 in file "MAIN_CONTROL.c"
+		line 542 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
   Servo2_grado    1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -524,7 +525,7 @@ Total ram usage:        3 bytes
 
  *************** function _regresar *****************
  Defined at:
-		line 203 in file "MAIN_CONTROL.c"
+		line 205 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -556,7 +557,7 @@ Total ram usage:        5 bytes
 
  *************** function _esperar *****************
  Defined at:
-		line 460 in file "MAIN_CONTROL.c"
+		line 462 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
   vel             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -587,7 +588,7 @@ Total ram usage:        4 bytes
 
  *************** function _dis_atr *****************
  Defined at:
-		line 315 in file "MAIN_CONTROL.c"
+		line 317 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -618,7 +619,7 @@ Total ram usage:        2 bytes
 
  *************** function _dis_ade *****************
  Defined at:
-		line 308 in file "MAIN_CONTROL.c"
+		line 310 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -649,7 +650,7 @@ Total ram usage:        2 bytes
 
  *************** function _obstaculo *****************
  Defined at:
-		line 233 in file "MAIN_CONTROL.c"
+		line 235 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -679,7 +680,7 @@ Total ram usage:        3 bytes
 
  *************** function _config *****************
  Defined at:
-		line 289 in file "MAIN_CONTROL.c"
+		line 291 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -711,7 +712,7 @@ Total ram usage:        0 bytes
 
  *************** function _init_PWM_2 *****************
  Defined at:
-		line 475 in file "MAIN_CONTROL.c"
+		line 477 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -741,7 +742,7 @@ Total ram usage:        0 bytes
 
  *************** function _init_ADC *****************
  Defined at:
-		line 321 in file "MAIN_CONTROL.c"
+		line 323 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
   channel         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -773,7 +774,7 @@ Total ram usage:        3 bytes
 
  *************** function _OSC_config *****************
  Defined at:
-		line 508 in file "MAIN_CONTROL.c"
+		line 510 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
   frecuencia      4    0[BANK0 ] unsigned long 
  Auto vars:     Size  Location     Type
@@ -803,7 +804,7 @@ Total ram usage:        4 bytes
 
  *************** function _cambiar_fila_izquierda *****************
  Defined at:
-		line 270 in file "MAIN_CONTROL.c"
+		line 272 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -833,7 +834,7 @@ Total ram usage:        3 bytes
 
  *************** function _cambiar_fila_derecha *****************
  Defined at:
-		line 252 in file "MAIN_CONTROL.c"
+		line 254 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -895,7 +896,7 @@ Total ram usage:        4 bytes
 
  *************** function _I2C_Slave_Init *****************
  Defined at:
-		line 584 in file "MAIN_CONTROL.c"
+		line 586 in file "MAIN_CONTROL.c"
  Parameters:    Size  Location     Type
   address         2    4[COMMON] short 
  Auto vars:     Size  Location     Type
@@ -957,27 +958,27 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 MAIN_CONTROL.c
-		_dis_ade       		CODE           	0648	0000	25
-		_ISR           		CODE           	0279	0000	159
-		_select_velocidad		CODE           	05D3	0000	40
-		_main          		CODE           	002B	0000	249
-		_regresar      		CODE           	01D1	0000	169
-		_cambiar_fila_derecha		CODE           	039C	0000	128
-		_I2C_Slave_Init		CODE           	0617	0000	26
-		_config        		CODE           	0599	0000	59
-		_obstaculo     		CODE           	0317	0000	134
-		_dis_atr       		CODE           	0630	0000	25
-		_esperar       		CODE           	055A	0000	64
-		_init_ADC      		CODE           	0499	0000	125
-		_cambiar_fila_izquierda		CODE           	041B	0000	127
-		_OSC_config    		CODE           	0123	0000	175
-		_init_PWM_2    		CODE           	05FA	0000	30
-		_Servo2_grados 		CODE           	0515	0000	70
+		_dis_ade       		CODE           	064A	0000	25
+		_ISR           		CODE           	027B	0000	159
+		_select_velocidad		CODE           	05D5	0000	40
+		_main          		CODE           	002B	0000	251
+		_regresar      		CODE           	01D3	0000	169
+		_cambiar_fila_derecha		CODE           	039E	0000	128
+		_I2C_Slave_Init		CODE           	0619	0000	26
+		_config        		CODE           	059B	0000	59
+		_obstaculo     		CODE           	0319	0000	134
+		_dis_atr       		CODE           	0632	0000	25
+		_esperar       		CODE           	055C	0000	64
+		_init_ADC      		CODE           	049B	0000	125
+		_cambiar_fila_izquierda		CODE           	041D	0000	127
+		_OSC_config    		CODE           	0125	0000	175
+		_init_PWM_2    		CODE           	05FC	0000	30
+		_Servo2_grados 		CODE           	0517	0000	70
 
-MAIN_CONTROL.c estimated size: 1605
+MAIN_CONTROL.c estimated size: 1607
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8.c
-		___bmul        		CODE           	0660	0000	20
+		___bmul        		CODE           	0662	0000	20
 
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8.c estimated size: 20
 

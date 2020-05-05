@@ -2790,12 +2790,14 @@ void main(void) {
     I2C_Slave_Init(0x20);
 
     while(1){
-
+        ADCON0bits.GO = 1;
+        while(ADCON0bits.GO == 1){
+        }
 
         Servo1_grados(0);
         Servo2_grados(0);
 
-        if(indicador == 1){
+        if(PORTEbits.RE0 == 1){
             Stepper_CCW(90);
             _delay((unsigned long)((10)*(1000000/4000.0)));
             for (int i = 0; i<60; i++){
@@ -2808,7 +2810,10 @@ void main(void) {
             }
             _delay((unsigned long)((500)*(1000000/4000.0)));
             Stepper_CW(90);
+            Servo1_grados(0);
+            Servo2_grados(0);
             indicador = 0;
+            while(PORTEbits.RE0 == 1);
         }
 
     }

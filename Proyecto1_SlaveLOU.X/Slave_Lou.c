@@ -107,12 +107,14 @@ void main(void) {
     I2C_Slave_Init(0x20);       //Le asignamos la dirección 0x20 al Slave_Lou 
 
     while(1){
-       
+        ADCON0bits.GO = 1;
+        while(ADCON0bits.GO == 1){   
+        }
 
         Servo1_grados(0);   
         Servo2_grados(0);
         
-        if(indicador == 1){
+        if(PORTEbits.RE0 == 1){
             Stepper_CCW(90);
             __delay_ms(10);
             for (int i = 0; i<60; i++){
@@ -125,7 +127,10 @@ void main(void) {
             }
             __delay_ms(500);
             Stepper_CW(90);
+            Servo1_grados(0);   
+            Servo2_grados(0);
             indicador = 0;
+            while(PORTEbits.RE0 == 1);
         }
 
     }     

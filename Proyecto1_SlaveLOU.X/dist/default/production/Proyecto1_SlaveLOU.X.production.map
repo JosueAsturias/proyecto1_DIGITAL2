@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Proyecto1_SlaveLOU.X.production.sym \
   --cmf=dist/default/production\Proyecto1_SlaveLOU.X.production.cmf -z \
-  -Q16F887 -oC:\Users\ICHELECE\AppData\Local\Temp\sbrc.2 \
+  -Q16F887 -oC:\Users\ICHELECE\AppData\Local\Temp\sa70.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Proyecto1_SlaveLOU.X.production.map -E1 \
   -ver=XC8 --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\ICHELECE\AppData\Local\Temp\sbrc.o \
+  -DENTRY=2 -k C:\Users\ICHELECE\AppData\Local\Temp\sa70.o \
   dist/default/production\Proyecto1_SlaveLOU.X.production.o 
 
 Object code version is 3.11
@@ -29,25 +29,25 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ICHELECE\AppData\Local\Temp\sbrc.o
+C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\Proyecto1_SlaveLOU.X.production.o
                 cinit                                 F        F        C        8       0
                 intentry                              4        4        8        8       0
-                text11                              521      521       78        8       0
-                text10                              6AE      6AE       1A        8       0
-                text9                               5EE      5EE       55        8       0
-                text8                               599      599       55        8       0
+                text11                              537      537       78        8       0
+                text10                              6C4      6C4       1A        8       0
+                text9                               604      604       55        8       0
+                text8                               5AF      5AF       55        8       0
                 text7                               1FA      1FA      1DF        8       0
                 text6                                1B       1B      1DF        8       0
-                text5                               6C8      6C8       19        8       0
-                text4                               3D9      3D9       AC        8       0
-                text3                               643      643       2F        8       0
-                text2                               691      691       1D        8       0
-                text1                               672      672       1F        8       0
-                maintext                            485      485       9C        8       0
+                text5                               6DE      6DE       19        8       0
+                text4                               48B      48B       AC        8       0
+                text3                               659      659       2F        8       0
+                text2                               6A7      6A7       1D        8       0
+                text1                               688      688       1F        8       0
+                maintext                            3D9      3D9       B2        8       0
                 cstackBANK0                          20       20        4       20       1
                 cstackCOMMON                         70       70        7       70       1
                 bssBANK0                             24       24        3       20       1
@@ -61,18 +61,18 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                 F        F        C         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text11                              521      521       78         0
-                text10                              6AE      6AE       1A         0
-                text9                               5EE      5EE       55         0
-                text8                               599      599       55         0
+                text11                              537      537       78         0
+                text10                              6C4      6C4       1A         0
+                text9                               604      604       55         0
+                text8                               5AF      5AF       55         0
                 text7                               1FA      1FA      1DF         0
                 text6                                1B       1B      1DF         0
-                text5                               6C8      6C8       19         0
-                text4                               3D9      3D9       AC         0
-                text3                               643      643       2F         0
-                text2                               691      691       1D         0
-                text1                               672      672       1F         0
-                maintext                            485      485       9C         0
+                text5                               6DE      6DE       19         0
+                text4                               48B      48B       AC         0
+                text3                               659      659       2F         0
+                text2                               6A7      6A7       1D         0
+                text1                               688      688       1F         0
+                maintext                            3D9      3D9       B2         0
 
         CLASS   STRCODE        
 
@@ -121,7 +121,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  0006DD  0006E1         8       0  CODE        2
+                intentry                       000004  0006F3  0006F7         8       0  CODE        2
                 cstackBANK0                    000020  000007  000027        20       1  BANK0       1
                 cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
                 config                         002007  000002  002009      400E       0  CONFIG      2
@@ -135,13 +135,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         06E1-1FFF            800
+                         06F7-1FFF            800
         COMMON           007A-007D              4           1
         CONST            0003-0003              1           2
-                         06E1-1FFF            100
+                         06F7-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         06E1-1FFF            100
+                         06F7-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0027-006F             49           1
                          00A0-00EF             50
@@ -153,9 +153,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         06E1-1FFF           191F
+                         06F7-1FFF           1909
         STRING           0003-0003              1           2
-                         06E1-1FFF            100
+                         06F7-1FFF            100
 
                                   Symbol Table
 
@@ -178,11 +178,11 @@ _CCPR1L                     (abs)        0015
 _CCPR2L                     (abs)        001B
 _GIE                        (abs)        005F
 _Humedad_H                  bssCOMMON    0079
-_I2C_Slave_Init             text10       06AE
+_I2C_Slave_Init             text10       06C4
 _INTCONbits                 (abs)        000B
-_ISR                        text11       0521
+_ISR                        text11       0537
 _OSCCONbits                 (abs)        008F
-_OSC_config                 text4        03D9
+_OSC_config                 text4        048B
 _PEIE                       (abs)        005E
 _PIE1bits                   (abs)        008C
 _PIR1bits                   (abs)        000C
@@ -190,6 +190,7 @@ _PORTA                      (abs)        0005
 _PORTB                      (abs)        0006
 _PORTD                      (abs)        0008
 _PORTE                      (abs)        0009
+_PORTEbits                  (abs)        0009
 _PR2                        (abs)        0092
 _RA3                        (abs)        002B
 _RA4                        (abs)        002C
@@ -203,8 +204,8 @@ _SSPIE                      (abs)        0463
 _SSPIF                      (abs)        0063
 _SSPSTAT                    (abs)        0094
 _SSPSTATbits                (abs)        0094
-_Servo1_grados              text9        05EE
-_Servo2_grados              text8        0599
+_Servo1_grados              text9        0604
+_Servo2_grados              text8        05AF
 _Stepper_CCW                text7        01FA
 _Stepper_CW                 text6        001B
 _T2CONbits                  (abs)        0012
@@ -306,37 +307,37 @@ ___latbits                  (abs)        0002
 ___sp                       stack        0000
 ___stackhi                  (abs)        0000
 ___stacklo                  (abs)        0000
-__end_of_I2C_Slave_Init     text10       06C8
-__end_of_ISR                text11       0599
-__end_of_OSC_config         text4        0485
-__end_of_Servo1_grados      text9        0643
-__end_of_Servo2_grados      text8        05EE
+__end_of_I2C_Slave_Init     text10       06DE
+__end_of_ISR                text11       05AF
+__end_of_OSC_config         text4        0537
+__end_of_Servo1_grados      text9        0659
+__end_of_Servo2_grados      text8        0604
 __end_of_Stepper_CCW        text7        03D9
 __end_of_Stepper_CW         text6        01FA
 __end_of__initialization    cinit        0017
-__end_of_config_ADC         text5        06E1
-__end_of_config_PORTS       text3        0672
-__end_of_init_PWM_1         text2        06AE
-__end_of_init_PWM_2         text1        0691
-__end_of_main               maintext     0521
+__end_of_config_ADC         text5        06F7
+__end_of_config_PORTS       text3        0688
+__end_of_init_PWM_1         text2        06C4
+__end_of_init_PWM_2         text1        06A7
+__end_of_main               maintext     048B
 __initialization            cinit        000F
 __pbssBANK0                 bssBANK0     0024
 __pbssCOMMON                bssCOMMON    0077
 __pcstackBANK0              cstackBANK0  0020
 __pcstackCOMMON             cstackCOMMON 0070
 __pintentry                 intentry     0004
-__pmaintext                 maintext     0485
-__ptext1                    text1        0672
-__ptext10                   text10       06AE
-__ptext11                   text11       0521
-__ptext2                    text2        0691
-__ptext3                    text3        0643
-__ptext4                    text4        03D9
-__ptext5                    text5        06C8
+__pmaintext                 maintext     03D9
+__ptext1                    text1        0688
+__ptext10                   text10       06C4
+__ptext11                   text11       0537
+__ptext2                    text2        06A7
+__ptext3                    text3        0659
+__ptext4                    text4        048B
+__ptext5                    text5        06DE
 __ptext6                    text6        001B
 __ptext7                    text7        01FA
-__ptext8                    text8        0599
-__ptext9                    text9        05EE
+__ptext8                    text8        05AF
+__ptext9                    text9        0604
 __size_of_I2C_Slave_Init    (abs)        0000
 __size_of_ISR               (abs)        0000
 __size_of_OSC_config        (abs)        0000
@@ -349,13 +350,13 @@ __size_of_config_PORTS      (abs)        0000
 __size_of_init_PWM_1        (abs)        0000
 __size_of_init_PWM_2        (abs)        0000
 __size_of_main              (abs)        0000
-_config_ADC                 text5        06C8
-_config_PORTS               text3        0643
+_config_ADC                 text5        06DE
+_config_PORTS               text3        0659
 _i                          bssCOMMON    0077
 _indicador                  bssBANK0     0024
-_init_PWM_1                 text2        0691
-_init_PWM_2                 text1        0672
-_main                       maintext     0485
+_init_PWM_1                 text2        06A7
+_init_PWM_2                 text1        0688
+_main                       maintext     03D9
 _recibir                    bssBANK0     0025
 _z                          bssBANK0     0026
 btemp                       (abs)        007E
@@ -477,7 +478,7 @@ Total ram usage:        0 bytes
 
  *************** function _config_PORTS *****************
  Defined at:
-		line 136 in file "Slave_Lou.c"
+		line 141 in file "Slave_Lou.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -507,7 +508,7 @@ Total ram usage:        0 bytes
 
  *************** function _OSC_config *****************
  Defined at:
-		line 155 in file "Slave_Lou.c"
+		line 160 in file "Slave_Lou.c"
  Parameters:    Size  Location     Type
   frecuencia      4    3[COMMON] unsigned long 
  Auto vars:     Size  Location     Type
@@ -538,7 +539,7 @@ Total ram usage:        4 bytes
 
  *************** function _config_ADC *****************
  Defined at:
-		line 186 in file "Slave_Lou.c"
+		line 191 in file "Slave_Lou.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -756,26 +757,26 @@ STEPPER_MITSUMI.c
 STEPPER_MITSUMI.c estimated size: 960
 
 PWMs.c
-		_Servo1_grados 		CODE           	05EE	0000	86
-		_init_PWM_1    		CODE           	0691	0000	30
-		_init_PWM_2    		CODE           	0672	0000	32
-		_Servo2_grados 		CODE           	0599	0000	86
+		_Servo1_grados 		CODE           	0604	0000	86
+		_init_PWM_1    		CODE           	06A7	0000	30
+		_init_PWM_2    		CODE           	0688	0000	32
+		_Servo2_grados 		CODE           	05AF	0000	86
 
 PWMs.c estimated size: 234
 
 I2C.c
-		_I2C_Slave_Init		CODE           	06AE	0000	27
+		_I2C_Slave_Init		CODE           	06C4	0000	27
 
 I2C.c estimated size: 27
 
 Slave_Lou.c
-		_ISR           		CODE           	0521	0000	121
-		_main          		CODE           	0485	0000	157
-		_OSC_config    		CODE           	03D9	0000	173
-		_config_ADC    		CODE           	06C8	0000	26
-		_config_PORTS  		CODE           	0643	0000	48
+		_ISR           		CODE           	0537	0000	121
+		_main          		CODE           	03D9	0000	179
+		_OSC_config    		CODE           	048B	0000	173
+		_config_ADC    		CODE           	06DE	0000	26
+		_config_PORTS  		CODE           	0659	0000	48
 
-Slave_Lou.c estimated size: 525
+Slave_Lou.c estimated size: 547
 
 shared
 		__initialization		CODE           	000F	0000	9

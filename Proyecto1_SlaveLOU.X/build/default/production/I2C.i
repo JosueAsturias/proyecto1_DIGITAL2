@@ -2494,7 +2494,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 19 "./I2C.h" 2
+# 18 "./I2C.h" 2
+
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2629,7 +2630,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 21 "./I2C.h" 2
+# 20 "./I2C.h" 2
 # 30 "./I2C.h"
 void I2C_Master_Init(const unsigned long c);
 
@@ -2667,7 +2668,8 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 13 "I2C.c" 2
+# 12 "I2C.c" 2
+
 
 
 

@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "Slave_Lou.c" 2
 # 10 "Slave_Lou.c"
-#pragma config FOSC = INTRC_CLKOUT
+#pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -22,7 +22,10 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 39 "Slave_Lou.c"
+
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2507,7 +2510,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 39 "Slave_Lou.c" 2
+# 27 "Slave_Lou.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2642,112 +2645,13 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 40 "Slave_Lou.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
-{
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 41 "Slave_Lou.c" 2
+# 28 "Slave_Lou.c" 2
 
 
 # 1 "./I2C.h" 1
 # 20 "./I2C.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 21 "./I2C.h" 2
+# 20 "./I2C.h" 2
 # 30 "./I2C.h"
 void I2C_Master_Init(const unsigned long c);
 
@@ -2785,7 +2689,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 43 "Slave_Lou.c" 2
+# 30 "Slave_Lou.c" 2
 
 # 1 "./PWMs.h" 1
 # 14 "./PWMs.h"
@@ -2797,7 +2701,7 @@ void init_PWM_1 (void);
 void init_PWM_2 (void);
 void Servo1_grados(uint8_t Servo1_grados);
 void Servo2_grados(uint8_t Servo2_grados);
-# 44 "Slave_Lou.c" 2
+# 31 "Slave_Lou.c" 2
 
 # 1 "./STEPPER_MITSUMI.h" 1
 # 14 "./STEPPER_MITSUMI.h"
@@ -2807,301 +2711,107 @@ void Servo2_grados(uint8_t Servo2_grados);
 
 void Stepper_CW(uint16_t Step_grados_cw);
 void Stepper_CCW(uint16_t Step_grados_ccw);
-# 45 "Slave_Lou.c" 2
-
-# 1 "./Library_LCD.h" 1
-# 17 "./Library_LCD.h"
-void LCD_DATO(int var);
-void LCD_iniciar(void);
-void LCD_CLEAR(void);
-void LCD_CURSOR(int a, int b);
-void LCD_CHAR(char a);
-void LCD_STRING(char *a);
-char uint_to_char(uint8_t numero);
-# 46 "Slave_Lou.c" 2
+# 32 "Slave_Lou.c" 2
 
 
 
 
 
-uint16_t Humedad_H = 0;
-uint16_t Humedad_L = 0;
-uint16_t *voltaje_map = 0;
+
+uint8_t Humedad_H = 0;
 
 uint8_t z = 0;
 
-uint16_t Sens_Humedad = 0;
-uint16_t LCD_Humedad = 0;
-uint8_t uni = 0;
-uint8_t dec = 0;
-uint8_t cen = 0;
 
-char centena = 0;
-char decena = 0;
-char unidad = 0;
-
-
-uint8_t ESTADO = 0;
-uint8_t ESTADO2 = 0;
-uint8_t ESTADO3 = 0;
-
-
-
+uint8_t recibir = 0;
+uint8_t indicador = 0;
 
 
 void config_PORTS(void);
 void config_ADC(void);
 void OSC_config(uint32_t frecuencia);
-uint16_t *mapeo(uint8_t valor, uint8_t limReal, uint8_t limSup);
 
 void __attribute__((picinterrupt(("")))) ISR(void) {
     if (ADIF) {
+        Humedad_H = ADRESH ;
+        PORTB = Humedad_H;
         PIR1bits.ADIF = 0;
     }
-# 122 "Slave_Lou.c"
+
+
+    if(PIR1bits.SSPIF == 1){
+
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;
+            SSPCONbits.SSPOV = 0;
+            SSPCONbits.WCOL = 0;
+            SSPCONbits.CKP = 1;
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+
+            z = SSPBUF;
+
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            recibir = SSPBUF;
+
+            if (recibir == 0xF0){
+                indicador =1;
+            }
+            _delay((unsigned long)((250)*(1000000/4000000.0))); }
+
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = Humedad_H;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(1000000/4000000.0)));
+            while(SSPSTATbits.BF);
+        }
+
+        PIR1bits.SSPIF = 0;
+    }
+
+
+
 }
 
 
 void main(void) {
+    OSC_config(1000000);
     config_PORTS();
     init_PWM_1();
     init_PWM_2();
     config_ADC();
     I2C_Slave_Init(0x20);
 
-    LCD_iniciar();
-    LCD_CLEAR();
-    LCD_CURSOR(1,1);
-    LCD_STRING ("Sensor Hum. YL69");
-
     while(1){
 
-        LCD_CURSOR(1,1);
-        LCD_STRING ("Sensor Hum. YL69");
 
-        ADCON0bits.GO = 1;
-        Humedad_H = ADRESH ;
+        Servo1_grados(0);
+        Servo2_grados(0);
 
-
-
-
-
-
-        voltaje_map = mapeo(Humedad_H, 255,1);
-        cen = voltaje_map[0];
-        dec = voltaje_map[1];
-        uni = voltaje_map[2];
-
-        centena = uint_to_char(cen);
-        decena = uint_to_char(dec);
-        unidad = uint_to_char(uni);
-
-        LCD_CURSOR(2,1);
-        LCD_CHAR(centena);
-        LCD_CHAR(decena);
-        LCD_CHAR(unidad);
-        LCD_CHAR('%');
-
-
-
-        if (PORTEbits.RE0 == 1){
-            ESTADO = 1;
-            _delay((unsigned long)((250)*(1000000/4000000.0)));
-
-
-            if (ESTADO == 1 && PORTEbits.RE0 == 0) {
-
-
-                Servo1_grados(0);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo1_grados(10);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo1_grados(30);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
+        if(indicador == 1){
+            Stepper_CCW(90);
+            _delay((unsigned long)((10)*(1000000/4000.0)));
+            for (int i = 0; i<60; i++){
                 Servo1_grados(45);
-
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo1_grados(90);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo1_grados(120);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo1_grados(150);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo1_grados(180);
-
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-                 Servo2_grados(0);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo2_grados(10);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo2_grados(30);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo2_grados(45);
-
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo2_grados(90);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo2_grados(120);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Servo2_grados(150);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
+                _delay((unsigned long)((10)*(1000000/4000.0)));
                 Servo2_grados(180);
-
+                ADCON0bits.GO = 1;
+                while(ADCON0bits.GO == 1){
+                }
             }
-            ESTADO = 0;
+            _delay((unsigned long)((500)*(1000000/4000.0)));
+            Stepper_CW(90);
+            indicador = 0;
         }
-
-
-        if (PORTEbits.RE1 == 1){
-            ESTADO2 = 1;
-            _delay((unsigned long)((250)*(1000000/4000000.0)));
-
-            if (ESTADO2 == 1 && PORTEbits.RE1 == 0) {
-
-                 Stepper_CW(360);
-                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-                 Stepper_CW(180);
-                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-                 Stepper_CW(90);
-                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-                 Stepper_CW(45);
-                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-                 Stepper_CW(15);
-                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-
-
-                 Stepper_CCW(360);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Stepper_CCW(180);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Stepper_CCW(90);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Stepper_CCW(45);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-                Stepper_CCW(15);
-                _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-            }
-            ESTADO2 = 0;
-        }
-
-
-
-
-
-        if (Humedad_H == 0xFF){
-            LCD_CURSOR(2,7);
-            LCD_STRING("  0%");
-
-        }
-
-
-        if ((dec == 9 || dec == 0) && (uni >= 6 || uni == 0) ){
-            LCD_CURSOR(2,7);
-            LCD_STRING("  0%");
-
-        }
-
-        if ( dec == 9 ){
-            if(uni >= 0 && uni < 5 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 10%");
-            }
-
-        }
-
-        if ( dec == 8 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 20%");
-            }
-
-        }
-
-        if ( dec == 7 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 30%");
-            }
-
-        }
-
-        if ( dec == 6 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 40%");
-            }
-
-        }
-
-        if ( dec == 5 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 50%");
-            }
-
-        }
-
-        if ( dec == 4 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 60%");
-            }
-
-        }
-
-        if ( dec == 3 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 70%");
-            }
-
-        }
-
-        if ( dec == 2 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 80%");
-            }
-
-        }
-
-        if ( dec == 1 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING(" 90%");
-            }
-
-        }
-
-        if ( dec == 0 ){
-            if(uni >= 0 && uni < 9 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING("100%");
-            }
-
-        }
-
-
-        if (cen == 0 ){
-            if(dec == 0 && uni == 0 ){
-            LCD_CURSOR(2,7);
-            LCD_STRING("100%");
-            }
-        }
-
-
-
-
-
 
     }
-
-
-
-
     return;
 }
 
@@ -3109,24 +2819,19 @@ void main(void) {
 void config_PORTS(void){
     OSC_config(1000000);
 
+    PORTA = 0;
     TRISA = 0b00000001;
     ANSEL = 0b00000001;
 
-    TRISAbits.TRISA3 = 0;
-    TRISAbits.TRISA4 = 0;
-
+    PORTB = 0;
     TRISB = 0x00;
-    TRISC = 0b00000000;
+    ANSELH = 0;
+
+    PORTD = 0;
     TRISD = 0x00;
-    TRISE = 0b00000111;
 
-
-    PORTA = 0x00;
-    PORTB = 0x00;
-    PORTC = 0x00;
-    PORTD = 0x00;
-    PORTE = 0x00;
-
+    PORTE = 0;
+    TRISE = 0b1111;
 
    }
 
@@ -3162,11 +2867,9 @@ void OSC_config(uint32_t frecuencia){
 }
 
 void config_ADC(void){
-    ADCON0bits.ADON = 1;
 
 
-    ANSELbits.ANS0 = 1;
-    TRISAbits.TRISA0 = 1;
+
 
     ADCON0bits.CHS0 = 0;
     ADCON0bits.CHS0 = 0;
@@ -3177,7 +2880,7 @@ void config_ADC(void){
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;
 
-    ADCON0bits.ADCS1 = 1;
+    ADCON0bits.ADCS1 = 0;
     ADCON0bits.ADCS0 = 0;
 
 
@@ -3186,26 +2889,5 @@ void config_ADC(void){
     PIE1bits.ADIE = 1;
     PIR1bits.ADIF = 0;
 
-}
-
-
-uint16_t *mapeo(uint8_t valor, uint8_t limPIC, uint8_t limFisico){
-    uint16_t result[3] = {0,0,0};
-    uint16_t dividendo = valor*limFisico;
-    while (limPIC <= dividendo){
-        result[0] = result[0] + 1;
-        dividendo = dividendo - limPIC;
-    }
-    dividendo = dividendo *10;
-    while (limPIC <= dividendo){
-        result[1] = result[1] +1;
-        dividendo = dividendo - limPIC;
-    }
-    dividendo = dividendo *10;
-    while (limPIC <= dividendo){
-        result[2] = result[2] +1;
-        dividendo = dividendo - limPIC;
-    }
-
-    return(result);
+    ADCON0bits.ADON = 1;
 }

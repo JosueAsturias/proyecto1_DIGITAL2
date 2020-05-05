@@ -4,6 +4,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3587 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3587: extern volatile __bit ADIF __attribute__((address(0x66)));
 [v _ADIF `Vb ~T0 @X0 0 e@102 ]
+"1238
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "543
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
 [s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -15,9 +21,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"856
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 856:     struct {
+[s S30 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . SSPM CKP SSPEN SSPOV WCOL ]
+"863
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 863:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"855
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 855: typedef union {
+[u S29 `S30 1 `S31 1 ]
+[n S29 . . . ]
+"870
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 870: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
+[v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
+"843
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"2183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2183:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . BF UA R_nW S P D_nA CKE SMP ]
+"2193
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2193:     struct {
+[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S83 . . R . D ]
+"2199
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2199:     struct {
+[s S84 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S84 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+"2206
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2206:     struct {
+[s S85 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S85 . . nW . nA ]
+"2212
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2212:     struct {
+[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S86 . . nWRITE . nADDRESS ]
+"2218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2218:     struct {
+[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S87 . . R_W . D_A ]
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2224:     struct {
+[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S88 . . READ_WRITE . DATA_ADDRESS ]
+"2182
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2182: typedef union {
+[u S81 `S82 1 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 ]
+[n S81 . . . . . . . . ]
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2231: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
+[v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"3641 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
+[v _BF `Vb ~T0 @X0 0 e@1184 ]
 [p mainexit ]
-"76 Slave_Lou.c
-[; ;Slave_Lou.c: 76: void config_PORTS(void);
+"49 Slave_Lou.c
+[; ;Slave_Lou.c: 49: void OSC_config(uint32_t frecuencia);
+[v _OSC_config `(v ~T0 @X0 0 ef1`ul ]
+"47
+[; ;Slave_Lou.c: 47: void config_PORTS(void);
 [v _config_PORTS `(v ~T0 @X0 0 ef ]
 "16 ./PWMs.h
 [; ;./PWMs.h: 16: void init_PWM_1 (void);
@@ -25,24 +94,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17
 [; ;./PWMs.h: 17: void init_PWM_2 (void);
 [v _init_PWM_2 `(v ~T0 @X0 0 ef ]
-"77 Slave_Lou.c
-[; ;Slave_Lou.c: 77: void config_ADC(void);
+"48 Slave_Lou.c
+[; ;Slave_Lou.c: 48: void config_ADC(void);
 [v _config_ADC `(v ~T0 @X0 0 ef ]
 "65 ./I2C.h
 [; ;./I2C.h: 65: void I2C_Slave_Init(uint8_t address);
 [v _I2C_Slave_Init `(v ~T0 @X0 0 ef1`uc ]
-"18 ./Library_LCD.h
-[; ;./Library_LCD.h: 18: void LCD_iniciar(void);
-[v _LCD_iniciar `(v ~T0 @X0 0 ef ]
+"18 ./PWMs.h
+[; ;./PWMs.h: 18: void Servo1_grados(uint8_t Servo1_grados);
+[v _Servo1_grados `(v ~T0 @X0 0 ef1`uc ]
 "19
-[; ;./Library_LCD.h: 19: void LCD_CLEAR(void);
-[v _LCD_CLEAR `(v ~T0 @X0 0 ef ]
-"20
-[; ;./Library_LCD.h: 20: void LCD_CURSOR(int a, int b);
-[v _LCD_CURSOR `(v ~T0 @X0 0 ef2`i`i ]
-"22
-[; ;./Library_LCD.h: 22: void LCD_STRING(char *a);
-[v _LCD_STRING `(v ~T0 @X0 0 ef1`*uc ]
+[; ;./PWMs.h: 19: void Servo2_grados(uint8_t Servo2_grados);
+[v _Servo2_grados `(v ~T0 @X0 0 ef1`uc ]
+"17 ./STEPPER_MITSUMI.h
+[; ;./STEPPER_MITSUMI.h: 17: void Stepper_CCW(uint16_t Step_grados_ccw);
+[v _Stepper_CCW `(v ~T0 @X0 0 ef1`ui ]
 "1251 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1251:     struct {
 [s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
@@ -66,92 +132,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1276
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
-"1238
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
-[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
-"79 Slave_Lou.c
-[; ;Slave_Lou.c: 79: uint16_t *mapeo(uint8_t valor, uint8_t limReal, uint8_t limSup);
-[v _mapeo `(*ui ~T0 @X0 0 ef3`uc`uc`uc ]
-"23 ./Library_LCD.h
-[; ;./Library_LCD.h: 23: char uint_to_char(uint8_t numero);
-[v _uint_to_char `(uc ~T0 @X0 0 ef1`uc ]
-"21
-[; ;./Library_LCD.h: 21: void LCD_CHAR(char a);
-[v _LCD_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"420 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 420:     struct {
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . RE0 RE1 RE2 RE3 ]
-"419
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 419: typedef union {
-[u S13 `S14 1 ]
-[n S13 . . ]
-"427
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 427: extern volatile PORTEbits_t PORTEbits __attribute__((address(0x009)));
-[v _PORTEbits `VS13 ~T0 @X0 0 e@9 ]
-[v F1256 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF1256 ~T0 @X0 0 e ]
-[p i __delay ]
-"18 ./PWMs.h
-[; ;./PWMs.h: 18: void Servo1_grados(uint8_t Servo1_grados);
-[v _Servo1_grados `(v ~T0 @X0 0 ef1`uc ]
-"19
-[; ;./PWMs.h: 19: void Servo2_grados(uint8_t Servo2_grados);
-[v _Servo2_grados `(v ~T0 @X0 0 ef1`uc ]
 "16 ./STEPPER_MITSUMI.h
 [; ;./STEPPER_MITSUMI.h: 16: void Stepper_CW(uint16_t Step_grados_cw);
 [v _Stepper_CW `(v ~T0 @X0 0 ef1`ui ]
-"17
-[; ;./STEPPER_MITSUMI.h: 17: void Stepper_CCW(uint16_t Step_grados_ccw);
-[v _Stepper_CCW `(v ~T0 @X0 0 ef1`ui ]
-"78 Slave_Lou.c
-[; ;Slave_Lou.c: 78: void OSC_config(uint32_t frecuencia);
-[v _OSC_config `(v ~T0 @X0 0 ef1`ul ]
-"1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+"166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"1416
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "3387
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"1422
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1422:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"1421
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1421: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"1433
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
-[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
 "1478
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"1540
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
-[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
-"1602
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"1664
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
-[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
-"166
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"228
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"290
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"3449
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
 "352
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1602
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "414
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"1664
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
 "1868
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1868:     struct {
 [s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
@@ -167,17 +177,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1882
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1882: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
 [v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
-"3393
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3393:     struct {
-[s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S133 . ANS0 ANS1 ANS2 ANS3 ANS4 ANS5 ANS6 ANS7 ]
-"3392
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3392: typedef union {
-[u S132 `S133 1 ]
-[n S132 . . ]
-"3404
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3404: extern volatile ANSELbits_t ANSELbits __attribute__((address(0x188)));
-[v _ANSELbits `VS132 ~T0 @X0 0 e@392 ]
 "2983
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2983:     struct {
 [s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -216,7 +215,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1718: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
 [v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
 "10 Slave_Lou.c
-[p x FOSC = INTRC_CLKOUT ]
+[p x FOSC = INTRC_NOCLKOUT ]
 "11
 [p x WDTE = OFF ]
 "12
@@ -473,1016 +472,475 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"51 Slave_Lou.c
-[; ;Slave_Lou.c: 51: uint16_t Humedad_H = 0;
-[v _Humedad_H `ui ~T0 @X0 1 e ]
+"38 Slave_Lou.c
+[; ;Slave_Lou.c: 38: uint8_t Humedad_H = 0;
+[v _Humedad_H `uc ~T0 @X0 1 e ]
 [i _Humedad_H
--> -> 0 `i `ui
+-> -> 0 `i `uc
 ]
-"52
-[; ;Slave_Lou.c: 52: uint16_t Humedad_L = 0;
-[v _Humedad_L `ui ~T0 @X0 1 e ]
-[i _Humedad_L
--> -> 0 `i `ui
-]
-"53
-[; ;Slave_Lou.c: 53: uint16_t *voltaje_map = 0;
-[v _voltaje_map `*ui ~T0 @X0 1 e ]
-[i _voltaje_map
--> -> 0 `i `*ui
-]
-"55
-[; ;Slave_Lou.c: 55: uint8_t z = 0;
+"40
+[; ;Slave_Lou.c: 40: uint8_t z = 0;
 [v _z `uc ~T0 @X0 1 e ]
 [i _z
 -> -> 0 `i `uc
 ]
-"57
-[; ;Slave_Lou.c: 57: uint16_t Sens_Humedad = 0;
-[v _Sens_Humedad `ui ~T0 @X0 1 e ]
-[i _Sens_Humedad
--> -> 0 `i `ui
-]
-"58
-[; ;Slave_Lou.c: 58: uint16_t LCD_Humedad = 0;
-[v _LCD_Humedad `ui ~T0 @X0 1 e ]
-[i _LCD_Humedad
--> -> 0 `i `ui
-]
-"59
-[; ;Slave_Lou.c: 59: uint8_t uni = 0;
-[v _uni `uc ~T0 @X0 1 e ]
-[i _uni
+"43
+[; ;Slave_Lou.c: 43: uint8_t recibir = 0;
+[v _recibir `uc ~T0 @X0 1 e ]
+[i _recibir
 -> -> 0 `i `uc
 ]
-"60
-[; ;Slave_Lou.c: 60: uint8_t dec = 0;
-[v _dec `uc ~T0 @X0 1 e ]
-[i _dec
--> -> 0 `i `uc
-]
-"61
-[; ;Slave_Lou.c: 61: uint8_t cen = 0;
-[v _cen `uc ~T0 @X0 1 e ]
-[i _cen
--> -> 0 `i `uc
-]
-"63
-[; ;Slave_Lou.c: 63: char centena = 0;
-[v _centena `uc ~T0 @X0 1 e ]
-[i _centena
--> -> 0 `i `uc
-]
-"64
-[; ;Slave_Lou.c: 64: char decena = 0;
-[v _decena `uc ~T0 @X0 1 e ]
-[i _decena
--> -> 0 `i `uc
-]
-"65
-[; ;Slave_Lou.c: 65: char unidad = 0;
-[v _unidad `uc ~T0 @X0 1 e ]
-[i _unidad
--> -> 0 `i `uc
-]
-"68
-[; ;Slave_Lou.c: 68: uint8_t ESTADO = 0;
-[v _ESTADO `uc ~T0 @X0 1 e ]
-[i _ESTADO
--> -> 0 `i `uc
-]
-"69
-[; ;Slave_Lou.c: 69: uint8_t ESTADO2 = 0;
-[v _ESTADO2 `uc ~T0 @X0 1 e ]
-[i _ESTADO2
--> -> 0 `i `uc
-]
-"70
-[; ;Slave_Lou.c: 70: uint8_t ESTADO3 = 0;
-[v _ESTADO3 `uc ~T0 @X0 1 e ]
-[i _ESTADO3
+"44
+[; ;Slave_Lou.c: 44: uint8_t indicador = 0;
+[v _indicador `uc ~T0 @X0 1 e ]
+[i _indicador
 -> -> 0 `i `uc
 ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"81
-[; ;Slave_Lou.c: 81: void __attribute__((picinterrupt(("")))) ISR(void) {
+"51
+[; ;Slave_Lou.c: 51: void __attribute__((picinterrupt(("")))) ISR(void) {
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"82
-[; ;Slave_Lou.c: 82:     if (ADIF) {
-[e $ ! _ADIF 140  ]
+"52
+[; ;Slave_Lou.c: 52:     if (ADIF) {
+[e $ ! _ADIF 139  ]
 {
-"83
-[; ;Slave_Lou.c: 83:         PIR1bits.ADIF = 0;
+"53
+[; ;Slave_Lou.c: 53:         Humedad_H = ADRESH ;
+[e = _Humedad_H _ADRESH ]
+"54
+[; ;Slave_Lou.c: 54:         PORTB = Humedad_H;
+[e = _PORTB _Humedad_H ]
+"55
+[; ;Slave_Lou.c: 55:         PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"56
+[; ;Slave_Lou.c: 56:     }
+}
+[e :U 139 ]
+"59
+[; ;Slave_Lou.c: 59:     if(PIR1bits.SSPIF == 1){
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 140  ]
+{
+"61
+[; ;Slave_Lou.c: 61:         SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"63
+[; ;Slave_Lou.c: 63:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 141  ]
+{
+"64
+[; ;Slave_Lou.c: 64:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"65
+[; ;Slave_Lou.c: 65:             SSPCONbits.SSPOV = 0;
+[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
+"66
+[; ;Slave_Lou.c: 66:             SSPCONbits.WCOL = 0;
+[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+"67
+[; ;Slave_Lou.c: 67:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"68
+[; ;Slave_Lou.c: 68:         }
+}
+[e :U 141 ]
+"70
+[; ;Slave_Lou.c: 70:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 142  ]
+{
+"72
+[; ;Slave_Lou.c: 72:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"74
+[; ;Slave_Lou.c: 74:             PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"75
+[; ;Slave_Lou.c: 75:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"76
+[; ;Slave_Lou.c: 76:             while(!SSPSTATbits.BF);
+[e $U 143  ]
+[e :U 144 ]
+[e :U 143 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 144  ]
+[e :U 145 ]
+"77
+[; ;Slave_Lou.c: 77:             recibir = SSPBUF;
+[e = _recibir _SSPBUF ]
+"79
+[; ;Slave_Lou.c: 79:             if (recibir == 0xF0){
+[e $ ! == -> _recibir `i -> 240 `i 146  ]
+{
+"80
+[; ;Slave_Lou.c: 80:                 indicador =1;
+[e = _indicador -> -> 1 `i `uc ]
+"81
+[; ;Slave_Lou.c: 81:             }
+}
+[e :U 146 ]
+"82
+[; ;Slave_Lou.c: 82:             _delay((unsigned long)((250)*(1000000/4000000.0))); }
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+}
+[e $U 147  ]
 "84
-[; ;Slave_Lou.c: 84:     }
+[; ;Slave_Lou.c: 84:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+[e :U 142 ]
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 148  ]
+{
+"85
+[; ;Slave_Lou.c: 85:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"86
+[; ;Slave_Lou.c: 86:             BF = 0;
+[e = _BF -> -> 0 `i `b ]
+"87
+[; ;Slave_Lou.c: 87:             SSPBUF = Humedad_H;
+[e = _SSPBUF _Humedad_H ]
+"88
+[; ;Slave_Lou.c: 88:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"89
+[; ;Slave_Lou.c: 89:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"90
+[; ;Slave_Lou.c: 90:             while(SSPSTATbits.BF);
+[e $U 149  ]
+[e :U 150 ]
+[e :U 149 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 150  ]
+[e :U 151 ]
+"91
+[; ;Slave_Lou.c: 91:         }
+}
+[e :U 148 ]
+[e :U 147 ]
+"93
+[; ;Slave_Lou.c: 93:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"94
+[; ;Slave_Lou.c: 94:     }
 }
 [e :U 140 ]
-"122
-[; ;Slave_Lou.c: 122: }
-[e :UE 139 ]
+"98
+[; ;Slave_Lou.c: 98: }
+[e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"125
-[; ;Slave_Lou.c: 125: void main(void) {
+"101
+[; ;Slave_Lou.c: 101: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"126
-[; ;Slave_Lou.c: 126:     config_PORTS();
+"102
+[; ;Slave_Lou.c: 102:     OSC_config(1000000);
+[e ( _OSC_config (1 -> -> 1000000 `l `ul ]
+"103
+[; ;Slave_Lou.c: 103:     config_PORTS();
 [e ( _config_PORTS ..  ]
-"127
-[; ;Slave_Lou.c: 127:     init_PWM_1();
+"104
+[; ;Slave_Lou.c: 104:     init_PWM_1();
 [e ( _init_PWM_1 ..  ]
-"128
-[; ;Slave_Lou.c: 128:     init_PWM_2();
+"105
+[; ;Slave_Lou.c: 105:     init_PWM_2();
 [e ( _init_PWM_2 ..  ]
-"129
-[; ;Slave_Lou.c: 129:     config_ADC();
+"106
+[; ;Slave_Lou.c: 106:     config_ADC();
 [e ( _config_ADC ..  ]
-"130
-[; ;Slave_Lou.c: 130:     I2C_Slave_Init(0x20);
+"107
+[; ;Slave_Lou.c: 107:     I2C_Slave_Init(0x20);
 [e ( _I2C_Slave_Init (1 -> -> 32 `i `uc ]
-"132
-[; ;Slave_Lou.c: 132:     LCD_iniciar();
-[e ( _LCD_iniciar ..  ]
-"133
-[; ;Slave_Lou.c: 133:     LCD_CLEAR();
-[e ( _LCD_CLEAR ..  ]
-"134
-[; ;Slave_Lou.c: 134:     LCD_CURSOR(1,1);
-[e ( _LCD_CURSOR (2 , -> 1 `i -> 1 `i ]
-"135
-[; ;Slave_Lou.c: 135:     LCD_STRING ("Sensor Hum. YL69");
-[e ( _LCD_STRING (1 :s 1C ]
-"137
-[; ;Slave_Lou.c: 137:     while(1){
-[e :U 143 ]
-{
-"139
-[; ;Slave_Lou.c: 139:         LCD_CURSOR(1,1);
-[e ( _LCD_CURSOR (2 , -> 1 `i -> 1 `i ]
-"140
-[; ;Slave_Lou.c: 140:         LCD_STRING ("Sensor Hum. YL69");
-[e ( _LCD_STRING (1 :s 2C ]
-"142
-[; ;Slave_Lou.c: 142:         ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"143
-[; ;Slave_Lou.c: 143:         Humedad_H = ADRESH ;
-[e = _Humedad_H -> _ADRESH `ui ]
-"150
-[; ;Slave_Lou.c: 150:         voltaje_map = mapeo(Humedad_H, 255,1);
-[e = _voltaje_map ( _mapeo (3 , , -> _Humedad_H `uc -> -> 255 `i `uc -> -> 1 `i `uc ]
-"151
-[; ;Slave_Lou.c: 151:         cen = voltaje_map[0];
-[e = _cen -> *U + _voltaje_map * -> -> 0 `i `x -> -> # *U _voltaje_map `i `x `uc ]
-"152
-[; ;Slave_Lou.c: 152:         dec = voltaje_map[1];
-[e = _dec -> *U + _voltaje_map * -> -> 1 `i `x -> -> # *U _voltaje_map `i `x `uc ]
-"153
-[; ;Slave_Lou.c: 153:         uni = voltaje_map[2];
-[e = _uni -> *U + _voltaje_map * -> -> 2 `i `x -> -> # *U _voltaje_map `i `x `uc ]
-"155
-[; ;Slave_Lou.c: 155:         centena = uint_to_char(cen);
-[e = _centena ( _uint_to_char (1 _cen ]
-"156
-[; ;Slave_Lou.c: 156:         decena = uint_to_char(dec);
-[e = _decena ( _uint_to_char (1 _dec ]
-"157
-[; ;Slave_Lou.c: 157:         unidad = uint_to_char(uni);
-[e = _unidad ( _uint_to_char (1 _uni ]
-"159
-[; ;Slave_Lou.c: 159:         LCD_CURSOR(2,1);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 1 `i ]
-"160
-[; ;Slave_Lou.c: 160:         LCD_CHAR(centena);
-[e ( _LCD_CHAR (1 _centena ]
-"161
-[; ;Slave_Lou.c: 161:         LCD_CHAR(decena);
-[e ( _LCD_CHAR (1 _decena ]
-"162
-[; ;Slave_Lou.c: 162:         LCD_CHAR(unidad);
-[e ( _LCD_CHAR (1 _unidad ]
-"163
-[; ;Slave_Lou.c: 163:         LCD_CHAR('%');
-[e ( _LCD_CHAR (1 -> -> 37 `ui `uc ]
-"167
-[; ;Slave_Lou.c: 167:         if (PORTEbits.RE0 == 1){
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 1 `i 145  ]
-{
-"168
-[; ;Slave_Lou.c: 168:             ESTADO = 1;
-[e = _ESTADO -> -> 1 `i `uc ]
-"169
-[; ;Slave_Lou.c: 169:             _delay((unsigned long)((250)*(1000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
-"172
-[; ;Slave_Lou.c: 172:             if (ESTADO == 1 && PORTEbits.RE0 == 0) {
-[e $ ! && == -> _ESTADO `i -> 1 `i == -> . . _PORTEbits 0 0 `i -> 0 `i 146  ]
-{
-"175
-[; ;Slave_Lou.c: 175:                 Servo1_grados(0);
-[e ( _Servo1_grados (1 -> -> 0 `i `uc ]
-"176
-[; ;Slave_Lou.c: 176:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"177
-[; ;Slave_Lou.c: 177:                 Servo1_grados(10);
-[e ( _Servo1_grados (1 -> -> 10 `i `uc ]
-"178
-[; ;Slave_Lou.c: 178:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"179
-[; ;Slave_Lou.c: 179:                 Servo1_grados(30);
-[e ( _Servo1_grados (1 -> -> 30 `i `uc ]
-"180
-[; ;Slave_Lou.c: 180:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"181
-[; ;Slave_Lou.c: 181:                 Servo1_grados(45);
-[e ( _Servo1_grados (1 -> -> 45 `i `uc ]
-"183
-[; ;Slave_Lou.c: 183:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"184
-[; ;Slave_Lou.c: 184:                 Servo1_grados(90);
-[e ( _Servo1_grados (1 -> -> 90 `i `uc ]
-"185
-[; ;Slave_Lou.c: 185:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"186
-[; ;Slave_Lou.c: 186:                 Servo1_grados(120);
-[e ( _Servo1_grados (1 -> -> 120 `i `uc ]
-"187
-[; ;Slave_Lou.c: 187:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"188
-[; ;Slave_Lou.c: 188:                 Servo1_grados(150);
-[e ( _Servo1_grados (1 -> -> 150 `i `uc ]
-"189
-[; ;Slave_Lou.c: 189:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"190
-[; ;Slave_Lou.c: 190:                 Servo1_grados(180);
-[e ( _Servo1_grados (1 -> -> 180 `i `uc ]
-"192
-[; ;Slave_Lou.c: 192:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"194
-[; ;Slave_Lou.c: 194:                  Servo2_grados(0);
-[e ( _Servo2_grados (1 -> -> 0 `i `uc ]
-"195
-[; ;Slave_Lou.c: 195:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"196
-[; ;Slave_Lou.c: 196:                 Servo2_grados(10);
-[e ( _Servo2_grados (1 -> -> 10 `i `uc ]
-"197
-[; ;Slave_Lou.c: 197:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"198
-[; ;Slave_Lou.c: 198:                 Servo2_grados(30);
-[e ( _Servo2_grados (1 -> -> 30 `i `uc ]
-"199
-[; ;Slave_Lou.c: 199:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"200
-[; ;Slave_Lou.c: 200:                 Servo2_grados(45);
-[e ( _Servo2_grados (1 -> -> 45 `i `uc ]
-"202
-[; ;Slave_Lou.c: 202:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"203
-[; ;Slave_Lou.c: 203:                 Servo2_grados(90);
-[e ( _Servo2_grados (1 -> -> 90 `i `uc ]
-"204
-[; ;Slave_Lou.c: 204:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"205
-[; ;Slave_Lou.c: 205:                 Servo2_grados(120);
-[e ( _Servo2_grados (1 -> -> 120 `i `uc ]
-"206
-[; ;Slave_Lou.c: 206:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"207
-[; ;Slave_Lou.c: 207:                 Servo2_grados(150);
-[e ( _Servo2_grados (1 -> -> 150 `i `uc ]
-"208
-[; ;Slave_Lou.c: 208:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"209
-[; ;Slave_Lou.c: 209:                 Servo2_grados(180);
-[e ( _Servo2_grados (1 -> -> 180 `i `uc ]
-"211
-[; ;Slave_Lou.c: 211:             }
-}
-[e :U 146 ]
-"212
-[; ;Slave_Lou.c: 212:             ESTADO = 0;
-[e = _ESTADO -> -> 0 `i `uc ]
-"213
-[; ;Slave_Lou.c: 213:         }
-}
-[e :U 145 ]
-"216
-[; ;Slave_Lou.c: 216:         if (PORTEbits.RE1 == 1){
-[e $ ! == -> . . _PORTEbits 0 1 `i -> 1 `i 147  ]
-{
-"217
-[; ;Slave_Lou.c: 217:             ESTADO2 = 1;
-[e = _ESTADO2 -> -> 1 `i `uc ]
-"218
-[; ;Slave_Lou.c: 218:             _delay((unsigned long)((250)*(1000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
-"220
-[; ;Slave_Lou.c: 220:             if (ESTADO2 == 1 && PORTEbits.RE1 == 0) {
-[e $ ! && == -> _ESTADO2 `i -> 1 `i == -> . . _PORTEbits 0 1 `i -> 0 `i 148  ]
-{
-"222
-[; ;Slave_Lou.c: 222:                  Stepper_CW(360);
-[e ( _Stepper_CW (1 -> -> 360 `i `ui ]
-"223
-[; ;Slave_Lou.c: 223:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"224
-[; ;Slave_Lou.c: 224:                  Stepper_CW(180);
-[e ( _Stepper_CW (1 -> -> 180 `i `ui ]
-"225
-[; ;Slave_Lou.c: 225:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"226
-[; ;Slave_Lou.c: 226:                  Stepper_CW(90);
-[e ( _Stepper_CW (1 -> -> 90 `i `ui ]
-"227
-[; ;Slave_Lou.c: 227:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"228
-[; ;Slave_Lou.c: 228:                  Stepper_CW(45);
-[e ( _Stepper_CW (1 -> -> 45 `i `ui ]
-"229
-[; ;Slave_Lou.c: 229:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"230
-[; ;Slave_Lou.c: 230:                  Stepper_CW(15);
-[e ( _Stepper_CW (1 -> -> 15 `i `ui ]
-"231
-[; ;Slave_Lou.c: 231:                  _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"235
-[; ;Slave_Lou.c: 235:                  Stepper_CCW(360);
-[e ( _Stepper_CCW (1 -> -> 360 `i `ui ]
-"236
-[; ;Slave_Lou.c: 236:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"237
-[; ;Slave_Lou.c: 237:                 Stepper_CCW(180);
-[e ( _Stepper_CCW (1 -> -> 180 `i `ui ]
-"238
-[; ;Slave_Lou.c: 238:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"239
-[; ;Slave_Lou.c: 239:                 Stepper_CCW(90);
-[e ( _Stepper_CCW (1 -> -> 90 `i `ui ]
-"240
-[; ;Slave_Lou.c: 240:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"241
-[; ;Slave_Lou.c: 241:                 Stepper_CCW(45);
-[e ( _Stepper_CCW (1 -> -> 45 `i `ui ]
-"242
-[; ;Slave_Lou.c: 242:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"243
-[; ;Slave_Lou.c: 243:                 Stepper_CCW(15);
-[e ( _Stepper_CCW (1 -> -> 15 `i `ui ]
-"244
-[; ;Slave_Lou.c: 244:                 _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"246
-[; ;Slave_Lou.c: 246:             }
-}
-[e :U 148 ]
-"247
-[; ;Slave_Lou.c: 247:             ESTADO2 = 0;
-[e = _ESTADO2 -> -> 0 `i `uc ]
-"248
-[; ;Slave_Lou.c: 248:         }
-}
-[e :U 147 ]
-"254
-[; ;Slave_Lou.c: 254:         if (Humedad_H == 0xFF){
-[e $ ! == _Humedad_H -> -> 255 `i `ui 149  ]
-{
-"255
-[; ;Slave_Lou.c: 255:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"256
-[; ;Slave_Lou.c: 256:             LCD_STRING("  0%");
-[e ( _LCD_STRING (1 :s 3C ]
-"258
-[; ;Slave_Lou.c: 258:         }
-}
-[e :U 149 ]
-"261
-[; ;Slave_Lou.c: 261:         if ((dec == 9 || dec == 0) && (uni >= 6 || uni == 0) ){
-[e $ ! && || == -> _dec `i -> 9 `i == -> _dec `i -> 0 `i || >= -> _uni `i -> 6 `i == -> _uni `i -> 0 `i 150  ]
-{
-"262
-[; ;Slave_Lou.c: 262:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"263
-[; ;Slave_Lou.c: 263:             LCD_STRING("  0%");
-[e ( _LCD_STRING (1 :s 4C ]
-"265
-[; ;Slave_Lou.c: 265:         }
-}
-[e :U 150 ]
-"267
-[; ;Slave_Lou.c: 267:         if ( dec == 9 ){
-[e $ ! == -> _dec `i -> 9 `i 151  ]
-{
-"268
-[; ;Slave_Lou.c: 268:             if(uni >= 0 && uni < 5 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 5 `i 152  ]
-{
-"269
-[; ;Slave_Lou.c: 269:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"270
-[; ;Slave_Lou.c: 270:             LCD_STRING(" 10%");
-[e ( _LCD_STRING (1 :s 5C ]
-"271
-[; ;Slave_Lou.c: 271:             }
-}
-[e :U 152 ]
-"273
-[; ;Slave_Lou.c: 273:         }
-}
-[e :U 151 ]
-"275
-[; ;Slave_Lou.c: 275:         if ( dec == 8 ){
-[e $ ! == -> _dec `i -> 8 `i 153  ]
-{
-"276
-[; ;Slave_Lou.c: 276:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 154  ]
-{
-"277
-[; ;Slave_Lou.c: 277:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"278
-[; ;Slave_Lou.c: 278:             LCD_STRING(" 20%");
-[e ( _LCD_STRING (1 :s 6C ]
-"279
-[; ;Slave_Lou.c: 279:             }
-}
+"109
+[; ;Slave_Lou.c: 109:     while(1){
 [e :U 154 ]
-"281
-[; ;Slave_Lou.c: 281:         }
-}
-[e :U 153 ]
-"283
-[; ;Slave_Lou.c: 283:         if ( dec == 7 ){
-[e $ ! == -> _dec `i -> 7 `i 155  ]
 {
-"284
-[; ;Slave_Lou.c: 284:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 156  ]
+"112
+[; ;Slave_Lou.c: 112:         Servo1_grados(0);
+[e ( _Servo1_grados (1 -> -> 0 `i `uc ]
+"113
+[; ;Slave_Lou.c: 113:         Servo2_grados(0);
+[e ( _Servo2_grados (1 -> -> 0 `i `uc ]
+"115
+[; ;Slave_Lou.c: 115:         if(indicador == 1){
+[e $ ! == -> _indicador `i -> 1 `i 156  ]
 {
-"285
-[; ;Slave_Lou.c: 285:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"286
-[; ;Slave_Lou.c: 286:             LCD_STRING(" 30%");
-[e ( _LCD_STRING (1 :s 7C ]
-"287
-[; ;Slave_Lou.c: 287:             }
-}
-[e :U 156 ]
-"289
-[; ;Slave_Lou.c: 289:         }
-}
-[e :U 155 ]
-"291
-[; ;Slave_Lou.c: 291:         if ( dec == 6 ){
-[e $ ! == -> _dec `i -> 6 `i 157  ]
+"116
+[; ;Slave_Lou.c: 116:             Stepper_CCW(90);
+[e ( _Stepper_CCW (1 -> -> 90 `i `ui ]
+"117
+[; ;Slave_Lou.c: 117:             _delay((unsigned long)((10)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"118
+[; ;Slave_Lou.c: 118:             for (int i = 0; i<60; i++){
 {
-"292
-[; ;Slave_Lou.c: 292:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 158  ]
-{
-"293
-[; ;Slave_Lou.c: 293:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"294
-[; ;Slave_Lou.c: 294:             LCD_STRING(" 40%");
-[e ( _LCD_STRING (1 :s 8C ]
-"295
-[; ;Slave_Lou.c: 295:             }
-}
-[e :U 158 ]
-"297
-[; ;Slave_Lou.c: 297:         }
-}
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 60 `i 157  ]
+[e $U 158  ]
 [e :U 157 ]
-"299
-[; ;Slave_Lou.c: 299:         if ( dec == 5 ){
-[e $ ! == -> _dec `i -> 5 `i 159  ]
 {
-"300
-[; ;Slave_Lou.c: 300:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 160  ]
+"119
+[; ;Slave_Lou.c: 119:                 Servo1_grados(45);
+[e ( _Servo1_grados (1 -> -> 45 `i `uc ]
+"120
+[; ;Slave_Lou.c: 120:                 _delay((unsigned long)((10)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"121
+[; ;Slave_Lou.c: 121:                 Servo2_grados(180);
+[e ( _Servo2_grados (1 -> -> 180 `i `uc ]
+"122
+[; ;Slave_Lou.c: 122:                 ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"123
+[; ;Slave_Lou.c: 123:                 while(ADCON0bits.GO == 1){
+[e $U 160  ]
+[e :U 161 ]
 {
-"301
-[; ;Slave_Lou.c: 301:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"302
-[; ;Slave_Lou.c: 302:             LCD_STRING(" 50%");
-[e ( _LCD_STRING (1 :s 9C ]
-"303
-[; ;Slave_Lou.c: 303:             }
+"124
+[; ;Slave_Lou.c: 124:                 }
 }
 [e :U 160 ]
-"305
-[; ;Slave_Lou.c: 305:         }
-}
-[e :U 159 ]
-"307
-[; ;Slave_Lou.c: 307:         if ( dec == 4 ){
-[e $ ! == -> _dec `i -> 4 `i 161  ]
-{
-"308
-[; ;Slave_Lou.c: 308:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 162  ]
-{
-"309
-[; ;Slave_Lou.c: 309:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"310
-[; ;Slave_Lou.c: 310:             LCD_STRING(" 60%");
-[e ( _LCD_STRING (1 :s 10C ]
-"311
-[; ;Slave_Lou.c: 311:             }
-}
+"123
+[; ;Slave_Lou.c: 123:                 while(ADCON0bits.GO == 1){
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 161  ]
 [e :U 162 ]
-"313
-[; ;Slave_Lou.c: 313:         }
+"125
+[; ;Slave_Lou.c: 125:             }
 }
-[e :U 161 ]
-"315
-[; ;Slave_Lou.c: 315:         if ( dec == 3 ){
-[e $ ! == -> _dec `i -> 3 `i 163  ]
-{
-"316
-[; ;Slave_Lou.c: 316:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 164  ]
-{
-"317
-[; ;Slave_Lou.c: 317:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"318
-[; ;Slave_Lou.c: 318:             LCD_STRING(" 70%");
-[e ( _LCD_STRING (1 :s 11C ]
-"319
-[; ;Slave_Lou.c: 319:             }
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 60 `i 157  ]
+[e :U 158 ]
 }
-[e :U 164 ]
-"321
-[; ;Slave_Lou.c: 321:         }
+"126
+[; ;Slave_Lou.c: 126:             _delay((unsigned long)((500)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"127
+[; ;Slave_Lou.c: 127:             Stepper_CW(90);
+[e ( _Stepper_CW (1 -> -> 90 `i `ui ]
+"128
+[; ;Slave_Lou.c: 128:             indicador = 0;
+[e = _indicador -> -> 0 `i `uc ]
+"129
+[; ;Slave_Lou.c: 129:         }
 }
-[e :U 163 ]
-"323
-[; ;Slave_Lou.c: 323:         if ( dec == 2 ){
-[e $ ! == -> _dec `i -> 2 `i 165  ]
-{
-"324
-[; ;Slave_Lou.c: 324:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 166  ]
-{
-"325
-[; ;Slave_Lou.c: 325:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"326
-[; ;Slave_Lou.c: 326:             LCD_STRING(" 80%");
-[e ( _LCD_STRING (1 :s 12C ]
-"327
-[; ;Slave_Lou.c: 327:             }
+[e :U 156 ]
+"131
+[; ;Slave_Lou.c: 131:     }
 }
-[e :U 166 ]
-"329
-[; ;Slave_Lou.c: 329:         }
+[e :U 153 ]
+[e $U 154  ]
+[e :U 155 ]
+"132
+[; ;Slave_Lou.c: 132:     return;
+[e $UE 152  ]
+"133
+[; ;Slave_Lou.c: 133: }
+[e :UE 152 ]
 }
-[e :U 165 ]
-"331
-[; ;Slave_Lou.c: 331:         if ( dec == 1 ){
-[e $ ! == -> _dec `i -> 1 `i 167  ]
-{
-"332
-[; ;Slave_Lou.c: 332:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 168  ]
-{
-"333
-[; ;Slave_Lou.c: 333:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"334
-[; ;Slave_Lou.c: 334:             LCD_STRING(" 90%");
-[e ( _LCD_STRING (1 :s 13C ]
-"335
-[; ;Slave_Lou.c: 335:             }
-}
-[e :U 168 ]
-"337
-[; ;Slave_Lou.c: 337:         }
-}
-[e :U 167 ]
-"339
-[; ;Slave_Lou.c: 339:         if ( dec == 0 ){
-[e $ ! == -> _dec `i -> 0 `i 169  ]
-{
-"340
-[; ;Slave_Lou.c: 340:             if(uni >= 0 && uni < 9 ){
-[e $ ! && >= -> _uni `i -> 0 `i < -> _uni `i -> 9 `i 170  ]
-{
-"341
-[; ;Slave_Lou.c: 341:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"342
-[; ;Slave_Lou.c: 342:             LCD_STRING("100%");
-[e ( _LCD_STRING (1 :s 14C ]
-"343
-[; ;Slave_Lou.c: 343:             }
-}
-[e :U 170 ]
-"345
-[; ;Slave_Lou.c: 345:         }
-}
-[e :U 169 ]
-"348
-[; ;Slave_Lou.c: 348:         if (cen == 0 ){
-[e $ ! == -> _cen `i -> 0 `i 171  ]
-{
-"349
-[; ;Slave_Lou.c: 349:             if(dec == 0 && uni == 0 ){
-[e $ ! && == -> _dec `i -> 0 `i == -> _uni `i -> 0 `i 172  ]
-{
-"350
-[; ;Slave_Lou.c: 350:             LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"351
-[; ;Slave_Lou.c: 351:             LCD_STRING("100%");
-[e ( _LCD_STRING (1 :s 15C ]
-"352
-[; ;Slave_Lou.c: 352:             }
-}
-[e :U 172 ]
-"353
-[; ;Slave_Lou.c: 353:         }
-}
-[e :U 171 ]
-"360
-[; ;Slave_Lou.c: 360:     }
-}
-[e :U 142 ]
-[e $U 143  ]
-[e :U 144 ]
-"365
-[; ;Slave_Lou.c: 365:     return;
-[e $UE 141  ]
-"366
-[; ;Slave_Lou.c: 366: }
-[e :UE 141 ]
-}
-"369
-[; ;Slave_Lou.c: 369: void config_PORTS(void){
+"136
+[; ;Slave_Lou.c: 136: void config_PORTS(void){
 [v _config_PORTS `(v ~T0 @X0 1 ef ]
 {
 [e :U _config_PORTS ]
 [f ]
-"370
-[; ;Slave_Lou.c: 370:     OSC_config(1000000);
+"137
+[; ;Slave_Lou.c: 137:     OSC_config(1000000);
 [e ( _OSC_config (1 -> -> 1000000 `l `ul ]
-"372
-[; ;Slave_Lou.c: 372:     TRISA = 0b00000001;
-[e = _TRISA -> -> 1 `i `uc ]
-"373
-[; ;Slave_Lou.c: 373:     ANSEL = 0b00000001;
-[e = _ANSEL -> -> 1 `i `uc ]
-"375
-[; ;Slave_Lou.c: 375:     TRISAbits.TRISA3 = 0;
-[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-"376
-[; ;Slave_Lou.c: 376:     TRISAbits.TRISA4 = 0;
-[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
-"378
-[; ;Slave_Lou.c: 378:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
-"379
-[; ;Slave_Lou.c: 379:     TRISC = 0b00000000;
-[e = _TRISC -> -> 0 `i `uc ]
-"380
-[; ;Slave_Lou.c: 380:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"381
-[; ;Slave_Lou.c: 381:     TRISE = 0b00000111;
-[e = _TRISE -> -> 7 `i `uc ]
-"384
-[; ;Slave_Lou.c: 384:     PORTA = 0x00;
+"139
+[; ;Slave_Lou.c: 139:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"385
-[; ;Slave_Lou.c: 385:     PORTB = 0x00;
+"140
+[; ;Slave_Lou.c: 140:     TRISA = 0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
+"141
+[; ;Slave_Lou.c: 141:     ANSEL = 0b00000001;
+[e = _ANSEL -> -> 1 `i `uc ]
+"143
+[; ;Slave_Lou.c: 143:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"386
-[; ;Slave_Lou.c: 386:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
-"387
-[; ;Slave_Lou.c: 387:     PORTD = 0x00;
+"144
+[; ;Slave_Lou.c: 144:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
+"145
+[; ;Slave_Lou.c: 145:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"147
+[; ;Slave_Lou.c: 147:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"388
-[; ;Slave_Lou.c: 388:     PORTE = 0x00;
+"148
+[; ;Slave_Lou.c: 148:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"150
+[; ;Slave_Lou.c: 150:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"391
-[; ;Slave_Lou.c: 391:    }
-[e :UE 173 ]
+"151
+[; ;Slave_Lou.c: 151:     TRISE = 0b1111;
+[e = _TRISE -> -> 15 `i `uc ]
+"153
+[; ;Slave_Lou.c: 153:    }
+[e :UE 163 ]
 }
-"393
-[; ;Slave_Lou.c: 393: void OSC_config(uint32_t frecuencia){
+"155
+[; ;Slave_Lou.c: 155: void OSC_config(uint32_t frecuencia){
 [v _OSC_config `(v ~T0 @X0 1 ef1`ul ]
 {
 [e :U _OSC_config ]
 [v _frecuencia `ul ~T0 @X0 1 r1 ]
 [f ]
-"394
-[; ;Slave_Lou.c: 394:     switch(frecuencia){
-[e $U 176  ]
+"156
+[; ;Slave_Lou.c: 156:     switch(frecuencia){
+[e $U 166  ]
 {
-"395
-[; ;Slave_Lou.c: 395:         case 8000000:
-[e :U 177 ]
-"396
-[; ;Slave_Lou.c: 396:             OSCCONbits.IRCF = 0b111;
+"157
+[; ;Slave_Lou.c: 157:         case 8000000:
+[e :U 167 ]
+"158
+[; ;Slave_Lou.c: 158:             OSCCONbits.IRCF = 0b111;
 [e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
-"397
-[; ;Slave_Lou.c: 397:             break;
-[e $U 175  ]
-"398
-[; ;Slave_Lou.c: 398:         case 4000000:
-[e :U 178 ]
-"399
-[; ;Slave_Lou.c: 399:             OSCCONbits.IRCF = 0b110;
+"159
+[; ;Slave_Lou.c: 159:             break;
+[e $U 165  ]
+"160
+[; ;Slave_Lou.c: 160:         case 4000000:
+[e :U 168 ]
+"161
+[; ;Slave_Lou.c: 161:             OSCCONbits.IRCF = 0b110;
 [e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
-"400
-[; ;Slave_Lou.c: 400:             break;
-[e $U 175  ]
-"401
-[; ;Slave_Lou.c: 401:         case 2000000:
-[e :U 179 ]
-"402
-[; ;Slave_Lou.c: 402:             OSCCONbits.IRCF = 0b101;
+"162
+[; ;Slave_Lou.c: 162:             break;
+[e $U 165  ]
+"163
+[; ;Slave_Lou.c: 163:         case 2000000:
+[e :U 169 ]
+"164
+[; ;Slave_Lou.c: 164:             OSCCONbits.IRCF = 0b101;
 [e = . . _OSCCONbits 0 4 -> -> 5 `i `uc ]
-"403
-[; ;Slave_Lou.c: 403:             break;
-[e $U 175  ]
-"404
-[; ;Slave_Lou.c: 404:         case 1000000:
-[e :U 180 ]
-"405
-[; ;Slave_Lou.c: 405:             OSCCONbits.IRCF = 0b100;
+"165
+[; ;Slave_Lou.c: 165:             break;
+[e $U 165  ]
+"166
+[; ;Slave_Lou.c: 166:         case 1000000:
+[e :U 170 ]
+"167
+[; ;Slave_Lou.c: 167:             OSCCONbits.IRCF = 0b100;
 [e = . . _OSCCONbits 0 4 -> -> 4 `i `uc ]
-"406
-[; ;Slave_Lou.c: 406:             break;
-[e $U 175  ]
-"407
-[; ;Slave_Lou.c: 407:         case 500000:
-[e :U 181 ]
-"408
-[; ;Slave_Lou.c: 408:             OSCCONbits.IRCF = 0b011;
+"168
+[; ;Slave_Lou.c: 168:             break;
+[e $U 165  ]
+"169
+[; ;Slave_Lou.c: 169:         case 500000:
+[e :U 171 ]
+"170
+[; ;Slave_Lou.c: 170:             OSCCONbits.IRCF = 0b011;
 [e = . . _OSCCONbits 0 4 -> -> 3 `i `uc ]
-"409
-[; ;Slave_Lou.c: 409:             break;
-[e $U 175  ]
-"410
-[; ;Slave_Lou.c: 410:         case 250000:
-[e :U 182 ]
-"411
-[; ;Slave_Lou.c: 411:             OSCCONbits.IRCF = 0b010;
+"171
+[; ;Slave_Lou.c: 171:             break;
+[e $U 165  ]
+"172
+[; ;Slave_Lou.c: 172:         case 250000:
+[e :U 172 ]
+"173
+[; ;Slave_Lou.c: 173:             OSCCONbits.IRCF = 0b010;
 [e = . . _OSCCONbits 0 4 -> -> 2 `i `uc ]
-"412
-[; ;Slave_Lou.c: 412:             break;
-[e $U 175  ]
-"413
-[; ;Slave_Lou.c: 413:         case 125000:
-[e :U 183 ]
-"414
-[; ;Slave_Lou.c: 414:             OSCCONbits.IRCF = 0b001;
+"174
+[; ;Slave_Lou.c: 174:             break;
+[e $U 165  ]
+"175
+[; ;Slave_Lou.c: 175:         case 125000:
+[e :U 173 ]
+"176
+[; ;Slave_Lou.c: 176:             OSCCONbits.IRCF = 0b001;
 [e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
-"415
-[; ;Slave_Lou.c: 415:             break;
-[e $U 175  ]
-"416
-[; ;Slave_Lou.c: 416:         case 32000:
-[e :U 184 ]
-"417
-[; ;Slave_Lou.c: 417:             OSCCONbits.IRCF = 0b000;
+"177
+[; ;Slave_Lou.c: 177:             break;
+[e $U 165  ]
+"178
+[; ;Slave_Lou.c: 178:         case 32000:
+[e :U 174 ]
+"179
+[; ;Slave_Lou.c: 179:             OSCCONbits.IRCF = 0b000;
 [e = . . _OSCCONbits 0 4 -> -> 0 `i `uc ]
-"418
-[; ;Slave_Lou.c: 418:             break;
-[e $U 175  ]
-"419
-[; ;Slave_Lou.c: 419:         default:
-[e :U 185 ]
-"420
-[; ;Slave_Lou.c: 420:             OSCCONbits.IRCF = 0b110;
-[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
-"421
-[; ;Slave_Lou.c: 421:     }
-}
-[e $U 175  ]
-[e :U 176 ]
-[e [\ _frecuencia , $ -> -> 8000000 `l `ul 177
- , $ -> -> 4000000 `l `ul 178
- , $ -> -> 2000000 `l `ul 179
- , $ -> -> 1000000 `l `ul 180
- , $ -> -> 500000 `l `ul 181
- , $ -> -> 250000 `l `ul 182
- , $ -> -> 125000 `l `ul 183
- , $ -> -> -> 32000 `i `l `ul 184
- 185 ]
+"180
+[; ;Slave_Lou.c: 180:             break;
+[e $U 165  ]
+"181
+[; ;Slave_Lou.c: 181:         default:
 [e :U 175 ]
-"422
-[; ;Slave_Lou.c: 422: }
-[e :UE 174 ]
+"182
+[; ;Slave_Lou.c: 182:             OSCCONbits.IRCF = 0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+"183
+[; ;Slave_Lou.c: 183:     }
 }
-"424
-[; ;Slave_Lou.c: 424: void config_ADC(void){
+[e $U 165  ]
+[e :U 166 ]
+[e [\ _frecuencia , $ -> -> 8000000 `l `ul 167
+ , $ -> -> 4000000 `l `ul 168
+ , $ -> -> 2000000 `l `ul 169
+ , $ -> -> 1000000 `l `ul 170
+ , $ -> -> 500000 `l `ul 171
+ , $ -> -> 250000 `l `ul 172
+ , $ -> -> 125000 `l `ul 173
+ , $ -> -> -> 32000 `i `l `ul 174
+ 175 ]
+[e :U 165 ]
+"184
+[; ;Slave_Lou.c: 184: }
+[e :UE 164 ]
+}
+"186
+[; ;Slave_Lou.c: 186: void config_ADC(void){
 [v _config_ADC `(v ~T0 @X0 1 ef ]
 {
 [e :U _config_ADC ]
 [f ]
-"425
-[; ;Slave_Lou.c: 425:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"428
-[; ;Slave_Lou.c: 428:     ANSELbits.ANS0 = 1;
-[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"429
-[; ;Slave_Lou.c: 429:     TRISAbits.TRISA0 = 1;
-[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-"431
-[; ;Slave_Lou.c: 431:     ADCON0bits.CHS0 = 0;
+"191
+[; ;Slave_Lou.c: 191:     ADCON0bits.CHS0 = 0;
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"432
-[; ;Slave_Lou.c: 432:     ADCON0bits.CHS0 = 0;
+"192
+[; ;Slave_Lou.c: 192:     ADCON0bits.CHS0 = 0;
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"433
-[; ;Slave_Lou.c: 433:     ADCON0bits.CHS0 = 0;
+"193
+[; ;Slave_Lou.c: 193:     ADCON0bits.CHS0 = 0;
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"434
-[; ;Slave_Lou.c: 434:     ADCON0bits.CHS0 = 0;
+"194
+[; ;Slave_Lou.c: 194:     ADCON0bits.CHS0 = 0;
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"436
-[; ;Slave_Lou.c: 436:     ADCON1bits.ADFM = 0;
+"196
+[; ;Slave_Lou.c: 196:     ADCON1bits.ADFM = 0;
 [e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
-"437
-[; ;Slave_Lou.c: 437:     ADCON1bits.VCFG0 = 0;
+"197
+[; ;Slave_Lou.c: 197:     ADCON1bits.VCFG0 = 0;
 [e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-"438
-[; ;Slave_Lou.c: 438:     ADCON1bits.VCFG1 = 0;
+"198
+[; ;Slave_Lou.c: 198:     ADCON1bits.VCFG1 = 0;
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"440
-[; ;Slave_Lou.c: 440:     ADCON0bits.ADCS1 = 1;
-[e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
-"441
-[; ;Slave_Lou.c: 441:     ADCON0bits.ADCS0 = 0;
+"200
+[; ;Slave_Lou.c: 200:     ADCON0bits.ADCS1 = 0;
+[e = . . _ADCON0bits 1 7 -> -> 0 `i `uc ]
+"201
+[; ;Slave_Lou.c: 201:     ADCON0bits.ADCS0 = 0;
 [e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
-"444
-[; ;Slave_Lou.c: 444:     INTCONbits.GIE = 1;
+"204
+[; ;Slave_Lou.c: 204:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"445
-[; ;Slave_Lou.c: 445:     INTCONbits.PEIE = 1;
+"205
+[; ;Slave_Lou.c: 205:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"446
-[; ;Slave_Lou.c: 446:     PIE1bits.ADIE = 1;
+"206
+[; ;Slave_Lou.c: 206:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"447
-[; ;Slave_Lou.c: 447:     PIR1bits.ADIF = 0;
+"207
+[; ;Slave_Lou.c: 207:     PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"449
-[; ;Slave_Lou.c: 449: }
-[e :UE 186 ]
+"209
+[; ;Slave_Lou.c: 209:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"210
+[; ;Slave_Lou.c: 210: }
+[e :UE 176 ]
 }
-"452
-[; ;Slave_Lou.c: 452: uint16_t *mapeo(uint8_t valor, uint8_t limPIC, uint8_t limFisico){
-[v _mapeo `(*ui ~T0 @X0 1 ef3`uc`uc`uc ]
-{
-[e :U _mapeo ]
-[v _valor `uc ~T0 @X0 1 r1 ]
-[v _limPIC `uc ~T0 @X0 1 r2 ]
-[v _limFisico `uc ~T0 @X0 1 r3 ]
-[f ]
-[v F1417 `ui ~T0 @X0 -> 3 `i s ]
-[i F1417
-:U ..
-"453
-[; ;Slave_Lou.c: 453:     uint16_t result[3] = {0,0,0};
--> -> 0 `i `ui
--> -> 0 `i `ui
--> -> 0 `i `ui
-..
-]
-[v _result `ui ~T0 @X0 -> 3 `i a ]
-[e = _result F1417 ]
-"454
-[; ;Slave_Lou.c: 454:     uint16_t dividendo = valor*limFisico;
-[v _dividendo `ui ~T0 @X0 1 a ]
-[e = _dividendo -> * -> _valor `i -> _limFisico `i `ui ]
-"455
-[; ;Slave_Lou.c: 455:     while (limPIC <= dividendo){
-[e $U 188  ]
-[e :U 189 ]
-{
-"456
-[; ;Slave_Lou.c: 456:         result[0] = result[0] + 1;
-[e = *U + &U _result * -> -> -> 0 `i `ui `ux -> -> # *U &U _result `ui `ux + *U + &U _result * -> -> -> 0 `i `ui `ux -> -> # *U &U _result `ui `ux -> -> 1 `i `ui ]
-"457
-[; ;Slave_Lou.c: 457:         dividendo = dividendo - limPIC;
-[e = _dividendo - _dividendo -> _limPIC `ui ]
-"458
-[; ;Slave_Lou.c: 458:     }
-}
-[e :U 188 ]
-"455
-[; ;Slave_Lou.c: 455:     while (limPIC <= dividendo){
-[e $ <= -> _limPIC `ui _dividendo 189  ]
-[e :U 190 ]
-"459
-[; ;Slave_Lou.c: 459:     dividendo = dividendo *10;
-[e = _dividendo * _dividendo -> -> 10 `i `ui ]
-"460
-[; ;Slave_Lou.c: 460:     while (limPIC <= dividendo){
-[e $U 191  ]
-[e :U 192 ]
-{
-"461
-[; ;Slave_Lou.c: 461:         result[1] = result[1] +1;
-[e = *U + &U _result * -> -> -> 1 `i `ui `ux -> -> # *U &U _result `ui `ux + *U + &U _result * -> -> -> 1 `i `ui `ux -> -> # *U &U _result `ui `ux -> -> 1 `i `ui ]
-"462
-[; ;Slave_Lou.c: 462:         dividendo = dividendo - limPIC;
-[e = _dividendo - _dividendo -> _limPIC `ui ]
-"463
-[; ;Slave_Lou.c: 463:     }
-}
-[e :U 191 ]
-"460
-[; ;Slave_Lou.c: 460:     while (limPIC <= dividendo){
-[e $ <= -> _limPIC `ui _dividendo 192  ]
-[e :U 193 ]
-"464
-[; ;Slave_Lou.c: 464:     dividendo = dividendo *10;
-[e = _dividendo * _dividendo -> -> 10 `i `ui ]
-"465
-[; ;Slave_Lou.c: 465:     while (limPIC <= dividendo){
-[e $U 194  ]
-[e :U 195 ]
-{
-"466
-[; ;Slave_Lou.c: 466:         result[2] = result[2] +1;
-[e = *U + &U _result * -> -> -> 2 `i `ui `ux -> -> # *U &U _result `ui `ux + *U + &U _result * -> -> -> 2 `i `ui `ux -> -> # *U &U _result `ui `ux -> -> 1 `i `ui ]
-"467
-[; ;Slave_Lou.c: 467:         dividendo = dividendo - limPIC;
-[e = _dividendo - _dividendo -> _limPIC `ui ]
-"468
-[; ;Slave_Lou.c: 468:     }
-}
-[e :U 194 ]
-"465
-[; ;Slave_Lou.c: 465:     while (limPIC <= dividendo){
-[e $ <= -> _limPIC `ui _dividendo 195  ]
-[e :U 196 ]
-"470
-[; ;Slave_Lou.c: 470:     return(result);
-[e ) &U _result ]
-[e $UE 187  ]
-"471
-[; ;Slave_Lou.c: 471: }
-[e :UE 187 ]
-}
-[a 1C 83 101 110 115 111 114 32 72 117 109 46 32 89 76 54 57 0 ]
-[a 2C 83 101 110 115 111 114 32 72 117 109 46 32 89 76 54 57 0 ]
-[a 13C 32 57 48 37 0 ]
-[a 12C 32 56 48 37 0 ]
-[a 11C 32 55 48 37 0 ]
-[a 10C 32 54 48 37 0 ]
-[a 9C 32 53 48 37 0 ]
-[a 8C 32 52 48 37 0 ]
-[a 7C 32 51 48 37 0 ]
-[a 6C 32 50 48 37 0 ]
-[a 5C 32 49 48 37 0 ]
-[a 14C 49 48 48 37 0 ]
-[a 15C 49 48 48 37 0 ]
-[a 3C 32 32 48 37 0 ]
-[a 4C 32 32 48 37 0 ]

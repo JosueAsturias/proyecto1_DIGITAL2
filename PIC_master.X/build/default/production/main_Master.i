@@ -2969,6 +2969,7 @@ void get_temperatura_obj(void);
 void init_ADC(uint8_t channel);
 void inclinacion_(void);
 void get_dis(void);
+void get_hum(void);
 
 void __attribute__((picinterrupt(("")))) ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){
@@ -2995,7 +2996,8 @@ void main(void) {
         inclinacion_();
         _delay((unsigned long)((50)*(1000000/4000.0)));
         get_dis();
-
+        _delay((unsigned long)((50)*(1000000/4000.0)));
+        get_hum();
 
 
 
@@ -3055,22 +3057,27 @@ void get_dis(void){
     d_frente = I2C_Master_Read(0);
     I2C_Master_Stop();
 
-    _delay((unsigned long)((100)*(1000000/4000.0)));
+    _delay((unsigned long)((50)*(1000000/4000.0)));
 
     I2C_Master_Start();
     I2C_Master_Write(0x31);
     d_atras = I2C_Master_Read(0);
     I2C_Master_Stop();
 
-    _delay((unsigned long)((100)*(1000000/4000.0)));
+    _delay((unsigned long)((50)*(1000000/4000.0)));
     I2C_Master_Start();
     I2C_Master_Write(0x31);
     bajar = I2C_Master_Read(0);
     I2C_Master_Stop();
-
-
+# 245 "main_Master.c"
 }
 
+void get_hum(void){
+    I2C_Master_Start();
+    I2C_Master_Write(0x21);
+    humedad = I2C_Master_Read(0);
+    I2C_Master_Stop();
+}
 
 void get_temperatura(void){
     init_ADC(0x05);

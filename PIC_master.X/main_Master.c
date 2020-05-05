@@ -132,6 +132,7 @@ void get_temperatura_obj(void);
 void init_ADC(uint8_t channel);
 void inclinacion_(void);
 void get_dis(void);
+void get_hum(void);
 
 void __interrupt() ISR(void){
     if (INTCONbits.RBIF == 1 && INTCONbits.RBIE == 1){   //atencion IOCB
@@ -158,7 +159,8 @@ void main(void) {
         inclinacion_();
         __delay_ms(50);
         get_dis();
-        
+        __delay_ms(50);
+        get_hum();
         //temperatura = temp_ambiente();
         //temperatura_obj = temp_objeto();
         //accZ = Acc_Z();
@@ -218,22 +220,36 @@ void get_dis(void){
     d_frente = I2C_Master_Read(0);
     I2C_Master_Stop();
     
-    __delay_ms(100);
+    __delay_ms(50);
     
     I2C_Master_Start();
     I2C_Master_Write(_ADDRESS_SLAVE_2_R);
     d_atras = I2C_Master_Read(0);
     I2C_Master_Stop();
     
-    __delay_ms(100);
+    __delay_ms(50);
     I2C_Master_Start();
     I2C_Master_Write(_ADDRESS_SLAVE_2_R);
     bajar = I2C_Master_Read(0);
     I2C_Master_Stop();
     
+//    if (bajar == 0xF0){
+//        __delay_ms(50);
+//        I2C_Master_Start();
+//        I2C_Master_Write(_ADDRESS_SLAVE_1_W);
+//        I2C_Master_Write(0xF0);
+//        I2C_Master_Stop();
+//    }
+    
     
 }
 
+void get_hum(void){
+    I2C_Master_Start();
+    I2C_Master_Write(_ADDRESS_SLAVE_1_R);
+    humedad = I2C_Master_Read(0);
+    I2C_Master_Stop();
+}
 
 void get_temperatura(void){
     init_ADC(0x05);

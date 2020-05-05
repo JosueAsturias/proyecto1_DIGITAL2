@@ -55,33 +55,35 @@
 [v _LCD_Create_Char LCD_Create_Char `(v  1 e 1 0 ]
 "181
 [v _uint_to_array uint_to_array `(*.4ui  1 e 1 0 ]
-"136 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"137 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"146
+"147
 [v _main main `(v  1 e 1 0 ]
-"185
+"187
 [v _SetUp SetUp `(v  1 e 1 0 ]
-"215
+"217
 [v _get_dis get_dis `(v  1 e 1 0 ]
-"238
+"247
+[v _get_hum get_hum `(v  1 e 1 0 ]
+"254
 [v _get_temperatura get_temperatura `(v  1 e 1 0 ]
-"245
+"261
 [v _get_temperatura_obj get_temperatura_obj `(v  1 e 1 0 ]
-"252
+"268
 [v _inclinacion_ inclinacion_ `(v  1 e 1 0 ]
-"259
+"275
 [v _init_ADC init_ADC `(v  1 e 1 0 ]
-"382
+"398
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
-"414
+"430
 [v _display_Uhrzeit display_Uhrzeit `(v  1 e 1 0 ]
-"434
+"450
 [v _display_Datum display_Datum `(v  1 e 1 0 ]
-"455
+"471
 [v _mostrarLCD mostrarLCD `(v  1 e 1 0 ]
-"638
+"654
 [v _pressBoton1 pressBoton1 `(v  1 e 1 0 ]
-"683
+"699
 [v _pressBoton2 pressBoton2 `(v  1 e 1 0 ]
 "27 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
 [v _BCD_a_DEC BCD_a_DEC `(uc  1 e 1 0 ]
@@ -97,7 +99,7 @@
 [v _uartTX_Write uartTX_Write `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S593 . 1 `uc 1 RA0 1 0 :1:0 
+[s S598 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -107,9 +109,9 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "183
-[u S602 . 1 `S593 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES602  1 e 1 @5 ]
-[s S320 . 1 `uc 1 RB0 1 0 :1:0 
+[u S607 . 1 `S598 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES607  1 e 1 @5 ]
+[s S324 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -119,8 +121,8 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S329 . 1 `S320 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES329  1 e 1 @6 ]
+[u S333 . 1 `S324 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES333  1 e 1 @6 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -140,7 +142,7 @@
 ]
 [u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
-[s S192 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S196 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -149,13 +151,13 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S200 . 1 `S192 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES200  1 e 1 @12 ]
+[u S204 . 1 `S196 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES204  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S734 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S739 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -165,31 +167,31 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S743 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S748 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S747 . 1 `uc 1 . 1 0 :6:0 
+[s S752 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S750 . 1 `uc 1 . 1 0 :6:0 
+[s S755 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S753 . 1 `S734 1 . 1 0 `S743 1 . 1 0 `S747 1 . 1 0 `S750 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES753  1 e 1 @24 ]
+[u S758 . 1 `S739 1 . 1 0 `S748 1 . 1 0 `S752 1 . 1 0 `S755 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES758  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S212 . 1 `uc 1 ADON 1 0 :1:0 
+[s S216 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S217 . 1 `uc 1 . 1 0 :1:0 
+[s S221 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -198,15 +200,15 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S226 . 1 `uc 1 . 1 0 :1:0 
+[s S230 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S229 . 1 `uc 1 . 1 0 :1:0 
+[s S233 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S232 . 1 `S212 1 . 1 0 `S217 1 . 1 0 `S226 1 . 1 0 `S229 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES232  1 e 1 @31 ]
-[s S110 . 1 `uc 1 PS 1 0 :3:0 
+[u S236 . 1 `S216 1 . 1 0 `S221 1 . 1 0 `S230 1 . 1 0 `S233 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES236  1 e 1 @31 ]
+[s S114 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -214,17 +216,17 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S117 . 1 `uc 1 PS0 1 0 :1:0 
+[s S121 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S121 . 1 `S110 1 . 1 0 `S117 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES121  1 e 1 @129 ]
+[u S125 . 1 `S114 1 . 1 0 `S121 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES125  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S514 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S519 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -234,29 +236,29 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S523 . 1 `S514 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES523  1 e 1 @135 ]
+[u S528 . 1 `S519 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES528  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S273 . 1 `uc 1 SCS 1 0 :1:0 
+[s S277 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S279 . 1 `uc 1 . 1 0 :4:0 
+[s S283 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S284 . 1 `S273 1 . 1 0 `S279 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES284  1 e 1 @143 ]
+[u S288 . 1 `S277 1 . 1 0 `S283 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES288  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S535 . 1 `uc 1 SEN 1 0 :1:0 
+[s S540 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -266,8 +268,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S544 . 1 `S535 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES544  1 e 1 @145 ]
+[u S549 . 1 `S540 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES549  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -276,7 +278,7 @@
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
 "2416
 [v _IOCB IOCB `VEuc  1 e 1 @150 ]
-[s S674 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S679 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -286,29 +288,29 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S683 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S688 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S687 . 1 `uc 1 . 1 0 :6:0 
+[s S692 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S690 . 1 `S674 1 . 1 0 `S683 1 . 1 0 `S687 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES690  1 e 1 @152 ]
+[u S695 . 1 `S679 1 . 1 0 `S688 1 . 1 0 `S692 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES695  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2704
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
-[s S258 . 1 `uc 1 . 1 0 :4:0 
+[s S262 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S264 . 1 `S258 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES264  1 e 1 @159 ]
-[s S711 . 1 `uc 1 ABDEN 1 0 :1:0 
+[u S268 . 1 `S262 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES268  1 e 1 @159 ]
+[s S716 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -318,8 +320,8 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3352
-[u S720 . 1 `S711 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES720  1 e 1 @391 ]
+[u S725 . 1 `S716 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES725  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -340,6 +342,8 @@
 [v _estado estado `uc  1 e 1 0 ]
 "53
 [v _velocidad velocidad `uc  1 e 1 0 ]
+"54
+[v _humedad humedad `uc  1 e 1 0 ]
 "55
 [v _inclinacion inclinacion `uc  1 e 1 0 ]
 "56
@@ -388,10 +392,10 @@
 [v _mes mes `uc  1 e 1 0 ]
 "24
 [v _jahr jahr `uc  1 e 1 0 ]
-"146 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"147 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _main main `(v  1 e 1 0 ]
 {
-"183
+"185
 } 0
 "34 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\UART.c
 [v _uartTX_Write uartTX_Write `(v  1 e 1 0 ]
@@ -401,32 +405,36 @@
 [v uartTX_Write@dato dato `uc  1 a 1 2 ]
 "37
 } 0
-"683 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"699 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _pressBoton2 pressBoton2 `(v  1 e 1 0 ]
 {
-"728
+"744
 } 0
-"638
+"654
 [v _pressBoton1 pressBoton1 `(v  1 e 1 0 ]
 {
-"681
+"697
 } 0
-"455
+"471
 [v _mostrarLCD mostrarLCD `(v  1 e 1 0 ]
 {
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 wreg ]
-"560
+"576
 [v mostrarLCD@dec_atras dec_atras `uc  1 a 1 32 ]
-"561
+"577
 [v mostrarLCD@uni_atras uni_atras `uc  1 a 1 29 ]
-"541
+"557
 [v mostrarLCD@dec_frente dec_frente `uc  1 a 1 31 ]
-"542
+"558
 [v mostrarLCD@uni_frente uni_frente `uc  1 a 1 28 ]
-"455
+"539
+[v mostrarLCD@decenas_humedad decenas_humedad `uc  1 a 1 30 ]
+"540
+[v mostrarLCD@unidades_humedad unidades_humedad `uc  1 a 1 27 ]
+"471
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 wreg ]
 [v mostrarLCD@pantalla pantalla `uc  1 a 1 26 ]
-"636
+"652
 } 0
 "181 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _uint_to_array uint_to_array `(*.4ui  1 e 1 0 ]
@@ -453,49 +461,49 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
 "53
 } 0
-"414 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"430 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _display_Uhrzeit display_Uhrzeit `(v  1 e 1 0 ]
 {
 [v display_Uhrzeit@fila fila `uc  1 a 1 wreg ]
-"420
+"436
 [v display_Uhrzeit@Uhr_d Uhr_d `uc  1 a 1 18 ]
-"419
+"435
 [v display_Uhrzeit@Uhr_u Uhr_u `uc  1 a 1 17 ]
-"418
+"434
 [v display_Uhrzeit@min_d min_d `uc  1 a 1 16 ]
-"417
+"433
 [v display_Uhrzeit@min_u min_u `uc  1 a 1 15 ]
-"416
+"432
 [v display_Uhrzeit@seg_d seg_d `uc  1 a 1 14 ]
-"415
+"431
 [v display_Uhrzeit@seg_u seg_u `uc  1 a 1 13 ]
-"414
+"430
 [v display_Uhrzeit@fila fila `uc  1 a 1 wreg ]
 [v display_Uhrzeit@columna columna `uc  1 p 1 8 ]
 [v display_Uhrzeit@fila fila `uc  1 a 1 12 ]
-"432
+"448
 } 0
-"434
+"450
 [v _display_Datum display_Datum `(v  1 e 1 0 ]
 {
 [v display_Datum@fila fila `uc  1 a 1 wreg ]
-"440
+"456
 [v display_Datum@jahr_d jahr_d `uc  1 a 1 18 ]
-"439
+"455
 [v display_Datum@jahr_u jahr_u `uc  1 a 1 17 ]
-"438
+"454
 [v display_Datum@mes_d mes_d `uc  1 a 1 16 ]
-"437
+"453
 [v display_Datum@mes_u mes_u `uc  1 a 1 15 ]
-"436
+"452
 [v display_Datum@dia_d dia_d `uc  1 a 1 14 ]
-"435
+"451
 [v display_Datum@dia_u dia_u `uc  1 a 1 13 ]
-"434
+"450
 [v display_Datum@fila fila `uc  1 a 1 wreg ]
 [v display_Datum@columna columna `uc  1 p 1 8 ]
 [v display_Datum@fila fila `uc  1 a 1 12 ]
-"453
+"469
 } 0
 "73 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _LCD_Write_String LCD_Write_String `(v  1 e 1 0 ]
@@ -521,33 +529,38 @@
 [v LCD_Set_Cursor@linea linea `uc  1 a 1 8 ]
 "94
 } 0
-"252 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"268 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _inclinacion_ inclinacion_ `(v  1 e 1 0 ]
 {
-"257
+"273
 } 0
-"245
+"261
 [v _get_temperatura_obj get_temperatura_obj `(v  1 e 1 0 ]
 {
-"250
+"266
 } 0
-"238
+"254
 [v _get_temperatura get_temperatura `(v  1 e 1 0 ]
 {
-"243
-} 0
 "259
+} 0
+"275
 [v _init_ADC init_ADC `(v  1 e 1 0 ]
 {
 [v init_ADC@channel channel `uc  1 a 1 wreg ]
 [v init_ADC@channel channel `uc  1 a 1 wreg ]
 [v init_ADC@channel channel `uc  1 a 1 4 ]
-"380
+"396
 } 0
-"215
+"247
+[v _get_hum get_hum `(v  1 e 1 0 ]
+{
+"252
+} 0
+"217
 [v _get_dis get_dis `(v  1 e 1 0 ]
 {
-"235
+"245
 } 0
 "78 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\RTC.c
 [v _get_Time get_Time `(v  1 e 1 0 ]
@@ -584,10 +597,10 @@
 [v ___bmul@multiplier multiplier `uc  1 a 1 5 ]
 "51
 } 0
-"185 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"187 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _SetUp SetUp `(v  1 e 1 0 ]
 {
-"213
+"215
 } 0
 "14 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\UART.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
@@ -652,11 +665,11 @@
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"382 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"398 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _OSC_config OSC_config `(v  1 e 1 0 ]
 {
 [v OSC_config@frecuencia frecuencia `ul  1 p 4 2 ]
-"411
+"427
 } 0
 "44 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\LCD_8bits.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
@@ -715,8 +728,8 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 6 ]
 "30
 } 0
-"136 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
+"137 C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\PIC_master.X\main_Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"144
+"145
 } 0

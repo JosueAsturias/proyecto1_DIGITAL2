@@ -126,7 +126,7 @@ void main(void) {
                 }
             }
             __delay_ms(500);
-            Stepper_CW(90);
+            Stepper_CW(180);
             Servo1_grados(0);   
             Servo2_grados(0);
             indicador = 0;

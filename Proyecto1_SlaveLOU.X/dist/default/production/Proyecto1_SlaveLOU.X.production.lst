@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Tue May 05 00:42:39 2020
+                                                                                               Tue May 05 00:56:21 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -956,8 +956,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    942  046A  0000               	nop
    943  046B                     l3385:	
    944                           
-   945                           ;Slave_Lou.c: 129:             Stepper_CW(90);
-   946  046B  305A               	movlw	90
+   945                           ;Slave_Lou.c: 129:             Stepper_CW(180);
+   946  046B  30B4               	movlw	180
    947  046C  00F3               	movwf	Stepper_CW@Step_grados_cw
    948  046D  3000               	movlw	0
    949  046E  00F4               	movwf	Stepper_CW@Step_grados_cw+1
@@ -4365,7 +4365,7 @@ DATA                 0      0      11      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Tue May 05 00:42:39 2020
+Symbol Table                                                                                   Tue May 05 00:56:21 2020
 
 Stepper_CCW@Step_grados_ccw 0073                           _i 0077                           _z 0026  
                __CFG_CP$OFF 0000                 _SSPSTATbits 0094                          _BF 04A0  

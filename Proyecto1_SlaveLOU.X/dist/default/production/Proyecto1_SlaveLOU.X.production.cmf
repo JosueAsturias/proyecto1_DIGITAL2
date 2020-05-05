@@ -30,7 +30,7 @@ cstackBANK0 BANK0 1 20 20 4 1
 intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 24 24 3 1
 bssCOMMON COMMON 1 77 77 3 1
-$C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
+$C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -80,19 +80,19 @@ STRING 6F7-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Proyecto1_SlaveLOU.X.production.o
-F cinit CODE >1159:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-F cinit CODE >1162:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-F cinit CODE >1188:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-10 cinit CODE >1189:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-11 cinit CODE >1190:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-12 cinit CODE >1193:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-13 cinit CODE >1194:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-14 cinit CODE >1195:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-15 cinit CODE >1196:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-16 cinit CODE >1197:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-17 cinit CODE >1203:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-17 cinit CODE >1205:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
-18 cinit CODE >1206:C:\Users\ICHELECE\AppData\Local\Temp\sa70.s
+F cinit CODE >1159:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+F cinit CODE >1162:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+F cinit CODE >1188:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+10 cinit CODE >1189:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+11 cinit CODE >1190:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+12 cinit CODE >1193:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+13 cinit CODE >1194:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+14 cinit CODE >1195:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+15 cinit CODE >1196:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+16 cinit CODE >1197:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+17 cinit CODE >1203:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+17 cinit CODE >1205:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
+18 cinit CODE >1206:C:\Users\ICHELECE\AppData\Local\Temp\s2hg.s
 4 intentry CODE >51:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Proyecto1_SlaveLOU.X\Slave_Lou.c
 537 text11 CODE >51:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Proyecto1_SlaveLOU.X\Slave_Lou.c
 537 text11 CODE >52:C:\Users\ICHELECE\Desktop\VII semestre\Progras digital 2\proyecto1_DIGITAL2\Proyecto1_SlaveLOU.X\Slave_Lou.c
@@ -457,21 +457,21 @@ __Hstrings 0 0 ABS 0 strings -
 _indicador 24 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1_SlaveLOU.X.production.o
 _ADIF 66 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
+___sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
 _main 7B2 0 CODE 0 maintext dist/default/production\Proyecto1_SlaveLOU.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
-start 18 0 CODE 0 init C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
+start 18 0 CODE 0 init C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_config_ADC 0 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
@@ -489,8 +489,8 @@ OSC_config@frecuencia 73 0 COMMON 1 cstackCOMMON dist/default/production\Proyect
 __size_of_init_PWM_1 0 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __size_of_init_PWM_2 0 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
-___stacklo 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
+___stackhi 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
+___stacklo 0 0 ABS 0 - C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
 _I2C_Slave_Init D88 0 CODE 0 text10 dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
@@ -503,7 +503,7 @@ _SSPCON 14 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Proyecto1_SlaveLOU.X.production.o
 _recibir 25 0 BANK0 1 bssBANK0 dist/default/production\Proyecto1_SlaveLOU.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
+___int_sp 0 0 STACK 2 stack C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -561,7 +561,7 @@ _Stepper_CCW 3F4 0 CODE 0 text7 dist/default/production\Proyecto1_SlaveLOU.X.pro
 __end_of_ISR B5E 0 CODE 0 text11 dist/default/production\Proyecto1_SlaveLOU.X.production.o
 _config_PORTS CB2 0 CODE 0 text3 dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ICHELECE\AppData\Local\Temp\sa70.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ICHELECE\AppData\Local\Temp\s2hg.o
 __end_of_Stepper_CW 3F4 0 CODE 0 text6 dist/default/production\Proyecto1_SlaveLOU.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 Servo1_grados@Servo1_grados 75 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1_SlaveLOU.X.production.o

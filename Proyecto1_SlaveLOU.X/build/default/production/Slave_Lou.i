@@ -2809,7 +2809,7 @@ void main(void) {
                 }
             }
             _delay((unsigned long)((500)*(1000000/4000.0)));
-            Stepper_CW(90);
+            Stepper_CW(180);
             Servo1_grados(0);
             Servo2_grados(0);
             indicador = 0;

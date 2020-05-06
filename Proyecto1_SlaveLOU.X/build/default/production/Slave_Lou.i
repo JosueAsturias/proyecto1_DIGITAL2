@@ -2798,7 +2798,7 @@ void main(void) {
         Servo2_grados(0);
 
         if(PORTEbits.RE0 == 1){
-            Stepper_CCW(90);
+            Stepper_CCW(45);
             _delay((unsigned long)((10)*(1000000/4000.0)));
             for (int i = 0; i<60; i++){
                 Servo1_grados(45);
@@ -2809,7 +2809,7 @@ void main(void) {
                 }
             }
             _delay((unsigned long)((500)*(1000000/4000.0)));
-            Stepper_CW(180);
+            Stepper_CW(45);
             Servo1_grados(0);
             Servo2_grados(0);
             indicador = 0;
